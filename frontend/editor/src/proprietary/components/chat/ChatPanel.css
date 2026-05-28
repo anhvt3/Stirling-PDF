@@ -295,8 +295,11 @@
   margin: 0.2rem 0;
 }
 
-.chat-bubble-user {
+.chat-bubble {
   max-width: 85%;
+}
+
+.chat-bubble-user {
   background: var(--mantine-color-blue-filled) !important;
   color: white !important;
 }
@@ -305,16 +308,14 @@
   color: white !important;
 }
 
-.chat-assistant-content {
-  width: 100%;
-  padding: 0 0.5rem;
-  font-size: var(--mantine-font-size-sm);
+.chat-bubble-assistant {
+  background: var(--mantine-color-default-hover) !important;
 }
 
-.chat-assistant-content p {
+.chat-bubble-assistant p {
   margin: 0 0 0.5em;
 }
 
-.chat-assistant-content p:last-child {
+.chat-bubble-assistant p:last-child {
   margin-bottom: 0;
 }

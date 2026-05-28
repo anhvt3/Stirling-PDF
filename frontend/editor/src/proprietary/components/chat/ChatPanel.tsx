@@ -196,7 +196,7 @@ function ChatMessageBubble({
 
   return (
     <div className="chat-message chat-message-assistant">
-      <div className="chat-assistant-content">
+      <Paper className="chat-bubble chat-bubble-assistant" p="xs" radius="md">
         <Text size="sm" component="div">
           {renderMarkdown(content)}
         </Text>
@@ -207,7 +207,7 @@ function ChatMessageBubble({
             t={t}
           />
         )}
-      </div>
+      </Paper>
     </div>
   );
 }

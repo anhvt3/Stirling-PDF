@@ -10,7 +10,7 @@ import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 
 @Data
-@Schema(description = "Run an AI workflow against one or more PDF files")
+@Schema(description = "Run an AI workflow")
 public class AiWorkflowRequest {
 
     @Schema(description = "The input PDF files")
