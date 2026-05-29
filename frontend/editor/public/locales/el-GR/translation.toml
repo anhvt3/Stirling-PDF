@@ -90,6 +90,7 @@ nothingToUndo = "Δεν υπάρχει τίποτα για αναίρεση"
 noticeTopUpOrPlan = "Μη επαρκείς μονάδες, παρακαλούμε ανανεώστε το υπόλοιπο ή αναβαθμίστε σε πλάνο"
 noValidFiles = "Δεν υπάρχουν έγκυρα αρχεία προς επεξεργασία"
 oops = "Ωχ!"
+openInNewWindow = "Άνοιγμα σε νέο παράθυρο"
 openInViewer = "Άνοιγμα στον προβολέα"
 operationCancelled = "Η ενέργεια ακυρώθηκε"
 page = "Σελίδα"
@@ -493,6 +494,11 @@ title = "Προσαρμογή κλίμακας σελίδας"
 
 [adjustPageScale.error]
 failed = "Παρουσιάστηκε σφάλμα κατά την προσαρμογή της κλίμακας σελίδας."
+
+[adjustPageScale.orientation]
+label = "Προσανατολισμός σελίδας"
+landscape = "Οριζόντιος"
+portrait = "Κάθετος"
 
 [adjustPageScale.pageSize]
 keep = "Διατήρηση αρχικού μεγέθους"
@@ -1512,6 +1518,32 @@ user = "Χρήστης"
 usernameInfo = "Το όνομα χρήστη μπορεί να περιέχει μόνο γράμματα, αριθμούς και τους ειδικούς χαρακτήρες @._+- ή πρέπει να είναι έγκυρη διεύθυνση email."
 webOnlyUser = "Χρήστης μόνο web"
 
+[agents]
+auto_redaction_description = "Αυτόματη απόκρυψη PII"
+auto_redaction_name = "Αυτόματη απόκρυψη"
+back_to_tools = "Πίσω στα εργαλεία"
+coming_soon = "Έρχεται σύντομα"
+compliance_description = "Έλεγχος εγγράφων για συμμόρφωση"
+compliance_name = "Έλεγχος συμμόρφωσης"
+data_extraction_description = "Εξαγωγή πινάκων και δομημένων δεδομένων"
+data_extraction_name = "Εξαγωγή δεδομένων"
+doc_summary_description = "Περίληψη μεγάλων εγγράφων"
+doc_summary_name = "Σύνοψη"
+form_filler_description = "Έξυπνη συμπλήρωση φορμών PDF"
+form_filler_name = "Συμπλήρωση φορμών"
+fullscreen_title = "Πράκτορες Stirling"
+pdf_to_markdown_description = "Μετατροπή PDF σε καθαρό Markdown"
+pdf_to_markdown_name = "PDF σε Markdown"
+section_title = "Πράκτορες"
+show_less = "Εμφάνιση λιγότερων"
+start_chat = "Έναρξη συνομιλίας"
+stirling_description = "Ο γενικής χρήσης βοηθός PDF σας"
+stirling_full_name = "Γενικός πράκτορας Stirling"
+stirling_long_description = "Βοηθός PDF γενικής χρήσης που μπορεί να εκτελεί εργαλεία, να δημιουργεί PDF και να εξάγει συμπεράσματα από τα έγγραφά σας."
+stirling_name = "Stirling"
+stirling_tooltip = "Πράκτορας Stirling"
+view_all = "Προβολή όλων των πρακτόρων"
+
 [analytics]
 disable = "Απενεργοποίηση analytics"
 enable = "Ενεργοποίηση analytics"
@@ -1771,6 +1803,10 @@ insufficientPermissions = "Δεν έχετε άδεια για αυτή την �
 pleaseLoginAgain = "Συνδεθείτε ξανά."
 sessionExpired = "Η συνεδρία έληξε"
 
+[auth.displayName]
+guest = "Επισκέπτης"
+user = "Χρήστης"
+
 [auto-rename]
 description = "Εντοπίζει αυτόματα τον τίτλο από το περιεχόμενο του PDF και τον χρησιμοποιεί ως όνομα αρχείου."
 header = "Αυτόματη μετονομασία PDF"
@@ -1862,6 +1898,13 @@ label = "Άνοιγμα μενού για {{title}}"
 
 [automate.files]
 placeholder = "Επιλέξτε αρχεία για επεξεργασία με αυτήν την αυτοματοποίηση"
+
+[automate.folderScanWarning]
+advice = "Μπορείτε ακόμη να κάνετε λήψη του αρχείου (π.χ. για επιθεώρηση ή χειροκίνητη επεξεργασία), αλλά τα μη υποστηριζόμενα βήματα πρέπει να αφαιρεθούν πριν μπορέσει να το εκτελέσει το backend."
+cancel = "Άκυρο"
+confirm = "Εξαγωγή ούτως ή άλλως"
+intro = "Η σάρωση φακέλων εκτελείται στο backend, επομένως μπορεί να εκτελεί μόνο εργαλεία που διαθέτουν backend endpoint. Τα παρακάτω βήματα σε αυτήν την αυτοματοποίηση δεν διαθέτουν και θα αποτύχουν όταν εκτελεστεί το pipeline:"
+title = "Ορισμένα βήματα δεν μπορούν να εκτελεστούν στη σάρωση φακέλων"
 
 [automate.importModal]
 cancel = "Ακύρωση"
@@ -2684,6 +2727,16 @@ title = "Αλλαγή δικαιωμάτων"
 [changePermissions.tooltip.warning]
 text = "Για να καταστούν αυτά τα δικαιώματα μη τροποποιήσιμα, χρησιμοποιήστε το εργαλείο Προσθήκη Κωδικού για να ορίσετε κωδικό πρόσβασης κατόχου."
 
+[chat.header]
+agentMenu = "Επιλογές πράκτορα Stirling"
+clearChat = "Καθαρισμός συνομιλίας"
+settings = "Ρυθμίσεις πράκτορα"
+
+[chat.input]
+attach = "Επισύναψη αρχείων"
+placeholder = "Τι θέλετε να κάνετε;"
+send = "Αποστολή μηνύματος"
+
 [chat.progress]
 analyzing = "Γίνεται ανάλυση του αιτήματός σας..."
 calling_engine = "Το AI σκέφτεται..."
@@ -2698,6 +2751,32 @@ whole_doc_compression_round = "Ενοποίηση σημειώσεων..."
 whole_doc_read_done = "Ολοκληρώθηκε η ανάγνωση του εγγράφου..."
 whole_doc_read_started = "Γίνεται ανάγνωση του εγγράφου..."
 whole_doc_slice_done = "Γίνεται ανάγνωση του εγγράφου... ({{percent}}% ολοκληρωμένο)"
+
+[chat.quickActions]
+browseYourFiles = "Περιήγηση στα αρχεία σας"
+compressMany = "Συμπίεση αυτών των εγγράφων"
+compressOne = "Συμπίεση αυτού του εγγράφου"
+convertMany = "Μετατροπή αυτών των εγγράφων σε PDF"
+convertOne = "Μετατροπή αυτού του εγγράφου σε PDF"
+fileSummary_one = "1 αρχείο στον πάγκο εργασίας ({{types}})"
+fileSummary_other = "{{count}} αρχεία στον πάγκο εργασίας ({{types}})"
+heading = "Ξεκινήστε"
+mergeMany = "Συγχώνευση αυτών των {{count}} εγγράφων σε 1"
+moreFiles = "+{{count}} ακόμη"
+openFromComputer = "Άνοιγμα από υπολογιστή"
+removeFile = "Αφαίρεση {{name}}"
+rotateMany = "Περιστροφή αυτών των εγγράφων"
+rotateOne = "Περιστροφή αυτού του εγγράφου"
+splitOne = "Διαχωρισμός αυτού του εγγράφου"
+
+[chat.responses]
+cannot_continue = "Κάτι πήγε στραβά και δεν μπορώ να συνεχίσω."
+cannot_do = "Δεν μπορώ να το κάνω αυτό."
+done = "Έγινε."
+need_clarification = "Μπορείτε να διευκρινίσετε το αίτημά σας;"
+not_found = "Δεν βρέθηκαν οι ζητούμενες πληροφορίες."
+processing = "Επεξεργασία ({{outcome}})..."
+unsupported_capability = "Μη υποστηριζόμενη δυνατότητα: {{capability}}"
 
 [chat.toolsUsed]
 summary = "Εκτελέστηκαν {{count}} εργαλεία"
@@ -2799,6 +2878,7 @@ selectBaseFirst = "Επιλέξτε πρώτα το αρχικό PDF"
 filesMissing = "Δεν ήταν δυνατός ο εντοπισμός των επιλεγμένων αρχείων. Παρακαλώ επιλέξτε τα ξανά."
 generic = "Δεν είναι δυνατή η σύγκριση αυτών των αρχείων."
 selectRequired = "Επιλέξτε ένα αρχικό και ένα τροποποιημένο έγγραφο."
+title = "Η σύγκριση απέτυχε"
 
 [compare.large.file]
 message = "Ένα ή και τα δύο παρεχόμενα έγγραφα είναι πολύ μεγάλα για επεξεργασία"
@@ -2864,6 +2944,7 @@ title = "Ακόμα δουλεύουμε…"
 
 [compare.status]
 complete = "Η σύγκριση είναι έτοιμη"
+error = "Η σύγκριση απέτυχε"
 extracting = "Εξαγωγή κειμένου..."
 processing = "Ανάλυση διαφορών..."
 
@@ -3771,12 +3852,246 @@ expand = "Ανάπτυξη πλευρικής στήλης"
 files = "Αρχεία"
 googleDrive = "Google Drive"
 googleDriveDisabled = "Το Google Drive δεν έχει ρυθμιστεί"
+leaveMyFiles = "Έξοδος από Τα αρχεία μου"
+myFiles = "Τα αρχεία μου"
 noFiles = "Ακόμη δεν υπάρχουν αρχεία"
 openFileManager = "Άνοιγμα διαχείρισης αρχείων"
 openFromComputer = "Άνοιγμα από υπολογιστή"
 openSettings = "Άνοιγμα ρυθμίσεων"
 search = "Αναζήτηση"
 searchPlaceholder = "Αναζήτηση αρχείων..."
+
+[filesPage]
+addToWorkspace = "Προσθήκη στον χώρο εργασίας"
+addToWorkspaceCount = "Προσθήκη {{count}} στον χώρο εργασίας"
+allFiles = "Όλα τα αρχεία"
+back = "Πίσω"
+backToFolder = "Πίσω στο {{folder}}"
+backToMyFiles = "Πίσω στα Αρχεία μου"
+breadcrumbs = "Διαδρομή φακέλου"
+cancel = "Άκυρο"
+clearSearch = "Καθαρισμός αναζήτησης"
+clearSelection = "Καθαρισμός επιλογής"
+closeDetails = "Κλείσιμο λεπτομερειών"
+create = "Δημιουργία"
+cycleBlocked = "Δεν είναι δυνατή η μετακίνηση φακέλου μέσα σε έναν από τους υποφακέλους του."
+delete = "Διαγραφή"
+deleteFolder = "Διαγραφή φακέλου"
+deleteFolderBody = "Διαγραφή φακέλου \"{{name}}\";"
+deleteFolderConfirm = "Διαγραφή φακέλου \"{{name}}\"; Τα αρχεία μέσα θα μετακινηθούν στα Όλα τα αρχεία. Θα επηρεαστούν {{count}} αρχείο(α)."
+deleteFolderContents = "Διαγραφή επίσης {{count}} αρχείου(ων) μέσα στον φάκελο"
+deleteFolderContentsWarning = "Τα αρχεία θα αφαιρεθούν οριστικά και δεν θα μπορούν να ανακτηθούν."
+deleteFolderError = "Δεν ήταν δυνατή η διαγραφή του φακέλου. Δοκιμάστε ξανά."
+deleteFolderKeepHint = "Τα αρχεία μέσα θα μετακινηθούν στα Όλα τα αρχεία."
+deleteFolderTitle = "Διαγραφή φακέλου;"
+deselectAll = "Καθαρισμός επιλογής"
+details = "Λεπτομέρειες"
+detailsCount = "{{count}} αρχεία επιλεγμένα"
+dismissError = "Απόρριψη"
+download = "Λήψη"
+downloadAll = "Λήψη όλων"
+downloadVersion = "Λήψη αυτής της έκδοσης"
+dropOverlay = "Αποθέστε αρχεία για μεταφόρτωση"
+dropOverlaySub = "Τα αρχεία ξεκινούν στο Τοπικά. Χρησιμοποιήστε 'Μετακίνηση σε' ή 'Αποθήκευση στο cloud' για να τα οργανώσετε σε φάκελο."
+file = "Αρχείο"
+fileMenu = "Ενέργειες αρχείου"
+folder = "Φάκελος"
+folderItems = "{{count}} στοιχεία"
+folderMenu = "Ενέργειες φακέλου"
+inPath = "στο {{path}}"
+inWorkspace = "Άνοιγμα"
+inWorkspaceAria = "Ήδη στον χώρο εργασίας"
+loading = "Φόρτωση…"
+localFoldersUnavailable = "Οι φάκελοι είναι διαθέσιμοι μόνο στο cloud - αποθηκεύστε ένα αρχείο στο cloud για να τα οργανώσετε σε φάκελο."
+moreActions = "Περισσότερες ενέργειες φακέλου"
+moveLocalToCloudBlocked = "Τα τοπικά αρχεία δεν μπορούν να μετακινηθούν σε φακέλους cloud. Αποθηκεύστε τα πρώτα στο cloud."
+moveSkippedRemote = "{{count}} αρχείο(α) δεν μπόρεσαν να μετακινηθούν στον διακομιστή (χωρίς δικαιώματα ή έχουν ήδη διαγραφεί)."
+moveTo = "Μετακίνηση σε…"
+myFiles = "Τα αρχεία μου"
+newFolder = "Νέος φάκελος"
+newFolderStorageDisabled = "Η αποθήκευση φακέλων στον διακομιστή δεν είναι ενεργοποιημένη. Ζητήστε από τον διαχειριστή σας να την ενεργοποιήσει."
+newFolderTabUnavailable = "Μεταβείτε στα Όλα ή στο Cloud για να δημιουργήσετε φακέλους."
+newRootFolder = "Νέος φάκελος στη ρίζα"
+offlineNoFolderEdits = "Ο συγχρονισμός φακέλων με τον διακομιστή δεν είναι διαθέσιμος - οι αλλαγές φακέλων είναι απενεργοποιημένες. Ελέγξτε τη σύνδεση και τη ρύθμιση αποθήκευσης."
+open = "Άνοιγμα"
+openInWorkbench = "Άνοιγμα στον πάγκο εργασίας"
+openVersionInWorkspace = "Άνοιγμα στον χώρο εργασίας"
+originFilter = "Φιλτράρισμα κατά προέλευση"
+quickView = "Γρήγορη προβολή"
+refresh = "Ανανέωση από διακομιστή"
+remove = "Διαγραφή"
+removeConfirm = "Διαγραφή {{count}} αρχείου(ων); Αυτό δεν μπορεί να αναιρεθεί."
+removeVersion = "Αφαίρεση αυτής της έκδοσης"
+rename = "Μετονομασία"
+renameFolder = "Μετονομασία φακέλου"
+resizeFolderTree = "Αλλαγή μεγέθους δέντρου φακέλων (πλήκτρα βελών, Shift για μεγαλύτερα βήματα· διπλό κλικ για αυτόματη προσαρμογή)"
+save = "Αποθήκευση"
+saveToServer = "Αποθήκευση στον διακομιστή"
+saveToServerDisabledHint = "Η αποθήκευση στον διακομιστή δεν είναι ενεργοποιημένη σε αυτόν τον διακομιστή. Ζητήστε από τον διαχειριστή σας να την ενεργοποιήσει."
+search = "Αναζήτηση"
+searchPlaceholder = "Αναζήτηση σε αυτόν τον φάκελο και τους υποφακέλους"
+selectAll = "Επιλογή όλων"
+selectAllHint = "Κλικ για επιλογή όλων. Συμβουλή: κρατήστε Ctrl (ή Cmd) για να προσθέτετε αρχεία ένα-ένα, Shift για επιλογή εύρους."
+selectedCount = "{{count}} επιλεγμένα"
+selectFile = "Επιλογή αρχείου {{name}}"
+shareDisabledHint = "Η κοινή χρήση αρχείων δεν είναι ενεργοποιημένη σε αυτόν τον διακομιστή. Ζητήστε από τον διαχειριστή σας να την ενεργοποιήσει."
+shareManage = "Διαχείριση κοινής χρήσης"
+showDetails = "Εμφάνιση λεπτομερειών"
+summary = "{{count}} στοιχεία"
+syncFailed = "Αποτυχία συγχρονισμού φακέλου: {{message}}"
+syncPartial = "Μερικός συγχρονισμός φακέλου: {{failed}} από {{total}} φακέλους δεν μπόρεσαν να συγχωνευθούν."
+tree = "Φάκελοι"
+upload = "Μεταφόρτωση"
+uploadedToLocal = "Τα μεταφορτωμένα αρχεία ξεκινούν στο Τοπικά. Χρησιμοποιήστε 'Αποθήκευση στο cloud' για να τα τοποθετήσετε σε φάκελο."
+uploadFromMobile = "Μεταφόρτωση από κινητό"
+versionActions = "Ενέργειες έκδοσης"
+versionCollapse = "Σύμπτυξη ενδιάμεσων εκδόσεων"
+versionOrigin = "Αρχική μεταφόρτωση"
+versionsCount = "{{count}} εκδόσεις"
+versionShowHidden = "Εμφάνιση {{count}} παλαιότερων εκδόσεων"
+viewVersion = "Προβολή αυτής της έκδοσης"
+
+[filesPage.appearance]
+colour = "Χρώμα"
+icon = "Εικονίδιο"
+title = "Εμφάνιση"
+useColour = "Χρήση χρώματος {{c}}"
+
+[filesPage.column]
+modified = "Τροποποιήθηκε"
+name = "Όνομα"
+size = "Μέγεθος"
+type = "Τύπος"
+
+[filesPage.empty]
+hint = "Αποθέστε PDF οπουδήποτε σε αυτή τη σελίδα για μεταφόρτωση ή χρησιμοποιήστε το κουμπί Νέος φάκελος για να οργανώσετε τα αρχεία σας."
+newFolderCta = "Δημιουργία φακέλου"
+title = "Αυτός ο φάκελος είναι άδειος"
+uploadCta = "Μεταφόρτωση αρχείων"
+
+[filesPage.empty.cloud]
+hint = "Μεταφορτώστε ένα αρχείο για αρχή ή δημιουργήστε φάκελο για οργάνωση."
+offlineHint = "Επανασυνδεθείτε για να φορτώσετε τη βιβλιοθήκη cloud."
+offlineTitle = "Δεν υπάρχουν προσωρινά αποθηκευμένα αρχεία cloud"
+title = "Δεν υπάρχουν ακόμη αρχεία cloud"
+
+[filesPage.empty.local]
+hint = "Αρχεία που αποθηκεύονται χωρίς μεταφόρτωση παραμένουν εδώ. Αποθέστε ένα αρχείο για προσθήκη."
+title = "Δεν υπάρχουν αρχεία μόνο τοπικά"
+
+[filesPage.empty.recent]
+hint = "Αρχεία που ανοίγετε ή επεξεργάζεστε θα εμφανιστούν εδώ."
+title = "Δεν έχει τροποποιηθεί ακόμη τίποτα"
+
+[filesPage.empty.shared]
+hint = "Όταν κάποιος μοιράζεται ένα αρχείο μέσω συνδέσμου, εμφανίζεται εδώ."
+title = "Τίποτα δεν μοιράστηκε μαζί σας"
+
+[filesPage.empty.sharedByMe]
+hint = "Δημιουργήστε σύνδεσμο κοινής χρήσης ή καλέστε έναν συνεργάτη από οποιοδήποτε από τα αρχεία σας για να εμφανιστεί εδώ."
+title = "Δεν έχετε μοιραστεί ακόμη αρχεία"
+
+[filesPage.error]
+actionFailed = "Δεν ήταν δυνατή η ενέργεια {{action}}."
+actionFailedDetail = "Δεν ήταν δυνατή η ενέργεια {{action}}: {{message}}"
+deleteFolderFailed = "Δεν ήταν δυνατή η διαγραφή του φακέλου."
+deleteFolderFailedDetail = "Δεν ήταν δυνατή η διαγραφή του φακέλου: {{message}}"
+folderAppearanceFailed = "Δεν ήταν δυνατή η ενημέρωση εμφάνισης φακέλου."
+folderAppearanceFailedDetail = "Δεν ήταν δυνατή η ενημέρωση εμφάνισης φακέλου: {{message}}"
+moveFilesFailed = "Δεν ήταν δυνατή η μετακίνηση αρχείων."
+moveFilesFailedDetail = "Δεν ήταν δυνατή η μετακίνηση αρχείων: {{message}}"
+moveFolderFailed = "Δεν ήταν δυνατή η μετακίνηση φακέλου."
+moveFolderFailedDetail = "Δεν ήταν δυνατή η μετακίνηση φακέλου: {{message}}"
+removeFilesFailed = "Δεν ήταν δυνατή η διαγραφή αρχείων."
+removeFilesFailedDetail = "Δεν ήταν δυνατή η διαγραφή αρχείων: {{message}}"
+uploadFilesFailed = "Δεν ήταν δυνατή η μεταφόρτωση αρχείων."
+uploadFilesFailedDetail = "Δεν ήταν δυνατή η μεταφόρτωση αρχείων: {{message}}"
+
+[filesPage.field]
+added = "Προστέθηκε"
+count = "Αρχεία"
+folder = "Φάκελος"
+modified = "Τροποποιήθηκε"
+name = "Όνομα"
+size = "Μέγεθος"
+toolHistory = "Ιστορικό εργαλείων"
+toolHistoryAtVersion = "Σωρευτική αλυσίδα εργαλείων"
+totalSize = "Συνολικό μέγεθος"
+type = "Τύπος"
+versionHistory = "Διαδρομή εκδόσεων"
+
+[filesPage.folderName]
+cancel = "Άκυρο"
+error = "Δεν ήταν δυνατή η αποθήκευση φακέλου. Δοκιμάστε ξανά."
+label = "Όνομα φακέλου"
+placeholder = "Όνομα φακέλου"
+
+[filesPage.moveDialog]
+cancel = "Άκυρο"
+confirm = "Μετακίνηση εδώ"
+error = "Δεν ήταν δυνατή η μετακίνηση. Δοκιμάστε ξανά."
+hint = "Επιλέξτε φάκελο προορισμού. Συμβουλή: μπορείτε επίσης να σύρετε και να αποθέσετε αρχεία πάνω σε φακέλους στο δέντρο αριστερά."
+newFolderCancel = "Απόρριψη"
+newFolderCreate = "Δημιουργία"
+newFolderError = "Δεν ήταν δυνατή η δημιουργία φακέλου. Δοκιμάστε ξανά."
+newFolderLabel = "Όνομα νέου φακέλου"
+newFolderPlaceholder = "Όνομα φακέλου"
+newFolderToggle = "Δημιουργία νέου φακέλου…"
+title = "Μετακίνηση σε φάκελο"
+
+[filesPage.origin]
+all = "Όλες οι προελεύσεις"
+cloud = "Cloud"
+cloudHint = "Αποθηκευμένο στον διακομιστή Stirling"
+local = "Τοπικά"
+localHint = "Αποθηκευμένο μόνο σε αυτό το πρόγραμμα περιήγησης"
+shared = "Κοινόχρηστα"
+sharedHint = "Κοινοποιήθηκε σε εσάς μέσω συνδέσμου"
+
+[filesPage.sort]
+modifiedAsc = "Παλαιότερα πρώτα"
+modifiedDesc = "Πιο πρόσφατα πρώτα"
+nameAsc = "Όνομα Α→Ω"
+nameDesc = "Όνομα Ω→Α"
+sizeAsc = "Μικρότερα πρώτα"
+sizeDesc = "Μεγαλύτερα πρώτα"
+
+[filesPage.syncError]
+client = "Αποτυχία συγχρονισμού φακέλου."
+network = "Δεν ήταν δυνατή η επικοινωνία με τον διακομιστή."
+server = "Σφάλμα διακομιστή κατά τον συγχρονισμό φακέλου."
+
+[filesPage.tabName]
+local = "Τοπικά"
+recent = "Πρόσφατα"
+shared = "Κοινόχρηστα με εμένα"
+sharedByMe = "Κοινόχρηστα από εμένα"
+
+[filesPage.tabs]
+all = "Όλα"
+ariaLabel = "Προβολές αρχείων"
+cloud = "Cloud"
+local = "Τοπικά"
+recent = "Πρόσφατα"
+shared = "Κοινόχρηστα με εμένα"
+sharedByMe = "Κοινόχρηστα από εμένα"
+
+[filesPage.treeMenu]
+actions = "Ενέργειες φακέλου για {{name}}"
+collapse = "Σύμπτυξη φακέλου"
+delete = "Διαγραφή φακέλου"
+expand = "Ανάπτυξη φακέλου"
+newSubfolder = "Νέος υποφάκελος"
+rename = "Μετονομασία"
+
+[filesPage.typeFilter]
+allTypes = "Όλοι οι τύποι"
+label = "Φιλτράρισμα κατά τύπο"
+
+[filesPage.viewMode]
+grid = "Προβολή πλέγματος"
+label = "Λειτουργία προβολής"
+list = "Προβολή λίστας"
 
 [fileToPDF]
 credit = "Αυτή η υπηρεσία χρησιμοποιεί LibreOffice και Unoconv για μετατροπή αρχείων."
@@ -7695,6 +8010,7 @@ bulkTitle = "Μεταφόρτωση επιλεγμένων αρχείων"
 description = "Μεταφορτώνει το τρέχον αρχείο στον αποθηκευτικό χώρο του διακομιστή για δική σας πρόσβαση."
 errorTitle = "Αποτυχία μεταφόρτωσης"
 failure = "Η μεταφόρτωση απέτυχε. Ελέγξτε τα στοιχεία σύνδεσης και τις ρυθμίσεις αποθήκευσης."
+featureDisabled = "Η αποθήκευση στον διακομιστή δεν είναι ενεργοποιημένη σε αυτόν τον διακομιστή."
 fileCount = "Επιλέχθηκαν {{count}} αρχεία"
 fileLabel = "Αρχείο"
 hint = "Οι δημόσιοι σύνδεσμοι και οι λειτουργίες πρόσβασης ελέγχονται από τις ρυθμίσεις του διακομιστή σας."
@@ -7868,13 +8184,18 @@ viewerMode = "Μεταβείτε στον επεξεργαστή αρχείων 
 [toolPanel]
 allTools = "Όλα τα εργαλεία"
 alpha = "Άλφα"
+backToAllTools = "Πίσω σε όλα τα εργαλεία"
+backToDefault = "Πίσω"
 backToTools = "Πίσω στα εργαλεία"
 collapse = "Σύμπτυξη πάνελ"
 comingSoon = "Σύντομα διαθέσιμο:"
 expand = "Ανάπτυξη πάνελ"
+goBack = "Επιστροφή"
 placeholder = "Επιλέξτε ένα εργαλείο για να ξεκινήσετε"
 premiumFeature = "Premium λειτουργία:"
 search = "Αναζήτηση εργαλείων"
+toolsHeader = "Εργαλεία"
+viewAllTools = "Προβολή όλων των εργαλείων"
 
 [toolPanel.fullscreen]
 comingSoon = "Σύντομα διαθέσιμο:"

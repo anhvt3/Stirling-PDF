@@ -90,6 +90,7 @@ nothingToUndo = "Rien à annuler"
 noticeTopUpOrPlan = "Not enough credits, please top up or upgrade to a plan"
 noValidFiles = "Aucun fichier valide à traiter"
 oops = "Oups !"
+openInNewWindow = "Ouvrir dans une nouvelle fenêtre"
 openInViewer = "Ouvrir dans le lecteur"
 operationCancelled = "Opération annulée"
 page = "Page"
@@ -493,6 +494,11 @@ title = "Ajuster l’échelle de page"
 
 [adjustPageScale.error]
 failed = "Une erreur est survenue lors de l’ajustement de l’échelle de page."
+
+[adjustPageScale.orientation]
+label = "Orientation de la page"
+landscape = "Paysage"
+portrait = "Portrait"
 
 [adjustPageScale.pageSize]
 keep = "Conserver la taille d’origine"
@@ -1512,6 +1518,32 @@ user = "Utilisateur"
 usernameInfo = "Le nom d'utilisateur ne peut contenir que des lettres, des chiffres et les caractères spéciaux suivants @._+- ou doit être une adresse e-mail valide."
 webOnlyUser = "Utilisateur Web uniquement"
 
+[agents]
+auto_redaction_description = "Occulter automatiquement les PII"
+auto_redaction_name = "Occultation automatique"
+back_to_tools = "Retour aux outils"
+coming_soon = "Bientôt disponible"
+compliance_description = "Vérifier la conformité des documents"
+compliance_name = "Vérification de conformité"
+data_extraction_description = "Extraire des tableaux et des données structurées"
+data_extraction_name = "Extraction de données"
+doc_summary_description = "Résumer des documents longs"
+doc_summary_name = "Synthèse"
+form_filler_description = "Remplir des formulaires PDF intelligemment"
+form_filler_name = "Remplissage de formulaire"
+fullscreen_title = "Agents Stirling"
+pdf_to_markdown_description = "Convertir des PDF en Markdown propre"
+pdf_to_markdown_name = "PDF vers Markdown"
+section_title = "Agents"
+show_less = "Afficher moins"
+start_chat = "Commencer la discussion"
+stirling_description = "Votre assistant PDF polyvalent"
+stirling_full_name = "Agent généraliste Stirling"
+stirling_long_description = "Assistant PDF polyvalent qui peut exécuter des outils, créer des PDF et extraire des informations de vos documents."
+stirling_name = "Stirling"
+stirling_tooltip = "Agent Stirling"
+view_all = "Voir tous les agents"
+
 [analytics]
 disable = "Désactiver les analyses"
 enable = "Activer les analyses"
@@ -1771,6 +1803,10 @@ insufficientPermissions = "Vous n'avez pas l'autorisation d'effectuer cette acti
 pleaseLoginAgain = "Veuillez vous reconnecter."
 sessionExpired = "Session expirée"
 
+[auth.displayName]
+guest = "Invité"
+user = "Utilisateur"
+
 [auto-rename]
 description = "Trouve automatiquement le titre dans le contenu de votre PDF et l’utilise comme nom de fichier."
 header = "Renommer automatiquement"
@@ -1862,6 +1898,13 @@ label = "Ouvrir le menu pour {{title}}"
 
 [automate.files]
 placeholder = "Sélectionnez des fichiers à traiter avec cette automatisation"
+
+[automate.folderScanWarning]
+advice = "Vous pouvez toujours télécharger le fichier (p. ex. pour l’inspecter ou le modifier manuellement), mais les étapes non prises en charge devront être supprimées avant que le backend puisse l’exécuter."
+cancel = "Annuler"
+confirm = "Exporter quand même"
+intro = "L’analyse de dossiers s’exécute en backend, elle ne peut donc exécuter que les outils disposant d’un endpoint backend. Les étapes suivantes de cette automatisation n’en ont pas et échoueront lors de l’exécution du pipeline :"
+title = "Certaines étapes ne peuvent pas s’exécuter lors de l’analyse de dossier"
 
 [automate.importModal]
 cancel = "Annuler"
@@ -2684,6 +2727,16 @@ title = "Modifier les permissions"
 [changePermissions.tooltip.warning]
 text = "Pour rendre ces permissions non modifiables, utilisez l’outil Ajouter un mot de passe pour définir un mot de passe propriétaire."
 
+[chat.header]
+agentMenu = "Options de l’agent Stirling"
+clearChat = "Effacer la conversation"
+settings = "Paramètres de l’agent"
+
+[chat.input]
+attach = "Joindre des fichiers"
+placeholder = "Que voulez-vous faire ?"
+send = "Envoyer le message"
+
 [chat.progress]
 analyzing = "Analyse de votre demande..."
 calling_engine = "L'IA réfléchit..."
@@ -2698,6 +2751,32 @@ whole_doc_compression_round = "Consolidation des notes..."
 whole_doc_read_done = "Lecture du document terminée..."
 whole_doc_read_started = "Lecture du document..."
 whole_doc_slice_done = "Lecture du document... ({{percent}} % terminé)"
+
+[chat.quickActions]
+browseYourFiles = "Parcourir vos fichiers"
+compressMany = "Compresser ces documents"
+compressOne = "Compresser ce document"
+convertMany = "Convertir ces documents en PDF"
+convertOne = "Convertir ce document en PDF"
+fileSummary_one = "1 fichier dans le plan de travail ({{types}})"
+fileSummary_other = "{{count}} fichiers dans le plan de travail ({{types}})"
+heading = "Pour commencer"
+mergeMany = "Fusionner ces {{count}} documents en 1"
+moreFiles = "+{{count}} de plus"
+openFromComputer = "Ouvrir depuis l’ordinateur"
+removeFile = "Supprimer {{name}}"
+rotateMany = "Faire pivoter ces documents"
+rotateOne = "Faire pivoter ce document"
+splitOne = "Scinder ce document"
+
+[chat.responses]
+cannot_continue = "Un problème est survenu et je ne peux pas continuer."
+cannot_do = "Je ne peux pas faire cela."
+done = "Terminé."
+need_clarification = "Pouvez-vous préciser votre demande ?"
+not_found = "Je n’ai pas trouvé l’information demandée."
+processing = "Traitement ({{outcome}})…"
+unsupported_capability = "Fonction non prise en charge : {{capability}}"
 
 [chat.toolsUsed]
 summary = "{{count}} outils exécutés"
@@ -2799,6 +2878,7 @@ selectBaseFirst = "Sélectionnez d’abord le PDF d’origine"
 filesMissing = "Impossible de localiser les fichiers sélectionnés. Veuillez les sélectionner à nouveau."
 generic = "Impossible de comparer ces fichiers."
 selectRequired = "Sélectionnez un document original et un document modifié."
+title = "Échec de la comparaison"
 
 [compare.large.file]
 message = "Un ou les deux documents fournis sont trop volumineux pour être traités"
@@ -2864,6 +2944,7 @@ title = "Toujours en cours…"
 
 [compare.status]
 complete = "Comparaison prête"
+error = "Échec de la comparaison"
 extracting = "Extraction du texte…"
 processing = "Analyse des différences…"
 
@@ -3771,12 +3852,246 @@ expand = "Développer la barre latérale"
 files = "Fichiers"
 googleDrive = "Google Drive"
 googleDriveDisabled = "Google Drive n’est pas configuré"
+leaveMyFiles = "Quitter Mes fichiers"
+myFiles = "Mes fichiers"
 noFiles = "Aucun fichier pour le moment"
 openFileManager = "Ouvrir le gestionnaire de fichiers"
 openFromComputer = "Ouvrir depuis l’ordinateur"
 openSettings = "Ouvrir les paramètres"
 search = "Rechercher"
 searchPlaceholder = "Rechercher des fichiers..."
+
+[filesPage]
+addToWorkspace = "Ajouter à l’espace de travail"
+addToWorkspaceCount = "Ajouter {{count}} à l’espace de travail"
+allFiles = "Tous les fichiers"
+back = "Retour"
+backToFolder = "Retour à {{folder}}"
+backToMyFiles = "Retour à Mes fichiers"
+breadcrumbs = "Chemin du dossier"
+cancel = "Annuler"
+clearSearch = "Effacer la recherche"
+clearSelection = "Effacer la sélection"
+closeDetails = "Fermer les détails"
+create = "Créer"
+cycleBlocked = "Impossible de déplacer un dossier dans l’un de ses sous-dossiers."
+delete = "Supprimer"
+deleteFolder = "Supprimer le dossier"
+deleteFolderBody = "Supprimer le dossier « {{name}} » ?"
+deleteFolderConfirm = "Supprimer le dossier « {{name}} » ? Les fichiers à l’intérieur seront déplacés vers Tous les fichiers. {{count}} fichier(s) concerné(s)."
+deleteFolderContents = "Supprimer aussi les {{count}} fichier(s) dans le dossier"
+deleteFolderContentsWarning = "Les fichiers seront définitivement supprimés et ne pourront pas être récupérés."
+deleteFolderError = "Impossible de supprimer le dossier. Réessayez."
+deleteFolderKeepHint = "Les fichiers à l’intérieur seront déplacés vers Tous les fichiers."
+deleteFolderTitle = "Supprimer le dossier ?"
+deselectAll = "Effacer la sélection"
+details = "Détails"
+detailsCount = "{{count}} fichiers sélectionnés"
+dismissError = "Ignorer"
+download = "Télécharger"
+downloadAll = "Tout télécharger"
+downloadVersion = "Télécharger cette version"
+dropOverlay = "Déposez des fichiers pour les téléverser"
+dropOverlaySub = "Les fichiers commencent dans Local. Utilisez 'Déplacer vers' ou 'Enregistrer dans le cloud' pour les organiser dans un dossier."
+file = "Fichier"
+fileMenu = "Actions fichier"
+folder = "Dossier"
+folderItems = "{{count}} éléments"
+folderMenu = "Actions dossier"
+inPath = "dans {{path}}"
+inWorkspace = "Ouvrir"
+inWorkspaceAria = "Déjà dans l’espace de travail"
+loading = "Chargement…"
+localFoldersUnavailable = "Les dossiers sont uniquement dans le cloud - enregistrez un fichier dans le cloud pour l’organiser."
+moreActions = "Plus d’actions sur le dossier"
+moveLocalToCloudBlocked = "Les fichiers locaux uniquement ne peuvent pas être déplacés dans des dossiers cloud. Enregistrez-les d’abord dans le cloud."
+moveSkippedRemote = "{{count}} fichier(s) n’ont pas pu être déplacés sur le serveur (pas d’autorisation ou déjà supprimés)."
+moveTo = "Déplacer vers…"
+myFiles = "Mes fichiers"
+newFolder = "Nouveau dossier"
+newFolderStorageDisabled = "Le stockage des dossiers sur le serveur n’est pas activé. Demandez à votre administrateur de l’activer."
+newFolderTabUnavailable = "Passez à Tous ou Cloud pour créer des dossiers."
+newRootFolder = "Nouveau dossier à la racine"
+offlineNoFolderEdits = "Synchronisation des dossiers serveur indisponible - les modifications de dossier sont désactivées. Vérifiez la connexion et la configuration du stockage."
+open = "Ouvrir"
+openInWorkbench = "Ouvrir dans le plan de travail"
+openVersionInWorkspace = "Ouvrir dans l’espace de travail"
+originFilter = "Filtrer par source"
+quickView = "Aperçu"
+refresh = "Actualiser depuis le serveur"
+remove = "Supprimer"
+removeConfirm = "Supprimer {{count}} fichier(s) ? Cette action est irréversible."
+removeVersion = "Supprimer cette version"
+rename = "Renommer"
+renameFolder = "Renommer le dossier"
+resizeFolderTree = "Redimensionner l’arborescence des dossiers (touches fléchées, Maj pour de plus grands pas ; double-clic pour auto-ajuster)"
+save = "Enregistrer"
+saveToServer = "Enregistrer sur le serveur"
+saveToServerDisabledHint = "L’enregistrement sur le serveur n’est pas activé sur ce serveur. Demandez à votre administrateur de l’activer."
+search = "Rechercher"
+searchPlaceholder = "Rechercher dans ce dossier et ses sous-dossiers"
+selectAll = "Tout sélectionner"
+selectAllHint = "Cliquez pour tout sélectionner. Astuce : maintenez Ctrl (ou Cmd) pour ajouter des fichiers un par un, Maj pour sélectionner une plage."
+selectedCount = "{{count}} sélectionnés"
+selectFile = "Sélectionner le fichier {{name}}"
+shareDisabledHint = "Le partage de fichiers n’est pas activé sur ce serveur. Demandez à votre administrateur de l’activer."
+shareManage = "Gérer le partage"
+showDetails = "Afficher les détails"
+summary = "{{count}} éléments"
+syncFailed = "Échec de synchronisation du dossier : {{message}}"
+syncPartial = "Synchronisation de dossier partielle : {{failed}} sur {{total}} dossiers n’ont pas pu être fusionnés."
+tree = "Dossiers"
+upload = "Téléverser"
+uploadedToLocal = "Les fichiers téléversés commencent dans Local. Utilisez 'Enregistrer dans le cloud' pour les placer dans un dossier."
+uploadFromMobile = "Téléverser depuis un mobile"
+versionActions = "Actions de version"
+versionCollapse = "Réduire les versions intermédiaires"
+versionOrigin = "Téléversement d’origine"
+versionsCount = "{{count}} versions"
+versionShowHidden = "Afficher {{count}} versions antérieures"
+viewVersion = "Voir cette version"
+
+[filesPage.appearance]
+colour = "Couleur"
+icon = "Icône"
+title = "Apparence"
+useColour = "Utiliser la couleur {{c}}"
+
+[filesPage.column]
+modified = "Modifié"
+name = "Nom"
+size = "Taille"
+type = "Type"
+
+[filesPage.empty]
+hint = "Déposez des PDF n’importe où sur cette page pour téléverser, ou utilisez le bouton Nouveau dossier pour organiser vos fichiers."
+newFolderCta = "Créer un dossier"
+title = "Ce dossier est vide"
+uploadCta = "Téléverser des fichiers"
+
+[filesPage.empty.cloud]
+hint = "Téléversez un fichier pour commencer, ou créez un dossier pour organiser."
+offlineHint = "Reconnectez-vous pour charger votre bibliothèque cloud."
+offlineTitle = "Aucun fichier cloud en cache"
+title = "Pas encore de fichiers cloud"
+
+[filesPage.empty.local]
+hint = "Les fichiers enregistrés sans téléversement restent ici. Déposez un fichier pour en ajouter un."
+title = "Aucun fichier local uniquement"
+
+[filesPage.empty.recent]
+hint = "Les fichiers que vous ouvrez ou modifiez apparaîtront ici."
+title = "Rien n’a encore été modifié"
+
+[filesPage.empty.shared]
+hint = "Lorsqu’une personne partage un fichier via un lien, il apparaît ici."
+title = "Rien n’a été partagé avec vous"
+
+[filesPage.empty.sharedByMe]
+hint = "Créez un lien de partage ou invitez un coéquipier depuis n’importe lequel de vos fichiers pour le voir ici."
+title = "Vous n’avez pas encore partagé de fichiers"
+
+[filesPage.error]
+actionFailed = "Impossible de {{action}}."
+actionFailedDetail = "Impossible de {{action}} : {{message}}"
+deleteFolderFailed = "Impossible de supprimer le dossier."
+deleteFolderFailedDetail = "Impossible de supprimer le dossier : {{message}}"
+folderAppearanceFailed = "Impossible de mettre à jour l’apparence du dossier."
+folderAppearanceFailedDetail = "Impossible de mettre à jour l’apparence du dossier : {{message}}"
+moveFilesFailed = "Impossible de déplacer les fichiers."
+moveFilesFailedDetail = "Impossible de déplacer les fichiers : {{message}}"
+moveFolderFailed = "Impossible de déplacer le dossier."
+moveFolderFailedDetail = "Impossible de déplacer le dossier : {{message}}"
+removeFilesFailed = "Impossible de supprimer les fichiers."
+removeFilesFailedDetail = "Impossible de supprimer les fichiers : {{message}}"
+uploadFilesFailed = "Impossible de téléverser les fichiers."
+uploadFilesFailedDetail = "Impossible de téléverser les fichiers : {{message}}"
+
+[filesPage.field]
+added = "Ajouté"
+count = "Fichiers"
+folder = "Dossier"
+modified = "Modifié"
+name = "Nom"
+size = "Taille"
+toolHistory = "Historique des outils"
+toolHistoryAtVersion = "Chaîne d’outils cumulative"
+totalSize = "Taille totale"
+type = "Type"
+versionHistory = "Parcours des versions"
+
+[filesPage.folderName]
+cancel = "Annuler"
+error = "Impossible d’enregistrer le dossier. Réessayez."
+label = "Nom du dossier"
+placeholder = "Nom du dossier"
+
+[filesPage.moveDialog]
+cancel = "Annuler"
+confirm = "Déplacer ici"
+error = "Impossible de déplacer. Réessayez."
+hint = "Choisissez un dossier de destination. Astuce : vous pouvez aussi glisser-déposer des fichiers sur les dossiers dans l’arborescence à gauche."
+newFolderCancel = "Ignorer"
+newFolderCreate = "Créer"
+newFolderError = "Impossible de créer le dossier. Réessayez."
+newFolderLabel = "Nom du nouveau dossier"
+newFolderPlaceholder = "Nom du dossier"
+newFolderToggle = "Créer un nouveau dossier…"
+title = "Déplacer vers le dossier"
+
+[filesPage.origin]
+all = "Toutes les sources"
+cloud = "Cloud"
+cloudHint = "Stocké sur le serveur Stirling"
+local = "Local"
+localHint = "Stocké uniquement dans ce navigateur"
+shared = "Partagé"
+sharedHint = "Partagé avec vous via un lien"
+
+[filesPage.sort]
+modifiedAsc = "Plus ancien d’abord"
+modifiedDesc = "Plus récent d’abord"
+nameAsc = "Nom A→Z"
+nameDesc = "Nom Z→A"
+sizeAsc = "Plus petit d’abord"
+sizeDesc = "Plus grand d’abord"
+
+[filesPage.syncError]
+client = "Échec de synchronisation du dossier."
+network = "Impossible d’atteindre le serveur."
+server = "Erreur serveur lors de la synchronisation des dossiers."
+
+[filesPage.tabName]
+local = "Local"
+recent = "Récents"
+shared = "Partagés avec moi"
+sharedByMe = "Partagés par moi"
+
+[filesPage.tabs]
+all = "Tous"
+ariaLabel = "Vues des fichiers"
+cloud = "Cloud"
+local = "Local"
+recent = "Récents"
+shared = "Partagés avec moi"
+sharedByMe = "Partagés par moi"
+
+[filesPage.treeMenu]
+actions = "Actions de dossier pour {{name}}"
+collapse = "Réduire le dossier"
+delete = "Supprimer le dossier"
+expand = "Développer le dossier"
+newSubfolder = "Nouveau sous-dossier"
+rename = "Renommer"
+
+[filesPage.typeFilter]
+allTypes = "Tous les types"
+label = "Filtrer par type"
+
+[filesPage.viewMode]
+grid = "Vue en grille"
+label = "Mode d’affichage"
+list = "Vue en liste"
 
 [fileToPDF]
 credit = "Ce service utilise LibreOffice et Unoconv pour la conversion de fichiers."
@@ -7695,6 +8010,7 @@ bulkTitle = "Téléverser les fichiers sélectionnés"
 description = "Cela téléverse le fichier actuel vers le stockage du serveur pour votre accès personnel."
 errorTitle = "Échec du téléversement"
 failure = "Échec du téléversement. Veuillez vérifier votre connexion et vos paramètres de stockage."
+featureDisabled = "L’enregistrement sur le serveur n’est pas activé sur ce serveur."
 fileCount = "{{count}} fichiers sélectionnés"
 fileLabel = "Fichier"
 hint = "Les liens publics et les modes d’accès sont contrôlés par les paramètres de votre serveur."
@@ -7868,13 +8184,18 @@ viewerMode = "Passez à l'éditeur de fichiers pour sélectionner plusieurs fich
 [toolPanel]
 allTools = "Tous les outils"
 alpha = "Alpha"
+backToAllTools = "Retour à tous les outils"
+backToDefault = "Retour"
 backToTools = "Retour aux outils"
 collapse = "Réduire le panneau"
 comingSoon = "Bientôt disponible :"
 expand = "Développer le panneau"
+goBack = "Revenir en arrière"
 placeholder = "Choisissez un outil pour commencer"
 premiumFeature = "Fonctionnalité Premium :"
 search = "Rechercher des outils"
+toolsHeader = "Outils"
+viewAllTools = "Voir tous les outils"
 
 [toolPanel.fullscreen]
 comingSoon = "Bientôt disponible :"

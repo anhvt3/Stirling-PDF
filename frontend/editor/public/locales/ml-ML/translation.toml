@@ -90,6 +90,7 @@ nothingToUndo = "പിൻവലിക്കാൻ ഒന്നുമില്�
 noticeTopUpOrPlan = "ക്രെഡിറ്റുകൾ മതി വരുന്നില്ല, ദയവായി ടോപ്പ് അപ് ചെയ്യുക അല്ലെങ്കിൽ ഒരു പ്ലാനിലേക്ക് അപ്‌ഗ്രേഡ് ചെയ്യുക"
 noValidFiles = "പ്രോസസ് ചെയ്യാൻ സാധുവായ ഫയലുകളില്ല"
 oops = "അയ്യോ!"
+openInNewWindow = "പുതിയ വിൻഡോയിൽ തുറക്കുക"
 openInViewer = "വ്യൂവറിൽ തുറക്കുക"
 operationCancelled = "പ്രവർത്തനം റദ്ദാക്കി"
 page = "പേജ്"
@@ -493,6 +494,11 @@ title = "പേജ് സ്കെയിൽ ക്രമപ്പെടുത്
 
 [adjustPageScale.error]
 failed = "പേജ് സ്കെയിൽ ക്രമപ്പെടുത്തുന്നതിനിടെ പിശക് സംഭവിച്ചു."
+
+[adjustPageScale.orientation]
+label = "പേജ് അഭിമുഖം"
+landscape = "തിരശ്ചീനം"
+portrait = "ലംബം"
 
 [adjustPageScale.pageSize]
 keep = "അസൽ വലിപ്പം നിലനിർത്തുക"
@@ -1512,6 +1518,32 @@ user = "ഉപയോക്താവ്"
 usernameInfo = "ഉപയോക്തൃനാമത്തിൽ അക്ഷരങ്ങൾ, അക്കങ്ങൾ, താഴെ പറയുന്ന പ്രത്യേക പ്രതീകങ്ങൾ @._+- എന്നിവ മാത്രമേ ഉണ്ടാകാവൂ അല്ലെങ്കിൽ സാധുവായ ഒരു ഇമെയിൽ വിലാസം ആയിരിക്കണം."
 webOnlyUser = "വെബ് മാത്രം ഉപയോക്താവ്"
 
+[agents]
+auto_redaction_description = "PII സ്വയമേവ മറയ്ക്കുക"
+auto_redaction_name = "സ്വയമേവ മറയ്ക്കൽ"
+back_to_tools = "ഉപകരണങ്ങളിലേക്ക് മടങ്ങുക"
+coming_soon = "വേഗം വരുന്നു"
+compliance_description = "കമ്പ്ലയൻസ് പരിശോധിക്കാൻ രേഖകൾ ഓഡിറ്റ് ചെയ്യുക"
+compliance_name = "കമ്പ്ലയൻസ് പരിശോധന"
+data_extraction_description = "ടേബിളുകളും ഘടനാബദ്ധമായ ഡാറ്റയും പുറത്തെടുക്കുക"
+data_extraction_name = "ഡാറ്റ പുറത്തെടുക്കൽ"
+doc_summary_description = "ദീർഘരേഖകൾ സംക്ഷിപ്തമാക്കുക"
+doc_summary_name = "സംക്ഷേപകൻ"
+form_filler_description = "PDF ഫോമുകൾ ബുദ്ധിപൂർവ്വം പൂരിപ്പിക്കുക"
+form_filler_name = "ഫോം ഫില്ലർ"
+fullscreen_title = "Stirling ഏജന്റുകൾ"
+pdf_to_markdown_description = "PDFകൾ ശുചിയായ Markdown-ലേക്ക് മാറ്റുക"
+pdf_to_markdown_name = "PDF-നെ Markdown-ലേക്ക്"
+section_title = "ഏജന്റുകൾ"
+show_less = "കുറച്ച് കാണിക്കുക"
+start_chat = "ചാറ്റ് ആരംഭിക്കുക"
+stirling_description = "നിങ്ങളുടെ പൊതുപയോഗ PDF അസിസ്റ്റന്റ്"
+stirling_full_name = "Stirling ജനറൽ ഏജന്റ്"
+stirling_long_description = "ടൂളുകൾ പ്രവർത്തിപ്പിക്കാനും, PDFകൾ സൃഷ്ടിക്കാനും, നിങ്ങളുടെ രേഖകളിൽ നിന്ന് ഉൾക്കാഴ്ചകൾ പുറത്തെടുക്കാനും കഴിയുന്ന പൊതുപയോഗ PDF അസിസ്റ്റന്റ്."
+stirling_name = "Stirling"
+stirling_tooltip = "Stirling ഏജന്റ്"
+view_all = "എല്ലാ ഏജന്റുകളും കാണുക"
+
 [analytics]
 disable = "അനലിറ്റിക്സ് പ്രവർത്തനരഹിതമാക്കുക"
 enable = "അനലിറ്റിക്സ് പ്രവർത്തനക്ഷമമാക്കുക"
@@ -1771,6 +1803,10 @@ insufficientPermissions = "ഈ പ്രവർത്തനം നടത്താ
 pleaseLoginAgain = "ദയവായി വീണ്ടും ലോഗിൻ ചെയ്യുക."
 sessionExpired = "സെഷൻ കാലഹരണപ്പെട്ടു"
 
+[auth.displayName]
+guest = "അതിഥി"
+user = "ഉപയോക്താവ്"
+
 [auto-rename]
 description = "നിങ്ങളുടെ PDF ഉള്ളടക്കത്തിൽ നിന്ന് തലക്കെട്ട് സ്വയം കണ്ടെത്തി അത് ഫയൽനാമമായി ഉപയോഗിക്കും."
 header = "PDF സ്വയം പുനർനാമകരണം ചെയ്യുക"
@@ -1862,6 +1898,13 @@ label = "{{title}} നുള്ള മെനു തുറക്കുക"
 
 [automate.files]
 placeholder = "ഈ ഓട്ടോമേഷൻ ഉപയോഗിച്ച് പ്രോസസ് ചെയ്യേണ്ട ഫയലുകൾ തിരഞ്ഞെടുക്കുക"
+
+[automate.folderScanWarning]
+advice = "താങ്കൾക്ക് ഇപ്പോഴും ഫയൽ ഡൗൺലോഡ് ചെയ്യാം (ഉദാ: പരിശോധിക്കുകയോ കൈയ്യാൽ തിരുത്തുകയോ ചെയ്യാൻ), പക്ഷേ ബാക്ക്എൻഡ് പ്രവർത്തിപ്പിക്കാൻ മുമ്പ് പിന്തുണയില്ലാത്ത ഘട്ടങ്ങൾ നീക്കം ചെയ്യണം."
+cancel = "റദ്ദാക്കുക"
+confirm = "എങ്കിലും എക്സ്പോർട്ട് ചെയ്യുക"
+intro = "ഫോൾഡർ സ്കാനിംഗ് ബാക്ക്എൻഡിൽ പ്രവർത്തിക്കുന്നു, അതിനാൽ ബാക്ക്എൻഡ് എൻഡ്പോയിന്റ് ഉള്ള ഉപകരണങ്ങൾ മാത്രമേ ഇത് പ്രവർത്തിപ്പിക്കാൻ കഴിയൂ. ഈ ഓട്ടോമേഷനിലെ താഴെ പറയുന്ന ഘട്ട(ങ്ങൾ)ക്ക് അത് ഇല്ല; പൈപ്പ്‌ലൈൻ പ്രവർത്തിക്കുമ്പോൾ അവ പരാജയപ്പെടും:"
+title = "ചില ഘട്ടങ്ങൾ ഫോൾഡർ സ്കാനിംഗിൽ പ്രവർത്തിക്കില്ല"
 
 [automate.importModal]
 cancel = "റദ്ദാക്കുക"
@@ -2684,6 +2727,16 @@ title = "അനുമതികൾ മാറ്റുക"
 [changePermissions.tooltip.warning]
 text = "ഈ അനുമതികൾ മാറ്റാൻ പറ്റാത്തതാക്കാൻ, Add Password ടൂൾ ഉപയോഗിച്ച് ഒരു ഉടമയുടെ പാസ്‌വേഡ് സജ്ജീകരിക്കുക."
 
+[chat.header]
+agentMenu = "Stirling ഏജന്റ് ഓപ്ഷനുകൾ"
+clearChat = "ചാറ്റ് മായ്ക്കുക"
+settings = "ഏജന്റ് ക്രമീകരണങ്ങൾ"
+
+[chat.input]
+attach = "ഫയലുകൾ അറ്റാച്ചുചെയ്യുക"
+placeholder = "താങ്കൾ എന്ത് ചെയ്യാൻ ആഗ്രഹിക്കുന്നു?"
+send = "സന്ദേശം അയയ്ക്കുക"
+
 [chat.progress]
 analyzing = "നിങ്ങളുടെ അഭ്യർത്ഥന വിശകലനം ചെയ്യുന്നു..."
 calling_engine = "AI ചിന്തിക്കുന്നു..."
@@ -2698,6 +2751,32 @@ whole_doc_compression_round = "കുറിപ്പുകൾ ഏകീകരി
 whole_doc_read_done = "ഡോക്യുമെന്റ് വായിച്ചു കഴിഞ്ഞു..."
 whole_doc_read_started = "ഡോക്യുമെന്റ് വായിക്കുന്നു..."
 whole_doc_slice_done = "ഡോക്യുമെന്റ് വായിക്കുന്നു... ({{percent}}% പൂർത്തിയായി)"
+
+[chat.quickActions]
+browseYourFiles = "നിങ്ങളുടെ ഫയലുകൾ ബ്രൗസ് ചെയ്യുക"
+compressMany = "ഈ രേഖകൾ കംപ്രസ് ചെയ്യുക"
+compressOne = "ഈ രേഖ കംപ്രസ് ചെയ്യുക"
+convertMany = "ഈ രേഖകൾ PDF-ലേക്ക് മാറ്റുക"
+convertOne = "ഈ രേഖ PDF-ലേക്ക് മാറ്റുക"
+fileSummary_one = "വർക്‌ബെഞ്ചിൽ 1 ഫയൽ ({{types}})"
+fileSummary_other = "വർക്‌ബെഞ്ചിൽ {{count}} ഫയലുകൾ ({{types}})"
+heading = "ആരംഭിക്കുക"
+mergeMany = "ഈ {{count}} രേഖകൾ 1-ലേക്ക് ലയിപ്പിക്കുക"
+moreFiles = "+{{count}} കൂടുതൽ"
+openFromComputer = "കമ്പ്യൂട്ടറിൽ നിന്ന് തുറക്കുക"
+removeFile = "{{name}} നീക്കംചെയ്യുക"
+rotateMany = "ഈ രേഖകൾ തിരിക്കുക"
+rotateOne = "ഈ രേഖ തിരിക്കുക"
+splitOne = "ഈ രേഖ വിഭജിക്കുക"
+
+[chat.responses]
+cannot_continue = "എന്തോ പിഴവുണ്ടായി; എനിക്ക് തുടർത്തുകൊണ്ടുപോകാൻ കഴിയില്ല."
+cannot_do = "എനിക്ക് അത് ചെയ്യാൻ കഴിയില്ല."
+done = "പൂർത്തിയായി."
+need_clarification = "താങ്കളുടെ അഭ്യർത്ഥന വ്യക്തമാക്കാമോ?"
+not_found = "അഭ്യർത്ഥിച്ച വിവരങ്ങൾ കണ്ടെത്താനായില്ല."
+processing = "പ്രോസസ്സിംഗ് ({{outcome}})..."
+unsupported_capability = "പിന്തുണയ്ക്കാത്ത ശേഷി: {{capability}}"
 
 [chat.toolsUsed]
 summary = "{{count}} ടൂളുകൾ പ്രവർത്തിപ്പിച്ചു"
@@ -2799,6 +2878,7 @@ selectBaseFirst = "മൂല PDF ആദ്യം തിരഞ്ഞെടുക�
 filesMissing = "തിരഞ്ഞെടുത്ത ഫയലുകൾ കണ്ടെത്താനായില്ല. ദയവായി വീണ്ടും തിരഞ്ഞെടുക്കുക."
 generic = "ഈ ഫയലുകൾ താരതമ്യം ചെയ്യാൻ കഴിഞ്ഞില്ല."
 selectRequired = "ഓറിജിനലും എഡിറ്റുചെയ്തതും തിരഞ്ഞെടുക്കുക."
+title = "താരതമ്യം പരാജയപ്പെട്ടു"
 
 [compare.large.file]
 message = "നൽകിയിട്ടുള്ള ഒന്നോ രണ്ടോ പ്രമാണങ്ങൾ പ്രോസസ്സ് ചെയ്യാൻ കഴിയാത്തത്ര വലുതാണ്"
@@ -2864,6 +2944,7 @@ title = "ഇതുവരെ പ്രവർത്തിച്ചുകൊണ്�
 
 [compare.status]
 complete = "താരതമ്യം തയ്യാറായി"
+error = "താരതമ്യം പരാജയപ്പെട്ടു"
 extracting = "വാചകം എടുക്കുന്നു..."
 processing = "വ്യത്യാസങ്ങൾ വിശകലനം ചെയ്യുന്നു..."
 
@@ -3771,12 +3852,246 @@ expand = "സൈഡ്ബാർ വിപുലീകരിക്കുക"
 files = "ഫയലുകൾ"
 googleDrive = "Google Drive"
 googleDriveDisabled = "Google Drive ക്രമീകരിച്ചിട്ടില്ല"
+leaveMyFiles = "എന്റെ ഫയലുകൾ വിടുക"
+myFiles = "എന്റെ ഫയലുകൾ"
 noFiles = "ഫയലുകളൊന്നുമില്ല"
 openFileManager = "ഫയൽ മാനേജർ തുറക്കുക"
 openFromComputer = "കമ്പ്യൂട്ടറിൽ നിന്ന് തുറക്കുക"
 openSettings = "ക്രമീകരണങ്ങൾ തുറക്കുക"
 search = "തിരയുക"
 searchPlaceholder = "ഫയലുകൾ തിരയുക..."
+
+[filesPage]
+addToWorkspace = "വർക്‌സ്‌പേസിലേക്ക് ചേർക്കുക"
+addToWorkspaceCount = "{{count}} എണ്ണം വർക്‌സ്‌പേസിലേക്ക് ചേർക്കുക"
+allFiles = "എല്ലാ ഫയലുകളും"
+back = "മടങ്ങുക"
+backToFolder = "{{folder}}-ലേക്ക് മടങ്ങുക"
+backToMyFiles = "എന്റെ ഫയലുകളിലേക്ക് മടങ്ങുക"
+breadcrumbs = "ഫോൾഡർ പാത"
+cancel = "റദ്ദാക്കുക"
+clearSearch = "തിരച്ചിൽ മായ്ക്കുക"
+clearSelection = "തിരഞ്ഞെടുപ്പ് മായ്ക്കുക"
+closeDetails = "വിശദാംശങ്ങൾ അടയ്ക്കുക"
+create = "സൃഷ്ടിക്കുക"
+cycleBlocked = "ഒരു ഫോൾഡറെ അതിന്റെ സ്വന്തമായ ഉപഫോൾഡറിലേക്കു നീക്കാൻ സാധ്യമല്ല."
+delete = "ഇല്ലാതാക്കുക"
+deleteFolder = "ഫോൾഡർ ഇല്ലാതാക്കുക"
+deleteFolderBody = "ഫോൾഡർ \"{{name}}\" ഇല്ലാതാക്കണോ?"
+deleteFolderConfirm = "ഫോൾഡർ \"{{name}}\" ഇല്ലാതാക്കണോ? അകത്തെ ഫയലുകൾ എല്ലാ ഫയലുകളിലേക്കു മാറ്റപ്പെടും. {{count}} ഫയൽ(കൾ) ബാധിക്കും."
+deleteFolderContents = "ഫോൾഡറിനുള്ളിലെ {{count}} ഫയൽ(കൾ)യും ഇല്ലാതാക്കുക"
+deleteFolderContentsWarning = "ഫയലുകൾ ശാശ്വതമായി നീക്കംചെയ്യപ്പെടും; തിരികെ ലഭ്യമാകില്ല."
+deleteFolderError = "ഫോൾഡർ ഇല്ലാതാക്കാൻ കഴിഞ്ഞില്ല. വീണ്ടും ശ്രമിക്കുക."
+deleteFolderKeepHint = "അകത്തെ ഫയലുകൾ എല്ലാ ഫയലുകളിലേക്കു മാറ്റപ്പെടും."
+deleteFolderTitle = "ഫോൾഡർ ഇല്ലാതാക്കണോ?"
+deselectAll = "തിരഞ്ഞെടുപ്പ് മായ്ക്കുക"
+details = "വിശദാംശങ്ങൾ"
+detailsCount = "{{count}} ഫയലുകൾ തിരഞ്ഞെടുത്തു"
+dismissError = "അവഗണിക്കുക"
+download = "ഡൗൺലോഡ്"
+downloadAll = "എല്ലാം ഡൗൺലോഡ് ചെയ്യുക"
+downloadVersion = "ഈ പതിപ്പ് ഡൗൺലോഡ് ചെയ്യുക"
+dropOverlay = "അപ്‌ലോഡ് ചെയ്യാൻ ഫയലുകൾ ഇവിടെ ഇടുക"
+dropOverlaySub = "ഫയലുകൾ ആദ്യം Local-ൽ തുടങ്ങും. ഫോൾഡറിലാക്കി ക്രമീകരിക്കാൻ 'ഇവിടേക്ക് നീക്കുക' അല്ലെങ്കിൽ 'ക്ലൗഡിലേക്ക് സംരക്ഷിക്കുക' ഉപയോഗിക്കുക."
+file = "ഫയൽ"
+fileMenu = "ഫയൽ പ്രവർത്തങ്ങൾ"
+folder = "ഫോൾഡർ"
+folderItems = "{{count}} ഇനങ്ങൾ"
+folderMenu = "ഫോൾഡർ പ്രവർത്തങ്ങൾ"
+inPath = "{{path}}-ൽ"
+inWorkspace = "തുറക്കുക"
+inWorkspaceAria = "ഇതിനകം വർക്‌സ്‌പേസിലുണ്ട്"
+loading = "ലോഡുചെയ്യുന്നു…"
+localFoldersUnavailable = "ഫോൾഡറുകൾ ക്ലൗഡിൽ മാത്രം - ക്രമീകരിക്കാൻ ഒരു ഫയൽ ക്ലൗഡിലേക്ക് സംരക്ഷിക്കുക."
+moreActions = "കൂടുതൽ ഫോൾഡർ പ്രവർത്തനങ്ങൾ"
+moveLocalToCloudBlocked = "ലോക്കൽ-മാത്രമായ ഫയലുകൾ ക്ലൗഡ് ഫോൾഡറുകളിലേക്ക് നീക്കാൻ കഴിയില്ല. ആദ്യം അവ ക്ലൗഡിലേക്ക് സംരക്ഷിക്കുക."
+moveSkippedRemote = "സെർവറിൽ {{count}} ഫയൽ(കൾ) നീക്കാൻ കഴിഞ്ഞില്ല (അനുമതിയില്ലെങ്കിൽ അല്ലെങ്കിൽ ഇതിനകം ഇല്ലാതാക്കിയിരിക്കുന്നു)."
+moveTo = "ഇവിടേക്ക് നീക്കുക…"
+myFiles = "എന്റെ ഫയലുകൾ"
+newFolder = "പുതിയ ഫോൾഡർ"
+newFolderStorageDisabled = "സെർവർ ഫോൾഡർ സംഭരണം പ്രാപ്തമാക്കിയിട്ടില്ല. അഡ്മിനോട് അത് ഓണാക്കാൻ പറയുക."
+newFolderTabUnavailable = "ഫോൾഡറുകൾ സൃഷ്ടിക്കാൻ എല്ലാം അല്ലെങ്കിൽ ക്ലൗഡ് ടാബിലേക്ക് മാറുക."
+newRootFolder = "റൂറ്റിൽ പുതിയ ഫോൾഡർ"
+offlineNoFolderEdits = "സെർവർ ഫോൾഡർ സിങ്ക് ലഭ്യമല്ല - ഫോൾഡർ മാറ്റങ്ങൾ പ്രവർത്തനരഹിതമാക്കിയിരിക്കുന്നു. സൈൻ-ഇനും സ്റ്റോറേജ് കോൺഫിഗറേഷനും പരിശോധിക്കുക."
+open = "തുറക്കുക"
+openInWorkbench = "വർക്‌ബെഞ്ചിൽ തുറക്കുക"
+openVersionInWorkspace = "വർക്‌സ്‌പേസിൽ തുറക്കുക"
+originFilter = "ഉറവിടം പ്രകാരം ഫിൽറ്റർ ചെയ്യുക"
+quickView = "ദ്രുതകാഴ്ച"
+refresh = "സെർവറിൽ നിന്ന് പുതുക്കുക"
+remove = "ഇല്ലാതാക്കുക"
+removeConfirm = "{{count}} ഫയൽ(കൾ) ഇല്ലാതാക്കണോ? ഇത് പിൻവലിക്കാൻ കഴിയില്ല."
+removeVersion = "ഈ പതിപ്പ് നീക്കംചെയ്യുക"
+rename = "പേരുമാറ്റുക"
+renameFolder = "ഫോൾഡറിന് പേര് മാറ്റുക"
+resizeFolderTree = "ഫോൾഡർ ട്രീയുടെ വലിപ്പം മാറ്റുക (അറോ കീകൾ, വലുതായ ഘട്ടങ്ങൾക്ക് Shift; ഓട്ടോ-ഫിറ്റിന് ഇരട്ട ക്ലിക്ക്)"
+save = "സംരക്ഷിക്കുക"
+saveToServer = "സെർവറിൽ സംരക്ഷിക്കുക"
+saveToServerDisabledHint = "ഈ സെർവറിൽ സെർവറിലേക്ക് സംരക്ഷിക്കൽ സജ്ജമാക്കിയിട്ടില്ല. നിങ്ങളുടെ അഡ്മിനോട് അത് പ്രാപ്തമാക്കാൻ പറയുക."
+search = "തിരയുക"
+searchPlaceholder = "ഈ ഫോൾഡറും ഉപഫോൾഡറുകളും തിരയുക"
+selectAll = "എല്ലാം തിരഞ്ഞെടുക്കുക"
+selectAllHint = "എല്ലാം തിരഞ്ഞെടുക്കാൻ ക്ലിക്ക് ചെയ്യുക. ടിപ്പ്: ഓരോന്നായി ഫയലുകൾ ചേർക്കാൻ Ctrl (അല്ലെങ്കിൽ Cmd) അമർത്തികൊണ്ട് പിടിക്കുക, പരിധി തിരഞ്ഞെടുക്കാൻ Shift ഉപയോഗിക്കുക."
+selectedCount = "{{count}} തിരഞ്ഞെടുക്കി"
+selectFile = "ഫയൽ {{name}} തിരഞ്ഞെടുക്കുക"
+shareDisabledHint = "ഈ സെർവറിൽ ഫയൽ പങ്കിടൽ സജ്ജമാക്കിയിട്ടില്ല. നിങ്ങളുടെ അഡ്മിനോട് അത് പ്രാപ്തമാക്കാൻ പറയുക."
+shareManage = "പങ്കിടൽ നിയന്ത്രിക്കുക"
+showDetails = "വിശദാംശങ്ങൾ കാണിക്കുക"
+summary = "{{count}} ഇനങ്ങൾ"
+syncFailed = "ഫോൾഡർ സിങ്ക് പരാജയപ്പെട്ടു: {{message}}"
+syncPartial = "ഫോൾഡർ സിങ്ക് ഭാഗികമായി പൂർത്തിയായി: {{total}} ഫോൾഡറുകളിൽ {{failed}} എണ്ണം ലയിപ്പിക്കാൻ കഴിഞ്ഞില്ല."
+tree = "ഫോൾഡറുകൾ"
+upload = "അപ്‌ലോഡ്"
+uploadedToLocal = "അപ്‌ലോഡ് ചെയ്ത ഫയലുകൾ Local-ൽ തുടങ്ങും. ഫോൾഡറിലേക്കു ഇടാൻ 'ക്ലൗഡിലേക്ക് സംരക്ഷിക്കുക' ഉപയോഗിക്കുക."
+uploadFromMobile = "മൊബൈലിൽ നിന്ന് അപ്‌ലോഡ് ചെയ്യുക"
+versionActions = "പതിപ്പ് പ്രവർത്തങ്ങൾ"
+versionCollapse = "ഇടക്കാല പതിപ്പുകൾ ചുരുക്കുക"
+versionOrigin = "മൂല അപ്‌ലോഡ്"
+versionsCount = "{{count}} പതിപ്പുകൾ"
+versionShowHidden = "മുമ്പത്തെ {{count}} പതിപ്പുകൾ കാണിക്കുക"
+viewVersion = "ഈ പതിപ്പ് കാണുക"
+
+[filesPage.appearance]
+colour = "നിറം"
+icon = "ഐക്കൺ"
+title = "ദൃശ്യരൂപം"
+useColour = "നിറം {{c}} ഉപയോഗിക്കുക"
+
+[filesPage.column]
+modified = "മാറ്റിയ സമയം"
+name = "പേര്"
+size = "വലിപ്പം"
+type = "തരം"
+
+[filesPage.empty]
+hint = "അപ്‌ലോഡിനായി ഈ പേജിൽ എവിടെയും PDFകൾ ഇടുക, അല്ലെങ്കിൽ 'പുതിയ ഫോൾഡർ' ബട്ടൺ ഉപയോഗിച്ച് നിങ്ങളുടെ ഫയലുകൾ ക്രമീകരിക്കുക."
+newFolderCta = "ഫോൾഡർ സൃഷ്ടിക്കുക"
+title = "ഈ ഫോൾഡർ ശൂന്യമാണ്"
+uploadCta = "ഫയലുകൾ അപ്‌ലോഡ് ചെയ്യുക"
+
+[filesPage.empty.cloud]
+hint = "ആരംഭിക്കാൻ ഒരു ഫയൽ അപ്‌ലോഡ് ചെയ്യുക, അല്ലെങ്കിൽ ക്രമീകരിക്കാൻ ഒരു ഫോൾഡർ സൃഷ്ടിക്കുക."
+offlineHint = "നിങ്ങളുടെ ക്ലൗഡ് ലൈബ്രറി ലോഡ് ചെയ്യാൻ വീണ്ടും ബന്ധിപ്പിക്കുക."
+offlineTitle = "കാഷെ ചെയ്ത ക്ലൗഡ് ഫയലില്ല"
+title = "ഇനിയും ക്ലൗഡ് ഫയലുകളില്ല"
+
+[filesPage.empty.local]
+hint = "അപ്‌ലോഡ് ചെയ്യാതെ സംരക്ഷിച്ച ഫയലുകൾ ഇവിടെതന്നെ തുടരും. ഒന്നുചേർക്കാൻ ഫയൽ ഇടുക."
+title = "ലോക്കൽ-മാത്രമായ ഫയലുകളില്ല"
+
+[filesPage.empty.recent]
+hint = "നിങ്ങൾ തുറക്കുന്നോ തിരുത്തുന്നോ ചെയ്യുന്ന ഫയലുകൾ ഇവിടെ പ്രത്യക്ഷപ്പെടും."
+title = "ഇന്നുവരെ മാറ്റങ്ങൾ ഇല്ല"
+
+[filesPage.empty.shared]
+hint = "ആർക്കെങ്കിലും ലിങ്ക് വഴി ഫയൽ പങ്കുവെച്ചാൽ അത് ഇവിടെ പ്രത്യക്ഷപ്പെടും."
+title = "താങ്കളുമായി ഒന്നും പങ്കുവെച്ചിട്ടില്ല"
+
+[filesPage.empty.sharedByMe]
+hint = "ഇത് ഇവിടെ കാണാൻ ഒരു ഷെയർ ലിങ്ക് സൃഷ്ടിക്കുകയോ നിങ്ങളുടെ ഏതെങ്കിലും ഫയലിൽ നിന്ന് ഒരു സംഘാംഗത്തെ ക്ഷണിക്കുകയോ ചെയ്യുക."
+title = "നിങ്ങൾ ഇതുവരെ യാതൊരു ഫയലുകളും പങ്കുവെച്ചിട്ടില്ല"
+
+[filesPage.error]
+actionFailed = "{{action}} ചെയ്യാൻ കഴിഞ്ഞില്ല."
+actionFailedDetail = "{{action}} ചെയ്യാൻ കഴിഞ്ഞില്ല: {{message}}"
+deleteFolderFailed = "ഫോൾഡർ ഇല്ലാതാക്കാൻ കഴിഞ്ഞില്ല."
+deleteFolderFailedDetail = "ഫോൾഡർ ഇല്ലാതാക്കാൻ കഴിഞ്ഞില്ല: {{message}}"
+folderAppearanceFailed = "ഫോൾഡറിന്റെ ദൃശ്യരൂപം അപ്‌ഡേറ്റ് ചെയ്യാൻ കഴിഞ്ഞില്ല."
+folderAppearanceFailedDetail = "ഫോൾഡറിന്റെ ദൃശ്യരൂപം അപ്‌ഡേറ്റ് ചെയ്യാൻ കഴിഞ്ഞില്ല: {{message}}"
+moveFilesFailed = "ഫയലുകൾ നീക്കാൻ കഴിഞ്ഞില്ല."
+moveFilesFailedDetail = "ഫയലുകൾ നീക്കാൻ കഴിഞ്ഞില്ല: {{message}}"
+moveFolderFailed = "ഫോൾഡർ നീക്കാൻ കഴിഞ്ഞില്ല."
+moveFolderFailedDetail = "ഫോൾഡർ നീക്കാൻ കഴിഞ്ഞില്ല: {{message}}"
+removeFilesFailed = "ഫയലുകൾ നീക്കംചെയ്യാൻ കഴിഞ്ഞില്ല."
+removeFilesFailedDetail = "ഫയലുകൾ നീക്കംചെയ്യാൻ കഴിഞ്ഞില്ല: {{message}}"
+uploadFilesFailed = "ഫയലുകൾ അപ്‌ലോഡ് ചെയ്യാൻ കഴിഞ്ഞില്ല."
+uploadFilesFailedDetail = "ഫയലുകൾ അപ്‌ലോഡ് ചെയ്യാൻ കഴിഞ്ഞില്ല: {{message}}"
+
+[filesPage.field]
+added = "ചേർത്തത്"
+count = "ഫയലുകൾ"
+folder = "ഫോൾഡർ"
+modified = "മാറ്റിയ സമയം"
+name = "പേര്"
+size = "വലിപ്പം"
+toolHistory = "ഉപകരണ ചരിത്രം"
+toolHistoryAtVersion = "സമഗ്ര ഉപകരണ ശൃംഖല"
+totalSize = "ആകെ വലിപ്പം"
+type = "തരം"
+versionHistory = "പതിപ്പ് യാത്ര"
+
+[filesPage.folderName]
+cancel = "റദ്ദാക്കുക"
+error = "ഫോൾഡർ സംരക്ഷിക്കാൻ കഴിഞ്ഞില്ല. വീണ്ടും ശ്രമിക്കുക."
+label = "ഫോൾഡർ പേര്"
+placeholder = "ഫോൾഡർ പേര്"
+
+[filesPage.moveDialog]
+cancel = "റദ്ദാക്കുക"
+confirm = "ഇവിടേക്ക് നീക്കുക"
+error = "നീക്കാൻ കഴിഞ്ഞില്ല. വീണ്ടും ശ്രമിക്കുക."
+hint = "ലക്ഷ്യ ഫോൾഡർ തിരഞ്ഞെടുക്കുക. ടിപ്പ്: ഇടതുവശത്തെ ട്രിയിലെ ഫോൾഡറുകളിലേക്ക് ഫയലുകൾ ഡ്രാഗ് ചെയ്ത് ഇടാനും കഴിയും."
+newFolderCancel = "തള്ളിക്കളയുക"
+newFolderCreate = "സൃഷ്ടിക്കുക"
+newFolderError = "ഫോൾഡർ സൃഷ്ടിക്കാൻ കഴിഞ്ഞില്ല. വീണ്ടും ശ്രമിക്കുക."
+newFolderLabel = "പുതിയ ഫോൾഡർ പേര്"
+newFolderPlaceholder = "ഫോൾഡർ പേര്"
+newFolderToggle = "പുതിയ ഫോൾഡർ സൃഷ്ടിക്കുക…"
+title = "ഫോൾഡറിലേക്കു നീക്കുക"
+
+[filesPage.origin]
+all = "എല്ലാ ഉറവിടങ്ങളും"
+cloud = "ക്ലൗഡ്"
+cloudHint = "Stirling സെർവറിൽ സംഭരിച്ചിരിക്കുന്നു"
+local = "ലോക്കൽ"
+localHint = "ഈ ബ്രൗസറിലേ സംഭരിച്ചിട്ടുള്ളൂ"
+shared = "പങ്കുവെച്ചത്"
+sharedHint = "ലിങ്ക് വഴി നിങ്ങളുമായി പങ്കുവെച്ചത്"
+
+[filesPage.sort]
+modifiedAsc = "പഴയവ ആദ്യം"
+modifiedDesc = "പുതിയവ ആദ്യം"
+nameAsc = "പേര് A→Z"
+nameDesc = "പേര് Z→A"
+sizeAsc = "ചെറുത് ആദ്യം"
+sizeDesc = "വലിയത് ആദ്യം"
+
+[filesPage.syncError]
+client = "ഫോൾഡർ സിങ്ക് പരാജയപ്പെട്ടു."
+network = "സെർവറിലെത്താൻ കഴിഞ്ഞില്ല."
+server = "ഫോൾഡർ സിങ്കിനിടയിൽ സെർവർ പിശക്."
+
+[filesPage.tabName]
+local = "ലോക്കൽ"
+recent = "അടുത്തിടെ"
+shared = "എന്നുമായി പങ്കിട്ടത്"
+sharedByMe = "ഞാൻ പങ്കിട്ടത്"
+
+[filesPage.tabs]
+all = "എല്ലാം"
+ariaLabel = "ഫയൽ കാഴ്ചകൾ"
+cloud = "ക്ലൗഡ്"
+local = "ലോക്കൽ"
+recent = "അടുത്തിടെ"
+shared = "എന്നുമായി പങ്കിട്ടത്"
+sharedByMe = "ഞാൻ പങ്കിട്ടത്"
+
+[filesPage.treeMenu]
+actions = "{{name}} നുള്ള ഫോൾഡർ പ്രവർത്തനങ്ങൾ"
+collapse = "ഫോൾഡർ ചുരുക്കുക"
+delete = "ഫോൾഡർ ഇല്ലാതാക്കുക"
+expand = "ഫോൾഡർ വിപുലീകരിക്കുക"
+newSubfolder = "പുതിയ ഉപഫോൾഡർ"
+rename = "പേരുമാറ്റുക"
+
+[filesPage.typeFilter]
+allTypes = "എല്ലാ തരങ്ങളും"
+label = "തരം പ്രകാരം ഫിൽറ്റർ ചെയ്യുക"
+
+[filesPage.viewMode]
+grid = "ഗ്രിഡ് കാഴ്ച"
+label = "കാഴ്ച മോഡ്"
+list = "ലിസ്റ്റ് കാഴ്ച"
 
 [fileToPDF]
 credit = "ഈ സേവനം ഫയൽ പരിവർത്തനത്തിനായി LibreOffice, Unoconv എന്നിവ ഉപയോഗിക്കുന്നു."
@@ -7695,6 +8010,7 @@ bulkTitle = "തിരഞ്ഞെടുത്ത ഫയലുകൾ അപ്�
 description = "ഇത് നിലവിലെ ഫയൽ നിങ്ങളുടേതായ ആക്സസിനായി സെർവർ സ്റ്റോറേജിലേക്ക് അപ്‌ലോഡ് ചെയ്യും."
 errorTitle = "അപ്‌ലോഡ് പരാജയപ്പെട്ടു"
 failure = "അപ്‌ലോഡ് പരാജയപ്പെട്ടു. ദയവായി നിങ്ങളുടെ ലോഗിൻ, സ്റ്റോറേജ് ക്രമീകരണങ്ങൾ പരിശോധിക്കുക."
+featureDisabled = "ഈ സെർവറിൽ സെർവറിലേക്ക് സംരക്ഷിക്കൽ സജ്ജമാക്കിയിട്ടില്ല."
 fileCount = "{{count}} ഫയലുകൾ തിരഞ്ഞെടുത്തു"
 fileLabel = "ഫയൽ"
 hint = "പബ്ലിക് ലിങ്കുകളും ആക്സസ് മോഡുകളും നിങ്ങളുടെ സെർവർ ക്രമീകരണങ്ങൾ നിയന്ത്രിക്കുന്നു."
@@ -7868,13 +8184,18 @@ viewerMode = "ഒന്നിലധികം ഫയലുകൾ തിരഞ്�
 [toolPanel]
 allTools = "എല്ലാ ടൂളുകളും"
 alpha = "Alpha"
+backToAllTools = "എല്ലാ ഉപകരണങ്ങളിലേക്കു മടങ്ങുക"
+backToDefault = "മടങ്ങുക"
 backToTools = "ടൂളുകളിലേക്ക് മടങ്ങുക"
 collapse = "പാനൽ ചുരുക്കുക"
 comingSoon = "വരുന്നു:"
 expand = "പാനൽ വിപുലീകരിക്കുക"
+goBack = "തിരികെ പോകുക"
 placeholder = "തുടങ്ങാൻ ഒരു ടൂൾ തിരഞ്ഞെടുക്കുക"
 premiumFeature = "പ്രീമിയം ഫീച്ചർ:"
 search = "ടൂളുകൾ തിരയുക"
+toolsHeader = "ഉപകരണങ്ങൾ"
+viewAllTools = "എല്ലാ ഉപകരണങ്ങളും കാണുക"
 
 [toolPanel.fullscreen]
 comingSoon = "ഉടൻ വരുന്നു:"

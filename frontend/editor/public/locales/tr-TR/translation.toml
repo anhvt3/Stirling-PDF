@@ -90,6 +90,7 @@ nothingToUndo = "Geri alınacak bir şey yok"
 noticeTopUpOrPlan = "Yeterli kredi yok, lütfen bakiye yükleyin veya bir plana yükseltin"
 noValidFiles = "İşlenecek geçerli dosya yok"
 oops = "Tüh!"
+openInNewWindow = "Yeni pencerede aç"
 openInViewer = "Görüntüleyicide Aç"
 operationCancelled = "İşlem iptal edildi"
 page = "Sayfa"
@@ -493,6 +494,11 @@ title = "Sayfa Ölçeğini Ayarla"
 
 [adjustPageScale.error]
 failed = "Sayfa ölçeği ayarlanırken bir hata oluştu."
+
+[adjustPageScale.orientation]
+label = "Sayfa yönü"
+landscape = "Yatay"
+portrait = "Dikey"
 
 [adjustPageScale.pageSize]
 keep = "Orijinal Boyutu Koru"
@@ -1512,6 +1518,32 @@ user = "Kullanıcı"
 usernameInfo = "Kullanıcı adı yalnızca harf, rakam ve aşağıdaki özel karakterleri @._+- içerebilir veya geçerli bir e-posta adresi olmalıdır."
 webOnlyUser = "Sadece Web Kullanıcısı"
 
+[agents]
+auto_redaction_description = "Kişisel Tanımlayıcı Bilgileri (PII) otomatik olarak karart"
+auto_redaction_name = "Otomatik Karartma"
+back_to_tools = "Araçlara geri dön"
+coming_soon = "Yakında"
+compliance_description = "Belgeleri uyumluluk için denetle"
+compliance_name = "Uyumluluk Kontrolü"
+data_extraction_description = "Tabloları ve yapılandırılmış verileri çıkar"
+data_extraction_name = "Veri Çıkarma"
+doc_summary_description = "Uzun belgeleri özetle"
+doc_summary_name = "Özetleyici"
+form_filler_description = "PDF formlarını akıllıca doldur"
+form_filler_name = "Form Doldurucu"
+fullscreen_title = "Stirling Ajanları"
+pdf_to_markdown_description = "PDF'leri sade Markdown'a dönüştür"
+pdf_to_markdown_name = "PDF'den Markdown'a"
+section_title = "Ajanlar"
+show_less = "Daha az göster"
+start_chat = "Sohbete başla"
+stirling_description = "Genel amaçlı PDF asistanınız"
+stirling_full_name = "Stirling Genel Ajan"
+stirling_long_description = "Araçları çalıştırabilen, PDF'ler oluşturabilen ve belgelerinizden içgörüler çıkarabilen genel amaçlı PDF asistanı."
+stirling_name = "Stirling"
+stirling_tooltip = "Stirling ajanı"
+view_all = "Tüm ajanları görüntüle"
+
 [analytics]
 disable = "Analizi Devre Dışı Bırak"
 enable = "Analizi Etkinleştir"
@@ -1771,6 +1803,10 @@ insufficientPermissions = "Bu işlemi gerçekleştirmek için izniniz yok."
 pleaseLoginAgain = "Lütfen tekrar giriş yapın."
 sessionExpired = "Oturum Süresi Doldu"
 
+[auth.displayName]
+guest = "Misafir"
+user = "Kullanıcı"
+
 [auto-rename]
 description = "PDF içeriğinizden başlığı otomatik olarak bulur ve dosya adı olarak kullanır."
 header = "PDF'i Otomatik Yeniden Adlandır"
@@ -1862,6 +1898,13 @@ label = "{{title}} için menüyü aç"
 
 [automate.files]
 placeholder = "Bu otomasyonla işlenecek dosyaları seçin"
+
+[automate.folderScanWarning]
+advice = "Dosyayı yine de indirebilirsiniz (ör. incelemek veya elle düzenlemek için), ancak arka uç çalıştırmadan önce desteklenmeyen adımların kaldırılması gerekir."
+cancel = "İptal"
+confirm = "Yine de dışa aktar"
+intro = "Klasör tarama arka uçta çalışır, bu yüzden yalnızca arka uç uç noktasına sahip araçlar çalıştırılabilir. Bu otomasyondaki aşağıdaki adım(lar)ın böyle bir uç noktası yok ve işlem hattı çalıştığında başarısız olacak:"
+title = "Bazı adımlar klasör taramada çalıştırılamıyor"
 
 [automate.importModal]
 cancel = "İptal"
@@ -2684,6 +2727,16 @@ title = "İzinleri Değiştir"
 [changePermissions.tooltip.warning]
 text = "Bu izinlerin değiştirilemez olmasını sağlamak için, sahip parolasını ayarlamak üzere Parola Ekle aracını kullanın."
 
+[chat.header]
+agentMenu = "Stirling ajan seçenekleri"
+clearChat = "Sohbeti temizle"
+settings = "Ajan ayarları"
+
+[chat.input]
+attach = "Dosya ekle"
+placeholder = "Ne yapmak istiyorsunuz?"
+send = "Mesaj gönder"
+
 [chat.progress]
 analyzing = "İsteğiniz analiz ediliyor..."
 calling_engine = "Yapay zekâ düşünüyor..."
@@ -2698,6 +2751,32 @@ whole_doc_compression_round = "Notlar birleştiriliyor..."
 whole_doc_read_done = "Belge okuma tamamlandı..."
 whole_doc_read_started = "Belge okunuyor..."
 whole_doc_slice_done = "Belge okunuyor... (%{{percent}} tamamlandı)"
+
+[chat.quickActions]
+browseYourFiles = "Dosyalarınıza göz at"
+compressMany = "Bu belgeleri sıkıştır"
+compressOne = "Bu belgeyi sıkıştır"
+convertMany = "Bu belgeleri PDF'ye dönüştür"
+convertOne = "Bu belgeyi PDF'ye dönüştür"
+fileSummary_one = "Çalışma tezgahında 1 dosya ({{types}})"
+fileSummary_other = "Çalışma tezgahında {{count}} dosya ({{types}})"
+heading = "Başlayın"
+mergeMany = "Bu {{count}} belgeyi 1 dosyada birleştir"
+moreFiles = "+{{count}} daha"
+openFromComputer = "Bilgisayardan aç"
+removeFile = "{{name}} öğesini kaldır"
+rotateMany = "Bu belgeleri döndür"
+rotateOne = "Bu belgeyi döndür"
+splitOne = "Bu belgeyi böl"
+
+[chat.responses]
+cannot_continue = "Bir şeyler ters gitti ve devam edemiyorum."
+cannot_do = "Bunu yapamıyorum."
+done = "Tamamlandı."
+need_clarification = "İsteğinizi netleştirir misiniz?"
+not_found = "İstenen bilgiyi bulamadım."
+processing = "İşleniyor ({{outcome}})..."
+unsupported_capability = "Desteklenmeyen özellik: {{capability}}"
 
 [chat.toolsUsed]
 summary = "{{count}} araç çalıştırıldı"
@@ -2799,6 +2878,7 @@ selectBaseFirst = "Önce orijinal PDF'yi seçin"
 filesMissing = "Seçili dosyalar bulunamadı. Lütfen yeniden seçin."
 generic = "Bu dosyalar karşılaştırılamıyor."
 selectRequired = "Bir orijinal ve bir düzenlenmiş belge seçin."
+title = "Karşılaştırma başarısız"
 
 [compare.large.file]
 message = "Verilen belgelerden biri veya her ikisi işlenemeyecek kadar büyük"
@@ -2864,6 +2944,7 @@ title = "Hâlâ çalışıyor…"
 
 [compare.status]
 complete = "Karşılaştırma hazır"
+error = "Karşılaştırma başarısız"
 extracting = "Metin çıkarılıyor..."
 processing = "Farklar analiz ediliyor..."
 
@@ -3771,12 +3852,246 @@ expand = "Kenar çubuğunu genişlet"
 files = "Dosyalar"
 googleDrive = "Google Drive"
 googleDriveDisabled = "Google Drive yapılandırılmamış"
+leaveMyFiles = "Dosyalarımdan çık"
+myFiles = "Dosyalarım"
 noFiles = "Henüz dosya yok"
 openFileManager = "Dosya yöneticisini aç"
 openFromComputer = "Bilgisayardan aç"
 openSettings = "Ayarları aç"
 search = "Ara"
 searchPlaceholder = "Dosyalarda ara..."
+
+[filesPage]
+addToWorkspace = "Çalışma alanına ekle"
+addToWorkspaceCount = "{{count}} öğeyi çalışma alanına ekle"
+allFiles = "Tüm dosyalar"
+back = "Geri"
+backToFolder = "{{folder}} konumuna geri dön"
+backToMyFiles = "Dosyalarıma geri dön"
+breadcrumbs = "Klasör yolu"
+cancel = "İptal"
+clearSearch = "Aramayı temizle"
+clearSelection = "Seçimi temizle"
+closeDetails = "Ayrıntıları kapat"
+create = "Oluştur"
+cycleBlocked = "Bir klasör, kendi alt klasörlerinden birine taşınamaz."
+delete = "Sil"
+deleteFolder = "Klasörü sil"
+deleteFolderBody = "Klasör \"{{name}}\" silinsin mi?"
+deleteFolderConfirm = "Klasör \"{{name}}\" silinsin mi? İçindeki dosyalar Tüm dosyalara taşınacak. {{count}} dosya etkilenecek."
+deleteFolderContents = "Klasör içindeki {{count}} dosyayı da sil"
+deleteFolderContentsWarning = "Dosyalar kalıcı olarak kaldırılacak ve kurtarılamaz."
+deleteFolderError = "Klasör silinemedi. Tekrar deneyin."
+deleteFolderKeepHint = "İçindeki dosyalar Tüm dosyalara taşınacak."
+deleteFolderTitle = "Klasör silinsin mi?"
+deselectAll = "Seçimi temizle"
+details = "Ayrıntılar"
+detailsCount = "{{count}} dosya seçildi"
+dismissError = "Kapat"
+download = "İndir"
+downloadAll = "Tümünü indir"
+downloadVersion = "Bu sürümü indir"
+dropOverlay = "Yüklemek için dosyaları bırakın"
+dropOverlaySub = "Dosyalar başlangıçta Yerel'de olur. Onları bir klasöre düzenlemek için 'Şuraya taşı' veya 'Buluta kaydet'i kullanın."
+file = "Dosya"
+fileMenu = "Dosya işlemleri"
+folder = "Klasör"
+folderItems = "{{count}} öğe"
+folderMenu = "Klasör işlemleri"
+inPath = "{{path}} içinde"
+inWorkspace = "Aç"
+inWorkspaceAria = "Zaten çalışma alanında"
+loading = "Yükleniyor…"
+localFoldersUnavailable = "Klasörler yalnızca bulutta - düzenlemek için bir dosyayı buluta kaydedin."
+moreActions = "Diğer klasör işlemleri"
+moveLocalToCloudBlocked = "Yalnızca yerel dosyalar bulut klasörlerine taşınamaz. Önce bunları buluta kaydedin."
+moveSkippedRemote = "Sunucuda {{count}} dosya taşınamadı (izin yok veya zaten silinmiş)."
+moveTo = "Şuraya taşı…"
+myFiles = "Dosyalarım"
+newFolder = "Yeni klasör"
+newFolderStorageDisabled = "Sunucu klasör depolaması etkin değil. Yöneticinizden açmasını isteyin."
+newFolderTabUnavailable = "Klasör oluşturmak için Tümü veya Bulut'a geçin."
+newRootFolder = "Kökte yeni klasör"
+offlineNoFolderEdits = "Sunucu klasör eşitlemesi kullanılamıyor - klasör değişiklikleri devre dışı. Oturum açmayı ve depolama yapılandırmasını kontrol edin."
+open = "Aç"
+openInWorkbench = "Çalışma tezgahında aç"
+openVersionInWorkspace = "Çalışma alanında aç"
+originFilter = "Kaynağa göre filtrele"
+quickView = "Hızlı görünüm"
+refresh = "Sunucudan yenile"
+remove = "Sil"
+removeConfirm = "{{count}} dosya silinsin mi? Bu işlem geri alınamaz."
+removeVersion = "Bu sürümü kaldır"
+rename = "Yeniden adlandır"
+renameFolder = "Klasörü yeniden adlandır"
+resizeFolderTree = "Klasör ağacını yeniden boyutlandır (ok tuşları, daha büyük adımlar için Shift; otomatik sığdırmak için çift tıklayın)"
+save = "Kaydet"
+saveToServer = "Sunucuya kaydet"
+saveToServerDisabledHint = "Bu sunucuda sunucuya kaydetme etkin değil. Yöneticinizden etkinleştirmesini isteyin."
+search = "Ara"
+searchPlaceholder = "Bu klasörde ve alt klasörlerinde ara"
+selectAll = "Tümünü seç"
+selectAllHint = "Tümünü seçmek için tıklayın. İpucu: Dosyaları tek tek eklemek için Ctrl (veya Cmd) tuşunu basılı tutun, bir aralık seçmek için Shift'i kullanın."
+selectedCount = "{{count}} seçildi"
+selectFile = "{{name}} dosyasını seç"
+shareDisabledHint = "Bu sunucuda dosya paylaşımı etkin değil. Yöneticinizden etkinleştirmesini isteyin."
+shareManage = "Paylaşımı yönet"
+showDetails = "Ayrıntıları göster"
+summary = "{{count}} öğe"
+syncFailed = "Klasör eşitlemesi başarısız: {{message}}"
+syncPartial = "Klasör eşitlemesi kısmi: {{total}} klasörün {{failed}} tanesi birleştirilemedi."
+tree = "Klasörler"
+upload = "Yükle"
+uploadedToLocal = "Yüklenen dosyalar başlangıçta Yerel'de olur. Bir klasöre koymak için 'Buluta kaydet'i kullanın."
+uploadFromMobile = "Mobil cihazdan yükle"
+versionActions = "Sürüm işlemleri"
+versionCollapse = "Ara sürümleri daralt"
+versionOrigin = "Orijinal yükleme"
+versionsCount = "{{count}} sürüm"
+versionShowHidden = "Önceki {{count}} sürümü göster"
+viewVersion = "Bu sürümü görüntüle"
+
+[filesPage.appearance]
+colour = "Renk"
+icon = "Simge"
+title = "Görünüm"
+useColour = "{{c}} rengini kullan"
+
+[filesPage.column]
+modified = "Değiştirildi"
+name = "Ad"
+size = "Boyut"
+type = "Tür"
+
+[filesPage.empty]
+hint = "PDF'leri yüklemek için bu sayfanın herhangi bir yerine bırakın veya dosyalarınızı düzenlemek için Yeni klasör düğmesini kullanın."
+newFolderCta = "Klasör oluştur"
+title = "Bu klasör boş"
+uploadCta = "Dosya yükle"
+
+[filesPage.empty.cloud]
+hint = "Başlamak için bir dosya yükleyin veya düzenlemek için bir klasör oluşturun."
+offlineHint = "Bulut kitaplığınızı yüklemek için yeniden bağlanın."
+offlineTitle = "Önbelleğe alınmış bulut dosyası yok"
+title = "Henüz bulut dosyası yok"
+
+[filesPage.empty.local]
+hint = "Yüklemeden kaydedilen dosyalar burada kalır. Eklemek için bir dosya bırakın."
+title = "Yalnızca yerel dosya yok"
+
+[filesPage.empty.recent]
+hint = "Açtığınız veya düzenlediğiniz dosyalar burada görünecek."
+title = "Henüz değişiklik yok"
+
+[filesPage.empty.shared]
+hint = "Birisi bir bağlantı aracılığıyla bir dosya paylaştığında burada görünür."
+title = "Sizinle paylaşılan bir şey yok"
+
+[filesPage.empty.sharedByMe]
+hint = "Herhangi bir dosyanızdan paylaşım bağlantısı oluşturun veya bir ekip arkadaşını davet edin; burada görünsün."
+title = "Henüz hiçbir dosya paylaşmadınız"
+
+[filesPage.error]
+actionFailed = "{{action}} gerçekleştirilemedi."
+actionFailedDetail = "{{action}} gerçekleştirilemedi: {{message}}"
+deleteFolderFailed = "Klasör silinemedi."
+deleteFolderFailedDetail = "Klasör silinemedi: {{message}}"
+folderAppearanceFailed = "Klasör görünümü güncellenemedi."
+folderAppearanceFailedDetail = "Klasör görünümü güncellenemedi: {{message}}"
+moveFilesFailed = "Dosyalar taşınamadı."
+moveFilesFailedDetail = "Dosyalar taşınamadı: {{message}}"
+moveFolderFailed = "Klasör taşınamadı."
+moveFolderFailedDetail = "Klasör taşınamadı: {{message}}"
+removeFilesFailed = "Dosyalar silinemedi."
+removeFilesFailedDetail = "Dosyalar silinemedi: {{message}}"
+uploadFilesFailed = "Dosyalar yüklenemedi."
+uploadFilesFailedDetail = "Dosyalar yüklenemedi: {{message}}"
+
+[filesPage.field]
+added = "Eklendi"
+count = "Dosya"
+folder = "Klasör"
+modified = "Değiştirildi"
+name = "Ad"
+size = "Boyut"
+toolHistory = "Araç geçmişi"
+toolHistoryAtVersion = "Kümülatif araç zinciri"
+totalSize = "Toplam boyut"
+type = "Tür"
+versionHistory = "Sürüm yolculuğu"
+
+[filesPage.folderName]
+cancel = "İptal"
+error = "Klasör kaydedilemedi. Tekrar deneyin."
+label = "Klasör adı"
+placeholder = "Klasör adı"
+
+[filesPage.moveDialog]
+cancel = "İptal"
+confirm = "Buraya taşı"
+error = "Taşınamadı. Tekrar deneyin."
+hint = "Bir hedef klasör seçin. İpucu: Soldaki ağaçta dosyaları klasörlerin üzerine sürükleyip bırakabilirsiniz."
+newFolderCancel = "Vazgeç"
+newFolderCreate = "Oluştur"
+newFolderError = "Klasör oluşturulamadı. Tekrar deneyin."
+newFolderLabel = "Yeni klasör adı"
+newFolderPlaceholder = "Klasör adı"
+newFolderToggle = "Yeni klasör oluştur…"
+title = "Klasöre taşı"
+
+[filesPage.origin]
+all = "Tüm kaynaklar"
+cloud = "Bulut"
+cloudHint = "Stirling sunucusunda depolanır"
+local = "Yerel"
+localHint = "Yalnızca bu tarayıcıda depolanır"
+shared = "Paylaşılan"
+sharedHint = "Bağlantı yoluyla sizinle paylaşılan"
+
+[filesPage.sort]
+modifiedAsc = "Önce en eski"
+modifiedDesc = "Önce en yeni"
+nameAsc = "Ad A→Z"
+nameDesc = "Ad Z→A"
+sizeAsc = "Önce en küçük"
+sizeDesc = "Önce en büyük"
+
+[filesPage.syncError]
+client = "Klasör eşitlemesi başarısız."
+network = "Sunucuya ulaşılamadı."
+server = "Klasör eşitlemesi sırasında sunucu hatası."
+
+[filesPage.tabName]
+local = "Yerel"
+recent = "Son"
+shared = "Benimle paylaşılan"
+sharedByMe = "Benim paylaştıklarım"
+
+[filesPage.tabs]
+all = "Tümü"
+ariaLabel = "Dosya görünümleri"
+cloud = "Bulut"
+local = "Yerel"
+recent = "Son"
+shared = "Benimle paylaşılan"
+sharedByMe = "Benim paylaştıklarım"
+
+[filesPage.treeMenu]
+actions = "{{name}} için klasör işlemleri"
+collapse = "Klasörü daralt"
+delete = "Klasörü sil"
+expand = "Klasörü genişlet"
+newSubfolder = "Yeni alt klasör"
+rename = "Yeniden adlandır"
+
+[filesPage.typeFilter]
+allTypes = "Tüm türler"
+label = "Türüne göre filtrele"
+
+[filesPage.viewMode]
+grid = "Izgara görünümü"
+label = "Görünüm modu"
+list = "Liste görünümü"
 
 [fileToPDF]
 credit = "Bu hizmet dosya dönüşümü için LibreOffice ve Unoconv'u kullanır."
@@ -7695,6 +8010,7 @@ bulkTitle = "Seçili dosyaları yükle"
 description = "Bu, geçerli dosyayı kendi erişiminiz için sunucu depolamasına yükler."
 errorTitle = "Yükleme başarısız"
 failure = "Yükleme başarısız. Lütfen oturum açma ve depolama ayarlarınızı kontrol edin."
+featureDisabled = "Bu sunucuda sunucuya kaydetme etkin değil."
 fileCount = "{{count}} dosya seçildi"
 fileLabel = "Dosya"
 hint = "Genel bağlantılar ve erişim modları, sunucu ayarlarınız tarafından kontrol edilir."
@@ -7868,13 +8184,18 @@ viewerMode = "Birden çok dosya seçmek için dosya düzenleyiciye geçin."
 [toolPanel]
 allTools = "Tüm araçlar"
 alpha = "Alfa"
+backToAllTools = "Tüm araçlara geri dön"
+backToDefault = "Geri"
 backToTools = "Araçlara geri dön"
 collapse = "Paneli daralt"
 comingSoon = "Yakında:"
 expand = "Paneli genişlet"
+goBack = "Geri dön"
 placeholder = "Başlamak için bir araç seçin"
 premiumFeature = "Premium özellik:"
 search = "Araçlarda ara"
+toolsHeader = "Araçlar"
+viewAllTools = "Tüm araçları görüntüle"
 
 [toolPanel.fullscreen]
 comingSoon = "Yakında:"

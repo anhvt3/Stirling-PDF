@@ -90,6 +90,7 @@ nothingToUndo = "Ez dago desegitekorik"
 noticeTopUpOrPlan = "Kreditu nahikorik ez, mesedez kargatu edo eguneratu plan batera"
 noValidFiles = "Ez dago prozesatzeko baliozko fitxategirik"
 oops = "Epa!"
+openInNewWindow = "Ireki leiho berri batean"
 openInViewer = "Ireki ikuslean"
 operationCancelled = "Eragiketa bertan behera utzi da"
 page = "Orrialdea"
@@ -493,6 +494,11 @@ title = "Orri-eskala doitu"
 
 [adjustPageScale.error]
 failed = "Errore bat gertatu da orri-eskala doitzean."
+
+[adjustPageScale.orientation]
+label = "Orriaren orientazioa"
+landscape = "Horizontala"
+portrait = "Bertikala"
 
 [adjustPageScale.pageSize]
 keep = "Mantendu jatorrizko tamaina"
@@ -1512,6 +1518,32 @@ user = "Erabiltzaile"
 usernameInfo = "Erabiltzaile-izenak letrak, zenbakiak eta honako karaktere bereziak soilik izan ditzake: @._+- edo baliozko helbide elektronikoa izan behar du."
 webOnlyUser = "Web-erabiltzailea bakarrik"
 
+[agents]
+auto_redaction_description = "PII automatikoki zentsuratu"
+auto_redaction_name = "Zentsuratze automatikoa"
+back_to_tools = "Itzuli tresnetara"
+coming_soon = "Laster"
+compliance_description = "Dokumentuak auditatu arau-betetzea egiaztatzeko"
+compliance_name = "Arau-betetze egiaztapena"
+data_extraction_description = "Taulak eta egitura-datuak erauzi"
+data_extraction_name = "Datu erauzketa"
+doc_summary_description = "Dokumentu luzeak laburtu"
+doc_summary_name = "Laburgailua"
+form_filler_description = "PDF inprimakiak modu adimendunean bete"
+form_filler_name = "Inprimaki-betetzailea"
+fullscreen_title = "Stirling agenteak"
+pdf_to_markdown_description = "Bihurtu PDFak Markdown garbira"
+pdf_to_markdown_name = "PDFtik Markdownera"
+section_title = "Agenteak"
+show_less = "Erakutsi gutxiago"
+start_chat = "Hasi txatean"
+stirling_description = "Zure PDF laguntzaile orokorra"
+stirling_full_name = "Stirling agente orokorra"
+stirling_long_description = "Helburu orokorreko PDF laguntzailea, tresnak exekutatu, PDFak sortu eta zure dokumentuetatik xehetasunak atera ditzakeena."
+stirling_name = "Stirling"
+stirling_tooltip = "Stirling agentea"
+view_all = "Ikusi agente guztiak"
+
 [analytics]
 disable = "Desgaitu analitika"
 enable = "Gaitu analitika"
@@ -1771,6 +1803,10 @@ insufficientPermissions = "Ez duzu ekintza hau egiteko baimenik."
 pleaseLoginAgain = "Hasi saioa berriro, mesedez."
 sessionExpired = "Saioa iraungi da"
 
+[auth.displayName]
+guest = "Gonbidatua"
+user = "Erabiltzailea"
+
 [auto-rename]
 description = "Automatikoki aurkitzen du zure PDF edukitik titulua eta fitxategi-izen gisa erabiltzen du."
 header = "PDF Aldatu izena"
@@ -1862,6 +1898,13 @@ label = "Ireki {{title}}-rako menua"
 
 [automate.files]
 placeholder = "Hautatu automatizazio honekin prozesatuko diren fitxategiak"
+
+[automate.folderScanWarning]
+advice = "Fitxategia oraindik deskargatu dezakezu (adib. ikuskatzeko edo eskuz editatzeko), baina onartu gabeko urratsak kendu behar dira backendak exekutatu aurretik."
+cancel = "Utzi"
+confirm = "Esportatu hala ere"
+intro = "Karpeten eskaneatzea backend-ean exekutatzen da; beraz, backend endpointa duten tresnak baino ezin ditu exekutatu. Automatizazio honetako ondoko urrats(ek) ez dute, eta pipeline-a exekutatzean huts egingo dute:"
+title = "Zenbait urrats ezin dira exekutatu karpeten eskaneatzean"
 
 [automate.importModal]
 cancel = "Ezeztatu"
@@ -2684,6 +2727,16 @@ title = "Aldatu baimenak"
 [changePermissions.tooltip.warning]
 text = "Baimen hauek aldaezinak bihurtzeko, erabili Gehitu Pasahitza tresna jabearen pasahitza ezartzeko."
 
+[chat.header]
+agentMenu = "Stirling agenteen aukerak"
+clearChat = "Garbitu txata"
+settings = "Agentearen ezarpenak"
+
+[chat.input]
+attach = "Erantsi fitxategiak"
+placeholder = "Zer egin nahi duzu?"
+send = "Bidali mezua"
+
 [chat.progress]
 analyzing = "Zure eskaera aztertzen..."
 calling_engine = "AI pentsatzen ari da..."
@@ -2698,6 +2751,32 @@ whole_doc_compression_round = "Oharrak bateratzen..."
 whole_doc_read_done = "Dokumentua irakurtzen amaituta..."
 whole_doc_read_started = "Dokumentua irakurtzen..."
 whole_doc_slice_done = "Dokumentua irakurtzen... ({{percent}}% osatuta)"
+
+[chat.quickActions]
+browseYourFiles = "Arakatu zure fitxategiak"
+compressMany = "Konprimitu dokumentu hauek"
+compressOne = "Konprimitu dokumentu hau"
+convertMany = "Bihurtu dokumentu hauek PDFra"
+convertOne = "Bihurtu dokumentu hau PDFra"
+fileSummary_one = "Lan-mahaian fitxategi 1 ({{types}})"
+fileSummary_other = "{{count}} fitxategi lan-mahaian ({{types}})"
+heading = "Hasi"
+mergeMany = "Batu {{count}} dokumentu hauek 1ean"
+moreFiles = "+{{count}} gehiago"
+openFromComputer = "Ireki ordenagailutik"
+removeFile = "Kendu {{name}}"
+rotateMany = "Biratu dokumentu hauek"
+rotateOne = "Biratu dokumentu hau"
+splitOne = "Zatitu dokumentu hau"
+
+[chat.responses]
+cannot_continue = "Zerbait gaizki joan da eta ezin dut jarraitu."
+cannot_do = "Ezin dut hori egin."
+done = "Eginda."
+need_clarification = "Zure eskaera argituko zenuke?"
+not_found = "Ezin izan dut eskatutako informazioa aurkitu."
+processing = "Prozesatzen ({{outcome}})..."
+unsupported_capability = "Onartu gabeko gaitasuna: {{capability}}"
 
 [chat.toolsUsed]
 summary = "{{count}} tresna exekutatu dira"
@@ -2799,6 +2878,7 @@ selectBaseFirst = "Hautatu jatorrizko PDFa lehenik"
 filesMissing = "Ezin izan dira hautatutako fitxategiak aurkitu. Mesedez, hautatu berriro."
 generic = "Ezin dira fitxategi hauek konparatu."
 selectRequired = "Hautatu jatorrizko eta editatutako dokumentu bat."
+title = "Alderaketak huts egin du"
 
 [compare.large.file]
 message = "Eman diren dokumentuetako bat edo biak handiegiak dira prozesatzeko"
@@ -2864,6 +2944,7 @@ title = "Oraindik lanean…"
 
 [compare.status]
 complete = "Konparazioa prest"
+error = "Alderaketak huts egin du"
 extracting = "Testua erauzten..."
 processing = "Aldaketak aztertzen..."
 
@@ -3771,12 +3852,246 @@ expand = "Zabaldu alboko barra"
 files = "Fitxategiak"
 googleDrive = "Google Drive"
 googleDriveDisabled = "Google Drive ez dago konfiguratuta"
+leaveMyFiles = "Irten Nire fitxategietatik"
+myFiles = "Nire fitxategiak"
 noFiles = "Oraindik ez dago fitxategirik"
 openFileManager = "Ireki fitxategi-kudeatzailea"
 openFromComputer = "Ireki ordenagailutik"
 openSettings = "Ireki ezarpenak"
 search = "Bilatu"
 searchPlaceholder = "Bilatu fitxategiak..."
+
+[filesPage]
+addToWorkspace = "Gehitu lan-espaziora"
+addToWorkspaceCount = "Gehitu {{count}} lan-espaziora"
+allFiles = "Fitxategi guztiak"
+back = "Atzera"
+backToFolder = "Itzuli {{folder}} karpetara"
+backToMyFiles = "Itzuli Nire fitxategietara"
+breadcrumbs = "Karpetaren bidea"
+cancel = "Utzi"
+clearSearch = "Garbitu bilaketa"
+clearSelection = "Garbitu hautapena"
+closeDetails = "Itxi xehetasunak"
+create = "Sortu"
+cycleBlocked = "Ezin da karpeta bat bere azpikarpetetako batera eraman."
+delete = "Ezabatu"
+deleteFolder = "Ezabatu karpeta"
+deleteFolderBody = "Ezabatu \"{{name}}\" karpeta?"
+deleteFolderConfirm = "Ezabatu \"{{name}}\" karpeta? Barruko fitxategiak Fitxategi guztiak atalera mugituko dira. {{count}} fitxategi eragingo dira."
+deleteFolderContents = "Ezabatu baita karpetako {{count}} fitxategi"
+deleteFolderContentsWarning = "Fitxategiak behin betiko kenduko dira eta ezin izango dira berreskuratu."
+deleteFolderError = "Ezin izan da karpeta ezabatu. Saiatu berriro."
+deleteFolderKeepHint = "Barruko fitxategiak Fitxategi guztiak atalera mugituko dira."
+deleteFolderTitle = "Ezabatu karpeta?"
+deselectAll = "Garbitu hautapena"
+details = "Xehetasunak"
+detailsCount = "{{count}} fitxategi hautatuta"
+dismissError = "Baztertu"
+download = "Deskargatu"
+downloadAll = "Deskargatu dena"
+downloadVersion = "Deskargatu bertsio hau"
+dropOverlay = "Jaregin fitxategiak igotzeko"
+dropOverlaySub = "Fitxategiak Lokalean hasten dira. Erabili 'Eraman hona' edo 'Gorde hodeian' karpeta batean antolatzeko."
+file = "Fitxategia"
+fileMenu = "Fitxategi-ekintzak"
+folder = "Karpeta"
+folderItems = "{{count}} elementu"
+folderMenu = "Karpeta-ekintzak"
+inPath = "{{path}} barruan"
+inWorkspace = "Ireki"
+inWorkspaceAria = "Dagoeneko lan-espazioan"
+loading = "Kargatzen…"
+localFoldersUnavailable = "Karpetak hodeian soilik daude - gorde fitxategi bat hodeian haiek antolatzeko."
+moreActions = "Karpeta-ekintza gehiago"
+moveLocalToCloudBlocked = "Lokaleko fitxategiak ezin dira hodeiko karpetetara eraman. Gorde lehenik hodeian."
+moveSkippedRemote = "{{count}} fitxategi ezin izan da zerbitzarian mugitu (baimenik ez edo dagoeneko ezabatuta)."
+moveTo = "Eraman hona…"
+myFiles = "Nire fitxategiak"
+newFolder = "Karpeta berria"
+newFolderStorageDisabled = "Zerbitzari-karpeten biltegiratzea ez dago gaituta. Eskatu administratzaileari aktiba dezan."
+newFolderTabUnavailable = "Aldatu Guztiak edo Hodeia atalera karpetak sortzeko."
+newRootFolder = "Karpeta berria erroan"
+offlineNoFolderEdits = "Zerbitzariko karpeten sinkronizazioa ez dago erabilgarri - karpeta-aldaketak desgaituta daude. Egiaztatu saio-hasiera eta biltegiratze-konfigurazioa."
+open = "Ireki"
+openInWorkbench = "Ireki lan-mahaian"
+openVersionInWorkspace = "Ireki lan-espazioan"
+originFilter = "Iragazi jatorriaren arabera"
+quickView = "Ikuspegi azkarra"
+refresh = "Freskatu zerbitzaritik"
+remove = "Ezabatu"
+removeConfirm = "Ezabatu {{count}} fitxategi? Ezin da desegin."
+removeVersion = "Kendu bertsio hau"
+rename = "Aldatu izena"
+renameFolder = "Aldatu karpetaren izena"
+resizeFolderTree = "Aldatu karpeten zuhaitzaren tamaina (gezi-teklak, Shift urrats handiagoetarako; klik bikoitza egokitze automatikoa)"
+save = "Gorde"
+saveToServer = "Gorde zerbitzarian"
+saveToServerDisabledHint = "Zerbitzarian gordetzea ez dago gaituta zerbitzari honetan. Eskatu administratzaileari gaitzeko."
+search = "Bilatu"
+searchPlaceholder = "Bilatu karpeta honetan eta azpikarpetetan"
+selectAll = "Hautatu dena"
+selectAllHint = "Egin klik dena hautatzeko. Aholkua: eutsi Ctrl (edo Cmd) teklei fitxategiak banan-banan gehitzeko, eta Shifti tarte bat hautatzeko."
+selectedCount = "{{count}} hautatuta"
+selectFile = "Hautatu {{name}} fitxategia"
+shareDisabledHint = "Fitxategiak partekatzea ez dago gaituta zerbitzari honetan. Eskatu administratzaileari gaitzeko."
+shareManage = "Kudeatu partekatzea"
+showDetails = "Erakutsi xehetasunak"
+summary = "{{count}} elementu"
+syncFailed = "Karpeten sinkronizazioak huts egin du: {{message}}"
+syncPartial = "Karpeten sinkronizazioa partziala: {{total}} karpetatik {{failed}} ezin izan dira bateratu."
+tree = "Karpetak"
+upload = "Igo"
+uploadedToLocal = "Igotako fitxategiak Lokalean hasten dira. Erabili 'Gorde hodeian' karpeta batean jartzeko."
+uploadFromMobile = "Igo mugikorretik"
+versionActions = "Bertsio-ekintzak"
+versionCollapse = "Tolestu erdiko bertsioak"
+versionOrigin = "Jatorrizko igoera"
+versionsCount = "{{count}} bertsio"
+versionShowHidden = "Erakutsi aurreko {{count}} bertsio"
+viewVersion = "Ikusi bertsio hau"
+
+[filesPage.appearance]
+colour = "Kolorea"
+icon = "Ikonoa"
+title = "Itxura"
+useColour = "Erabili {{c}} kolorea"
+
+[filesPage.column]
+modified = "Aldatuta"
+name = "Izena"
+size = "Tamaina"
+type = "Mota"
+
+[filesPage.empty]
+hint = "Jaregin PDFak orri honetako edozein lekutan igotzeko, edo erabili Karpeta berria botoia zure fitxategiak antolatzeko."
+newFolderCta = "Sortu karpeta"
+title = "Karpeta hau hutsik dago"
+uploadCta = "Igo fitxategiak"
+
+[filesPage.empty.cloud]
+hint = "Igo fitxategi bat hasteko, edo sortu karpeta bat antolatzeko."
+offlineHint = "Konektatu berriro zure hodeiko liburutegia kargatzeko."
+offlineTitle = "Ez dago hodeiko fitxategirik cachean"
+title = "Oraindik ez dago hodeiko fitxategirik"
+
+[filesPage.empty.local]
+hint = "Igo gabe gordetako fitxategiak hemen geratzen dira. Jaregin fitxategi bat gehitzeko."
+title = "Ez dago lokaleko fitxategi esklusiborik"
+
+[filesPage.empty.recent]
+hint = "Irekitzen edo editatzen dituzun fitxategiak hemen agertuko dira."
+title = "Oraindik ezer ez da aldatu"
+
+[filesPage.empty.shared]
+hint = "Norbaitek estekaren bidez fitxategi bat partekatzen duenean, hemen agertzen da."
+title = "Ez dizute ezer partekatu"
+
+[filesPage.empty.sharedByMe]
+hint = "Sortu partekatzeko esteka edo gonbidatu lankide bat edozein fitxategitatik, eta hemen ikusiko duzu."
+title = "Oraindik ez duzu fitxategirik partekatu"
+
+[filesPage.error]
+actionFailed = "Ezin izan da {{action}}."
+actionFailedDetail = "Ezin izan da {{action}}: {{message}}"
+deleteFolderFailed = "Ezin izan da karpeta ezabatu."
+deleteFolderFailedDetail = "Ezin izan da karpeta ezabatu: {{message}}"
+folderAppearanceFailed = "Ezin izan da karpetaren itxura eguneratu."
+folderAppearanceFailedDetail = "Ezin izan da karpetaren itxura eguneratu: {{message}}"
+moveFilesFailed = "Ezin izan dira fitxategiak mugitu."
+moveFilesFailedDetail = "Ezin izan dira fitxategiak mugitu: {{message}}"
+moveFolderFailed = "Ezin izan da karpeta mugitu."
+moveFolderFailedDetail = "Ezin izan da karpeta mugitu: {{message}}"
+removeFilesFailed = "Ezin izan dira fitxategiak ezabatu."
+removeFilesFailedDetail = "Ezin izan dira fitxategiak ezabatu: {{message}}"
+uploadFilesFailed = "Ezin izan dira fitxategiak igo."
+uploadFilesFailedDetail = "Ezin izan dira fitxategiak igo: {{message}}"
+
+[filesPage.field]
+added = "Gehituta"
+count = "Fitxategiak"
+folder = "Karpeta"
+modified = "Aldatuta"
+name = "Izena"
+size = "Tamaina"
+toolHistory = "Tresnen historia"
+toolHistoryAtVersion = "Tresna-kate metatua"
+totalSize = "Tamaina osoa"
+type = "Mota"
+versionHistory = "Bertsioen ibilbidea"
+
+[filesPage.folderName]
+cancel = "Utzi"
+error = "Ezin izan da karpeta gorde. Saiatu berriro."
+label = "Karpetaren izena"
+placeholder = "Karpetaren izena"
+
+[filesPage.moveDialog]
+cancel = "Utzi"
+confirm = "Eraman hona"
+error = "Ezin izan da mugitu. Saiatu berriro."
+hint = "Hautatu helburu-karpeta. Aholkua: ezkerreko zuhaitzeko karpetetara ere arrastatu eta jaregin ditzakezu fitxategiak."
+newFolderCancel = "Baztertu"
+newFolderCreate = "Sortu"
+newFolderError = "Ezin izan da karpeta sortu. Saiatu berriro."
+newFolderLabel = "Karpeta berriaren izena"
+newFolderPlaceholder = "Karpetaren izena"
+newFolderToggle = "Sortu karpeta berria…"
+title = "Eraman karpetara"
+
+[filesPage.origin]
+all = "Iturri guztiak"
+cloud = "Hodeia"
+cloudHint = "Stirling zerbitzarian gordeta"
+local = "Lokala"
+localHint = "Nabigatzaile honetan soilik gordeta"
+shared = "Partekatua"
+sharedHint = "Estekaren bidez zurekin partekatua"
+
+[filesPage.sort]
+modifiedAsc = "Zaharrenak lehenik"
+modifiedDesc = "Berrienak lehenik"
+nameAsc = "Izena A→Z"
+nameDesc = "Izena Z→A"
+sizeAsc = "Txikiena lehenik"
+sizeDesc = "Handiena lehenik"
+
+[filesPage.syncError]
+client = "Karpeten sinkronizazioak huts egin du."
+network = "Ezin izan da zerbitzarira iritsi."
+server = "Zerbitzari-errorea karpeten sinkronizazioan."
+
+[filesPage.tabName]
+local = "Lokala"
+recent = "Azkenak"
+shared = "Nirekin partekatuak"
+sharedByMe = "Nik partekatuak"
+
+[filesPage.tabs]
+all = "Guztiak"
+ariaLabel = "Fitxategi ikuspegiak"
+cloud = "Hodeia"
+local = "Lokala"
+recent = "Azkenak"
+shared = "Nirekin partekatuak"
+sharedByMe = "Nik partekatuak"
+
+[filesPage.treeMenu]
+actions = "Karpeta-ekintzak: {{name}}"
+collapse = "Tolestu karpeta"
+delete = "Ezabatu karpeta"
+expand = "Zabaldu karpeta"
+newSubfolder = "Azpikarpet berria"
+rename = "Aldatu izena"
+
+[filesPage.typeFilter]
+allTypes = "Mota guztiak"
+label = "Iragazi motaren arabera"
+
+[filesPage.viewMode]
+grid = "Sareta ikuspegia"
+label = "Ikuspegi modua"
+list = "Zerrenda ikuspegia"
 
 [fileToPDF]
 credit = "Zerbitzu honek LibreOffice eta Unoconv erabiltzen ditu fitxategiak bihurtzeko"
@@ -7695,6 +8010,7 @@ bulkTitle = "Igo hautatutako fitxategiak"
 description = "Honek uneko fitxategia zerbitzariaren biltegira igotzen du zure sarbiderako."
 errorTitle = "Igoerak huts egin du"
 failure = "Igoerak huts egin du. Egiaztatu zure saio-hasiera eta biltegiratze ezarpenak."
+featureDisabled = "Zerbitzarian gordetzea ez dago gaituta zerbitzari honetan."
 fileCount = "{{count}} fitxategi hautatuta"
 fileLabel = "Fitxategia"
 hint = "Esteka publikoak eta sarbide-moduak zure zerbitzariaren ezarpenek kontrolatzen dituzte."
@@ -7868,13 +8184,18 @@ viewerMode = "Aldatu fitxategi editoreara hainbat fitxategi hautatzeko."
 [toolPanel]
 allTools = "Tresna guztiak"
 alpha = "Alpha"
+backToAllTools = "Itzuli tresna guztietara"
+backToDefault = "Atzera"
 backToTools = "Itzuli tresnetara"
 collapse = "Tolestu panela"
 comingSoon = "Laster eskuragarri:"
 expand = "Zabaldu panela"
+goBack = "Atzera egin"
 placeholder = "Aukeratu tresna bat hasteko"
 premiumFeature = "Premium ezaugarria:"
 search = "Bilatu tresnak"
+toolsHeader = "Tresnak"
+viewAllTools = "Ikusi tresna guztiak"
 
 [toolPanel.fullscreen]
 comingSoon = "Laster:"

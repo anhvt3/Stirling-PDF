@@ -90,6 +90,7 @@ nothingToUndo = "Няма какво да се отмени"
 noticeTopUpOrPlan = "Недостатъчно кредити. Моля, заредете още или надградете до план"
 noValidFiles = "Няма валидни файлове за обработка"
 oops = "Опаа!"
+openInNewWindow = "Отвори в нов прозорец"
 openInViewer = "Отвори във визуализатора"
 operationCancelled = "Операцията е отменена"
 page = "Страница"
@@ -493,6 +494,11 @@ title = "Настройка на мащаба на страницата"
 
 [adjustPageScale.error]
 failed = "Възникна грешка при настройване на мащаба на страницата."
+
+[adjustPageScale.orientation]
+label = "Ориентация на страницата"
+landscape = "Пейзаж"
+portrait = "Портрет"
 
 [adjustPageScale.pageSize]
 keep = "Запази оригиналния размер"
@@ -1512,6 +1518,32 @@ user = "Потребител"
 usernameInfo = "Потребителското име може да съдържа само букви, цифри и следните специални символи @._+- или трябва да е валиден имейл адрес."
 webOnlyUser = "Само за уеб-потребител"
 
+[agents]
+auto_redaction_description = "Автоматично заличаване на PII"
+auto_redaction_name = "Автоматично заличаване"
+back_to_tools = "Назад към инструментите"
+coming_soon = "Скоро"
+compliance_description = "Одит на документи за съответствие"
+compliance_name = "Проверка за съответствие"
+data_extraction_description = "Извличане на таблици и структурирани данни"
+data_extraction_name = "Извличане на данни"
+doc_summary_description = "Обобщаване на дълги документи"
+doc_summary_name = "Обобщаване"
+form_filler_description = "Интелигентно попълване на PDF формуляри"
+form_filler_name = "Попълване на формуляри"
+fullscreen_title = "Stirling агенти"
+pdf_to_markdown_description = "Преобразува PDF файлове в чист Markdown"
+pdf_to_markdown_name = "PDF към Markdown"
+section_title = "Агенти"
+show_less = "Покажи по-малко"
+start_chat = "Започнете чат"
+stirling_description = "Вашият универсален PDF помощник"
+stirling_full_name = "Общ агент Stirling"
+stirling_long_description = "Универсален PDF помощник, който може да стартира инструменти, да създава PDF файлове и да извлича изводи от вашите документи."
+stirling_name = "Stirling"
+stirling_tooltip = "Агент Stirling"
+view_all = "Виж всички агенти"
+
 [analytics]
 disable = "Деактивиране на анализа"
 enable = "Активиране на анализа"
@@ -1771,6 +1803,10 @@ insufficientPermissions = "Нямате разрешение да извърши
 pleaseLoginAgain = "Моля, влезте отново."
 sessionExpired = "Сесията изтече"
 
+[auth.displayName]
+guest = "Гост"
+user = "Потребител"
+
 [auto-rename]
 description = "Автоматично открива заглавието от съдържанието на вашия PDF и го използва като име на файла."
 header = "Автоматично преименуване на PDF"
@@ -1862,6 +1898,13 @@ label = "Отваряне на меню за {{title}}"
 
 [automate.files]
 placeholder = "Изберете файлове за обработка с тази автоматизация"
+
+[automate.folderScanWarning]
+advice = "Можете все пак да изтеглите файла (напр. за преглед или ръчна редакция), но неподдържаните стъпки трябва да бъдат премахнати, преди бекендът да може да го изпълни."
+cancel = "Отказ"
+confirm = "Все пак експортирай"
+intro = "Сканирането на папки се изпълнява на бекенда, затова може да стартира само инструменти, които имат бекенд крайна точка. Следните стъпки в тази автоматизация нямат такава и ще се провалят при изпълнение на конвейера:"
+title = "Някои стъпки не могат да се изпълнят при сканиране на папки"
 
 [automate.importModal]
 cancel = "Отказ"
@@ -2684,6 +2727,16 @@ title = "Промяна на правата"
 [changePermissions.tooltip.warning]
 text = "За да направите тези разрешения непроменяеми, използвайте инструмента „Добавяне на парола“, за да зададете парола на собственика."
 
+[chat.header]
+agentMenu = "Опции на агента Stirling"
+clearChat = "Изчистване на чата"
+settings = "Настройки на агента"
+
+[chat.input]
+attach = "Прикачи файлове"
+placeholder = "Какво искате да направите?"
+send = "Изпрати съобщение"
+
 [chat.progress]
 analyzing = "Анализиране на заявката ви..."
 calling_engine = "AI обмисля..."
@@ -2698,6 +2751,32 @@ whole_doc_compression_round = "Консолидиране на бележкит�
 whole_doc_read_done = "Четенето на документа приключи..."
 whole_doc_read_started = "Четене на документа..."
 whole_doc_slice_done = "Четене на документа... ({{percent}}% завършено)"
+
+[chat.quickActions]
+browseYourFiles = "Преглед на вашите файлове"
+compressMany = "Компресирай тези документи"
+compressOne = "Компресирай този документ"
+convertMany = "Преобразувай тези документи в PDF"
+convertOne = "Преобразувай този документ в PDF"
+fileSummary_one = "1 файл в работната зона ({{types}})"
+fileSummary_other = "{{count}} файла в работната зона ({{types}})"
+heading = "Първи стъпки"
+mergeMany = "Обедини тези {{count}} документа в 1"
+moreFiles = "+{{count}} още"
+openFromComputer = "Отвори от компютъра"
+removeFile = "Премахни {{name}}"
+rotateMany = "Завърти тези документи"
+rotateOne = "Завърти този документ"
+splitOne = "Раздели този документ"
+
+[chat.responses]
+cannot_continue = "Нещо се обърка и не мога да продължа."
+cannot_do = "Не мога да направя това."
+done = "Готово."
+need_clarification = "Бихте ли уточнили заявката си?"
+not_found = "Не успях да намеря исканата информация."
+processing = "Обработка ({{outcome}})..."
+unsupported_capability = "Неподдържана възможност: {{capability}}"
 
 [chat.toolsUsed]
 summary = "Изпълнени са {{count}} инструмента"
@@ -2799,6 +2878,7 @@ selectBaseFirst = "Първо изберете оригиналния PDF"
 filesMissing = "Неуспех при намиране на избраните файлове. Моля, изберете ги отново."
 generic = "Тези файлове не могат да бъдат сравнени."
 selectRequired = "Изберете оригинален и редактиран документ."
+title = "Сравнението неуспешно"
 
 [compare.large.file]
 message = "Един или и двата предоставени документа са твърде големи за обработка"
@@ -2864,6 +2944,7 @@ title = "Все още работим…"
 
 [compare.status]
 complete = "Сравнението е готово"
+error = "Сравнението неуспешно"
 extracting = "Извличане на текст..."
 processing = "Анализ на разликите..."
 
@@ -3771,12 +3852,246 @@ expand = "Разгъване на страничната лента"
 files = "Файлове"
 googleDrive = "Google Drive"
 googleDriveDisabled = "Google Drive не е конфигуриран"
+leaveMyFiles = "Изход от Моите файлове"
+myFiles = "Моите файлове"
 noFiles = "Все още няма файлове"
 openFileManager = "Отваряне на мениджъра на файлове"
 openFromComputer = "Отваряне от компютър"
 openSettings = "Отваряне на настройките"
 search = "Търсене"
 searchPlaceholder = "Търсене на файлове..."
+
+[filesPage]
+addToWorkspace = "Добави към работното пространство"
+addToWorkspaceCount = "Добави {{count}} към работното пространство"
+allFiles = "Всички файлове"
+back = "Назад"
+backToFolder = "Назад към {{folder}}"
+backToMyFiles = "Назад към Моите файлове"
+breadcrumbs = "Път на папката"
+cancel = "Отказ"
+clearSearch = "Изчисти търсенето"
+clearSelection = "Изчисти избора"
+closeDetails = "Затвори подробностите"
+create = "Създай"
+cycleBlocked = "Папка не може да бъде преместена в някоя от собствените си подпапки."
+delete = "Изтрий"
+deleteFolder = "Изтрий папка"
+deleteFolderBody = "Да се изтрие ли папка „{{name}}“?"
+deleteFolderConfirm = "Да се изтрие ли папка „{{name}}“? Файловете вътре ще бъдат преместени във Всички файлове. Засегнати {{count}} файл(а)."
+deleteFolderContents = "Изтрий също {{count}} файл(а) в папката"
+deleteFolderContentsWarning = "Файловете ще бъдат изтрити окончателно и не могат да бъдат възстановени."
+deleteFolderError = "Неуспешно изтриване на папката. Опитайте отново."
+deleteFolderKeepHint = "Файловете вътре ще бъдат преместени във Всички файлове."
+deleteFolderTitle = "Да се изтрие ли папката?"
+deselectAll = "Изчисти избора"
+details = "Подробности"
+detailsCount = "Избрани {{count}} файла"
+dismissError = "Отхвърли"
+download = "Изтегли"
+downloadAll = "Изтегли всички"
+downloadVersion = "Изтегли тази версия"
+dropOverlay = "Пуснете файлове за качване"
+dropOverlaySub = "Файловете започват в Локално. Използвайте „Премести в“ или „Запази в облака“, за да ги организирате в папка."
+file = "Файл"
+fileMenu = "Действия за файла"
+folder = "Папка"
+folderItems = "{{count}} елемента"
+folderMenu = "Действия за папката"
+inPath = "в {{path}}"
+inWorkspace = "Отворен"
+inWorkspaceAria = "Вече в работното пространство"
+loading = "Зареждане…"
+localFoldersUnavailable = "Папките са само в облака – запазете файл в облака, за да ги организирате."
+moreActions = "Още действия за папката"
+moveLocalToCloudBlocked = "Само локални файлове не могат да бъдат местени в облачни папки. Първо ги запазете в облака."
+moveSkippedRemote = "{{count}} файл(а) не можаха да бъдат преместени на сървъра (няма разрешение или вече изтрити)."
+moveTo = "Премести в…"
+myFiles = "Моите файлове"
+newFolder = "Нова папка"
+newFolderStorageDisabled = "Сървърното съхранение на папки не е активирано. Помолете администратора си да го включи."
+newFolderTabUnavailable = "Превключете на Всички или Облак, за да създавате папки."
+newRootFolder = "Нова папка в корена"
+offlineNoFolderEdits = "Синхронизирането на папки със сървъра е недостъпно – промените по папки са изключени. Проверете влизането и конфигурацията на съхранението."
+open = "Отвори"
+openInWorkbench = "Отвори в работната зона"
+openVersionInWorkspace = "Отвори в работното пространство"
+originFilter = "Филтър по източник"
+quickView = "Бърз преглед"
+refresh = "Опресни от сървъра"
+remove = "Премахни"
+removeConfirm = "Да се премахнат ли {{count}} файла? Това не може да бъде отменено."
+removeVersion = "Премахни тази версия"
+rename = "Преименувай"
+renameFolder = "Преименувай папка"
+resizeFolderTree = "Промени размера на дървото на папките (клавиши със стрелки, Shift за по-големи стъпки; двоен клик за автонапасване)"
+save = "Запази"
+saveToServer = "Запази на сървъра"
+saveToServerDisabledHint = "Запазването на файлове на сървъра не е активирано на този сървър. Помолете администратора да го активира."
+search = "Търсене"
+searchPlaceholder = "Търсене в тази папка и подпапки"
+selectAll = "Избери всички"
+selectAllHint = "Кликнете, за да изберете всички. Съвет: задръжте Ctrl (или Cmd), за да добавяте файлове поотделно, Shift за избор на диапазон."
+selectedCount = "{{count}} избрани"
+selectFile = "Избери файл {{name}}"
+shareDisabledHint = "Споделянето на файлове не е активирано на този сървър. Помолете администратора да го активира."
+shareManage = "Управление на споделянето"
+showDetails = "Покажи подробности"
+summary = "{{count}} елемента"
+syncFailed = "Неуспешна синхронизация на папките: {{message}}"
+syncPartial = "Частична синхронизация на папките: {{failed}} от {{total}} папки не можаха да бъдат обединени."
+tree = "Папки"
+upload = "Качи"
+uploadedToLocal = "Качените файлове започват в Локално. Използвайте „Запази в облака“, за да ги поставите в папка."
+uploadFromMobile = "Качи от мобилно устройство"
+versionActions = "Действия за версията"
+versionCollapse = "Свий междинните версии"
+versionOrigin = "Първоначално качване"
+versionsCount = "{{count}} версии"
+versionShowHidden = "Покажи {{count}} по-ранни версии"
+viewVersion = "Преглед на тази версия"
+
+[filesPage.appearance]
+colour = "Цвят"
+icon = "Икона"
+title = "Външен вид"
+useColour = "Използвай цвят {{c}}"
+
+[filesPage.column]
+modified = "Променен"
+name = "Име"
+size = "Размер"
+type = "Тип"
+
+[filesPage.empty]
+hint = "Пуснете PDF файлове навсякъде на тази страница, за да ги качите, или използвайте бутона „Нова папка“, за да организирате файловете си."
+newFolderCta = "Създай папка"
+title = "Тази папка е празна"
+uploadCta = "Качи файлове"
+
+[filesPage.empty.cloud]
+hint = "Качете файл, за да започнете, или създайте папка за организация."
+offlineHint = "Свържете се отново, за да заредите облачната си библиотека."
+offlineTitle = "Няма кеширани облачни файлове"
+title = "Все още няма облачни файлове"
+
+[filesPage.empty.local]
+hint = "Файловете, запазени без качване, остават тук. Пуснете файл, за да добавите."
+title = "Няма само локални файлове"
+
+[filesPage.empty.recent]
+hint = "Файловете, които отваряте или редактирате, ще се покажат тук."
+title = "Още няма промени"
+
+[filesPage.empty.shared]
+hint = "Когато някой сподели файл чрез линк, той ще се появи тук."
+title = "Нищо не е споделено с вас"
+
+[filesPage.empty.sharedByMe]
+hint = "Създайте линк за споделяне или поканете колега от някой от вашите файлове, за да го видите тук."
+title = "Все още не сте споделяли файлове"
+
+[filesPage.error]
+actionFailed = "Не можа да се извърши {{action}}."
+actionFailedDetail = "Не можа да се извърши {{action}}: {{message}}"
+deleteFolderFailed = "Неуспешно изтриване на папка."
+deleteFolderFailedDetail = "Неуспешно изтриване на папка: {{message}}"
+folderAppearanceFailed = "Неуспешно актуализиране на външния вид на папката."
+folderAppearanceFailedDetail = "Неуспешно актуализиране на външния вид на папката: {{message}}"
+moveFilesFailed = "Неуспешно преместване на файлове."
+moveFilesFailedDetail = "Неуспешно преместване на файлове: {{message}}"
+moveFolderFailed = "Неуспешно преместване на папка."
+moveFolderFailedDetail = "Неуспешно преместване на папка: {{message}}"
+removeFilesFailed = "Неуспешно премахване на файлове."
+removeFilesFailedDetail = "Неуспешно премахване на файлове: {{message}}"
+uploadFilesFailed = "Неуспешно качване на файлове."
+uploadFilesFailedDetail = "Неуспешно качване на файлове: {{message}}"
+
+[filesPage.field]
+added = "Добавен"
+count = "Файлове"
+folder = "Папка"
+modified = "Променен"
+name = "Име"
+size = "Размер"
+toolHistory = "История на инструментите"
+toolHistoryAtVersion = "Натрупана верига от инструменти"
+totalSize = "Общ размер"
+type = "Тип"
+versionHistory = "История на версиите"
+
+[filesPage.folderName]
+cancel = "Отказ"
+error = "Неуспешно запазване на папката. Опитайте отново."
+label = "Име на папка"
+placeholder = "Име на папка"
+
+[filesPage.moveDialog]
+cancel = "Отказ"
+confirm = "Премести тук"
+error = "Неуспешно преместване. Опитайте отново."
+hint = "Изберете целева папка. Съвет: можете също да плъзгате и пускате файлове върху папките в дървото вляво."
+newFolderCancel = "Откажи"
+newFolderCreate = "Създай"
+newFolderError = "Неуспешно създаване на папка. Опитайте отново."
+newFolderLabel = "Име на новата папка"
+newFolderPlaceholder = "Име на папка"
+newFolderToggle = "Създай нова папка…"
+title = "Преместване в папка"
+
+[filesPage.origin]
+all = "Всички източници"
+cloud = "Облак"
+cloudHint = "Съхранено на сървъра на Stirling"
+local = "Локално"
+localHint = "Съхранено само в този браузър"
+shared = "Споделено"
+sharedHint = "Споделено с вас чрез линк"
+
+[filesPage.sort]
+modifiedAsc = "Най-старите първо"
+modifiedDesc = "Най-скорошните първо"
+nameAsc = "Име A→Z"
+nameDesc = "Име Z→A"
+sizeAsc = "Най-малките първо"
+sizeDesc = "Най-големите първо"
+
+[filesPage.syncError]
+client = "Неуспешна синхронизация на папките."
+network = "Неуспешна връзка със сървъра."
+server = "Сървърна грешка по време на синхронизация на папките."
+
+[filesPage.tabName]
+local = "Локално"
+recent = "Скорошни"
+shared = "Споделени с мен"
+sharedByMe = "Споделени от мен"
+
+[filesPage.tabs]
+all = "Всички"
+ariaLabel = "Изгледи на файлове"
+cloud = "Облак"
+local = "Локално"
+recent = "Скорошни"
+shared = "Споделени с мен"
+sharedByMe = "Споделени от мен"
+
+[filesPage.treeMenu]
+actions = "Действия за папка {{name}}"
+collapse = "Свий папката"
+delete = "Изтрий папка"
+expand = "Разгъни папката"
+newSubfolder = "Нова подпапка"
+rename = "Преименувай"
+
+[filesPage.typeFilter]
+allTypes = "Всички типове"
+label = "Филтър по тип"
+
+[filesPage.viewMode]
+grid = "Мрежа"
+label = "Режим на изглед"
+list = "Списък"
 
 [fileToPDF]
 credit = "Тази услуга използва LibreOffice и Unoconv за преобразуване на файлове."
@@ -7695,6 +8010,7 @@ bulkTitle = "Качване на избраните файлове"
 description = "Това качва текущия файл в сървърното хранилище за ваш достъп."
 errorTitle = "Неуспешно качване"
 failure = "Качването не бе успешно. Моля, проверете данните си за вход и настройките за съхранение."
+featureDisabled = "Запазването на файлове на сървъра не е активирано на този сървър."
 fileCount = "{{count}} избрани файла"
 fileLabel = "Файл"
 hint = "Публичните връзки и режимите за достъп се контролират от настройките на вашия сървър."
@@ -7868,13 +8184,18 @@ viewerMode = "Преминете към редактора на файлове, 
 [toolPanel]
 allTools = "Всички инструменти"
 alpha = "Алфа"
+backToAllTools = "Назад към всички инструменти"
+backToDefault = "Назад"
 backToTools = "Назад към инструментите"
 collapse = "Свиване на панела"
 comingSoon = "Очаквайте скоро:"
 expand = "Разгъване на панела"
+goBack = "Върни се"
 placeholder = "Изберете инструмент, за да започнете"
 premiumFeature = "Премиум функция:"
 search = "Търсене на инструменти"
+toolsHeader = "Инструменти"
+viewAllTools = "Виж всички инструменти"
 
 [toolPanel.fullscreen]
 comingSoon = "Очаквайте скоро:"

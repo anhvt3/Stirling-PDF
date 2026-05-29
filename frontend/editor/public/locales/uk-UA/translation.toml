@@ -90,6 +90,7 @@ nothingToUndo = "Нічого скасовувати"
 noticeTopUpOrPlan = "Недостатньо кредитів, поповніть баланс або перейдіть на тарифний план"
 noValidFiles = "Немає придатних файлів для обробки"
 oops = "Упс!"
+openInNewWindow = "Відкрити в новому вікні"
 openInViewer = "Відкрити у переглядачі"
 operationCancelled = "Операцію скасовано"
 page = "Сторінка"
@@ -493,6 +494,11 @@ title = "Налаштувати масштаб сторінки"
 
 [adjustPageScale.error]
 failed = "Під час налаштування масштабу сторінки сталася помилка."
+
+[adjustPageScale.orientation]
+label = "Орієнтація сторінки"
+landscape = "Альбомна"
+portrait = "Книжкова"
 
 [adjustPageScale.pageSize]
 keep = "Зберегти початковий розмір"
@@ -1512,6 +1518,32 @@ user = "Користувач"
 usernameInfo = "Ім’я користувача може містити лише літери, цифри та наступні спеціальні символи @._+- або має бути дійсною електронною адресою."
 webOnlyUser = "Тільки веб-користувач"
 
+[agents]
+auto_redaction_description = "Автоматично зачернювати PII"
+auto_redaction_name = "Автоматичне зачернення"
+back_to_tools = "Назад до інструментів"
+coming_soon = "Скоро"
+compliance_description = "Аудит документів на відповідність"
+compliance_name = "Перевірка відповідності"
+data_extraction_description = "Витягувати таблиці та структуровані дані"
+data_extraction_name = "Витягування даних"
+doc_summary_description = "Стисло підсумовувати довгі документи"
+doc_summary_name = "Підсумовувач"
+form_filler_description = "Розумно заповнювати форми PDF"
+form_filler_name = "Заповнювач форм"
+fullscreen_title = "Агенти Stirling"
+pdf_to_markdown_description = "Конвертувати PDF у чистий Markdown"
+pdf_to_markdown_name = "PDF у Markdown"
+section_title = "Агенти"
+show_less = "Показати менше"
+start_chat = "Почати чат"
+stirling_description = "Ваш універсальний помічник для PDF"
+stirling_full_name = "Універсальний агент Stirling"
+stirling_long_description = "Універсальний PDF-помічник, який може запускати інструменти, створювати PDF і витягувати корисну інформацію з ваших документів."
+stirling_name = "Stirling"
+stirling_tooltip = "Агент Stirling"
+view_all = "Переглянути всіх агентів"
+
 [analytics]
 disable = "Вимкнути аналітику"
 enable = "Увімкнути аналітику"
@@ -1771,6 +1803,10 @@ insufficientPermissions = "У вас немає прав для виконанн
 pleaseLoginAgain = "Будь ласка, увійдіть знову."
 sessionExpired = "Сеанс завершено"
 
+[auth.displayName]
+guest = "Гість"
+user = "Користувач"
+
 [auto-rename]
 description = "Автоматично знаходить назву у вмісті вашого PDF і використовує її як ім’я файлу."
 header = "Автоматичне перейменування PDF"
@@ -1862,6 +1898,13 @@ label = "Відкрити меню для {{title}}"
 
 [automate.files]
 placeholder = "Виберіть файли для обробки цією автоматизацією"
+
+[automate.folderScanWarning]
+advice = "Ви все одно можете завантажити файл (наприклад, щоб переглянути або відредагувати вручну), але непідтримувані кроки потрібно видалити, перш ніж бекенд зможе його виконати."
+cancel = "Скасувати"
+confirm = "Все одно експортувати"
+intro = "Сканування папок виконується на бекенді, тому може запускати лише інструменти, які мають бекенд-ендпойнт. Наступні кроки в цій автоматизації його не мають і завершаться помилкою під час виконання конвеєра:"
+title = "Деякі кроки не можуть виконуватися під час сканування папок"
 
 [automate.importModal]
 cancel = "Скасувати"
@@ -2684,6 +2727,16 @@ title = "Змінити дозволи"
 [changePermissions.tooltip.warning]
 text = "Щоб зробити ці дозволи незмінними, скористайтесь інструментом «Додати пароль», щоб встановити пароль власника."
 
+[chat.header]
+agentMenu = "Параметри агента Stirling"
+clearChat = "Очистити чат"
+settings = "Налаштування агента"
+
+[chat.input]
+attach = "Додати файли"
+placeholder = "Що ви хочете зробити?"
+send = "Надіслати повідомлення"
+
 [chat.progress]
 analyzing = "Аналізую ваш запит..."
 calling_engine = "AI думає..."
@@ -2698,6 +2751,32 @@ whole_doc_compression_round = "Об’єднання нотаток..."
 whole_doc_read_done = "Завершено читання документа..."
 whole_doc_read_started = "Читання документа..."
 whole_doc_slice_done = "Читання документа... ({{percent}}% виконано)"
+
+[chat.quickActions]
+browseYourFiles = "Переглянути ваші файли"
+compressMany = "Стиснути ці документи"
+compressOne = "Стиснути цей документ"
+convertMany = "Перетворити ці документи у PDF"
+convertOne = "Перетворити цей документ у PDF"
+fileSummary_one = "1 файл у робочій області ({{types}})"
+fileSummary_other = "{{count}} файлів у робочій області ({{types}})"
+heading = "Початок"
+mergeMany = "Об’єднати ці {{count}} документи в 1"
+moreFiles = "+{{count}} ще"
+openFromComputer = "Відкрити з комп’ютера"
+removeFile = "Прибрати {{name}}"
+rotateMany = "Повернути ці документи"
+rotateOne = "Повернути цей документ"
+splitOne = "Розділити цей документ"
+
+[chat.responses]
+cannot_continue = "Щось пішло не так, і я не можу продовжити."
+cannot_do = "Я не можу цього зробити."
+done = "Готово."
+need_clarification = "Уточніть, будь ласка, запит."
+not_found = "Не вдалося знайти запитану інформацію."
+processing = "Обробка ({{outcome}})..."
+unsupported_capability = "Непідтримувана можливість: {{capability}}"
 
 [chat.toolsUsed]
 summary = "Запущено {{count}} інструментів"
@@ -2799,6 +2878,7 @@ selectBaseFirst = "Спочатку виберіть початковий PDF"
 filesMissing = "Не вдалося знайти вибрані файли. Будь ласка, виберіть їх знову."
 generic = "Не вдалося порівняти ці файли."
 selectRequired = "Виберіть оригінальний і відредагований документ."
+title = "Порівняння не вдалося"
 
 [compare.large.file]
 message = "Один або обидва надані документи занадто великі для обробки"
@@ -2864,6 +2944,7 @@ title = "Все ще працюємо…"
 
 [compare.status]
 complete = "Порівняння готове"
+error = "Порівняння не вдалося"
 extracting = "Витягнення тексту..."
 processing = "Аналіз відмінностей..."
 
@@ -3771,12 +3852,246 @@ expand = "Розгорнути бічну панель"
 files = "Файли"
 googleDrive = "Google Drive"
 googleDriveDisabled = "Google Drive не налаштовано"
+leaveMyFiles = "Вийти з «Мої файли»"
+myFiles = "Мої файли"
 noFiles = "Файлів ще немає"
 openFileManager = "Відкрити файловий менеджер"
 openFromComputer = "Відкрити з комп’ютера"
 openSettings = "Відкрити налаштування"
 search = "Пошук"
 searchPlaceholder = "Пошук файлів..."
+
+[filesPage]
+addToWorkspace = "Додати до робочої області"
+addToWorkspaceCount = "Додати {{count}} до робочої області"
+allFiles = "Усі файли"
+back = "Назад"
+backToFolder = "Назад до {{folder}}"
+backToMyFiles = "Назад до Моїх файлів"
+breadcrumbs = "Шлях до папки"
+cancel = "Скасувати"
+clearSearch = "Очистити пошук"
+clearSelection = "Очистити вибір"
+closeDetails = "Закрити деталі"
+create = "Створити"
+cycleBlocked = "Неможливо перемістити папку до однієї з її власних підпапок."
+delete = "Видалити"
+deleteFolder = "Видалити папку"
+deleteFolderBody = "Видалити папку «{{name}}»?"
+deleteFolderConfirm = "Видалити папку «{{name}}»? Файли всередині буде переміщено до «Усі файли». Буде зачеплено {{count}} файл(ів)."
+deleteFolderContents = "Також видалити {{count}} файл(и) у папці"
+deleteFolderContentsWarning = "Файли буде видалено назавжди й відновити їх неможливо."
+deleteFolderError = "Не вдалося видалити папку. Спробуйте ще раз."
+deleteFolderKeepHint = "Файли всередині буде переміщено до «Усі файли»."
+deleteFolderTitle = "Видалити папку?"
+deselectAll = "Очистити вибір"
+details = "Деталі"
+detailsCount = "Вибрано {{count}} файлів"
+dismissError = "Закрити"
+download = "Завантажити"
+downloadAll = "Завантажити все"
+downloadVersion = "Завантажити цю версію"
+dropOverlay = "Перетягніть файли, щоб передати"
+dropOverlaySub = "Файли спочатку потрапляють до «Локальні». Використовуйте «Перемістити до» або «Зберегти в хмарі», щоб упорядкувати їх у папку."
+file = "Файл"
+fileMenu = "Дії з файлом"
+folder = "Папка"
+folderItems = "{{count}} елементів"
+folderMenu = "Дії з папкою"
+inPath = "у {{path}}"
+inWorkspace = "Відкрити"
+inWorkspaceAria = "Вже в робочій області"
+loading = "Завантаження…"
+localFoldersUnavailable = "Папки доступні лише в хмарі — збережіть файл у хмарі, щоб упорядкувати його."
+moreActions = "Додаткові дії з папкою"
+moveLocalToCloudBlocked = "Лише локальні файли не можна переміщувати до хмарних папок. Спочатку збережіть їх у хмарі."
+moveSkippedRemote = "{{count}} файл(ів) не вдалося перемістити на сервері (немає дозволу або вже видалені)."
+moveTo = "Перемістити до…"
+myFiles = "Мої файли"
+newFolder = "Нова папка"
+newFolderStorageDisabled = "Зберігання папок на сервері не ввімкнено. Попросіть адміністратора увімкнути його."
+newFolderTabUnavailable = "Перемкніться на «Усі» або «Хмара», щоб створювати папки."
+newRootFolder = "Нова папка в корені"
+offlineNoFolderEdits = "Синхронізація папок із сервером недоступна — зміни в папках вимкнено. Перевірте вхід і налаштування сховища."
+open = "Відкрити"
+openInWorkbench = "Відкрити в робочій області"
+openVersionInWorkspace = "Відкрити у робочій області"
+originFilter = "Фільтрувати за джерелом"
+quickView = "Швидкий перегляд"
+refresh = "Оновити з сервера"
+remove = "Видалити"
+removeConfirm = "Видалити {{count}} файл(и)? Цю дію не можна скасувати."
+removeVersion = "Видалити цю версію"
+rename = "Перейменувати"
+renameFolder = "Перейменувати папку"
+resizeFolderTree = "Змінити розмір дерева папок (клавіші зі стрілками, Shift — для більших кроків; подвійне клацання — авто-підбір)"
+save = "Зберегти"
+saveToServer = "Зберегти на сервері"
+saveToServerDisabledHint = "Функцію збереження на цьому сервері не ввімкнено. Попросіть адміністратора її ввімкнути."
+search = "Пошук"
+searchPlaceholder = "Шукати в цій папці й підпапках"
+selectAll = "Вибрати все"
+selectAllHint = "Клацніть, щоб вибрати все. Підказка: утримуйте Ctrl (або Cmd), щоб додавати файли по одному, Shift — щоб вибрати діапазон."
+selectedCount = "Вибрано {{count}}"
+selectFile = "Вибрати файл {{name}}"
+shareDisabledHint = "Спільний доступ до файлів на цьому сервері не ввімкнено. Попросіть адміністратора увімкнути його."
+shareManage = "Керувати спільним доступом"
+showDetails = "Показати деталі"
+summary = "{{count}} елементів"
+syncFailed = "Помилка синхронізації папок: {{message}}"
+syncPartial = "Часткова синхронізація папок: {{failed}} із {{total}} папок не вдалося об’єднати."
+tree = "Папки"
+upload = "Передати"
+uploadedToLocal = "Передані файли спочатку потрапляють до «Локальні». Використовуйте «Зберегти в хмарі», щоб помістити їх у папку."
+uploadFromMobile = "Передати з мобільного"
+versionActions = "Дії з версією"
+versionCollapse = "Згорнути проміжні версії"
+versionOrigin = "Початкове передавання"
+versionsCount = "{{count}} версій"
+versionShowHidden = "Показати {{count}} попередніх версій"
+viewVersion = "Переглянути цю версію"
+
+[filesPage.appearance]
+colour = "Колір"
+icon = "Піктограма"
+title = "Вигляд"
+useColour = "Використати колір {{c}}"
+
+[filesPage.column]
+modified = "Змінено"
+name = "Назва"
+size = "Розмір"
+type = "Тип"
+
+[filesPage.empty]
+hint = "Перетягніть PDF будь-куди на цій сторінці, щоб передати, або скористайтеся кнопкою «Нова папка», щоб упорядкувати файли."
+newFolderCta = "Створити папку"
+title = "Ця папка порожня"
+uploadCta = "Передати файли"
+
+[filesPage.empty.cloud]
+hint = "Спочатку передайте файл або створіть папку для впорядкування."
+offlineHint = "Під’єднайтесь знову, щоб завантажити вашу хмарну бібліотеку."
+offlineTitle = "Немає кешованих хмарних файлів"
+title = "Ще немає хмарних файлів"
+
+[filesPage.empty.local]
+hint = "Файли, збережені без передавання, лишаються тут. Перетягніть файл, щоб додати."
+title = "Немає файлів лише локально"
+
+[filesPage.empty.recent]
+hint = "Файли, які ви відкриваєте або редагуєте, з’являться тут."
+title = "Поки що нічого не змінено"
+
+[filesPage.empty.shared]
+hint = "Коли хтось ділиться файлом через посилання, він з’являється тут."
+title = "Нічого не поділено з вами"
+
+[filesPage.empty.sharedByMe]
+hint = "Створіть посилання для спільного доступу або запросіть колегу з будь-якого вашого файлу, щоб побачити його тут."
+title = "Ви ще не поділилися жодним файлом"
+
+[filesPage.error]
+actionFailed = "Не вдалося виконати дію «{{action}}»."
+actionFailedDetail = "Не вдалося виконати дію «{{action}}»: {{message}}"
+deleteFolderFailed = "Не вдалося видалити папку."
+deleteFolderFailedDetail = "Не вдалося видалити папку: {{message}}"
+folderAppearanceFailed = "Не вдалося оновити вигляд папки."
+folderAppearanceFailedDetail = "Не вдалося оновити вигляд папки: {{message}}"
+moveFilesFailed = "Не вдалося перемістити файли."
+moveFilesFailedDetail = "Не вдалося перемістити файли: {{message}}"
+moveFolderFailed = "Не вдалося перемістити папку."
+moveFolderFailedDetail = "Не вдалося перемістити папку: {{message}}"
+removeFilesFailed = "Не вдалося видалити файли."
+removeFilesFailedDetail = "Не вдалося видалити файли: {{message}}"
+uploadFilesFailed = "Не вдалося передати файли."
+uploadFilesFailedDetail = "Не вдалося передати файли: {{message}}"
+
+[filesPage.field]
+added = "Додано"
+count = "Файли"
+folder = "Папка"
+modified = "Змінено"
+name = "Назва"
+size = "Розмір"
+toolHistory = "Історія інструментів"
+toolHistoryAtVersion = "Сукупний ланцюжок інструментів"
+totalSize = "Загальний розмір"
+type = "Тип"
+versionHistory = "Історія версій"
+
+[filesPage.folderName]
+cancel = "Скасувати"
+error = "Не вдалося зберегти папку. Спробуйте ще раз."
+label = "Назва папки"
+placeholder = "Назва папки"
+
+[filesPage.moveDialog]
+cancel = "Скасувати"
+confirm = "Перемістити сюди"
+error = "Не вдалося перемістити. Спробуйте ще раз."
+hint = "Виберіть цільову папку. Підказка: також можна перетягувати файли на папки у дереві ліворуч."
+newFolderCancel = "Скасувати"
+newFolderCreate = "Створити"
+newFolderError = "Не вдалося створити папку. Спробуйте ще раз."
+newFolderLabel = "Назва нової папки"
+newFolderPlaceholder = "Назва папки"
+newFolderToggle = "Створити нову папку…"
+title = "Перемістити до папки"
+
+[filesPage.origin]
+all = "Усі джерела"
+cloud = "Хмара"
+cloudHint = "Зберігається на сервері Stirling"
+local = "Локальні"
+localHint = "Зберігається лише в цьому браузері"
+shared = "Надано доступ"
+sharedHint = "Надіслано вам за посиланням"
+
+[filesPage.sort]
+modifiedAsc = "Від найстаріших"
+modifiedDesc = "Від найновіших"
+nameAsc = "Назва A→Z"
+nameDesc = "Назва Z→A"
+sizeAsc = "Від найменших"
+sizeDesc = "Від найбільших"
+
+[filesPage.syncError]
+client = "Помилка синхронізації папок."
+network = "Не вдалося зв’язатися з сервером."
+server = "Помилка сервера під час синхронізації папок."
+
+[filesPage.tabName]
+local = "Локальні"
+recent = "Нещодавні"
+shared = "Поділилися зі мною"
+sharedByMe = "Надані мною"
+
+[filesPage.tabs]
+all = "Усі"
+ariaLabel = "Подання файлів"
+cloud = "Хмара"
+local = "Локальні"
+recent = "Нещодавні"
+shared = "Поділилися зі мною"
+sharedByMe = "Надані мною"
+
+[filesPage.treeMenu]
+actions = "Дії з папкою «{{name}}»"
+collapse = "Згорнути папку"
+delete = "Видалити папку"
+expand = "Розгорнути папку"
+newSubfolder = "Нова підпапка"
+rename = "Перейменувати"
+
+[filesPage.typeFilter]
+allTypes = "Усі типи"
+label = "Фільтрувати за типом"
+
+[filesPage.viewMode]
+grid = "Сітка"
+label = "Режим перегляду"
+list = "Список"
 
 [fileToPDF]
 credit = "Цей сервіс використовує LibreOffice та Unoconv для перетворення файлів."
@@ -7695,6 +8010,7 @@ bulkTitle = "Завантажити вибрані файли"
 description = "Це завантажить поточний файл у серверне сховище для вашого доступу."
 errorTitle = "Помилка завантаження"
 failure = "Не вдалося завантажити. Перевірте свої облікові дані входу та налаштування сховища."
+featureDisabled = "Збереження на сервері на цьому сервері вимкнено."
 fileCount = "Вибрано файлів: {{count}}"
 fileLabel = "Файл"
 hint = "Публічні посилання та режими доступу керуються налаштуваннями вашого сервера."
@@ -7868,13 +8184,18 @@ viewerMode = "Перейдіть до редактора файлів, щоб в
 [toolPanel]
 allTools = "Усі інструменти"
 alpha = "Альфа"
+backToAllTools = "Назад до всіх інструментів"
+backToDefault = "Назад"
 backToTools = "Назад до інструментів"
 collapse = "Згорнути панель"
 comingSoon = "Незабаром:"
 expand = "Розгорнути панель"
+goBack = "Повернутися"
 placeholder = "Виберіть інструмент, щоб почати"
 premiumFeature = "Преміум-функція:"
 search = "Пошук інструментів"
+toolsHeader = "Інструменти"
+viewAllTools = "Переглянути всі інструменти"
 
 [toolPanel.fullscreen]
 comingSoon = "Незабаром:"

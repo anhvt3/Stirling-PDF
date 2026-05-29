@@ -90,6 +90,7 @@ nothingToUndo = "Niets om ongedaan te maken"
 noticeTopUpOrPlan = "Onvoldoende credits, vul aan of upgrade naar een abonnement"
 noValidFiles = "Geen geldige bestanden om te verwerken"
 oops = "Oeps!"
+openInNewWindow = "In nieuw venster openen"
 openInViewer = "Openen in Viewer"
 operationCancelled = "Bewerking geannuleerd"
 page = "Pagina"
@@ -493,6 +494,11 @@ title = "Paginaschaal aanpassen"
 
 [adjustPageScale.error]
 failed = "Er is een fout opgetreden bij het aanpassen van de paginaschaal."
+
+[adjustPageScale.orientation]
+label = "Paginastand"
+landscape = "Liggend"
+portrait = "Staand"
 
 [adjustPageScale.pageSize]
 keep = "Oorspronkelijk formaat behouden"
@@ -1512,6 +1518,32 @@ user = "Gebruiker"
 usernameInfo = "Gebruikersnaam kan alleen letters, nummers en de volgende speciale tekens @._+- bevatten of moet een geldig emailadres zijn."
 webOnlyUser = "Alleen web gebruiker"
 
+[agents]
+auto_redaction_description = "Persoonsgegevens automatisch redigeren"
+auto_redaction_name = "Automatische redactie"
+back_to_tools = "Terug naar tools"
+coming_soon = "Binnenkort beschikbaar"
+compliance_description = "Documenten controleren op naleving"
+compliance_name = "Compliancecontrole"
+data_extraction_description = "Tabellen en gestructureerde gegevens extraheren"
+data_extraction_name = "Gegevensextractie"
+doc_summary_description = "Lange documenten samenvatten"
+doc_summary_name = "Samenvatter"
+form_filler_description = "PDF-formulieren intelligent invullen"
+form_filler_name = "Formulierinvuller"
+fullscreen_title = "Stirling-agents"
+pdf_to_markdown_description = "PDF's converteren naar nette Markdown"
+pdf_to_markdown_name = "PDF naar Markdown"
+section_title = "Agenten"
+show_less = "Minder weergeven"
+start_chat = "Chat starten"
+stirling_description = "Uw algemene PDF-assistent"
+stirling_full_name = "Stirling algemene agent"
+stirling_long_description = "Algemene PDF-assistent die tools kan uitvoeren, PDF's kan maken en inzichten uit uw documenten kan halen."
+stirling_name = "Stirling"
+stirling_tooltip = "Stirling-agent"
+view_all = "Alle agenten bekijken"
+
 [analytics]
 disable = "Analyses uitschakelen"
 enable = "Analyses inschakelen"
@@ -1771,6 +1803,10 @@ insufficientPermissions = "U hebt geen toestemming om deze actie uit te voeren."
 pleaseLoginAgain = "Log alstublieft opnieuw in."
 sessionExpired = "Sessie verlopen"
 
+[auth.displayName]
+guest = "Gast"
+user = "Gebruiker"
+
 [auto-rename]
 description = "Zoekt automatisch de titel in uw PDF-inhoud en gebruikt deze als bestandsnaam."
 header = "PDF automatisch hernoemen"
@@ -1862,6 +1898,13 @@ label = "Menu openen voor {{title}}"
 
 [automate.files]
 placeholder = "Selecteer bestanden om met deze automatisering te verwerken"
+
+[automate.folderScanWarning]
+advice = "U kunt het bestand nog steeds downloaden (bijv. om het te inspecteren of handmatig te bewerken), maar de niet-ondersteunde stappen moeten worden verwijderd voordat de backend het kan uitvoeren."
+cancel = "Annuleren"
+confirm = "Toch exporteren"
+intro = "Mapscannen draait op de backend, dus het kan alleen tools uitvoeren die een backend-endpoint hebben. De volgende stap(pen) in deze automatisering hebben dat niet en zullen falen wanneer de pijplijn wordt uitgevoerd:"
+title = "Sommige stappen kunnen niet worden uitgevoerd bij mapscannen"
 
 [automate.importModal]
 cancel = "Annuleren"
@@ -2684,6 +2727,16 @@ title = "Rechten wijzigen"
 [changePermissions.tooltip.warning]
 text = "Om deze machtigingen niet wijzigbaar te maken, gebruik de tool Wachtwoord toevoegen om een eigenaarwachtwoord in te stellen."
 
+[chat.header]
+agentMenu = "Opties voor Stirling-agent"
+clearChat = "Chat wissen"
+settings = "Agent-instellingen"
+
+[chat.input]
+attach = "Bestanden bijvoegen"
+placeholder = "Wat wilt u doen?"
+send = "Bericht verzenden"
+
 [chat.progress]
 analyzing = "Uw verzoek wordt geanalyseerd..."
 calling_engine = "AI is aan het nadenken..."
@@ -2698,6 +2751,32 @@ whole_doc_compression_round = "Notities samenvoegen..."
 whole_doc_read_done = "Document lezen voltooid..."
 whole_doc_read_started = "Document lezen..."
 whole_doc_slice_done = "Document lezen... ({{percent}}% voltooid)"
+
+[chat.quickActions]
+browseYourFiles = "Door uw bestanden bladeren"
+compressMany = "Deze documenten comprimeren"
+compressOne = "Dit document comprimeren"
+convertMany = "Deze documenten naar PDF converteren"
+convertOne = "Dit document naar PDF converteren"
+fileSummary_one = "1 bestand in werkbank ({{types}})"
+fileSummary_other = "{{count}} bestanden in werkbank ({{types}})"
+heading = "Aan de slag"
+mergeMany = "Deze {{count}} documenten samenvoegen tot 1"
+moreFiles = "+{{count}} meer"
+openFromComputer = "Openen vanaf computer"
+removeFile = "Verwijder {{name}}"
+rotateMany = "Deze documenten draaien"
+rotateOne = "Dit document draaien"
+splitOne = "Dit document splitsen"
+
+[chat.responses]
+cannot_continue = "Er is iets misgegaan en ik kan niet doorgaan."
+cannot_do = "Dat kan ik niet doen."
+done = "Klaar."
+need_clarification = "Kunt u uw verzoek verduidelijken?"
+not_found = "Ik kon de gevraagde informatie niet vinden."
+processing = "Verwerken ({{outcome}})..."
+unsupported_capability = "Niet-ondersteunde mogelijkheid: {{capability}}"
 
 [chat.toolsUsed]
 summary = "{{count}} tools uitgevoerd"
@@ -2799,6 +2878,7 @@ selectBaseFirst = "Selecteer eerst de originele PDF"
 filesMissing = "Kan de geselecteerde bestanden niet vinden. Selecteer ze opnieuw."
 generic = "Kan deze bestanden niet vergelijken."
 selectRequired = "Selecteer een origineel en bewerkt document."
+title = "Vergelijking mislukt"
 
 [compare.large.file]
 message = "Eén of beiden van de bijgewerkte documenten zijn te groot om verwerkt te worden."
@@ -2864,6 +2944,7 @@ title = "Nog bezig..."
 
 [compare.status]
 complete = "Vergelijking gereed"
+error = "Vergelijking mislukt"
 extracting = "Tekst wordt geëxtraheerd..."
 processing = "Verschillen analyseren..."
 
@@ -3771,12 +3852,246 @@ expand = "Zijbalk uitvouwen"
 files = "Bestanden"
 googleDrive = "Google Drive"
 googleDriveDisabled = "Google Drive is niet geconfigureerd"
+leaveMyFiles = "Mijn bestanden verlaten"
+myFiles = "Mijn bestanden"
 noFiles = "Nog geen bestanden"
 openFileManager = "Bestandsbeheer openen"
 openFromComputer = "Openen vanaf computer"
 openSettings = "Instellingen openen"
 search = "Zoeken"
 searchPlaceholder = "Bestanden zoeken..."
+
+[filesPage]
+addToWorkspace = "Toevoegen aan werkruimte"
+addToWorkspaceCount = "{{count}} toevoegen aan werkruimte"
+allFiles = "Alle bestanden"
+back = "Terug"
+backToFolder = "Terug naar {{folder}}"
+backToMyFiles = "Terug naar Mijn bestanden"
+breadcrumbs = "Mappad"
+cancel = "Annuleren"
+clearSearch = "Zoekopdracht wissen"
+clearSelection = "Selectie wissen"
+closeDetails = "Details sluiten"
+create = "Maken"
+cycleBlocked = "Kan een map niet in een van zijn eigen submappen verplaatsen."
+delete = "Verwijderen"
+deleteFolder = "Map verwijderen"
+deleteFolderBody = "Map \"{{name}}\" verwijderen?"
+deleteFolderConfirm = "Map \"{{name}}\" verwijderen? Bestanden binnenin worden verplaatst naar Alle bestanden. {{count}} bestand(en) getroffen."
+deleteFolderContents = "Ook {{count}} bestand(en) in de map verwijderen"
+deleteFolderContentsWarning = "Bestanden worden permanent verwijderd en kunnen niet worden hersteld."
+deleteFolderError = "Kan de map niet verwijderen. Probeer het opnieuw."
+deleteFolderKeepHint = "Bestanden binnenin worden verplaatst naar Alle bestanden."
+deleteFolderTitle = "Map verwijderen?"
+deselectAll = "Selectie wissen"
+details = "Details"
+detailsCount = "{{count}} bestanden geselecteerd"
+dismissError = "Sluiten"
+download = "Downloaden"
+downloadAll = "Alles downloaden"
+downloadVersion = "Deze versie downloaden"
+dropOverlay = "Bestanden neerzetten om te uploaden"
+dropOverlaySub = "Bestanden beginnen in Lokaal. Gebruik 'Verplaatsen naar' of 'Opslaan in cloud' om ze in een map te organiseren."
+file = "Bestand"
+fileMenu = "Bestandsacties"
+folder = "Map"
+folderItems = "{{count}} items"
+folderMenu = "Mapacties"
+inPath = "in {{path}}"
+inWorkspace = "Openen"
+inWorkspaceAria = "Al in werkruimte"
+loading = "Laden…"
+localFoldersUnavailable = "Mappen zijn alleen in de cloud - sla een bestand op in de cloud om ze te organiseren."
+moreActions = "Meer mapacties"
+moveLocalToCloudBlocked = "Alleen-lokale bestanden kunnen niet naar cloudmappen worden verplaatst. Sla ze eerst in de cloud op."
+moveSkippedRemote = "{{count}} bestand(en) konden niet op de server worden verplaatst (geen toestemming of al verwijderd)."
+moveTo = "Verplaatsen naar…"
+myFiles = "Mijn bestanden"
+newFolder = "Nieuwe map"
+newFolderStorageDisabled = "Serveropslag voor mappen is niet ingeschakeld. Vraag uw beheerder om dit in te schakelen."
+newFolderTabUnavailable = "Schakel over naar Alles of Cloud om mappen te maken."
+newRootFolder = "Nieuwe map op hoofdniveau"
+offlineNoFolderEdits = "Serversynchronisatie voor mappen niet beschikbaar - mapwijzigingen zijn uitgeschakeld. Controleer aanmelding en opslagconfiguratie."
+open = "Openen"
+openInWorkbench = "Openen in werkbank"
+openVersionInWorkspace = "Openen in werkruimte"
+originFilter = "Filteren op bron"
+quickView = "Snel bekijken"
+refresh = "Vernieuwen vanaf server"
+remove = "Verwijderen"
+removeConfirm = "{{count}} bestand(en) verwijderen? Dit kan niet ongedaan worden gemaakt."
+removeVersion = "Deze versie verwijderen"
+rename = "Naam wijzigen"
+renameFolder = "Map hernoemen"
+resizeFolderTree = "Formaat van mappenstructuur wijzigen (pijltjestoetsen, Shift voor grotere stappen; dubbelklikken om automatisch te passen)"
+save = "Opslaan"
+saveToServer = "Opslaan op server"
+saveToServerDisabledHint = "Opslaan op de server is op deze server niet ingeschakeld. Vraag uw beheerder om dit in te schakelen."
+search = "Zoeken"
+searchPlaceholder = "Deze map en submappen doorzoeken"
+selectAll = "Alles selecteren"
+selectAllHint = "Klik om alles te selecteren. Tip: houd Ctrl (of Cmd) ingedrukt om bestanden één voor één toe te voegen, Shift om een bereik te selecteren."
+selectedCount = "{{count}} geselecteerd"
+selectFile = "Bestand {{name}} selecteren"
+shareDisabledHint = "Bestandsdeling is op deze server niet ingeschakeld. Vraag uw beheerder om dit in te schakelen."
+shareManage = "Delen beheren"
+showDetails = "Details weergeven"
+summary = "{{count}} items"
+syncFailed = "Mappensynchronisatie mislukt: {{message}}"
+syncPartial = "Mappensynchronisatie gedeeltelijk: {{failed}} van {{total}} mappen konden niet worden samengevoegd."
+tree = "Mappen"
+upload = "Uploaden"
+uploadedToLocal = "Geüploade bestanden beginnen in Lokaal. Gebruik 'Opslaan in cloud' om ze in een map te plaatsen."
+uploadFromMobile = "Uploaden vanaf mobiel"
+versionActions = "Versie-acties"
+versionCollapse = "Middelste versies samenvouwen"
+versionOrigin = "Oorspronkelijke upload"
+versionsCount = "{{count}} versies"
+versionShowHidden = "{{count}} eerdere versies weergeven"
+viewVersion = "Deze versie bekijken"
+
+[filesPage.appearance]
+colour = "Kleur"
+icon = "Pictogram"
+title = "Weergave"
+useColour = "Kleur {{c}} gebruiken"
+
+[filesPage.column]
+modified = "Gewijzigd"
+name = "Naam"
+size = "Grootte"
+type = "Type"
+
+[filesPage.empty]
+hint = "Zet PDF's ergens op deze pagina neer om te uploaden, of gebruik de knop Nieuwe map om uw bestanden te organiseren."
+newFolderCta = "Map maken"
+title = "Deze map is leeg"
+uploadCta = "Bestanden uploaden"
+
+[filesPage.empty.cloud]
+hint = "Upload een bestand om te beginnen, of maak een map om te organiseren."
+offlineHint = "Verbind opnieuw om uw cloudbibliotheek te laden."
+offlineTitle = "Geen cloudbestanden in cache"
+title = "Nog geen cloudbestanden"
+
+[filesPage.empty.local]
+hint = "Bestanden die zijn opgeslagen zonder te uploaden blijven hier. Zet een bestand neer om er een toe te voegen."
+title = "Geen alleen-lokale bestanden"
+
+[filesPage.empty.recent]
+hint = "Bestanden die u opent of bewerkt, verschijnen hier."
+title = "Nog niets gewijzigd"
+
+[filesPage.empty.shared]
+hint = "Wanneer iemand een bestand via link deelt, verschijnt het hier."
+title = "Niets met u gedeeld"
+
+[filesPage.empty.sharedByMe]
+hint = "Maak een deellink of nodig een teamgenoot uit vanuit een van uw bestanden om het hier te zien."
+title = "U hebt nog geen bestanden gedeeld"
+
+[filesPage.error]
+actionFailed = "Kon {{action}} niet uitvoeren."
+actionFailedDetail = "Kon {{action}} niet uitvoeren: {{message}}"
+deleteFolderFailed = "Kan map niet verwijderen."
+deleteFolderFailedDetail = "Kan map niet verwijderen: {{message}}"
+folderAppearanceFailed = "Kan mapweergave niet bijwerken."
+folderAppearanceFailedDetail = "Kan mapweergave niet bijwerken: {{message}}"
+moveFilesFailed = "Kan bestanden niet verplaatsen."
+moveFilesFailedDetail = "Kan bestanden niet verplaatsen: {{message}}"
+moveFolderFailed = "Kan map niet verplaatsen."
+moveFolderFailedDetail = "Kan map niet verplaatsen: {{message}}"
+removeFilesFailed = "Kan bestanden niet verwijderen."
+removeFilesFailedDetail = "Kan bestanden niet verwijderen: {{message}}"
+uploadFilesFailed = "Kan bestanden niet uploaden."
+uploadFilesFailedDetail = "Kan bestanden niet uploaden: {{message}}"
+
+[filesPage.field]
+added = "Toegevoegd"
+count = "Bestanden"
+folder = "Map"
+modified = "Gewijzigd"
+name = "Naam"
+size = "Grootte"
+toolHistory = "Toolgeschiedenis"
+toolHistoryAtVersion = "Cumulatieve toolchain"
+totalSize = "Totale grootte"
+type = "Type"
+versionHistory = "Versiegeschiedenis"
+
+[filesPage.folderName]
+cancel = "Annuleren"
+error = "Kon map niet opslaan. Probeer het opnieuw."
+label = "Mapnaam"
+placeholder = "Mapnaam"
+
+[filesPage.moveDialog]
+cancel = "Annuleren"
+confirm = "Hierheen verplaatsen"
+error = "Kan niet verplaatsen. Probeer het opnieuw."
+hint = "Kies een doelmap. Tip: u kunt ook bestanden slepen en neerzetten op mappen in de structuur links."
+newFolderCancel = "Verwerpen"
+newFolderCreate = "Maken"
+newFolderError = "Kan map niet maken. Probeer het opnieuw."
+newFolderLabel = "Nieuwe mapnaam"
+newFolderPlaceholder = "Mapnaam"
+newFolderToggle = "Nieuwe map maken…"
+title = "Verplaatsen naar map"
+
+[filesPage.origin]
+all = "Alle bronnen"
+cloud = "Cloud"
+cloudHint = "Opgeslagen op de Stirling-server"
+local = "Lokaal"
+localHint = "Alleen opgeslagen in deze browser"
+shared = "Gedeeld"
+sharedHint = "Met u gedeeld via link"
+
+[filesPage.sort]
+modifiedAsc = "Oudste eerst"
+modifiedDesc = "Recent eerst"
+nameAsc = "Naam A→Z"
+nameDesc = "Naam Z→A"
+sizeAsc = "Kleinste eerst"
+sizeDesc = "Grootste eerst"
+
+[filesPage.syncError]
+client = "Mappensynchronisatie mislukt."
+network = "Kon de server niet bereiken."
+server = "Serverfout tijdens mappensynchronisatie."
+
+[filesPage.tabName]
+local = "Lokaal"
+recent = "Recent"
+shared = "Gedeeld met mij"
+sharedByMe = "Door mij gedeeld"
+
+[filesPage.tabs]
+all = "Alles"
+ariaLabel = "Bestandsweergaven"
+cloud = "Cloud"
+local = "Lokaal"
+recent = "Recent"
+shared = "Gedeeld met mij"
+sharedByMe = "Door mij gedeeld"
+
+[filesPage.treeMenu]
+actions = "Mapacties voor {{name}}"
+collapse = "Map samenvouwen"
+delete = "Map verwijderen"
+expand = "Map uitvouwen"
+newSubfolder = "Nieuwe submap"
+rename = "Naam wijzigen"
+
+[filesPage.typeFilter]
+allTypes = "Alle typen"
+label = "Filteren op type"
+
+[filesPage.viewMode]
+grid = "Rasterweergave"
+label = "Weergavemodus"
+list = "Lijstweergave"
 
 [fileToPDF]
 credit = "Deze service gebruikt LibreOffice en Unoconv voor bestandsconversie."
@@ -7695,6 +8010,7 @@ bulkTitle = "Geselecteerde bestanden uploaden"
 description = "Dit uploadt het huidige bestand naar serveropslag voor uw eigen toegang."
 errorTitle = "Upload mislukt"
 failure = "Upload mislukt. Controleer uw inlog- en opslaginstellingen."
+featureDisabled = "Opslaan op de server is op deze server niet ingeschakeld."
 fileCount = "{{count}} bestanden geselecteerd"
 fileLabel = "Bestand"
 hint = "Openbare links en toegangsmodi worden beheerd door uw serverinstellingen."
@@ -7868,13 +8184,18 @@ viewerMode = "Schakel over naar de bestandseditor om meerdere bestanden te selec
 [toolPanel]
 allTools = "Alle tools"
 alpha = "Alfa"
+backToAllTools = "Terug naar alle tools"
+backToDefault = "Terug"
 backToTools = "Terug naar tools"
 collapse = "Paneel samenvouwen"
 comingSoon = "Binnenkort beschikbaar:"
 expand = "Paneel uitvouwen"
+goBack = "Ga terug"
 placeholder = "Kies een tool om te beginnen"
 premiumFeature = "Premiumfunctie:"
 search = "Tools zoeken"
+toolsHeader = "Tools"
+viewAllTools = "Alle tools bekijken"
 
 [toolPanel.fullscreen]
 comingSoon = "Binnenkort:"

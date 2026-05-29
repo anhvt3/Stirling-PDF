@@ -90,6 +90,7 @@ nothingToUndo = "Nimic de anulat"
 noticeTopUpOrPlan = "Credite insuficiente, reîncărcați sau treceți la un plan"
 noValidFiles = "Niciun fișier valid de procesat"
 oops = "Ups!"
+openInNewWindow = "Deschideți într-o fereastră nouă"
 openInViewer = "Deschideți în Vizualizator"
 operationCancelled = "Operațiune anulată"
 page = "Pagină"
@@ -493,6 +494,11 @@ title = "Ajustează scala paginii"
 
 [adjustPageScale.error]
 failed = "A apărut o eroare la ajustarea scalei paginii."
+
+[adjustPageScale.orientation]
+label = "Orientarea paginii"
+landscape = "Orizontală"
+portrait = "Verticală"
 
 [adjustPageScale.pageSize]
 keep = "Păstrează dimensiunea originală"
@@ -1512,6 +1518,32 @@ user = "Utilizator"
 usernameInfo = "Numele de utilizator poate conține doar litere, numere și următoarele caractere speciale @._+- sau trebuie să fie o adresă de email validă."
 webOnlyUser = "Utilizator Doar Web"
 
+[agents]
+auto_redaction_description = "Redactați automat datele cu caracter personal (PII)"
+auto_redaction_name = "Redactare automată"
+back_to_tools = "Înapoi la instrumente"
+coming_soon = "În curând"
+compliance_description = "Auditați documentele pentru conformitate"
+compliance_name = "Verificare conformitate"
+data_extraction_description = "Extrageți tabele și date structurate"
+data_extraction_name = "Extracție de date"
+doc_summary_description = "Rezumați documente lungi"
+doc_summary_name = "Sumarizator"
+form_filler_description = "Completați formulare PDF în mod inteligent"
+form_filler_name = "Completare formulare"
+fullscreen_title = "Agenți Stirling"
+pdf_to_markdown_description = "Convertiți PDF-uri în Markdown curat"
+pdf_to_markdown_name = "PDF în Markdown"
+section_title = "Agenți"
+show_less = "Afișați mai puțin"
+start_chat = "Începeți conversația"
+stirling_description = "Asistentul dvs. PDF de uz general"
+stirling_full_name = "Agentul general Stirling"
+stirling_long_description = "Asistent PDF cu scop general care poate rula instrumente, crea PDF-uri și extrage informații din documentele dvs."
+stirling_name = "Stirling"
+stirling_tooltip = "Agentul Stirling"
+view_all = "Afișați toți agenții"
+
 [analytics]
 disable = "Dezactivați analizele"
 enable = "Activați analizele"
@@ -1771,6 +1803,10 @@ insufficientPermissions = "Nu aveți permisiunea de a efectua această acțiune.
 pleaseLoginAgain = "Vă rugăm să vă autentificați din nou."
 sessionExpired = "Sesiune expirată"
 
+[auth.displayName]
+guest = "Invitat"
+user = "Utilizator"
+
 [auto-rename]
 description = "Găsește automat titlul din conținutul PDF-ului și îl folosește ca nume de fișier."
 header = "Redenumire Automată PDF"
@@ -1862,6 +1898,13 @@ label = "Deschide meniul pentru {{title}}"
 
 [automate.files]
 placeholder = "Selectați fișiere de procesat cu această automatizare"
+
+[automate.folderScanWarning]
+advice = "Puteți totuși să descărcați fișierul (de ex., pentru a-l inspecta sau edita manual), dar pașii neacceptați vor trebui eliminați înainte ca backend-ul să îl poată rula."
+cancel = "Anulați"
+confirm = "Exportați oricum"
+intro = "Scanarea folderelor rulează pe backend, deci poate executa doar instrumente care au un endpoint de backend. Următorii pași din această automatizare nu au și vor eșua când pipeline-ul rulează:"
+title = "Unii pași nu pot rula în scanarea folderelor"
 
 [automate.importModal]
 cancel = "Anulează"
@@ -2684,6 +2727,16 @@ title = "Schimbă Permisiunile"
 [changePermissions.tooltip.warning]
 text = "Pentru ca aceste permisiuni să nu poată fi schimbate, utilizați instrumentul Adăugare parolă pentru a seta o parolă de proprietar."
 
+[chat.header]
+agentMenu = "Opțiuni agent Stirling"
+clearChat = "Ștergeți conversația"
+settings = "Setări agent"
+
+[chat.input]
+attach = "Atașați fișiere"
+placeholder = "Ce doriți să faceți?"
+send = "Trimiteți mesaj"
+
 [chat.progress]
 analyzing = "Se analizează solicitarea dvs...."
 calling_engine = "AI se gândește..."
@@ -2698,6 +2751,32 @@ whole_doc_compression_round = "Se consolidează notele..."
 whole_doc_read_done = "S-a terminat citirea documentului..."
 whole_doc_read_started = "Se citește documentul..."
 whole_doc_slice_done = "Se citește documentul... ({{percent}}% complet)"
+
+[chat.quickActions]
+browseYourFiles = "Răsfoiți fișierele dvs."
+compressMany = "Comprimați aceste documente"
+compressOne = "Comprimați acest document"
+convertMany = "Convertiți aceste documente în PDF"
+convertOne = "Convertiți acest document în PDF"
+fileSummary_one = "1 fișier în bancul de lucru ({{types}})"
+fileSummary_other = "{{count}} fișiere în bancul de lucru ({{types}})"
+heading = "Începeți"
+mergeMany = "Îmbinați aceste {{count}} documente într-unul"
+moreFiles = "+{{count}} în plus"
+openFromComputer = "Deschideți de pe computer"
+removeFile = "Eliminați {{name}}"
+rotateMany = "Rotiți aceste documente"
+rotateOne = "Rotiți acest document"
+splitOne = "Împărțiți acest document"
+
+[chat.responses]
+cannot_continue = "A apărut o eroare și nu pot continua."
+cannot_do = "Nu pot face asta."
+done = "Gata."
+need_clarification = "Puteți clarifica cererea?"
+not_found = "Nu am putut găsi informațiile solicitate."
+processing = "Se procesează ({{outcome}})..."
+unsupported_capability = "Capabilitate neacceptată: {{capability}}"
 
 [chat.toolsUsed]
 summary = "S-au rulat {{count}} instrumente"
@@ -2799,6 +2878,7 @@ selectBaseFirst = "Selectează mai întâi PDF-ul original"
 filesMissing = "Nu s-au putut găsi fișierele selectate. Vă rugăm să le selectați din nou."
 generic = "Nu s-au putut compara aceste fișiere."
 selectRequired = "Selectați un document original și unul editat."
+title = "Compararea a eșuat"
 
 [compare.large.file]
 message = "Unul sau ambele documente furnizate sunt prea mari pentru a fi procesate"
@@ -2864,6 +2944,7 @@ title = "Încă lucrăm…"
 
 [compare.status]
 complete = "Compararea este gata"
+error = "Compararea a eșuat"
 extracting = "Se extrage textul..."
 processing = "Se analizează diferențele..."
 
@@ -3771,12 +3852,246 @@ expand = "Extinde bara laterală"
 files = "Fișiere"
 googleDrive = "Google Drive"
 googleDriveDisabled = "Google Drive nu este configurat"
+leaveMyFiles = "Ieșiți din Fișierele mele"
+myFiles = "Fișierele mele"
 noFiles = "Încă nu există fișiere"
 openFileManager = "Deschide managerul de fișiere"
 openFromComputer = "Deschide de pe calculator"
 openSettings = "Deschide setările"
 search = "Căutare"
 searchPlaceholder = "Caută fișiere..."
+
+[filesPage]
+addToWorkspace = "Adăugați în spațiul de lucru"
+addToWorkspaceCount = "Adăugați {{count}} în spațiul de lucru"
+allFiles = "Toate fișierele"
+back = "Înapoi"
+backToFolder = "Înapoi la {{folder}}"
+backToMyFiles = "Înapoi la Fișierele mele"
+breadcrumbs = "Cale dosar"
+cancel = "Anulați"
+clearSearch = "Ștergeți căutarea"
+clearSelection = "Anulați selecția"
+closeDetails = "Închideți detaliile"
+create = "Creați"
+cycleBlocked = "Nu puteți muta un dosar într-unul dintre propriile sale subdosare."
+delete = "Ștergeți"
+deleteFolder = "Ștergeți dosarul"
+deleteFolderBody = "Ștergeți dosarul \"{{name}}\"?"
+deleteFolderConfirm = "Ștergeți dosarul \"{{name}}\"? Fișierele din interior vor fi mutate la Toate fișierele. {{count}} fișier(e) afectate."
+deleteFolderContents = "Ștergeți și {{count}} fișier(e) din dosar"
+deleteFolderContentsWarning = "Fișierele vor fi eliminate definitiv și nu pot fi recuperate."
+deleteFolderError = "Nu s-a putut șterge dosarul. Încercați din nou."
+deleteFolderKeepHint = "Fișierele din interior vor fi mutate la Toate fișierele."
+deleteFolderTitle = "Ștergeți dosarul?"
+deselectAll = "Anulați selecția"
+details = "Detalii"
+detailsCount = "{{count}} fișiere selectate"
+dismissError = "Închideți"
+download = "Descărcați"
+downloadAll = "Descărcați tot"
+downloadVersion = "Descărcați această versiune"
+dropOverlay = "Plasați fișiere pentru încărcare"
+dropOverlaySub = "Fișierele pornesc în Local. Folosiți 'Mută în' sau 'Salvați în cloud' pentru a le organiza într-un dosar."
+file = "Fișier"
+fileMenu = "Acțiuni fișier"
+folder = "Dosar"
+folderItems = "{{count}} elemente"
+folderMenu = "Acțiuni dosar"
+inPath = "în {{path}}"
+inWorkspace = "Deschideți"
+inWorkspaceAria = "Deja în spațiul de lucru"
+loading = "Se încarcă…"
+localFoldersUnavailable = "Dosarele sunt doar în cloud - salvați un fișier în cloud pentru a le organiza."
+moreActions = "Mai multe acțiuni pentru dosar"
+moveLocalToCloudBlocked = "Fișierele doar locale nu pot fi mutate în dosare din cloud. Salvați-le mai întâi în cloud."
+moveSkippedRemote = "{{count}} fișier(e) nu au putut fi mutate pe server (fără permisiune sau deja șterse)."
+moveTo = "Mutați în…"
+myFiles = "Fișierele mele"
+newFolder = "Dosar nou"
+newFolderStorageDisabled = "Stocarea de dosare pe server nu este activată. Rugați administratorul să o activeze."
+newFolderTabUnavailable = "Comutați la Toate sau Cloud pentru a crea dosare."
+newRootFolder = "Dosar nou la rădăcină"
+offlineNoFolderEdits = "Sincronizarea dosarelor cu serverul nu este disponibilă - modificările dosarelor sunt dezactivate. Verificați autentificarea și configurarea stocării."
+open = "Deschideți"
+openInWorkbench = "Deschideți în bancul de lucru"
+openVersionInWorkspace = "Deschideți în spațiul de lucru"
+originFilter = "Filtrați după sursă"
+quickView = "Vizualizare rapidă"
+refresh = "Reîmprospătați de pe server"
+remove = "Ștergeți"
+removeConfirm = "Ștergeți {{count}} fișier(e)? Aceasta nu poate fi anulată."
+removeVersion = "Eliminați această versiune"
+rename = "Redenumiți"
+renameFolder = "Redenumiți dosarul"
+resizeFolderTree = "Redimensionați arborele de dosare (tastele săgeți, Shift pentru pași mai mari; dublu clic pentru autoajustare)"
+save = "Salvați"
+saveToServer = "Salvați pe server"
+saveToServerDisabledHint = "Salvarea pe server nu este activată pe acest server. Rugați administratorul să o activeze."
+search = "Căutați"
+searchPlaceholder = "Căutați în acest dosar și subdosare"
+selectAll = "Selectați tot"
+selectAllHint = "Faceți clic pentru a selecta tot. Sfat: țineți apăsat Ctrl (sau Cmd) pentru a adăuga fișiere pe rând, Shift pentru a selecta un interval."
+selectedCount = "{{count}} selectate"
+selectFile = "Selectați fișierul {{name}}"
+shareDisabledHint = "Partajarea fișierelor nu este activată pe acest server. Rugați administratorul să o activeze."
+shareManage = "Gestionați partajarea"
+showDetails = "Afișați detaliile"
+summary = "{{count}} elemente"
+syncFailed = "Sincronizarea dosarelor a eșuat: {{message}}"
+syncPartial = "Sincronizare parțială a dosarelor: {{failed}} din {{total}} dosare nu au putut fi îmbinate."
+tree = "Dosare"
+upload = "Încărcați"
+uploadedToLocal = "Fișierele încărcate încep în Local. Folosiți 'Salvați în cloud' pentru a le pune într-un dosar."
+uploadFromMobile = "Încărcați de pe mobil"
+versionActions = "Acțiuni versiune"
+versionCollapse = "Restrângeți versiunile intermediare"
+versionOrigin = "Încărcare inițială"
+versionsCount = "{{count}} versiuni"
+versionShowHidden = "Afișați {{count}} versiuni anterioare"
+viewVersion = "Vizualizați această versiune"
+
+[filesPage.appearance]
+colour = "Culoare"
+icon = "Pictogramă"
+title = "Aspect"
+useColour = "Utilizați culoarea {{c}}"
+
+[filesPage.column]
+modified = "Modificat"
+name = "Nume"
+size = "Dimensiune"
+type = "Tip"
+
+[filesPage.empty]
+hint = "Trageți PDF-uri oriunde pe această pagină pentru a le încărca sau folosiți butonul Dosar nou pentru a vă organiza fișierele."
+newFolderCta = "Creați dosar"
+title = "Acest dosar este gol"
+uploadCta = "Încărcați fișiere"
+
+[filesPage.empty.cloud]
+hint = "Încărcați un fișier pentru a începe sau creați un dosar pentru a organiza."
+offlineHint = "Reconectați-vă pentru a încărca biblioteca din cloud."
+offlineTitle = "Niciun fișier cloud în cache"
+title = "Nu există încă fișiere în cloud"
+
+[filesPage.empty.local]
+hint = "Fișierele salvate fără a fi încărcate rămân aici. Plasați un fișier pentru a adăuga unul."
+title = "Niciun fișier doar local"
+
+[filesPage.empty.recent]
+hint = "Fișierele pe care le deschideți sau editați vor apărea aici."
+title = "Nimic modificat încă"
+
+[filesPage.empty.shared]
+hint = "Când cineva partajează un fișier prin link, acesta apare aici."
+title = "Nimic partajat cu dvs."
+
+[filesPage.empty.sharedByMe]
+hint = "Creați un link de partajare sau invitați un coleg de echipă din oricare dintre fișierele dvs. pentru a-l vedea aici."
+title = "Nu ați partajat încă niciun fișier"
+
+[filesPage.error]
+actionFailed = "Nu s-a putut {{action}}."
+actionFailedDetail = "Nu s-a putut {{action}}: {{message}}"
+deleteFolderFailed = "Nu s-a putut șterge dosarul."
+deleteFolderFailedDetail = "Nu s-a putut șterge dosarul: {{message}}"
+folderAppearanceFailed = "Nu s-a putut actualiza aspectul dosarului."
+folderAppearanceFailedDetail = "Nu s-a putut actualiza aspectul dosarului: {{message}}"
+moveFilesFailed = "Nu s-au putut muta fișierele."
+moveFilesFailedDetail = "Nu s-au putut muta fișierele: {{message}}"
+moveFolderFailed = "Nu s-a putut muta dosarul."
+moveFolderFailedDetail = "Nu s-a putut muta dosarul: {{message}}"
+removeFilesFailed = "Nu s-au putut elimina fișierele."
+removeFilesFailedDetail = "Nu s-au putut elimina fișierele: {{message}}"
+uploadFilesFailed = "Nu s-au putut încărca fișierele."
+uploadFilesFailedDetail = "Nu s-au putut încărca fișierele: {{message}}"
+
+[filesPage.field]
+added = "Adăugat"
+count = "Fișiere"
+folder = "Dosar"
+modified = "Modificat"
+name = "Nume"
+size = "Dimensiune"
+toolHistory = "Istoric instrument"
+toolHistoryAtVersion = "Lanț de instrumente cumulativ"
+totalSize = "Dimensiune totală"
+type = "Tip"
+versionHistory = "Istoricul versiunilor"
+
+[filesPage.folderName]
+cancel = "Anulați"
+error = "Nu s-a putut salva dosarul. Încercați din nou."
+label = "Numele dosarului"
+placeholder = "Numele dosarului"
+
+[filesPage.moveDialog]
+cancel = "Anulați"
+confirm = "Mutați aici"
+error = "Nu s-a putut muta. Încercați din nou."
+hint = "Alegeți un dosar de destinație. Sfat: puteți, de asemenea, să glisați și să plasați fișiere pe dosarele din arborele din stânga."
+newFolderCancel = "Renunțați"
+newFolderCreate = "Creați"
+newFolderError = "Nu s-a putut crea dosarul. Încercați din nou."
+newFolderLabel = "Nume dosar nou"
+newFolderPlaceholder = "Numele dosarului"
+newFolderToggle = "Creați dosar nou…"
+title = "Mutare în dosar"
+
+[filesPage.origin]
+all = "Toate sursele"
+cloud = "Cloud"
+cloudHint = "Stocat pe serverul Stirling"
+local = "Local"
+localHint = "Stocat doar în acest browser"
+shared = "Partajat"
+sharedHint = "Partajat cu dvs. prin link"
+
+[filesPage.sort]
+modifiedAsc = "Cele mai vechi mai întâi"
+modifiedDesc = "Cele mai recente mai întâi"
+nameAsc = "Nume A→Z"
+nameDesc = "Nume Z→A"
+sizeAsc = "Cele mai mici mai întâi"
+sizeDesc = "Cele mai mari mai întâi"
+
+[filesPage.syncError]
+client = "Sincronizarea dosarelor a eșuat."
+network = "Nu s-a putut contacta serverul."
+server = "Eroare de server în timpul sincronizării dosarelor."
+
+[filesPage.tabName]
+local = "Local"
+recent = "Recente"
+shared = "Partajate cu mine"
+sharedByMe = "Partajate de mine"
+
+[filesPage.tabs]
+all = "Toate"
+ariaLabel = "Vizualizări fișiere"
+cloud = "Cloud"
+local = "Local"
+recent = "Recente"
+shared = "Partajate cu mine"
+sharedByMe = "Partajate de mine"
+
+[filesPage.treeMenu]
+actions = "Acțiuni dosar pentru {{name}}"
+collapse = "Restrângeți dosarul"
+delete = "Ștergeți dosarul"
+expand = "Extindeți dosarul"
+newSubfolder = "Subdosar nou"
+rename = "Redenumiți"
+
+[filesPage.typeFilter]
+allTypes = "Toate tipurile"
+label = "Filtrați după tip"
+
+[filesPage.viewMode]
+grid = "Vizualizare grilă"
+label = "Mod de vizualizare"
+list = "Vizualizare listă"
 
 [fileToPDF]
 credit = "Acest serviciu utilizează LibreOffice și Unoconv pentru conversia fișierelor."
@@ -7695,6 +8010,7 @@ bulkTitle = "Încărcați fișierele selectate"
 description = "Aceasta încarcă fișierul curent în spațiul de stocare al serverului pentru accesul dvs."
 errorTitle = "Încărcare eșuată"
 failure = "Încărcare eșuată. Verificați autentificarea și setările de stocare."
+featureDisabled = "Salvarea pe server nu este activată pe acest server."
 fileCount = "{{count}} fișiere selectate"
 fileLabel = "Fișier"
 hint = "Linkurile publice și modurile de acces sunt controlate de setările serverului."
@@ -7868,13 +8184,18 @@ viewerMode = "Comutați la editorul de fișiere pentru a selecta mai multe fiși
 [toolPanel]
 allTools = "Toate instrumentele"
 alpha = "Alpha"
+backToAllTools = "Înapoi la toate instrumentele"
+backToDefault = "Înapoi"
 backToTools = "Înapoi la instrumente"
 collapse = "Restrânge panoul"
 comingSoon = "În curând:"
 expand = "Extinde panoul"
+goBack = "Înapoi"
 placeholder = "Alegeți un instrument pentru a începe"
 premiumFeature = "Funcție premium:"
 search = "Caută instrumente"
+toolsHeader = "Instrumente"
+viewAllTools = "Afișați toate instrumentele"
 
 [toolPanel.fullscreen]
 comingSoon = "În curând:"

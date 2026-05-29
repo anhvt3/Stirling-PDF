@@ -90,6 +90,7 @@ nothingToUndo = "Nelze vrátit žádnou akci"
 noticeTopUpOrPlan = "Není dostatek kreditů, dobijte je nebo přejděte na tarif"
 noValidFiles = "Žádné platné soubory ke zpracování"
 oops = "Jejda!"
+openInNewWindow = "Otevřít v novém okně"
 openInViewer = "Otevřít v prohlížeči"
 operationCancelled = "Operace zrušena"
 page = "Stránka"
@@ -493,6 +494,11 @@ title = "Upravit měřítko stránky"
 
 [adjustPageScale.error]
 failed = "Při úpravě měřítka stránky došlo k chybě."
+
+[adjustPageScale.orientation]
+label = "Orientace stránky"
+landscape = "Na šířku"
+portrait = "Na výšku"
 
 [adjustPageScale.pageSize]
 keep = "Zachovat původní velikost"
@@ -1512,6 +1518,32 @@ user = "Uživatel"
 usernameInfo = "Uživatelské jméno může obsahovat pouze písmena, číslice a následující speciální znaky @._+- nebo musí být platná e-mailová adresa."
 webOnlyUser = "Pouze webový uživatel"
 
+[agents]
+auto_redaction_description = "Automaticky začernit osobní údaje (PII)"
+auto_redaction_name = "Automatické začernění"
+back_to_tools = "Zpět na nástroje"
+coming_soon = "Již brzy"
+compliance_description = "Audit dokumentů z hlediska souladu"
+compliance_name = "Kontrola souladu"
+data_extraction_description = "Extrahovat tabulky a strukturovaná data"
+data_extraction_name = "Extrakce dat"
+doc_summary_description = "Shrnovat dlouhé dokumenty"
+doc_summary_name = "Souhrn"
+form_filler_description = "Inteligentně vyplňovat PDF formuláře"
+form_filler_name = "Vyplňování formulářů"
+fullscreen_title = "Stirling Agents"
+pdf_to_markdown_description = "Převést PDF na čistý Markdown"
+pdf_to_markdown_name = "PDF na Markdown"
+section_title = "Agenti"
+show_less = "Zobrazit méně"
+start_chat = "Začít chat"
+stirling_description = "Váš všestranný PDF asistent"
+stirling_full_name = "Obecný agent Stirling"
+stirling_long_description = "Všestranný PDF asistent, který umí spouštět nástroje, vytvářet PDF a získávat poznatky z vašich dokumentů."
+stirling_name = "Stirling"
+stirling_tooltip = "Agent Stirling"
+view_all = "Zobrazit všechny agenty"
+
 [analytics]
 disable = "Zakázat analytiku"
 enable = "Povolit analytiku"
@@ -1771,6 +1803,10 @@ insufficientPermissions = "Nemáte oprávnění k provedení této akce."
 pleaseLoginAgain = "Přihlaste se prosím znovu."
 sessionExpired = "Relace vypršela"
 
+[auth.displayName]
+guest = "Host"
+user = "Uživatel"
+
 [auto-rename]
 description = "Automaticky najde název z obsahu vašeho PDF a použije jej jako název souboru."
 header = "Automatické přejmenování PDF"
@@ -1862,6 +1898,13 @@ label = "Otevřít nabídku pro {{title}}"
 
 [automate.files]
 placeholder = "Vyberte soubory pro zpracování touto automatizací"
+
+[automate.folderScanWarning]
+advice = "Soubor si stále můžete stáhnout (např. k nahlédnutí nebo ruční úpravě), ale nepodporované kroky bude třeba odstranit, aby je backend mohl spustit."
+cancel = "Zrušit"
+confirm = "Přesto exportovat"
+intro = "Skenování složek běží na backendu, takže může spouštět jen nástroje, které mají backend endpoint. Následující kroky v této automatizaci jej nemají a při spuštění pipeline selžou:"
+title = "Některé kroky nelze ve skenování složek spustit"
 
 [automate.importModal]
 cancel = "Zrušit"
@@ -2684,6 +2727,16 @@ title = "Změnit oprávnění"
 [changePermissions.tooltip.warning]
 text = "Abyste tato oprávnění učinili nezměnitelnými, použijte nástroj Přidat heslo a nastavte heslo vlastníka."
 
+[chat.header]
+agentMenu = "Možnosti agenta Stirling"
+clearChat = "Vymazat chat"
+settings = "Nastavení agenta"
+
+[chat.input]
+attach = "Připojit soubory"
+placeholder = "Co chcete udělat?"
+send = "Odeslat zprávu"
+
 [chat.progress]
 analyzing = "Analyzuji váš požadavek..."
 calling_engine = "AI přemýšlí..."
@@ -2698,6 +2751,32 @@ whole_doc_compression_round = "Slučování poznámek..."
 whole_doc_read_done = "Dokončeno čtení dokumentu..."
 whole_doc_read_started = "Čtení dokumentu..."
 whole_doc_slice_done = "Čtení dokumentu... ({{percent}} % dokončeno)"
+
+[chat.quickActions]
+browseYourFiles = "Procházet vaše soubory"
+compressMany = "Komprimovat tyto dokumenty"
+compressOne = "Komprimovat tento dokument"
+convertMany = "Převést tyto dokumenty na PDF"
+convertOne = "Převést tento dokument na PDF"
+fileSummary_one = "1 soubor v pracovní ploše ({{types}})"
+fileSummary_other = "{{count}} souborů v pracovní ploše ({{types}})"
+heading = "Začít"
+mergeMany = "Sloučit těchto {{count}} dokumentů do 1"
+moreFiles = "+{{count}} dalších"
+openFromComputer = "Otevřít z počítače"
+removeFile = "Odebrat {{name}}"
+rotateMany = "Otočit tyto dokumenty"
+rotateOne = "Otočit tento dokument"
+splitOne = "Rozdělit tento dokument"
+
+[chat.responses]
+cannot_continue = "Něco se pokazilo a nemohu pokračovat."
+cannot_do = "Tohle nemohu udělat."
+done = "Hotovo."
+need_clarification = "Můžete upřesnit požadavek?"
+not_found = "Nepodařilo se najít požadované informace."
+processing = "Zpracování ({{outcome}})..."
+unsupported_capability = "Nepodporovaná schopnost: {{capability}}"
 
 [chat.toolsUsed]
 summary = "Spuštěno {{count}} nástrojů"
@@ -2799,6 +2878,7 @@ selectBaseFirst = "Nejprve vyberte původní PDF"
 filesMissing = "Nelze najít vybrané soubory. Zvolte je prosím znovu."
 generic = "Tyto soubory nelze porovnat."
 selectRequired = "Vyberte původní a upravený dokument."
+title = "Porovnání se nezdařilo"
 
 [compare.large.file]
 message = "Jeden nebo oba poskytnuté dokumenty jsou příliš velké na zpracování"
@@ -2864,6 +2944,7 @@ title = "Stále pracujeme…"
 
 [compare.status]
 complete = "Porovnání připraveno"
+error = "Porovnání se nezdařilo"
 extracting = "Extrahování textu..."
 processing = "Analýza rozdílů..."
 
@@ -3771,12 +3852,246 @@ expand = "Rozbalit postranní panel"
 files = "Soubory"
 googleDrive = "Google Drive"
 googleDriveDisabled = "Google Drive není nakonfigurován"
+leaveMyFiles = "Opustit Moje soubory"
+myFiles = "Moje soubory"
 noFiles = "Zatím žádné soubory"
 openFileManager = "Otevřít správce souborů"
 openFromComputer = "Otevřít z počítače"
 openSettings = "Otevřít nastavení"
 search = "Hledat"
 searchPlaceholder = "Hledat soubory..."
+
+[filesPage]
+addToWorkspace = "Přidat do pracovního prostoru"
+addToWorkspaceCount = "Přidat {{count}} do pracovního prostoru"
+allFiles = "Všechny soubory"
+back = "Zpět"
+backToFolder = "Zpět do {{folder}}"
+backToMyFiles = "Zpět na Moje soubory"
+breadcrumbs = "Cesta ke složce"
+cancel = "Zrušit"
+clearSearch = "Vymazat hledání"
+clearSelection = "Zrušit výběr"
+closeDetails = "Zavřít podrobnosti"
+create = "Vytvořit"
+cycleBlocked = "Nelze přesunout složku do jedné z jejích podsložek."
+delete = "Smazat"
+deleteFolder = "Smazat složku"
+deleteFolderBody = "Smazat složku \"{{name}}\"?"
+deleteFolderConfirm = "Smazat složku \"{{name}}\"? Soubory uvnitř budou přesunuty do Všechny soubory. Bude ovlivněno {{count}} soubor(ů)."
+deleteFolderContents = "Také smazat {{count}} soubor(ů) uvnitř složky"
+deleteFolderContentsWarning = "Soubory budou trvale odstraněny a nepůjde je obnovit."
+deleteFolderError = "Složku se nepodařilo smazat. Zkuste to znovu."
+deleteFolderKeepHint = "Soubory uvnitř budou přesunuty do Všechny soubory."
+deleteFolderTitle = "Smazat složku?"
+deselectAll = "Zrušit výběr"
+details = "Podrobnosti"
+detailsCount = "Vybráno {{count}} souborů"
+dismissError = "Zavřít"
+download = "Stáhnout"
+downloadAll = "Stáhnout vše"
+downloadVersion = "Stáhnout tuto verzi"
+dropOverlay = "Přetáhněte soubory k nahrání"
+dropOverlaySub = "Soubory začínají v Místní. Použijte 'Přesunout do' nebo 'Uložit do cloudu' k jejich uspořádání do složky."
+file = "Soubor"
+fileMenu = "Akce souboru"
+folder = "Složka"
+folderItems = "{{count}} položek"
+folderMenu = "Akce složky"
+inPath = "v {{path}}"
+inWorkspace = "Otevřít"
+inWorkspaceAria = "Už v pracovním prostoru"
+loading = "Načítání…"
+localFoldersUnavailable = "Složky jsou pouze v cloudu – uložte soubor do cloudu, abyste je mohli uspořádat."
+moreActions = "Další akce složky"
+moveLocalToCloudBlocked = "Soubory pouze místně nelze přesunout do cloudových složek. Nejprve je uložte do cloudu."
+moveSkippedRemote = "{{count}} soubor(ů) se na serveru nepodařilo přesunout (bez oprávnění nebo již smazáno)."
+moveTo = "Přesunout do…"
+myFiles = "Moje soubory"
+newFolder = "Nová složka"
+newFolderStorageDisabled = "Úložiště složek na serveru není povoleno. Požádejte správce o zapnutí."
+newFolderTabUnavailable = "Pro vytvoření složek přepněte na Vše nebo Cloud."
+newRootFolder = "Nová složka v kořeni"
+offlineNoFolderEdits = "Synchronizace složek se serverem není dostupná – změny ve složkách jsou zakázány. Zkontrolujte přihlášení a konfiguraci úložiště."
+open = "Otevřít"
+openInWorkbench = "Otevřít v pracovní ploše"
+openVersionInWorkspace = "Otevřít v pracovním prostoru"
+originFilter = "Filtrovat podle zdroje"
+quickView = "Rychlý náhled"
+refresh = "Obnovit ze serveru"
+remove = "Smazat"
+removeConfirm = "Smazat {{count}} soubor(ů)? Tuto akci nelze vrátit."
+removeVersion = "Odebrat tuto verzi"
+rename = "Přejmenovat"
+renameFolder = "Přejmenovat složku"
+resizeFolderTree = "Změnit velikost stromu složek (šipky, Shift pro větší kroky; dvojklik pro automatické přizpůsobení)"
+save = "Uložit"
+saveToServer = "Uložit na server"
+saveToServerDisabledHint = "Ukládání na server není na tomto serveru povoleno. Požádejte správce o povolení."
+search = "Hledat"
+searchPlaceholder = "Prohledat tuto složku a podsložky"
+selectAll = "Vybrat vše"
+selectAllHint = "Kliknutím vyberete vše. Tip: podržte Ctrl (nebo Cmd) pro přidání souborů po jednom, Shift pro výběr rozsahu."
+selectedCount = "Vybráno: {{count}}"
+selectFile = "Vybrat soubor {{name}}"
+shareDisabledHint = "Sdílení souborů není na tomto serveru povoleno. Požádejte správce o povolení."
+shareManage = "Spravovat sdílení"
+showDetails = "Zobrazit podrobnosti"
+summary = "{{count}} položek"
+syncFailed = "Synchronizace složek se nezdařila: {{message}}"
+syncPartial = "Částečná synchronizace složek: {{failed}} z {{total}} složek se nepodařilo sloučit."
+tree = "Složky"
+upload = "Nahrát"
+uploadedToLocal = "Nahrané soubory začínají v Místní. Pro zařazení do složky použijte 'Uložit do cloudu'."
+uploadFromMobile = "Nahrát z mobilu"
+versionActions = "Akce verze"
+versionCollapse = "Sbalit prostřední verze"
+versionOrigin = "Původní nahrání"
+versionsCount = "{{count}} verzí"
+versionShowHidden = "Zobrazit {{count}} starších verzí"
+viewVersion = "Zobrazit tuto verzi"
+
+[filesPage.appearance]
+colour = "Barva"
+icon = "Ikona"
+title = "Vzhled"
+useColour = "Použít barvu {{c}}"
+
+[filesPage.column]
+modified = "Upraveno"
+name = "Název"
+size = "Velikost"
+type = "Typ"
+
+[filesPage.empty]
+hint = "Přetáhněte soubory PDF kamkoli na tuto stránku pro nahrání nebo použijte tlačítko Nová složka k uspořádání souborů."
+newFolderCta = "Vytvořit složku"
+title = "Tato složka je prázdná"
+uploadCta = "Nahrát soubory"
+
+[filesPage.empty.cloud]
+hint = "Nejprve nahrajte soubor nebo vytvořte složku pro uspořádání."
+offlineHint = "Znovu se připojte pro načtení vaší cloudové knihovny."
+offlineTitle = "Žádné soubory cloudu v mezipaměti"
+title = "Zatím žádné soubory v cloudu"
+
+[filesPage.empty.local]
+hint = "Soubory uložené bez nahrání zůstanou zde. Přetažením přidáte soubor."
+title = "Žádné soubory pouze místně"
+
+[filesPage.empty.recent]
+hint = "Soubory, které otevřete nebo upravíte, se zde zobrazí."
+title = "Zatím nic upraveno"
+
+[filesPage.empty.shared]
+hint = "Když někdo sdílí soubor přes odkaz, zobrazí se zde."
+title = "Nic s vámi nesdíleno"
+
+[filesPage.empty.sharedByMe]
+hint = "Vytvořte odkaz ke sdílení nebo pozvěte kolegu z některého ze svých souborů, aby se zde zobrazil."
+title = "Zatím jste nesdíleli žádné soubory"
+
+[filesPage.error]
+actionFailed = "Nepodařilo se {{action}}."
+actionFailedDetail = "Nepodařilo se {{action}}: {{message}}"
+deleteFolderFailed = "Složku se nepodařilo smazat."
+deleteFolderFailedDetail = "Složku se nepodařilo smazat: {{message}}"
+folderAppearanceFailed = "Vzhled složky se nepodařilo aktualizovat."
+folderAppearanceFailedDetail = "Vzhled složky se nepodařilo aktualizovat: {{message}}"
+moveFilesFailed = "Soubory se nepodařilo přesunout."
+moveFilesFailedDetail = "Soubory se nepodařilo přesunout: {{message}}"
+moveFolderFailed = "Složku se nepodařilo přesunout."
+moveFolderFailedDetail = "Složku se nepodařilo přesunout: {{message}}"
+removeFilesFailed = "Soubory se nepodařilo odstranit."
+removeFilesFailedDetail = "Soubory se nepodařilo odstranit: {{message}}"
+uploadFilesFailed = "Soubory se nepodařilo nahrát."
+uploadFilesFailedDetail = "Soubory se nepodařilo nahrát: {{message}}"
+
+[filesPage.field]
+added = "Přidáno"
+count = "Soubory"
+folder = "Složka"
+modified = "Upraveno"
+name = "Název"
+size = "Velikost"
+toolHistory = "Historie nástrojů"
+toolHistoryAtVersion = "Kumulativní řetězec nástrojů"
+totalSize = "Celková velikost"
+type = "Typ"
+versionHistory = "Cesta verzí"
+
+[filesPage.folderName]
+cancel = "Zrušit"
+error = "Složku se nepodařilo uložit. Zkuste to znovu."
+label = "Název složky"
+placeholder = "Název složky"
+
+[filesPage.moveDialog]
+cancel = "Zrušit"
+confirm = "Přesunout sem"
+error = "Nepodařilo se přesunout. Zkuste to znovu."
+hint = "Vyberte cílovou složku. Tip: soubory můžete také přetahovat na složky ve stromu vlevo."
+newFolderCancel = "Zahodit"
+newFolderCreate = "Vytvořit"
+newFolderError = "Složku se nepodařilo vytvořit. Zkuste to znovu."
+newFolderLabel = "Název nové složky"
+newFolderPlaceholder = "Název složky"
+newFolderToggle = "Vytvořit novou složku…"
+title = "Přesunout do složky"
+
+[filesPage.origin]
+all = "Všechny zdroje"
+cloud = "Cloud"
+cloudHint = "Uloženo na serveru Stirling"
+local = "Místní"
+localHint = "Uloženo pouze v tomto prohlížeči"
+shared = "Sdílené"
+sharedHint = "Sdílené s vámi prostřednictvím odkazu"
+
+[filesPage.sort]
+modifiedAsc = "Nejstarší první"
+modifiedDesc = "Nejnovější první"
+nameAsc = "Název A→Z"
+nameDesc = "Název Z→A"
+sizeAsc = "Nejmenší první"
+sizeDesc = "Největší první"
+
+[filesPage.syncError]
+client = "Synchronizace složek se nezdařila."
+network = "Nelze se spojit se serverem."
+server = "Chyba serveru během synchronizace složek."
+
+[filesPage.tabName]
+local = "Místní"
+recent = "Nedávné"
+shared = "Sdílené se mnou"
+sharedByMe = "Sdílené mnou"
+
+[filesPage.tabs]
+all = "Vše"
+ariaLabel = "Zobrazení souborů"
+cloud = "Cloud"
+local = "Místní"
+recent = "Nedávné"
+shared = "Sdílené se mnou"
+sharedByMe = "Sdílené mnou"
+
+[filesPage.treeMenu]
+actions = "Akce složky pro {{name}}"
+collapse = "Sbalit složku"
+delete = "Smazat složku"
+expand = "Rozbalit složku"
+newSubfolder = "Nová podsložka"
+rename = "Přejmenovat"
+
+[filesPage.typeFilter]
+allTypes = "Všechny typy"
+label = "Filtrovat podle typu"
+
+[filesPage.viewMode]
+grid = "Mřížkové zobrazení"
+label = "Režim zobrazení"
+list = "Seznamové zobrazení"
 
 [fileToPDF]
 credit = "Tato služba používá LibreOffice a Unoconv pro konverzi souborů."
@@ -7695,6 +8010,7 @@ bulkTitle = "Nahrát vybrané soubory"
 description = "Tímto nahrajete aktuální soubor do úložiště serveru pro svůj přístup."
 errorTitle = "Nahrávání selhalo"
 failure = "Nahrávání selhalo. Zkontrolujte prosím své přihlášení a nastavení úložiště."
+featureDisabled = "Ukládání na server není na tomto serveru povoleno."
 fileCount = "Vybráno {{count}} souborů"
 fileLabel = "Soubor"
 hint = "Veřejné odkazy a režimy přístupu jsou řízeny nastavením vašeho serveru."
@@ -7868,13 +8184,18 @@ viewerMode = "Chcete-li vybrat více souborů, přepněte do editoru souborů."
 [toolPanel]
 allTools = "Všechny nástroje"
 alpha = "Alfa"
+backToAllTools = "Zpět na všechny nástroje"
+backToDefault = "Zpět"
 backToTools = "Zpět na nástroje"
 collapse = "Sbalit panel"
 comingSoon = "Již brzy:"
 expand = "Rozbalit panel"
+goBack = "Vrátit se"
 placeholder = "Vyberte nástroj pro začátek"
 premiumFeature = "Prémiová funkce:"
 search = "Hledat nástroje"
+toolsHeader = "Nástroje"
+viewAllTools = "Zobrazit všechny nástroje"
 
 [toolPanel.fullscreen]
 comingSoon = "Již brzy:"

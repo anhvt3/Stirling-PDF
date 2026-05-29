@@ -90,6 +90,7 @@ nothingToUndo = "Nada para desfazer"
 noticeTopUpOrPlan = "Créditos insuficientes; recarregue ou atualize para um plano"
 noValidFiles = "Nenhum arquivo válido para processar"
 oops = "Ops!"
+openInNewWindow = "Abrir em nova janela"
 openInViewer = "Abrir no visualizador"
 operationCancelled = "Operação cancelada"
 page = "Página"
@@ -493,6 +494,11 @@ title = "Ajustar escala da página"
 
 [adjustPageScale.error]
 failed = "Ocorreu um erro ao ajustar a escala da página."
+
+[adjustPageScale.orientation]
+label = "Orientação da página"
+landscape = "Paisagem"
+portrait = "Retrato"
 
 [adjustPageScale.pageSize]
 keep = "Manter tamanho original"
@@ -1512,6 +1518,32 @@ user = "Usuário"
 usernameInfo = "Nome de usuário só pode incluir letras, números e os seguintes caracteres especiais @._+- ou deve ser um e-mail válido."
 webOnlyUser = "Usuário web apenas"
 
+[agents]
+auto_redaction_description = "Ocultar PII automaticamente"
+auto_redaction_name = "Ocultação automática"
+back_to_tools = "Voltar para ferramentas"
+coming_soon = "Em breve"
+compliance_description = "Auditar documentos para conformidade"
+compliance_name = "Verificação de conformidade"
+data_extraction_description = "Extrair tabelas e dados estruturados"
+data_extraction_name = "Extração de dados"
+doc_summary_description = "Resumir documentos longos"
+doc_summary_name = "Resumidor"
+form_filler_description = "Preencher formulários PDF de forma inteligente"
+form_filler_name = "Preenchedor de formulários"
+fullscreen_title = "Agentes Stirling"
+pdf_to_markdown_description = "Converter PDFs para Markdown limpo"
+pdf_to_markdown_name = "PDF para Markdown"
+section_title = "Agentes"
+show_less = "Mostrar menos"
+start_chat = "Iniciar conversa"
+stirling_description = "Seu assistente PDF de uso geral"
+stirling_full_name = "Agente Geral Stirling"
+stirling_long_description = "Assistente PDF de uso geral que pode executar ferramentas, criar PDFs e extrair insights dos seus documentos."
+stirling_name = "Stirling"
+stirling_tooltip = "Agente Stirling"
+view_all = "Ver todos os agentes"
+
 [analytics]
 disable = "Desabilitar coleta de dados"
 enable = "Habilitar coleta de dados"
@@ -1771,6 +1803,10 @@ insufficientPermissions = "Você não tem permissão para executar esta ação."
 pleaseLoginAgain = "Faça login novamente."
 sessionExpired = "Sessão expirada"
 
+[auth.displayName]
+guest = "Convidado"
+user = "Usuário"
+
 [auto-rename]
 description = "Localiza automaticamente o título no conteúdo do seu PDF e o usa como nome de arquivo."
 header = "Renomeação Automática do PDF"
@@ -1862,6 +1898,13 @@ label = "Abrir menu para {{title}}"
 
 [automate.files]
 placeholder = "Selecione arquivos para processar com esta automação"
+
+[automate.folderScanWarning]
+advice = "Você ainda pode baixar o arquivo (por exemplo, para inspecioná-lo ou editá-lo manualmente), mas as etapas não compatíveis precisam ser removidas antes que o backend possa executá-lo."
+cancel = "Cancelar"
+confirm = "Exportar mesmo assim"
+intro = "A verificação de pastas é executada no backend, portanto só pode executar ferramentas que tenham um endpoint no backend. As seguintes etapas desta automação não têm e falharão quando o pipeline for executado:"
+title = "Algumas etapas não podem ser executadas na verificação de pastas"
 
 [automate.importModal]
 cancel = "Cancelar"
@@ -2684,6 +2727,16 @@ title = "Alterar Permissões"
 [changePermissions.tooltip.warning]
 text = "Para tornar essas permissões imutáveis, use a ferramenta Adicionar senha para definir uma senha de proprietário."
 
+[chat.header]
+agentMenu = "Opções do agente Stirling"
+clearChat = "Limpar conversa"
+settings = "Configurações do agente"
+
+[chat.input]
+attach = "Anexar arquivos"
+placeholder = "O que você quer fazer?"
+send = "Enviar mensagem"
+
 [chat.progress]
 analyzing = "Analisando sua solicitação..."
 calling_engine = "A IA está pensando..."
@@ -2698,6 +2751,32 @@ whole_doc_compression_round = "Consolidando notas..."
 whole_doc_read_done = "Leitura do documento concluída..."
 whole_doc_read_started = "Lendo o documento..."
 whole_doc_slice_done = "Lendo o documento... ({{percent}}% concluído)"
+
+[chat.quickActions]
+browseYourFiles = "Navegar pelos seus arquivos"
+compressMany = "Compactar estes documentos"
+compressOne = "Compactar este documento"
+convertMany = "Converter estes documentos para PDF"
+convertOne = "Converter este documento para PDF"
+fileSummary_one = "1 arquivo na bancada ({{types}})"
+fileSummary_other = "{{count}} arquivos na bancada ({{types}})"
+heading = "Começar"
+mergeMany = "Mesclar estes {{count}} documentos em 1"
+moreFiles = "+{{count}} mais"
+openFromComputer = "Abrir do computador"
+removeFile = "Remover {{name}}"
+rotateMany = "Girar estes documentos"
+rotateOne = "Girar este documento"
+splitOne = "Dividir este documento"
+
+[chat.responses]
+cannot_continue = "Algo deu errado e não posso continuar."
+cannot_do = "Não consigo fazer isso."
+done = "Concluído."
+need_clarification = "Poderia esclarecer seu pedido?"
+not_found = "Não encontrei as informações solicitadas."
+processing = "Processando ({{outcome}})..."
+unsupported_capability = "Recurso não suportado: {{capability}}"
 
 [chat.toolsUsed]
 summary = "Executou {{count}} ferramentas"
@@ -2799,6 +2878,7 @@ selectBaseFirst = "Selecione primeiro o PDF original"
 filesMissing = "Não foi possível localizar os arquivos selecionados. Selecione-os novamente."
 generic = "Não foi possível comparar esses arquivos."
 selectRequired = "Selecione um documento original e um editado."
+title = "Falha na comparação"
 
 [compare.large.file]
 message = "Um ou ambos os documentos fornecidos são muito grandes para processar."
@@ -2864,6 +2944,7 @@ title = "Ainda trabalhando…"
 
 [compare.status]
 complete = "Comparação pronta"
+error = "Falha na comparação"
 extracting = "Extraindo texto..."
 processing = "Analisando diferenças..."
 
@@ -3771,12 +3852,246 @@ expand = "Expandir barra lateral"
 files = "Arquivos"
 googleDrive = "Google Drive"
 googleDriveDisabled = "Google Drive não está configurado"
+leaveMyFiles = "Sair de Meus Arquivos"
+myFiles = "Meus Arquivos"
 noFiles = "Ainda não há arquivos"
 openFileManager = "Abrir gerenciador de arquivos"
 openFromComputer = "Abrir do computador"
 openSettings = "Abrir configurações"
 search = "Pesquisar"
 searchPlaceholder = "Pesquisar arquivos..."
+
+[filesPage]
+addToWorkspace = "Adicionar ao espaço de trabalho"
+addToWorkspaceCount = "Adicionar {{count}} ao espaço de trabalho"
+allFiles = "Todos os arquivos"
+back = "Voltar"
+backToFolder = "Voltar para {{folder}}"
+backToMyFiles = "Voltar para Meus Arquivos"
+breadcrumbs = "Caminho da pasta"
+cancel = "Cancelar"
+clearSearch = "Limpar pesquisa"
+clearSelection = "Limpar seleção"
+closeDetails = "Fechar detalhes"
+create = "Criar"
+cycleBlocked = "Não é possível mover uma pasta para uma de suas próprias subpastas."
+delete = "Excluir"
+deleteFolder = "Excluir pasta"
+deleteFolderBody = "Excluir a pasta \"{{name}}\"?"
+deleteFolderConfirm = "Excluir a pasta \"{{name}}\"? Os arquivos dentro dela serão movidos para Todos os arquivos. {{count}} arquivo(s) afetado(s)."
+deleteFolderContents = "Também excluir {{count}} arquivo(s) dentro da pasta"
+deleteFolderContentsWarning = "Os arquivos serão removidos permanentemente e não poderão ser recuperados."
+deleteFolderError = "Não foi possível excluir a pasta. Tente novamente."
+deleteFolderKeepHint = "Os arquivos dentro serão movidos para Todos os arquivos."
+deleteFolderTitle = "Excluir pasta?"
+deselectAll = "Limpar seleção"
+details = "Detalhes"
+detailsCount = "{{count}} arquivo(s) selecionado(s)"
+dismissError = "Dispensar"
+download = "Baixar"
+downloadAll = "Baixar tudo"
+downloadVersion = "Baixar esta versão"
+dropOverlay = "Solte os arquivos para fazer upload"
+dropOverlaySub = "Os arquivos começam em Local. Use 'Mover para' ou 'Salvar na nuvem' para organizá-los em uma pasta."
+file = "Arquivo"
+fileMenu = "Ações do arquivo"
+folder = "Pasta"
+folderItems = "{{count}} itens"
+folderMenu = "Ações da pasta"
+inPath = "em {{path}}"
+inWorkspace = "Abrir"
+inWorkspaceAria = "Já no espaço de trabalho"
+loading = "Carregando…"
+localFoldersUnavailable = "Pastas são apenas na nuvem - salve um arquivo na nuvem para organizá-lo."
+moreActions = "Mais ações da pasta"
+moveLocalToCloudBlocked = "Arquivos apenas locais não podem ser movidos para pastas na nuvem. Salve-os na nuvem primeiro."
+moveSkippedRemote = "{{count}} arquivo(s) não puderam ser movidos no servidor (sem permissão ou já excluídos)."
+moveTo = "Mover para…"
+myFiles = "Meus Arquivos"
+newFolder = "Nova pasta"
+newFolderStorageDisabled = "O armazenamento de pastas no servidor não está habilitado. Peça ao seu administrador para ativá-lo."
+newFolderTabUnavailable = "Mude para Todos ou Nuvem para criar pastas."
+newRootFolder = "Nova pasta na raiz"
+offlineNoFolderEdits = "Sincronização de pastas do servidor indisponível - alterações em pastas desativadas. Verifique o login e a configuração de armazenamento."
+open = "Abrir"
+openInWorkbench = "Abrir na bancada"
+openVersionInWorkspace = "Abrir no espaço de trabalho"
+originFilter = "Filtrar por origem"
+quickView = "Visualização rápida"
+refresh = "Atualizar do servidor"
+remove = "Excluir"
+removeConfirm = "Excluir {{count}} arquivo(s)? Esta ação não pode ser desfeita."
+removeVersion = "Remover esta versão"
+rename = "Renomear"
+renameFolder = "Renomear pasta"
+resizeFolderTree = "Redimensionar a árvore de pastas (teclas de seta, Shift para passos maiores; clique duplo para ajustar automaticamente)"
+save = "Salvar"
+saveToServer = "Salvar no servidor"
+saveToServerDisabledHint = "Salvar no servidor não está habilitado neste servidor. Peça ao administrador para habilitar."
+search = "Pesquisar"
+searchPlaceholder = "Pesquisar nesta pasta e subpastas"
+selectAll = "Selecionar tudo"
+selectAllHint = "Clique para selecionar tudo. Dica: segure Ctrl (ou Cmd) para adicionar arquivos um a um, Shift para selecionar um intervalo."
+selectedCount = "{{count}} selecionado(s)"
+selectFile = "Selecionar arquivo {{name}}"
+shareDisabledHint = "O compartilhamento de arquivos não está habilitado neste servidor. Peça ao administrador para habilitar."
+shareManage = "Gerenciar compartilhamento"
+showDetails = "Mostrar detalhes"
+summary = "{{count}} itens"
+syncFailed = "Falha na sincronização de pastas: {{message}}"
+syncPartial = "Sincronização parcial de pastas: {{failed}} de {{total}} pastas não puderam ser mescladas."
+tree = "Pastas"
+upload = "Fazer upload"
+uploadedToLocal = "Arquivos enviados começam em Local. Use 'Salvar na nuvem' para colocá-los em uma pasta."
+uploadFromMobile = "Enviar do dispositivo móvel"
+versionActions = "Ações da versão"
+versionCollapse = "Recolher versões intermediárias"
+versionOrigin = "Envio original"
+versionsCount = "{{count}} versões"
+versionShowHidden = "Mostrar {{count}} versões anteriores"
+viewVersion = "Ver esta versão"
+
+[filesPage.appearance]
+colour = "Cor"
+icon = "Ícone"
+title = "Aparência"
+useColour = "Usar a cor {{c}}"
+
+[filesPage.column]
+modified = "Modificado"
+name = "Nome"
+size = "Tamanho"
+type = "Tipo"
+
+[filesPage.empty]
+hint = "Solte PDFs em qualquer lugar desta página para fazer upload ou use o botão Nova pasta para organizar seus arquivos."
+newFolderCta = "Criar pasta"
+title = "Esta pasta está vazia"
+uploadCta = "Fazer upload de arquivos"
+
+[filesPage.empty.cloud]
+hint = "Envie um arquivo para começar ou crie uma pasta para organizar."
+offlineHint = "Reconecte-se para carregar sua biblioteca na nuvem."
+offlineTitle = "Nenhum arquivo da nuvem em cache"
+title = "Ainda não há arquivos na nuvem"
+
+[filesPage.empty.local]
+hint = "Arquivos salvos sem upload ficam aqui. Solte um arquivo para adicionar."
+title = "Nenhum arquivo apenas local"
+
+[filesPage.empty.recent]
+hint = "Arquivos que você abrir ou editar aparecerão aqui."
+title = "Nada modificado ainda"
+
+[filesPage.empty.shared]
+hint = "Quando alguém compartilha um arquivo via link, ele aparece aqui."
+title = "Nada foi compartilhado com você"
+
+[filesPage.empty.sharedByMe]
+hint = "Crie um link de compartilhamento ou convide um colega em qualquer um dos seus arquivos para vê-lo aqui."
+title = "Você ainda não compartilhou nenhum arquivo"
+
+[filesPage.error]
+actionFailed = "Não foi possível {{action}}."
+actionFailedDetail = "Não foi possível {{action}}: {{message}}"
+deleteFolderFailed = "Não foi possível excluir a pasta."
+deleteFolderFailedDetail = "Não foi possível excluir a pasta: {{message}}"
+folderAppearanceFailed = "Não foi possível atualizar a aparência da pasta."
+folderAppearanceFailedDetail = "Não foi possível atualizar a aparência da pasta: {{message}}"
+moveFilesFailed = "Não foi possível mover os arquivos."
+moveFilesFailedDetail = "Não foi possível mover os arquivos: {{message}}"
+moveFolderFailed = "Não foi possível mover a pasta."
+moveFolderFailedDetail = "Não foi possível mover a pasta: {{message}}"
+removeFilesFailed = "Não foi possível excluir os arquivos."
+removeFilesFailedDetail = "Não foi possível excluir os arquivos: {{message}}"
+uploadFilesFailed = "Não foi possível fazer upload dos arquivos."
+uploadFilesFailedDetail = "Não foi possível fazer upload dos arquivos: {{message}}"
+
+[filesPage.field]
+added = "Adicionado"
+count = "Arquivos"
+folder = "Pasta"
+modified = "Modificado"
+name = "Nome"
+size = "Tamanho"
+toolHistory = "Histórico de ferramentas"
+toolHistoryAtVersion = "Cadeia de ferramentas cumulativa"
+totalSize = "Tamanho total"
+type = "Tipo"
+versionHistory = "Histórico de versões"
+
+[filesPage.folderName]
+cancel = "Cancelar"
+error = "Não foi possível salvar a pasta. Tente novamente."
+label = "Nome da pasta"
+placeholder = "Nome da pasta"
+
+[filesPage.moveDialog]
+cancel = "Cancelar"
+confirm = "Mover aqui"
+error = "Não foi possível mover. Tente novamente."
+hint = "Escolha uma pasta de destino. Dica: você também pode arrastar e soltar arquivos sobre as pastas na árvore à esquerda."
+newFolderCancel = "Descartar"
+newFolderCreate = "Criar"
+newFolderError = "Não foi possível criar a pasta. Tente novamente."
+newFolderLabel = "Nome da nova pasta"
+newFolderPlaceholder = "Nome da pasta"
+newFolderToggle = "Criar nova pasta…"
+title = "Mover para a pasta"
+
+[filesPage.origin]
+all = "Todas as origens"
+cloud = "Nuvem"
+cloudHint = "Armazenado no servidor do Stirling"
+local = "Local"
+localHint = "Armazenado apenas neste navegador"
+shared = "Compartilhado"
+sharedHint = "Compartilhado com você via link"
+
+[filesPage.sort]
+modifiedAsc = "Mais antigo primeiro"
+modifiedDesc = "Mais recente primeiro"
+nameAsc = "Nome A→Z"
+nameDesc = "Nome Z→A"
+sizeAsc = "Menor primeiro"
+sizeDesc = "Maior primeiro"
+
+[filesPage.syncError]
+client = "Falha na sincronização de pastas."
+network = "Não foi possível alcançar o servidor."
+server = "Erro do servidor durante a sincronização de pastas."
+
+[filesPage.tabName]
+local = "Local"
+recent = "Recentes"
+shared = "Compartilhado comigo"
+sharedByMe = "Compartilhado por mim"
+
+[filesPage.tabs]
+all = "Todos"
+ariaLabel = "Modos de visualização de arquivos"
+cloud = "Nuvem"
+local = "Local"
+recent = "Recentes"
+shared = "Compartilhado comigo"
+sharedByMe = "Compartilhado por mim"
+
+[filesPage.treeMenu]
+actions = "Ações da pasta para {{name}}"
+collapse = "Recolher pasta"
+delete = "Excluir pasta"
+expand = "Expandir pasta"
+newSubfolder = "Nova subpasta"
+rename = "Renomear"
+
+[filesPage.typeFilter]
+allTypes = "Todos os tipos"
+label = "Filtrar por tipo"
+
+[filesPage.viewMode]
+grid = "Visualização em grade"
+label = "Modo de visualização"
+list = "Visualização em lista"
 
 [fileToPDF]
 credit = "Este serviço usa o LibreOffice e o Unoconv realizar a conversão de arquivos."
@@ -7695,6 +8010,7 @@ bulkTitle = "Enviar arquivos selecionados"
 description = "Isso envia o arquivo atual para o armazenamento do servidor para o seu próprio acesso."
 errorTitle = "Falha no envio"
 failure = "Falha no envio. Verifique seu login e as configurações de armazenamento."
+featureDisabled = "Salvar no servidor não está habilitado neste servidor."
 fileCount = "{{count}} arquivos selecionados"
 fileLabel = "Arquivo"
 hint = "Links públicos e modos de acesso são controlados pelas configurações do seu servidor."
@@ -7868,13 +8184,18 @@ viewerMode = "Mude para o editor de arquivos para selecionar vários arquivos."
 [toolPanel]
 allTools = "Todas as ferramentas"
 alpha = "Alpha"
+backToAllTools = "Voltar para todas as ferramentas"
+backToDefault = "Voltar"
 backToTools = "Voltar às ferramentas"
 collapse = "Recolher painel"
 comingSoon = "Em breve:"
 expand = "Expandir painel"
+goBack = "Voltar"
 placeholder = "Escolha uma ferramenta para começar"
 premiumFeature = "Recurso premium:"
 search = "Pesquisar ferramentas"
+toolsHeader = "Ferramentas"
+viewAllTools = "Ver todas as ferramentas"
 
 [toolPanel.fullscreen]
 comingSoon = "Em breve:"

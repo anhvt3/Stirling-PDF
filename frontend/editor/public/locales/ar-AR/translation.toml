@@ -90,6 +90,7 @@ nothingToUndo = "لا شيء للتراجع عنه"
 noticeTopUpOrPlan = "لا توجد أرصدة كافية، يرجى إعادة الشحن أو الترقية إلى خطة"
 noValidFiles = "لا توجد ملفات صالحة للمعالجة"
 oops = "عذرًا!"
+openInNewWindow = "فتح في نافذة جديدة"
 openInViewer = "فتح في العارض"
 operationCancelled = "تم إلغاء العملية"
 page = "صفحة"
@@ -493,6 +494,11 @@ title = "ضبط مقياس الصفحة"
 
 [adjustPageScale.error]
 failed = "حدث خطأ أثناء ضبط مقياس الصفحة."
+
+[adjustPageScale.orientation]
+label = "اتجاه الصفحة"
+landscape = "أفقي"
+portrait = "عمودي"
 
 [adjustPageScale.pageSize]
 keep = "الإبقاء على الحجم الأصلي"
@@ -1512,6 +1518,32 @@ user = "مستخدم"
 usernameInfo = "يمكن أن يحتوي اسم المستخدم فقط على أحرف وأرقام والرموز الخاصة التالية @._+- أو يجب أن يكون عنوان بريد إلكتروني صالح."
 webOnlyUser = "مستخدم الويب فقط"
 
+[agents]
+auto_redaction_description = "تنقيح PII تلقائيًا"
+auto_redaction_name = "تنقيح تلقائي"
+back_to_tools = "الرجوع إلى الأدوات"
+coming_soon = "قريبًا"
+compliance_description = "تدقيق المستندات للتحقق من الامتثال"
+compliance_name = "فحص الامتثال"
+data_extraction_description = "استخراج الجداول والبيانات المهيكلة"
+data_extraction_name = "استخراج البيانات"
+doc_summary_description = "تلخيص المستندات الطويلة"
+doc_summary_name = "الملخِّص"
+form_filler_description = "ملء نماذج PDF بذكاء"
+form_filler_name = "معبئ النماذج"
+fullscreen_title = "وكلاء Stirling"
+pdf_to_markdown_description = "تحويل ملفات PDF إلى Markdown نظيف"
+pdf_to_markdown_name = "PDF إلى Markdown"
+section_title = "الوكلاء"
+show_less = "عرض أقل"
+start_chat = "ابدأ المحادثة"
+stirling_description = "مساعد PDF عام الغرض الخاص بك"
+stirling_full_name = "الوكيل العام لـ Stirling"
+stirling_long_description = "مساعد PDF عام الغرض يمكنه تشغيل الأدوات، وإنشاء ملفات PDF، واستخلاص الرؤى من مستنداتك."
+stirling_name = "Stirling"
+stirling_tooltip = "وكيل Stirling"
+view_all = "عرض كل الوكلاء"
+
 [analytics]
 disable = "تعطيل الإحصائيات"
 enable = "تفعيل الإحصائيات"
@@ -1771,6 +1803,10 @@ insufficientPermissions = "ليست لديك صلاحية لتنفيذ هذا ا
 pleaseLoginAgain = "يرجى تسجيل الدخول مرة أخرى."
 sessionExpired = "انتهت الجلسة"
 
+[auth.displayName]
+guest = "ضيف"
+user = "مستخدم"
+
 [auto-rename]
 description = "يجد تلقائيًا العنوان من محتوى PDF ويستخدمه كاسم الملف."
 header = "إعادة تسمية PDF تلقائيًا"
@@ -1862,6 +1898,13 @@ label = "افتح القائمة لـ {{title}}"
 
 [automate.files]
 placeholder = "اختر ملفات لمعالجتها بهذه الأتمتة"
+
+[automate.folderScanWarning]
+advice = "لا يزال بإمكانك تنزيل الملف (مثلاً لفحصه أو تعديله يدويًا)، ولكن يجب إزالة الخطوات غير المدعومة قبل أن تتمكن الواجهة الخلفية من تشغيله."
+cancel = "إلغاء"
+confirm = "تصدير على أي حال"
+intro = "يعمل فحص المجلدات على الواجهة الخلفية، لذا لا يمكنه تنفيذ إلا الأدوات التي لديها نقطة نهاية في الواجهة الخلفية. الخطوة/الخطوات التالية في هذا التشغيل الآلي لا تملك ذلك، وستفشل عند تشغيل خط الأنابيب:"
+title = "لا يمكن تنفيذ بعض الخطوات في فحص المجلدات"
 
 [automate.importModal]
 cancel = "إلغاء"
@@ -2684,6 +2727,16 @@ title = "تغيير الأذونات"
 [changePermissions.tooltip.warning]
 text = "لجعل هذه الأذونات غير قابلة للتغيير، استخدم أداة إضافة كلمة مرور لتعيين كلمة مرور للمالك."
 
+[chat.header]
+agentMenu = "خيارات وكيل Stirling"
+clearChat = "مسح المحادثة"
+settings = "إعدادات الوكيل"
+
+[chat.input]
+attach = "إرفاق ملفات"
+placeholder = "ما الذي تريد فعله؟"
+send = "إرسال الرسالة"
+
 [chat.progress]
 analyzing = "جاري تحليل طلبك..."
 calling_engine = "الذكاء الاصطناعي يفكر..."
@@ -2698,6 +2751,32 @@ whole_doc_compression_round = "يتم دمج الملاحظات..."
 whole_doc_read_done = "اكتملت قراءة المستند..."
 whole_doc_read_started = "يتم قراءة المستند..."
 whole_doc_slice_done = "يتم قراءة المستند... (اكتمل {{percent}}%)"
+
+[chat.quickActions]
+browseYourFiles = "استعرض ملفاتك"
+compressMany = "اضغط هذه المستندات"
+compressOne = "اضغط هذا المستند"
+convertMany = "حوّل هذه المستندات إلى PDF"
+convertOne = "حوّل هذا المستند إلى PDF"
+fileSummary_one = "ملف واحد في مساحة العمل ({{types}})"
+fileSummary_other = "{{count}} ملف في مساحة العمل ({{types}})"
+heading = "البدء"
+mergeMany = "ادمج هذه المستندات وعددها {{count}} في مستند واحد"
+moreFiles = "+{{count}} المزيد"
+openFromComputer = "فتح من الكمبيوتر"
+removeFile = "إزالة {{name}}"
+rotateMany = "دوّر هذه المستندات"
+rotateOne = "دوّر هذا المستند"
+splitOne = "قسّم هذا المستند"
+
+[chat.responses]
+cannot_continue = "حدث خطأ ولا أستطيع المتابعة."
+cannot_do = "لا أستطيع فعل ذلك."
+done = "تم."
+need_clarification = "هل يمكنك توضيح طلبك؟"
+not_found = "تعذّر العثور على المعلومات المطلوبة."
+processing = "جارٍ المعالجة ({{outcome}})..."
+unsupported_capability = "إمكانية غير مدعومة: {{capability}}"
 
 [chat.toolsUsed]
 summary = "تم تشغيل عدد {{count}} من الأدوات"
@@ -2799,6 +2878,7 @@ selectBaseFirst = "يرجى اختيار ملف PDF الأصلي أولاً"
 filesMissing = "تعذّر العثور على الملفات المحددة. يرجى إعادة تحديدها."
 generic = "تعذّرت مقارنة هذه الملفات."
 selectRequired = "حدد مستندًا أصليًا وآخر معدلًا."
+title = "فشلت المقارنة"
 
 [compare.large.file]
 message = "أو كلا المستندين المقدمين كبيرة حجمهما للتعامل معهما"
@@ -2864,6 +2944,7 @@ title = "ما زلنا نعمل…"
 
 [compare.status]
 complete = "المقارنة جاهزة"
+error = "فشلت المقارنة"
 extracting = "جارٍ استخراج النص..."
 processing = "جارٍ تحليل الفروقات..."
 
@@ -3771,12 +3852,246 @@ expand = "توسيع الشريط الجانبي"
 files = "الملفات"
 googleDrive = "Google Drive"
 googleDriveDisabled = "Google Drive غير مُكوَّن"
+leaveMyFiles = "مغادرة ملفاتي"
+myFiles = "ملفاتي"
 noFiles = "لا توجد ملفات بعد"
 openFileManager = "فتح مدير الملفات"
 openFromComputer = "فتح من الكمبيوتر"
 openSettings = "فتح الإعدادات"
 search = "بحث"
 searchPlaceholder = "ابحث في الملفات..."
+
+[filesPage]
+addToWorkspace = "إضافة إلى مساحة العمل"
+addToWorkspaceCount = "إضافة {{count}} إلى مساحة العمل"
+allFiles = "كل الملفات"
+back = "رجوع"
+backToFolder = "رجوع إلى {{folder}}"
+backToMyFiles = "الرجوع إلى ملفاتي"
+breadcrumbs = "مسار المجلد"
+cancel = "إلغاء"
+clearSearch = "مسح البحث"
+clearSelection = "مسح التحديد"
+closeDetails = "إغلاق التفاصيل"
+create = "إنشاء"
+cycleBlocked = "لا يمكن نقل مجلد إلى أحد مجلداته الفرعية."
+delete = "حذف"
+deleteFolder = "حذف المجلد"
+deleteFolderBody = "حذف المجلد \"{{name}}\"؟"
+deleteFolderConfirm = "حذف المجلد \"{{name}}\"؟ سيتم نقل الملفات بالداخل إلى «كل الملفات». عدد الملفات المتأثرة: {{count}}."
+deleteFolderContents = "احذف أيضًا {{count}} ملفًا داخل المجلد"
+deleteFolderContentsWarning = "سيتم حذف الملفات نهائيًا ولا يمكن استعادتها."
+deleteFolderError = "تعذّر حذف المجلد. حاول مرة أخرى."
+deleteFolderKeepHint = "سيتم نقل الملفات بالداخل إلى «كل الملفات»."
+deleteFolderTitle = "هل تريد حذف المجلد؟"
+deselectAll = "مسح التحديد"
+details = "التفاصيل"
+detailsCount = "تم تحديد {{count}} ملف"
+dismissError = "تجاهل"
+download = "تنزيل"
+downloadAll = "تنزيل الكل"
+downloadVersion = "تنزيل هذا الإصدار"
+dropOverlay = "إفلات الملفات للرفع"
+dropOverlaySub = "تبدأ الملفات في «المحلي». استخدم 'نقل إلى' أو 'حفظ إلى السحابة' لتنظيمها في مجلد."
+file = "ملف"
+fileMenu = "إجراءات الملف"
+folder = "مجلد"
+folderItems = "{{count}} عناصر"
+folderMenu = "إجراءات المجلد"
+inPath = "في {{path}}"
+inWorkspace = "فتح"
+inWorkspaceAria = "موجود بالفعل في مساحة العمل"
+loading = "جارٍ التحميل…"
+localFoldersUnavailable = "المجلدات متاحة في السحابة فقط — احفظ ملفًا إلى السحابة لتنظيمه."
+moreActions = "إجراءات مجلد إضافية"
+moveLocalToCloudBlocked = "لا يمكن نقل الملفات المحلية فقط إلى مجلدات السحابة. احفظها إلى السحابة أولًا."
+moveSkippedRemote = "تعذّر نقل {{count}} ملفًا على الخادم (لا توجد صلاحية أو تم حذفه مسبقًا)."
+moveTo = "نقل إلى…"
+myFiles = "ملفاتي"
+newFolder = "مجلد جديد"
+newFolderStorageDisabled = "تخزين مجلدات الخادم غير مُمكّن. اطلب من المسؤول تشغيله."
+newFolderTabUnavailable = "انتقل إلى «الكل» أو «السحابة» لإنشاء مجلدات."
+newRootFolder = "مجلد جديد في الجذر"
+offlineNoFolderEdits = "مزامنة مجلدات الخادم غير متاحة — تم تعطيل تغييرات المجلد. تحقق من تسجيل الدخول وإعدادات التخزين."
+open = "فتح"
+openInWorkbench = "فتح في مساحة العمل"
+openVersionInWorkspace = "فتح في مساحة العمل"
+originFilter = "تصفية حسب المصدر"
+quickView = "عرض سريع"
+refresh = "تحديث من الخادم"
+remove = "حذف"
+removeConfirm = "هل تريد حذف {{count}} ملفًا؟ لا يمكن التراجع عن ذلك."
+removeVersion = "إزالة هذا الإصدار"
+rename = "إعادة تسمية"
+renameFolder = "إعادة تسمية المجلد"
+resizeFolderTree = "تغيير حجم شجرة المجلدات (مفاتيح الأسهم، وShift لخطوات أكبر؛ انقر نقرًا مزدوجًا للضبط التلقائي)"
+save = "حفظ"
+saveToServer = "حفظ إلى الخادم"
+saveToServerDisabledHint = "الحفظ إلى الخادم غير مُمكّن على هذا الخادم. اطلب من المسؤول تمكينه."
+search = "بحث"
+searchPlaceholder = "ابحث في هذا المجلد والمجلدات الفرعية"
+selectAll = "تحديد الكل"
+selectAllHint = "انقر لتحديد الكل. نصيحة: اضغط مع الاستمرار على Ctrl (أو Cmd) لإضافة الملفات واحدًا تلو الآخر، وShift لتحديد نطاق."
+selectedCount = "{{count}} محدد"
+selectFile = "تحديد الملف {{name}}"
+shareDisabledHint = "مشاركة الملفات غير مُمكّنة على هذا الخادم. اطلب من المسؤول تمكينها."
+shareManage = "إدارة المشاركة"
+showDetails = "إظهار التفاصيل"
+summary = "{{count}} عناصر"
+syncFailed = "فشلت مزامنة المجلد: {{message}}"
+syncPartial = "مزامنة المجلد جزئية: تعذّر دمج {{failed}} من أصل {{total}} مجلدات."
+tree = "المجلدات"
+upload = "رفع"
+uploadedToLocal = "تبدأ الملفات التي تم رفعها في «المحلي». استخدم 'حفظ إلى السحابة' لوضعها في مجلد."
+uploadFromMobile = "الرفع من الهاتف المحمول"
+versionActions = "إجراءات الإصدار"
+versionCollapse = "طيّ الإصدارات الوسطى"
+versionOrigin = "الرفع الأصلي"
+versionsCount = "{{count}} إصدار"
+versionShowHidden = "إظهار {{count}} من الإصدارات الأقدم"
+viewVersion = "عرض هذا الإصدار"
+
+[filesPage.appearance]
+colour = "اللون"
+icon = "الأيقونة"
+title = "المظهر"
+useColour = "استخدام اللون {{c}}"
+
+[filesPage.column]
+modified = "آخر تعديل"
+name = "الاسم"
+size = "الحجم"
+type = "النوع"
+
+[filesPage.empty]
+hint = "أسقط ملفات PDF في أي مكان بهذه الصفحة للرفع، أو استخدم زر «مجلد جديد» لتنظيم ملفاتك."
+newFolderCta = "إنشاء مجلد"
+title = "هذا المجلد فارغ"
+uploadCta = "رفع ملفات"
+
+[filesPage.empty.cloud]
+hint = "ارفَع ملفًا للبدء، أو أنشئ مجلدًا لتنظيمه."
+offlineHint = "أعد الاتصال لتحميل مكتبتك السحابية."
+offlineTitle = "لا توجد ملفات سحابية مخزنة مؤقتًا"
+title = "لا توجد ملفات سحابية بعد"
+
+[filesPage.empty.local]
+hint = "تظل الملفات المحفوظة دون رفع هنا. أسقط ملفًا لإضافته."
+title = "لا توجد ملفات محلية فقط"
+
+[filesPage.empty.recent]
+hint = "ستظهر هنا الملفات التي تفتحها أو تعدّلها."
+title = "لم يتم تعديل أي شيء بعد"
+
+[filesPage.empty.shared]
+hint = "عندما يشارك شخص ما ملفًا عبر رابط، سيظهر هنا."
+title = "لا يوجد شيء مُشارَك معك"
+
+[filesPage.empty.sharedByMe]
+hint = "أنشئ رابط مشاركة أو ادعُ زميلًا من أي من ملفاتك لتراه هنا."
+title = "لم تقم بمشاركة أي ملفات بعد"
+
+[filesPage.error]
+actionFailed = "تعذّر تنفيذ {{action}}."
+actionFailedDetail = "تعذّر تنفيذ {{action}}: {{message}}"
+deleteFolderFailed = "تعذّر حذف المجلد."
+deleteFolderFailedDetail = "تعذّر حذف المجلد: {{message}}"
+folderAppearanceFailed = "تعذّر تحديث مظهر المجلد."
+folderAppearanceFailedDetail = "تعذّر تحديث مظهر المجلد: {{message}}"
+moveFilesFailed = "تعذّر نقل الملفات."
+moveFilesFailedDetail = "تعذّر نقل الملفات: {{message}}"
+moveFolderFailed = "تعذّر نقل المجلد."
+moveFolderFailedDetail = "تعذّر نقل المجلد: {{message}}"
+removeFilesFailed = "تعذّر حذف الملفات."
+removeFilesFailedDetail = "تعذّر حذف الملفات: {{message}}"
+uploadFilesFailed = "تعذّر رفع الملفات."
+uploadFilesFailedDetail = "تعذّر رفع الملفات: {{message}}"
+
+[filesPage.field]
+added = "أضيف"
+count = "الملفات"
+folder = "المجلد"
+modified = "آخر تعديل"
+name = "الاسم"
+size = "الحجم"
+toolHistory = "سجل الأدوات"
+toolHistoryAtVersion = "سلسلة الأدوات التراكمية"
+totalSize = "الحجم الإجمالي"
+type = "النوع"
+versionHistory = "مسار الإصدارات"
+
+[filesPage.folderName]
+cancel = "إلغاء"
+error = "تعذّر حفظ المجلد. حاول مرة أخرى."
+label = "اسم المجلد"
+placeholder = "اسم المجلد"
+
+[filesPage.moveDialog]
+cancel = "إلغاء"
+confirm = "نقل إلى هنا"
+error = "تعذّر النقل. حاول مرة أخرى."
+hint = "اختر مجلد الوجهة. نصيحة: يمكنك أيضًا سحب الملفات وإفلاتها فوق المجلدات في الشجرة على اليسار."
+newFolderCancel = "تجاهل"
+newFolderCreate = "إنشاء"
+newFolderError = "تعذّر إنشاء المجلد. حاول مرة أخرى."
+newFolderLabel = "اسم المجلد الجديد"
+newFolderPlaceholder = "اسم المجلد"
+newFolderToggle = "إنشاء مجلد جديد…"
+title = "نقل إلى مجلد"
+
+[filesPage.origin]
+all = "كل المصادر"
+cloud = "السحابة"
+cloudHint = "مخزن على خادم Stirling"
+local = "محلي"
+localHint = "مخزن فقط في هذا المتصفح"
+shared = "مشترَك"
+sharedHint = "مشترَك معك عبر رابط"
+
+[filesPage.sort]
+modifiedAsc = "الأقدم أولاً"
+modifiedDesc = "الأحدث أولاً"
+nameAsc = "الاسم أ→ي"
+nameDesc = "الاسم ي→أ"
+sizeAsc = "الأصغر أولاً"
+sizeDesc = "الأكبر أولاً"
+
+[filesPage.syncError]
+client = "فشلت مزامنة المجلد."
+network = "تعذّر الوصول إلى الخادم."
+server = "خطأ في الخادم أثناء مزامنة المجلد."
+
+[filesPage.tabName]
+local = "محلي"
+recent = "حديث"
+shared = "مشترَك معي"
+sharedByMe = "مشترَك بواسطتي"
+
+[filesPage.tabs]
+all = "الكل"
+ariaLabel = "طرق عرض الملفات"
+cloud = "السحابة"
+local = "محلي"
+recent = "حديث"
+shared = "مشترَك معي"
+sharedByMe = "مشترَك بواسطتي"
+
+[filesPage.treeMenu]
+actions = "إجراءات المجلد لـ {{name}}"
+collapse = "طيّ المجلد"
+delete = "حذف المجلد"
+expand = "توسيع المجلد"
+newSubfolder = "مجلد فرعي جديد"
+rename = "إعادة تسمية"
+
+[filesPage.typeFilter]
+allTypes = "كل الأنواع"
+label = "تصفية حسب النوع"
+
+[filesPage.viewMode]
+grid = "عرض الشبكة"
+label = "وضع العرض"
+list = "عرض القائمة"
 
 [fileToPDF]
 credit = "تستخدم هذه الخدمة LibreOffice و Unoconv لتحويل الملفات."
@@ -7695,6 +8010,7 @@ bulkTitle = "تحميل الملفات المحددة"
 description = "يقوم هذا بتحميل الملف الحالي إلى تخزين الخادم لاستخدامك الخاص."
 errorTitle = "فشل التحميل"
 failure = "فشل التحميل. يرجى التحقق من تسجيل الدخول وإعدادات التخزين."
+featureDisabled = "الحفظ إلى الخادم غير مُمكّن على هذا الخادم."
 fileCount = "تم تحديد {{count}} ملفًا"
 fileLabel = "الملف"
 hint = "تتحكم إعدادات الخادم في الروابط العامة وأوضاع الوصول."
@@ -7868,13 +8184,18 @@ viewerMode = "انتقل إلى محرر الملفات لاختيار عدة م
 [toolPanel]
 allTools = "كل الأدوات"
 alpha = "ألفا"
+backToAllTools = "الرجوع إلى كل الأدوات"
+backToDefault = "رجوع"
 backToTools = "الرجوع إلى الأدوات"
 collapse = "طيّ اللوحة"
 comingSoon = "قريباً:"
 expand = "توسيع اللوحة"
+goBack = "الرجوع"
 placeholder = "اختر أداة للبدء"
 premiumFeature = "ميزة Premium:"
 search = "بحث في الأدوات"
+toolsHeader = "الأدوات"
+viewAllTools = "عرض كل الأدوات"
 
 [toolPanel.fullscreen]
 comingSoon = "قريبًا:"

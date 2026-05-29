@@ -90,6 +90,7 @@ nothingToUndo = "Inget att ångra"
 noticeTopUpOrPlan = "Inte tillräckligt med krediter, fyll på eller uppgradera till ett abonnemang"
 noValidFiles = "Inga giltiga filer att bearbeta"
 oops = "Hoppsan!"
+openInNewWindow = "Öppna i nytt fönster"
 openInViewer = "Öppna i visaren"
 operationCancelled = "Åtgärd avbruten"
 page = "Sidan"
@@ -493,6 +494,11 @@ title = "Justera sidskalning"
 
 [adjustPageScale.error]
 failed = "Ett fel inträffade vid justering av sidskalningen."
+
+[adjustPageScale.orientation]
+label = "Sidorientering"
+landscape = "Liggande"
+portrait = "Stående"
 
 [adjustPageScale.pageSize]
 keep = "Behåll originalstorlek"
@@ -1512,6 +1518,32 @@ user = "Användare"
 usernameInfo = "Användarnamn kan endast innehålla bokstäver, siffror och följande specialtecken @._+- eller måste vara en giltig e-postadress."
 webOnlyUser = "Endast webbanvändare"
 
+[agents]
+auto_redaction_description = "Maskera PII automatiskt"
+auto_redaction_name = "Automatisk maskering"
+back_to_tools = "Tillbaka till verktyg"
+coming_soon = "Kommer snart"
+compliance_description = "Granska dokument för regelefterlevnad"
+compliance_name = "Efterlevnadskontroll"
+data_extraction_description = "Extrahera tabeller och strukturerad data"
+data_extraction_name = "Dataextrahering"
+doc_summary_description = "Sammanfatta långa dokument"
+doc_summary_name = "Sammanfattare"
+form_filler_description = "Fyll i PDF-formulär intelligent"
+form_filler_name = "Formulärifyllare"
+fullscreen_title = "Stirling-agenter"
+pdf_to_markdown_description = "Konvertera PDF-filer till ren Markdown"
+pdf_to_markdown_name = "PDF till Markdown"
+section_title = "Agenter"
+show_less = "Visa mindre"
+start_chat = "Starta chatt"
+stirling_description = "Din allmänna PDF-assistent"
+stirling_full_name = "Stirlings allmänna agent"
+stirling_long_description = "Allmän PDF-assistent som kan köra verktyg, skapa PDF-filer och utvinna insikter från dina dokument."
+stirling_name = "Stirling"
+stirling_tooltip = "Stirling-agent"
+view_all = "Visa alla agenter"
+
 [analytics]
 disable = "Avaktivera analys"
 enable = "Aktivera analys"
@@ -1771,6 +1803,10 @@ insufficientPermissions = "Du har inte behörighet att utföra denna åtgärd."
 pleaseLoginAgain = "Logga in igen."
 sessionExpired = "Sessionen har gått ut"
 
+[auth.displayName]
+guest = "Gäst"
+user = "Användare"
+
 [auto-rename]
 description = "Hittar automatiskt titeln i innehållet i din PDF och använder den som filnamn."
 header = "Auto-byt namn på PDF"
@@ -1862,6 +1898,13 @@ label = "Öppna meny för {{title}}"
 
 [automate.files]
 placeholder = "Välj filer att bearbeta med denna automatisering"
+
+[automate.folderScanWarning]
+advice = "Du kan fortfarande ladda ned filen (t.ex. för att granska eller redigera den manuellt), men de steg som inte stöds måste tas bort innan backend kan köra den."
+cancel = "Avbryt"
+confirm = "Exportera ändå"
+intro = "Mappskanning körs på backend och kan därför bara köra verktyg som har en backend-endpoint. Följande steg i den här automatiseringen saknar det och kommer att misslyckas när pipelinen körs:"
+title = "Vissa steg kan inte köras vid mappskanning"
 
 [automate.importModal]
 cancel = "Avbryt"
@@ -2684,6 +2727,16 @@ title = "Ändra behörigheter"
 [changePermissions.tooltip.warning]
 text = "För att göra dessa behörigheter oföränderliga, använd verktyget Lägg till lösenord för att ange ett ägarlösenord."
 
+[chat.header]
+agentMenu = "Alternativ för Stirling-agent"
+clearChat = "Rensa chatt"
+settings = "Agentinställningar"
+
+[chat.input]
+attach = "Bifoga filer"
+placeholder = "Vad vill du göra?"
+send = "Skicka meddelande"
+
 [chat.progress]
 analyzing = "Analyserar din begäran..."
 calling_engine = "AI:n tänker..."
@@ -2698,6 +2751,32 @@ whole_doc_compression_round = "Sammanställer anteckningar..."
 whole_doc_read_done = "Läste klart dokumentet..."
 whole_doc_read_started = "Läser dokumentet..."
 whole_doc_slice_done = "Läser dokumentet... ({{percent}}% slutfört)"
+
+[chat.quickActions]
+browseYourFiles = "Bläddra i dina filer"
+compressMany = "Komprimera dessa dokument"
+compressOne = "Komprimera det här dokumentet"
+convertMany = "Konvertera dessa dokument till PDF"
+convertOne = "Konvertera det här dokumentet till PDF"
+fileSummary_one = "1 fil i arbetsbänken ({{types}})"
+fileSummary_other = "{{count}} filer i arbetsbänken ({{types}})"
+heading = "Kom igång"
+mergeMany = "Slå samman dessa {{count}} dokument till 1"
+moreFiles = "+{{count}} till"
+openFromComputer = "Öppna från dator"
+removeFile = "Ta bort {{name}}"
+rotateMany = "Rotera dessa dokument"
+rotateOne = "Rotera det här dokumentet"
+splitOne = "Dela upp det här dokumentet"
+
+[chat.responses]
+cannot_continue = "Något gick fel och jag kan inte fortsätta."
+cannot_do = "Jag kan inte göra det."
+done = "Klart."
+need_clarification = "Kan du förtydliga din begäran?"
+not_found = "Jag kunde inte hitta den begärda informationen."
+processing = "Bearbetar ({{outcome}})..."
+unsupported_capability = "Funktion som inte stöds: {{capability}}"
 
 [chat.toolsUsed]
 summary = "Körde {{count}} verktyg"
@@ -2799,6 +2878,7 @@ selectBaseFirst = "Välj ursprunglig PDF först"
 filesMissing = "Kunde inte hitta de valda filerna. Välj dem igen."
 generic = "Kan inte jämföra dessa filer."
 selectRequired = "Välj ett original- och ett redigerat dokument."
+title = "Jämförelsen misslyckades"
 
 [compare.large.file]
 message = "En eller båda de angivna dokumenten är för stora att bearbeta"
@@ -2864,6 +2944,7 @@ title = "Arbetar fortfarande…"
 
 [compare.status]
 complete = "Jämförelse klar"
+error = "Jämförelsen misslyckades"
 extracting = "Extraherar text..."
 processing = "Analyserar skillnader..."
 
@@ -3771,12 +3852,246 @@ expand = "Expandera sidofält"
 files = "Filer"
 googleDrive = "Google Drive"
 googleDriveDisabled = "Google Drive är inte konfigurerat"
+leaveMyFiles = "Lämna Mina filer"
+myFiles = "Mina filer"
 noFiles = "Inga filer ännu"
 openFileManager = "Öppna filhanteraren"
 openFromComputer = "Öppna från dator"
 openSettings = "Öppna inställningar"
 search = "Sök"
 searchPlaceholder = "Sök filer..."
+
+[filesPage]
+addToWorkspace = "Lägg till i arbetsytan"
+addToWorkspaceCount = "Lägg till {{count}} i arbetsytan"
+allFiles = "Alla filer"
+back = "Tillbaka"
+backToFolder = "Tillbaka till {{folder}}"
+backToMyFiles = "Tillbaka till Mina filer"
+breadcrumbs = "Mappsökväg"
+cancel = "Avbryt"
+clearSearch = "Rensa sökning"
+clearSelection = "Rensa markering"
+closeDetails = "Stäng detaljer"
+create = "Skapa"
+cycleBlocked = "Kan inte flytta en mapp till någon av sina egna undermappar."
+delete = "Ta bort"
+deleteFolder = "Ta bort mapp"
+deleteFolderBody = "Ta bort mappen \"{{name}}\"?"
+deleteFolderConfirm = "Ta bort mappen \"{{name}}\"? Filer i den kommer att flyttas till Alla filer. {{count}} fil(er) påverkas."
+deleteFolderContents = "Ta även bort {{count}} fil(er) i mappen"
+deleteFolderContentsWarning = "Filer tas bort permanent och kan inte återställas."
+deleteFolderError = "Det gick inte att ta bort mappen. Försök igen."
+deleteFolderKeepHint = "Filer i den kommer att flyttas till Alla filer."
+deleteFolderTitle = "Ta bort mapp?"
+deselectAll = "Rensa markering"
+details = "Detaljer"
+detailsCount = "{{count}} filer markerade"
+dismissError = "Avfärda"
+download = "Ladda ned"
+downloadAll = "Ladda ned alla"
+downloadVersion = "Ladda ned den här versionen"
+dropOverlay = "Släpp filer för att ladda upp"
+dropOverlaySub = "Filer startar i Lokalt. Använd 'Flytta till' eller 'Spara till molnet' för att organisera dem i en mapp."
+file = "Fil"
+fileMenu = "Filåtgärder"
+folder = "Mapp"
+folderItems = "{{count}} objekt"
+folderMenu = "Mappåtgärder"
+inPath = "i {{path}}"
+inWorkspace = "Öppna"
+inWorkspaceAria = "Redan i arbetsytan"
+loading = "Läser in…"
+localFoldersUnavailable = "Mappar finns bara i molnet – spara en fil till molnet för att kunna organisera den."
+moreActions = "Fler mappåtgärder"
+moveLocalToCloudBlocked = "Filer som bara är lokala kan inte flyttas till molnmappar. Spara dem till molnet först."
+moveSkippedRemote = "{{count}} fil(er) kunde inte flyttas på servern (saknar behörighet eller redan borttagna)."
+moveTo = "Flytta till…"
+myFiles = "Mina filer"
+newFolder = "Ny mapp"
+newFolderStorageDisabled = "Mapp-lagring på servern är inte aktiverad. Be din administratör slå på den."
+newFolderTabUnavailable = "Växla till Alla eller Moln för att skapa mappar."
+newRootFolder = "Ny mapp i roten"
+offlineNoFolderEdits = "Serversynk för mappar är inte tillgänglig – mappändringar är inaktiverade. Kontrollera inloggning och lagringskonfiguration."
+open = "Öppna"
+openInWorkbench = "Öppna i arbetsbänken"
+openVersionInWorkspace = "Öppna i arbetsytan"
+originFilter = "Filtrera efter källa"
+quickView = "Snabbvisning"
+refresh = "Uppdatera från servern"
+remove = "Ta bort"
+removeConfirm = "Ta bort {{count}} fil(er)? Detta kan inte ångras."
+removeVersion = "Ta bort den här versionen"
+rename = "Byt namn"
+renameFolder = "Byt namn på mapp"
+resizeFolderTree = "Ändra storlek på mappträdet (piltangenter, Skift för större steg; dubbelklicka för att anpassa automatiskt)"
+save = "Spara"
+saveToServer = "Spara till servern"
+saveToServerDisabledHint = "Sparande till servern är inte aktiverat på den här servern. Be din administratör att aktivera det."
+search = "Sök"
+searchPlaceholder = "Sök i den här mappen och undermappar"
+selectAll = "Markera alla"
+selectAllHint = "Klicka för att markera alla. Tips: håll Ctrl (eller Cmd) för att lägga till filer en i taget, Skift för att markera ett intervall."
+selectedCount = "{{count}} markerade"
+selectFile = "Markera fil {{name}}"
+shareDisabledHint = "Fildelning är inte aktiverad på den här servern. Be din administratör att aktivera det."
+shareManage = "Hantera delning"
+showDetails = "Visa detaljer"
+summary = "{{count}} objekt"
+syncFailed = "Mappsynkronisering misslyckades: {{message}}"
+syncPartial = "Mappsynk delvis: {{failed}} av {{total}} mappar kunde inte slås ihop."
+tree = "Mappar"
+upload = "Ladda upp"
+uploadedToLocal = "Uppladdade filer startar i Lokalt. Använd 'Spara till molnet' för att lägga dem i en mapp."
+uploadFromMobile = "Ladda upp från mobil"
+versionActions = "Versionsåtgärder"
+versionCollapse = "Fäll ihop mellanliggande versioner"
+versionOrigin = "Ursprunglig uppladdning"
+versionsCount = "{{count}} versioner"
+versionShowHidden = "Visa {{count}} tidigare versioner"
+viewVersion = "Visa den här versionen"
+
+[filesPage.appearance]
+colour = "Färg"
+icon = "Ikon"
+title = "Utseende"
+useColour = "Använd färg {{c}}"
+
+[filesPage.column]
+modified = "Ändrad"
+name = "Namn"
+size = "Storlek"
+type = "Typ"
+
+[filesPage.empty]
+hint = "Släpp PDF-filer var som helst på den här sidan för att ladda upp, eller använd knappen Ny mapp för att organisera dina filer."
+newFolderCta = "Skapa mapp"
+title = "Den här mappen är tom"
+uploadCta = "Ladda upp filer"
+
+[filesPage.empty.cloud]
+hint = "Ladda upp en fil för att börja, eller skapa en mapp för att organisera."
+offlineHint = "Anslut igen för att läsa in ditt molnbibliotek."
+offlineTitle = "Inga cachade molnfiler"
+title = "Inga molnfiler ännu"
+
+[filesPage.empty.local]
+hint = "Filer som sparas utan uppladdning finns kvar här. Släpp en fil för att lägga till en."
+title = "Inga filer enbart lokalt"
+
+[filesPage.empty.recent]
+hint = "Filer du öppnar eller redigerar visas här."
+title = "Inget har ändrats ännu"
+
+[filesPage.empty.shared]
+hint = "När någon delar en fil via länk visas den här."
+title = "Ingenting delat med dig"
+
+[filesPage.empty.sharedByMe]
+hint = "Skapa en delningslänk eller bjud in en teammedlem från någon av dina filer för att se den här."
+title = "Du har inte delat några filer ännu"
+
+[filesPage.error]
+actionFailed = "Det gick inte att {{action}}."
+actionFailedDetail = "Det gick inte att {{action}}: {{message}}"
+deleteFolderFailed = "Det gick inte att ta bort mappen."
+deleteFolderFailedDetail = "Det gick inte att ta bort mappen: {{message}}"
+folderAppearanceFailed = "Det gick inte att uppdatera mappens utseende."
+folderAppearanceFailedDetail = "Det gick inte att uppdatera mappens utseende: {{message}}"
+moveFilesFailed = "Det gick inte att flytta filer."
+moveFilesFailedDetail = "Det gick inte att flytta filer: {{message}}"
+moveFolderFailed = "Det gick inte att flytta mappen."
+moveFolderFailedDetail = "Det gick inte att flytta mappen: {{message}}"
+removeFilesFailed = "Det gick inte att ta bort filer."
+removeFilesFailedDetail = "Det gick inte att ta bort filer: {{message}}"
+uploadFilesFailed = "Det gick inte att ladda upp filer."
+uploadFilesFailedDetail = "Det gick inte att ladda upp filer: {{message}}"
+
+[filesPage.field]
+added = "Tillagd"
+count = "Filer"
+folder = "Mapp"
+modified = "Ändrad"
+name = "Namn"
+size = "Storlek"
+toolHistory = "Verktygshistorik"
+toolHistoryAtVersion = "Kumulativ verktygskedja"
+totalSize = "Total storlek"
+type = "Typ"
+versionHistory = "Versionsresa"
+
+[filesPage.folderName]
+cancel = "Avbryt"
+error = "Det gick inte att spara mappen. Försök igen."
+label = "Mappnamn"
+placeholder = "Mappnamn"
+
+[filesPage.moveDialog]
+cancel = "Avbryt"
+confirm = "Flytta hit"
+error = "Det gick inte att flytta. Försök igen."
+hint = "Välj en målmapp. Tips: du kan också dra och släppa filer på mapparna i trädet till vänster."
+newFolderCancel = "Ignorera"
+newFolderCreate = "Skapa"
+newFolderError = "Det gick inte att skapa mappen. Försök igen."
+newFolderLabel = "Nytt mappnamn"
+newFolderPlaceholder = "Mappnamn"
+newFolderToggle = "Skapa ny mapp…"
+title = "Flytta till mapp"
+
+[filesPage.origin]
+all = "Alla källor"
+cloud = "Moln"
+cloudHint = "Lagrad på Stirling-servern"
+local = "Lokalt"
+localHint = "Endast lagrad i den här webbläsaren"
+shared = "Delad"
+sharedHint = "Delad med dig via länk"
+
+[filesPage.sort]
+modifiedAsc = "Äldst först"
+modifiedDesc = "Senaste först"
+nameAsc = "Namn A→Ö"
+nameDesc = "Namn Ö→A"
+sizeAsc = "Minst först"
+sizeDesc = "Störst först"
+
+[filesPage.syncError]
+client = "Mappsynkronisering misslyckades."
+network = "Kunde inte nå servern."
+server = "Serverfel under mappsynkronisering."
+
+[filesPage.tabName]
+local = "Lokalt"
+recent = "Senaste"
+shared = "Delat med mig"
+sharedByMe = "Delat av mig"
+
+[filesPage.tabs]
+all = "Alla"
+ariaLabel = "Filvyer"
+cloud = "Moln"
+local = "Lokalt"
+recent = "Senaste"
+shared = "Delat med mig"
+sharedByMe = "Delat av mig"
+
+[filesPage.treeMenu]
+actions = "Mappåtgärder för {{name}}"
+collapse = "Fäll ihop mapp"
+delete = "Ta bort mapp"
+expand = "Fäll ut mapp"
+newSubfolder = "Ny undermapp"
+rename = "Byt namn"
+
+[filesPage.typeFilter]
+allTypes = "Alla typer"
+label = "Filtrera efter typ"
+
+[filesPage.viewMode]
+grid = "Rutnätsvy"
+label = "Visningsläge"
+list = "Listvy"
 
 [fileToPDF]
 credit = "Denna tjänst använder LibreOffice och Unoconv för filkonvertering."
@@ -7695,6 +8010,7 @@ bulkTitle = "Ladda upp markerade filer"
 description = "Detta laddar upp den aktuella filen till serverlagring för din egen åtkomst."
 errorTitle = "Uppladdning misslyckades"
 failure = "Uppladdning misslyckades. Kontrollera din inloggning och dina lagringsinställningar."
+featureDisabled = "Sparande till servern är inte aktiverat på den här servern."
 fileCount = "{{count}} filer markerade"
 fileLabel = "Fil"
 hint = "Offentliga länkar och åtkomstlägen styrs av dina serverinställningar."
@@ -7868,13 +8184,18 @@ viewerMode = "Byt till filredigeraren för att välja flera filer."
 [toolPanel]
 allTools = "Alla verktyg"
 alpha = "Alfa"
+backToAllTools = "Tillbaka till alla verktyg"
+backToDefault = "Tillbaka"
 backToTools = "Tillbaka till verktyg"
 collapse = "Fäll ihop panel"
 comingSoon = "Kommer snart:"
 expand = "Expandera panel"
+goBack = "Gå tillbaka"
 placeholder = "Välj ett verktyg för att komma igång"
 premiumFeature = "Premiumfunktion:"
 search = "Sök verktyg"
+toolsHeader = "Verktyg"
+viewAllTools = "Visa alla verktyg"
 
 [toolPanel.fullscreen]
 comingSoon = "Kommer snart:"

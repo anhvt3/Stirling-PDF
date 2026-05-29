@@ -90,6 +90,7 @@ nothingToUndo = "ཕྱིར་འཐེན་བྱ་རྒྱུ་མེད
 noticeTopUpOrPlan = "བཀོལ་གྲངས་མི་འདངས། གྲངས་ཁ་སྣོན་བྱེད ཡང་ན་འཆར་གཞི་སྤེལ་རོགས་"
 noValidFiles = "ལས་སྣོན་བྱེད་པའི་ཡིག་ཆ་ནུས་ལྡན་མེད།"
 oops = "ཨོབ། !"
+openInNewWindow = "སྒོ་ཁ་གསར་པར་ཁ་ཕྱེ"
 openInViewer = "ལྟ་མཁན་ནང་ཁ་ཕྱེ།"
 operationCancelled = "བཀོལ་སྤྱོད་མེད་པར་བཟོས་པ།"
 page = "ཤོག་ངོས།"
@@ -493,6 +494,11 @@ title = "སྙོམ་སྒྲིག་ཤོག་ངོས་ཚད་ག�
 
 [adjustPageScale.error]
 failed = "ཤོག་ངོས་ཚད་གཞི་སྙོམ་སྒྲིག་བྱེད་སྐབས་ནོར་འཁྲུལ་བྱུང་ཡོད།"
+
+[adjustPageScale.orientation]
+label = "ཤོག་ངོས་ཕྱོགས་སྒྲིག"
+landscape = "འཕྲེད་ཕྱོགས"
+portrait = "དཀྱུས་ཕྱོགས"
 
 [adjustPageScale.pageSize]
 keep = "ཚད་གཞི་ཐོག་མ་ཉར་དགོས།"
@@ -1512,6 +1518,32 @@ user = "བེད་སྤྱོད།"
 usernameInfo = "སྤྱོད་མཁན་གྱི་མིང་ནང་ཡི་གེ་དང་ཨང་གྲངས་དང་གཤམ་གྱི་དམིགས་བསལ་གྱི་ཡིག་འབྲུ་ཁོ་ན་ཡོད་སྲིད།"
 webOnlyUser = "དྲ་རྒྱ་བེད་སྤྱོད་པ་ཁོ་ནུས།"
 
+[agents]
+auto_redaction_description = "མི་སྒེར་ངོས་འཛིན་ཆ་འཕྲིན་རང་འགུལ་གབ་དོག་བཟོ"
+auto_redaction_name = "རང་འགུལ་གབ་དོག"
+back_to_tools = "ལག་ཆས་ཚང་མར་ལོག"
+coming_soon = "ཉེ་འགྲོར་འོང་"
+compliance_description = "ཁྲིམས་ལྟ་ལ་བརྟེན་ནས་ཡིག་ཆ་ཞིབ་བཤེར་བྱེད་"
+compliance_name = "ཁྲིམས་ལྟ་ཞིབ་བཤེར"
+data_extraction_description = "ཐིག་ཁྲམ་དང་བཀོད་སྒྲིག་ཡོད་པའི་གཞི་གྲངས་ཕྱིར་འདོན"
+data_extraction_name = "གཞི་གྲངས་ཕྱིར་འདོན"
+doc_summary_description = "ཡིག་ཆ་རིང་པོའི་བཅུད་སྡུད་བྱེད་"
+doc_summary_name = "བཅུད་སྡུད"
+form_filler_description = "PDF འཇུག་ཤོག་ཤེས་རབ་ཅན་གྱིས་བཀང་"
+form_filler_name = "འཇུག་ཤོག་བཀང་ཆས"
+fullscreen_title = "Stirling ལས་ཚབ"
+pdf_to_markdown_description = "PDF ཡིག་ཆ་ཚུལ་གསལ་ Markdown ལ་བསྒྱུར་"
+pdf_to_markdown_name = "PDF ནས་ Markdown ལ་"
+section_title = "ལས་ཚབ"
+show_less = "ཉུང་བསྟན"
+start_chat = "གླེང་མོལ་འགོ་བཙུགས"
+stirling_description = "ཁྱེད་ཀྱི་ PDF སྤྱི་དོན་ལས་ཚབ"
+stirling_full_name = "Stirling སྤྱི་ལས་ཚབ"
+stirling_long_description = "ལག་ཆས་འཁོར་སྐྱོད་བྱ་དང་ PDF བཟོ་སྐྲུན་བྱེད་པ་ དེ་མ་ཟད་ཁྱེད་ཀྱི་ཡིག་ཆ་ནས་དོན་གྲུབ་བསྡུས་འདོད་ཕྱིར་འདོན་ཐུབ་པའི་ PDF སྤྱི་དོན་ལས་ཚབ།"
+stirling_name = "Stirling"
+stirling_tooltip = "Stirling ལས་ཚབ"
+view_all = "ལས་ཚབ་ཚང་མ་ལྟ"
+
 [analytics]
 disable = "དབང་པོ་སྐྱོན་ཅན་དབྱེ་ཞིབ།"
 enable = "དབྱེ་ཞིབ་ནུས་པ།"
@@ -1771,6 +1803,10 @@ insufficientPermissions = "ཁྱེད་ལ་བྱ་སྤྱོད་འ�
 pleaseLoginAgain = "ཡང་བསྐྱར་ནང་འཇུག་གནང་རོགས།"
 sessionExpired = "དུས་ཚོད་རྫོགས་པ།"
 
+[auth.displayName]
+guest = "མགྱོན་པོ"
+user = "ལག་ལེན་བྱེད་པ"
+
 [auto-rename]
 description = "རང་འགུལ་གྱིས་ཁྱེད་ཀྱི་PDFནང་དོན་ནས་མིང་དེ་འཚོལ་ནས་ཡིག་ཆའི་མིང་ལྟར་བེད་སྤྱོད་བྱེད་ཀྱི་ཡོད།"
 header = "རང་འགུལ་གྱིས་མིང་བསྒྱུར་བའི་PDF"
@@ -1862,6 +1898,13 @@ label = "{{title}} ཡི་དོན་ལས་འདེམས་བྱང་�
 
 [automate.files]
 placeholder = "རང་འགུལ་ཅན་འདི་དང་ལས་སྣོན་བྱེད་པའི་ཡིག་ཆ་འདེམས།"
+
+[automate.folderScanWarning]
+advice = "ཁྱེད་ཀྱིས་ད་དུང་ཡིག་ཆ་ཕབ་ལེན་བྱེད་ཆོག (དཔེར་ན་ཞིབ་བཤེར་ཡང་ན་ལག་ཐོག་བཟོ་བཅོས་བྱེད་) དེ་འབད་རུང་ རྒྱབ་སྒྲིག་ལ་མ་ལྡན་པའི་རིམ་པ་ཚང་མ་རྒྱབ་སྒྲིག་གྱིས་འཁོར་སྐྱོད་བྱ་སྔ་གོང་ལ་བསུབ་དགོས།"
+cancel = "ཆ་མེད"
+confirm = "གང་རུང་དུ་ཕྱིར་འདྲེན"
+intro = "སྣོད་འཚོལ་ཞིབ་ནི་རྒྱབ་སྒྲིག་སྟེང་དུ་འཁོར་སྐྱོད་བྱེད་པས་ རྒྱབ་སྒྲིག་མཐའ་སྣེ་ཡོད་པའི་ལག་ཆས་ཙམ་སྒྲུབ་ཐུབ། འགེལ་འདྲེན་འདིའི་རིམ་པ་འོག་གི་ཁག་ལ་དེ་མེད་པས་ སྒྲུབ་ལམ་འཁོར་སྐྱོད་སྐབས་ཕམ་པ་འགྲོ:"
+title = "རིམ་པ་ཁ་ཤས་སྣོད་འཚོལ་ལ་འཁོར་མི་བྱེད།"
 
 [automate.importModal]
 cancel = "དོར"
@@ -2684,6 +2727,16 @@ title = "འཕོ་འགྱུར།"
 [changePermissions.tooltip.warning]
 text = "ཆོག་མཆན་འདི་དག་འགྱུར་བ་མེད་པར་བཟོ་བར། བདག་པོའི་གསང་ཚིག་སྒྲིག་པའི་ཆེད་དུ་གསང་གྲངས་ཁ་སྣོན་བྱེད་པའི་ལག་ཆ་སྤྱོད་དགོས།"
 
+[chat.header]
+agentMenu = "Stirling ལས་ཚབ་གདམ་གསེས"
+clearChat = "གླེང་མོལ་བསུབ"
+settings = "ལས་ཚབ་སྒྲིག་འགོད"
+
+[chat.input]
+attach = "ཡིག་ཆ་ཟུར་སྣོན"
+placeholder = "ཁྱེད་ཀྱིས་གང་བྱེད་དགོས?"
+send = "དོན་གཏོང"
+
 [chat.progress]
 analyzing = "ཁྱེད་ཀྱི་ཞུ་བ་ཞིབ་འཇུག་བཞིན..."
 calling_engine = "AI བསམ་བློ་བཏང་བཞིན..."
@@ -2698,6 +2751,32 @@ whole_doc_compression_round = "མཆན་ཚོགས་སྒྲིག..."
 whole_doc_read_done = "ཡིག་ཆ་ཀློག་པ་མཇུག་བསྡུས..."
 whole_doc_read_started = "ཡིག་ཆ་ཀློག་བཞིན..."
 whole_doc_slice_done = "ཡིག་ཆ་ཀློག་བཞིན... ({{percent}}% མཇུག་བསྡུས)"
+
+[chat.quickActions]
+browseYourFiles = "ཁྱེད་ཀྱི་ཡིག་ཆ་ལྟ"
+compressMany = "ཡིག་ཆ་འདི་ཚོ་སྲབ་གཏུབ"
+compressOne = "ཡིག་ཆ་འདི་སྲབ་གཏུབ"
+convertMany = "ཡིག་ཆ་འདི་ཚོ་རང་ PDF ལ་བསྒྱུར"
+convertOne = "ཡིག་ཆ་འདི་ PDF ལ་བསྒྱུར"
+fileSummary_one = "ལས་ལེན་ས་ན་ཡིག་ཆ 1 ({{types}})"
+fileSummary_other = "{{count}} ཡིག་ཆ་ལས་ལེན་ས་ན ({{types}})"
+heading = "འགོ་འཛུགས"
+mergeMany = "ཡིག་ཆ {{count}} དེ་ཚོ་མཉམ་སྒྲིལ་བྱས་ཏེ 1 བཟོ"
+moreFiles = "+{{count}} དེ་ལས་མང"
+openFromComputer = "གློག་ཀླད་ནས་ཁ་ཕྱེ"
+removeFile = "{{name}} བསུབ"
+rotateMany = "ཡིག་ཆ་འདི་ཚོ་སྐོར་བསྒྱུར"
+rotateOne = "ཡིག་ཆ་འདི་སྐོར་བསྒྱུར"
+splitOne = "ཡིག་ཆ་འདི་དུམ་བུ་བགོ"
+
+[chat.responses]
+cannot_continue = "ནོར་འཁྲུལ་བྱུང་ མུ་མཐའ་མི་འགྲོ།"
+cannot_do = "དེ་བྱ་མི་ཐུབ།"
+done = "རྫོགས་སོང་།"
+need_clarification = "ཞུ་བ་གསལ་བར་བཤད་རོགས།"
+not_found = "རེ་ཞུ་བའི་ཆ་འཕྲིན་རྙེད་མ་སོང་།"
+processing = "བཟོ་ལས་བྱེད་པ ({{outcome}})..."
+unsupported_capability = "སྒྲིག་འགོད་མེད་པའི་ནུས་པ: {{capability}}"
 
 [chat.toolsUsed]
 summary = "ལག་ཆ་ {{count}} སྒྲུབ་ཟིན"
@@ -2799,6 +2878,7 @@ selectBaseFirst = "དང་པོར ཐོག་མའི PDF འདེམས"
 filesMissing = "འདེམས་སྒྲུག་བྱས་པའི་ཡིག་ཆ་དེ་ཚོ་འཚོལ་ཞིབ་བྱེད་མི་ཐུབ། དེ་ཚོ་ཡང་བསྐྱར་འདེམ་རོགས།"
 generic = "ཡིག་ཆ་འདི་དག་ལ་འགྲན་རྩོད་བྱེད་མི་ཐུབ།"
 selectRequired = "ཐོག་མའི་ཡིག་ཆ་དང་རྩོམ་སྒྲིག་བྱས་པའི་ཡིག་ཆ་ཞིག་འདེམས།"
+title = "གཞི་བསྡུར་ཕམ་པ"
 
 [compare.large.file]
 message = "མཁོ་སྤྲོད་བྱས་པའི་ཡིག་ཆ་གཅིག་ཡང་ན་གཉིས་ཀ་ལས་སྣོན་བྱེད་པར་ཆེ་དྲགས་པ་རེད།"
@@ -2864,6 +2944,7 @@ title = "ད་དུང་ཡང་ལས་ཀ་བྱེད་ཀྱི་�
 
 [compare.status]
 complete = "བསྡུར་ཚད་གྲ་སྒྲིག་བྱེད་པ།"
+error = "གཞི་བསྡུར་ཕམ་པ"
 extracting = "ཡིག་འབྲུ་འདོན་པ།..."
 processing = "ཁྱད་པར་དབྱེ་ཞིབ་བྱེད་པ།"
 
@@ -3771,12 +3852,246 @@ expand = "ཟུར་པང་རྒྱས"
 files = "ཡིག་ཆ"
 googleDrive = "Google Drive"
 googleDriveDisabled = "Google Drive སྒྲིག་འགོད་མ་བྱས"
+leaveMyFiles = "ངའི་ཡིག་ཆ་ནས་ཕྱིར་འདོན"
+myFiles = "ངའི་ཡིག་ཆ"
 noFiles = "ད་ཚུན་ཡིག་ཆ་མེད"
 openFileManager = "ཡིག་ཆ་དོ་དམ་ཁ་ཕྱེ"
 openFromComputer = "གློག་ཀླད་ནས་ཁ་ཕྱེ"
 openSettings = "སྒྲིག་སྟངས་ཁ་ཕྱེ"
 search = "འཚོལ"
 searchPlaceholder = "ཡིག་ཆ་འཚོལ..."
+
+[filesPage]
+addToWorkspace = "ལས་ལེན་ས་ལ་སྣོན"
+addToWorkspaceCount = "{{count}} ལས་ལེན་ས་ལ་སྣོན"
+allFiles = "ཡིག་ཆ་ཚང་མ"
+back = "ཕྱིར་ལོག"
+backToFolder = "{{folder}} ལ་ཕྱིར་ལོག"
+backToMyFiles = "ངའི་ཡིག་ཆ་ལ་ཕྱིར་ལོག"
+breadcrumbs = "སྣོད་ལམ་བཀོད"
+cancel = "ཆ་མེད"
+clearSearch = "འཚོལ་བཤེར་བསུབ"
+clearSelection = "འདེམས་པ་བསུབ"
+closeDetails = "ཞིབ་ཕྲ་ཁ་རྒྱབ"
+create = "སྐྲུན"
+cycleBlocked = "སྣོད་དེ་རང་གི་བུ་སྣོད་ནང་སྤོ་མི་ཐུབ།"
+delete = "བསུབ"
+deleteFolder = "སྣོད་བསུབ"
+deleteFolderBody = "སྣོད \"{{name}}\" བསུབ་དམ?"
+deleteFolderConfirm = "སྣོད \"{{name}}\" བསུབ་དམ? ནང་གི་ཡིག་ཆ་ཚང་མ་ཡིག་ཆ་ཚང་མར་སྤོར། {{count}} ཡིག་ཆ་ལ་འགུལ་འབྱུང་།"
+deleteFolderContents = "སྣོད་ནང་གི་ {{count}} ཡིག་ཆ་ཡང་བསུབ"
+deleteFolderContentsWarning = "ཡིག་ཆ་རྣམས་རྟག་པར་བསུབ དེ་ཕྱིར་ལོག་མི་ཐུབ།"
+deleteFolderError = "སྣོད་བསུབ་མ་ཐུབ། སླར་ཚོད་ལྟ།"
+deleteFolderKeepHint = "ནང་གི་ཡིག་ཆ་ཚང་མ་ཡིག་ཆ་ཚང་མར་སྤོར།"
+deleteFolderTitle = "སྣོད་བསུབ་དམ?"
+deselectAll = "འདེམས་པ་བསུབ"
+details = "ཞིབ་ཕྲ"
+detailsCount = "{{count}} ཡིག་ཆ་བདམས"
+dismissError = "ནོར་འཁྲུལ་སུབ"
+download = "ཕབ་ལེན"
+downloadAll = "ཚང་མ་ཕབ་ལེན"
+downloadVersion = "ཐོན་རིམ་འདི་ཕབ་ལེན"
+dropOverlay = "ཡིག་ཆ་བཙུགས་ནས་ཡར་སྐྱེལ"
+dropOverlaySub = "ཡིག་ཆ་ཚང་མ Local ནས་འགོ་བཙུགས། 'Move to' ཡང་ན 'Save to cloud' བེད་སྤྱད་ནས་སྣོད་ནང་སྒྲིག་སྟངས་བྱེད།"
+file = "ཡིག་ཆ"
+fileMenu = "ཡིག་ཆའི་བྱ་སྤྱོད"
+folder = "སྣོད"
+folderItems = "{{count}} རྣམ་པ"
+folderMenu = "སྣོད་ཀྱི་བྱ་སྤྱོད"
+inPath = "{{path}} ནང་"
+inWorkspace = "ཁ་ཕྱེ"
+inWorkspaceAria = "ལས་ལེན་ས་ནང་ཡོད་ཟིན"
+loading = "མར་འཇུག…"
+localFoldersUnavailable = "སྣོད་ཚང་མ Cloud ཁོ་ན་རེད་— ཡིག་ཆ་ཞིག Cloud ལ་ཉར་ནས་སྣོད་ནང་སྒྲིག"
+moreActions = "སྣོད་ཀྱི་བྱ་སྤྱོད་མང་པོ"
+moveLocalToCloudBlocked = "Local ཁོ་ནའི་ཡིག་ཆ་ཚང་མ Cloud སྣོད་ལ་སྤོ་མི་ཐུབ། དང་པོ Cloud ལ་ཉར་དགོས།"
+moveSkippedRemote = "{{count}} ཡིག་ཆ་ཡིས་ཞབས་ཞུ་ཆས་སུ་སྤོ་མ་ཐུབ (དབང་ཚད་མེད་ ཡང་ན་བསུབས་ཟིན་པ)།"
+moveTo = "སྤོ་བ…"
+myFiles = "ངའི་ཡིག་ཆ"
+newFolder = "སྣོད་གསར་པ"
+newFolderStorageDisabled = "ཞབས་ཞུ་ཆས་སྣོད་ཉར་ཚད་ལྕོགས་མེད། བདག་པོ་ལ་སྤེལ་རོགས།"
+newFolderTabUnavailable = "All ཡང་ན Cloud ལ་བརྗེས་ནས་སྣོད་གསར་པ་བཟོ།"
+newRootFolder = "རྩ་བའི་ས་ཆར་སྣོད་གསར་པ"
+offlineNoFolderEdits = "ཞབས་ཞུ་ཆས་ཀྱི་སྣོད་མཉམ་བསྒྲིག་མི་འབྱོར་པས སྣོད་བསྒྱུར་བཅོས་བཀག་འགོག་ཡོད། ཐོ་འགོད་དང་ཉར་གསོག་སྒྲིག་འགོད་ལ་ཞིབ་བཤེར།"
+open = "ཁ་ཕྱེ"
+openInWorkbench = "ལས་ལེན་ས་ནས་ཁ་ཕྱེ"
+openVersionInWorkspace = "ལས་ལེན་ས་ནས་ཁ་ཕྱེ"
+originFilter = "ཁུངས་གནས་འཚག"
+quickView = "མགྱོགས་ལྟ"
+refresh = "ཞབས་ཞུ་ཆས་ནས་སྒྲིག་གསར"
+remove = "བསུབ"
+removeConfirm = "{{count}} ཡིག་ཆ་བསུབ་དམ? ཕྱིར་ལོག་མི་ཐུབ།"
+removeVersion = "ཐོན་རིམ་འདི་བསུབ"
+rename = "མིང་བསྒྱུར"
+renameFolder = "སྣོད་མིང་བསྒྱུར"
+resizeFolderTree = "སྣོད་སྡེ་བའི་ཚད་བསྒྱུར (མདའ་ཚན་ལྡེ་མིག དང་ Shift ལྷག་མ; གཉིས་ལྡབ་ནས་རང་འཚམ་)"
+save = "ཉར"
+saveToServer = "ཞབས་ཞུ་ཆས་ལ་ཉར"
+saveToServerDisabledHint = "ཞབས་ཞུ་ཆས་ལ་ཉར་ནི་ལྕོགས་མེད། བདག་པོ་ལ་སྤེལ་རོགས།"
+search = "འཚོལ"
+searchPlaceholder = "སྣོད་འདི་དང་བུ་སྣོད་ཚང་མར་འཚོལ"
+selectAll = "ཚང་མ་འདེམས"
+selectAllHint = "ཚང་མ་འདེམས་པར་ཨེབ། ཕན་བདེ: Ctrl (ཡང་ན Cmd) བཟུང་ནས་གཅིག་གཅིག་སྣོན་པ་, Shift ཡིས་ཁྱབ་ཚད་འདེམས།"
+selectedCount = "{{count}} གདམ་ཟིན"
+selectFile = "ཡིག་ཆ {{name}} འདེམས"
+shareDisabledHint = "ཡིག་ཆ་མཉམ་སྤྱོད་ལྕོགས་མེད། བདག་པོ་ལ་སྤེལ་རོགས།"
+shareManage = "མཉམ་སྤྱོད་དོ་དམ"
+showDetails = "ཞིབ་ཕྲ་སྟོན"
+summary = "{{count}} རྣམ་པ"
+syncFailed = "སྣོད་མཉམ་བསྒྲིག་ཕམ་: {{message}}"
+syncPartial = "སྣོད་མཉམ་བསྒྲིག་ཆ་ཤས: {{total}} སྣོད་ནས་ {{failed}} སྣོད་མཉམ་འཇོག་མ་ཐུབ།"
+tree = "སྣོད་སྡེ་བ"
+upload = "ཡར་སྐྱེལ"
+uploadedToLocal = "ཡར་སྐྱེལ་བྱས་པའི་ཡིག་ཆ་ཚང་མ Local ནས་འགོ་འཛུགས། ཡིག་ཆ་སྣོད་ནང་འཇོག་ནི་ལ 'Save to cloud' བེད་སྤྱད།"
+uploadFromMobile = "ཁ་པར་ནས་ཡར་སྐྱེལ"
+versionActions = "ཐོན་རིམ་བྱ་སྤྱོད"
+versionCollapse = "བར་མའི་ཐོན་རིམ་བསྡམས"
+versionOrigin = "ཐོན་རིམ་ཐོག་མ"
+versionsCount = "{{count}} ཐོན་རིམ"
+versionShowHidden = "སྔ་མའི་ཐོན་རིམ {{count}} སྟོན"
+viewVersion = "ཐོན་རིམ་འདི་ལྟ"
+
+[filesPage.appearance]
+colour = "ཁ་དོག"
+icon = "རིས་རྟགས"
+title = "རྣམ་གསལ"
+useColour = "ཁ་དོག {{c}} སྤྱོད"
+
+[filesPage.column]
+modified = "བསྒྱུར་བཅོས་བྱས་ཚེས"
+name = "མིང"
+size = "ཆེ་ཆུང"
+type = "རིགས"
+
+[filesPage.empty]
+hint = "PDF ཚང་མ་ཤོག་ངོས་འདིའི་ས་གང་རུང་དུ་བཙུགས་ནས་ཡར་སྐྱེལ། ཡང་ན 'New folder' མཐེབ་གཏོང་ནས་ཡིག་ཆ་སྣོད་སྒྲིག"
+newFolderCta = "སྣོད་བཟོ"
+title = "སྣོད་འདི་སྟོང་"
+uploadCta = "ཡིག་ཆ་ཡར་སྐྱེལ"
+
+[filesPage.empty.cloud]
+hint = "འགོ་བཙུགས་པར་ཡིག་ཆ་ཞིག་ཡར་སྐྱེལ ཡང་ན་སྣོད་ཞིག་གསར་བཟོ་ནས་སྒྲིག"
+offlineHint = "ཡང་སྦྱར་ནས་ Cloud མཛོད་སྣོད་མངོན་གསལ་བཟོ།"
+offlineTitle = "Cloud ཡིག་ཆ་གསོག་འཇོག་མེད"
+title = "Cloud ཡིག་ཆ་ད་དུང་མེད"
+
+[filesPage.empty.local]
+hint = "ཡར་སྐྱེལ་མ་བྱས་པའི་ཡིག་ཆ་ཚང་མ་ནཱ་ལ་བཞག ཡིག་ཆ་ཞིག་བཙུགས།"
+title = "Local ཁོ་ནའི་ཡིག་ཆ་མེད"
+
+[filesPage.empty.recent]
+hint = "ཁྱེད་ཀྱིས་ཁ་ཕྱེ་བ་དང་བཟོ་བཅོས་བྱས་པའི་ཡིག་ཆ་འདིར་འབྱུང་།"
+title = "ད་དུང་བསྒྱུར་བཅོས་མེད"
+
+[filesPage.empty.shared]
+hint = "མི་གཞན་ཞིག་དྲ་ཐག་བརྒྱུད་ནས་མཉམ་སྤྱོད་བྱས་པ་ཡིག་ཆ་འདིར་འབྱུང་།"
+title = "ཁྱེད་ལ་མཉམ་སྤྱོད་མེད"
+
+[filesPage.empty.sharedByMe]
+hint = "ཁྱེད་ཀྱི་ཡིག་ཆ་གང་རུང་ནས་མཉམ་སྤྱོད་དྲ་ཐག་བཟོ ཡང་ན་ལས་མཉེན་མཐུན་པ་ཞིག་མགོ་འཇོག"
+title = "ཁྱེད་ཀྱིས་ད་དུང་ཡིག་ཆ་སྤྲོད་མེད"
+
+[filesPage.error]
+actionFailed = "{{action}} མཐར་འཁྱོལ་མ་བྱུང་།"
+actionFailedDetail = "{{action}} མཐར་འཁྱོལ་མ་བྱུང་: {{message}}"
+deleteFolderFailed = "སྣོད་བསུབ་མ་ཐུབ།"
+deleteFolderFailedDetail = "སྣོད་བསུབ་མ་ཐུབ: {{message}}"
+folderAppearanceFailed = "སྣོད་རྣམ་གསལ་གསར་སྒྲིག་མ་ཐུབ།"
+folderAppearanceFailedDetail = "སྣོད་རྣམ་གསལ་གསར་སྒྲིག་མ་ཐུབ: {{message}}"
+moveFilesFailed = "ཡིག་ཆ་སྤོ་མ་ཐུབ།"
+moveFilesFailedDetail = "ཡིག་ཆ་སྤོ་མ་ཐུབ: {{message}}"
+moveFolderFailed = "སྣོད་སྤོ་མ་ཐུབ།"
+moveFolderFailedDetail = "སྣོད་སྤོ་མ་ཐུབ: {{message}}"
+removeFilesFailed = "ཡིག་ཆ་བསུབ་མ་ཐུབ།"
+removeFilesFailedDetail = "ཡིག་ཆ་བསུབ་མ་ཐུབ: {{message}}"
+uploadFilesFailed = "ཡིག་ཆ་ཡར་སྐྱེལ་མ་ཐུབ།"
+uploadFilesFailedDetail = "ཡིག་ཆ་ཡར་སྐྱེལ་མ་ཐུབ: {{message}}"
+
+[filesPage.field]
+added = "ཁ་སྣོན་བྱས་པ"
+count = "ཡིག་ཆ"
+folder = "སྣོད"
+modified = "བསྒྱུར་བཅོས"
+name = "མིང"
+size = "ཆེ་ཆུང"
+toolHistory = "ལག་ཆས་ལོགས་རྒྱུད"
+toolHistoryAtVersion = "ལག་ཆས་བསྒྲིགས་རིམ་སྡུས་པ"
+totalSize = "ཆེ་ཆུང་སྤྱི"
+type = "རིགས"
+versionHistory = "ཐོན་རིམ་འགྲུལ་ལམ"
+
+[filesPage.folderName]
+cancel = "ཆ་མེད"
+error = "སྣོད་ཉར་མ་ཐུབ སླར་ཚོད་ལྟ།"
+label = "སྣོད་མིང"
+placeholder = "སྣོད་མིང"
+
+[filesPage.moveDialog]
+cancel = "ཆ་མེད"
+confirm = "འདིར་སྤོ"
+error = "སྤོ་མ་ཐུབ སླར་ཚོད་ལྟ།"
+hint = "སྣོད་དམིགས་ཡུལ་འདེམས། ཕན་བདེ: གཡས་གཡོན་སྣོད་རྩ་བར་ཡིག་ཆ་འདྲུད་པས་སྤོ་ཆོག"
+newFolderCancel = "འདོར"
+newFolderCreate = "གསར་བཟོ"
+newFolderError = "སྣོད་གསར་བཟོ་མ་ཐུབ སླར་ཚོད་ལྟ།"
+newFolderLabel = "སྣོད་གསར་པའི་མིང"
+newFolderPlaceholder = "སྣོད་མིང"
+newFolderToggle = "སྣོད་གསར་པ་བཟོ…"
+title = "སྣོད་ལ་སྤོ"
+
+[filesPage.origin]
+all = "ཁུངས་ཚང་མ"
+cloud = "Cloud"
+cloudHint = "Stirling ཞབས་ཞུ་ཆས་སྟེང་ཉར་ཡོད"
+local = "Local"
+localHint = "འདི་བརྙན་སྣང་འཆར་བྱང་འདི་ནས་རྐྱངམ་གཅིག་ཉར"
+shared = "མཉམ་སྤྱོད"
+sharedHint = "དྲ་ཐག་བརྒྱུད་ནས་ཁྱེད་ལ་མཉམ་སྤྱོད"
+
+[filesPage.sort]
+modifiedAsc = "རྙིང་པ་དང་པོ"
+modifiedDesc = "ཉེ་མཐར་དང་པོ"
+nameAsc = "མིང A→Z"
+nameDesc = "མིང Z→A"
+sizeAsc = "ཆུང་བ་དང་པོ"
+sizeDesc = "ཆེ་བ་དང་པོ"
+
+[filesPage.syncError]
+client = "སྣོད་མཉམ་བསྒྲིག་ཕམ་པ།"
+network = "ཞབས་ཞུ་ཆས་ལ་མཐུད་མ་ཐུབ།"
+server = "སྣོད་མཉམ་བསྒྲིག་སྐབས་ཞབས་ཞུ་ཆས་ནས་ནོར་འཁྲུལ།"
+
+[filesPage.tabName]
+local = "Local"
+recent = "Recent"
+shared = "ང་ལ་མཉམ་སྤྱོད"
+sharedByMe = "ངས་མཉམ་སྤྱོད"
+
+[filesPage.tabs]
+all = "ཚང་མ"
+ariaLabel = "ཡིག་ཆ་ལྟ་ཚུལ"
+cloud = "Cloud"
+local = "Local"
+recent = "Recent"
+shared = "ང་ལ་མཉམ་སྤྱོད"
+sharedByMe = "ངས་མཉམ་སྤྱོད"
+
+[filesPage.treeMenu]
+actions = "{{name}} ཡི་སྣོད་བྱ་སྤྱོད"
+collapse = "སྣོད་སྡམ"
+delete = "སྣོད་བསུབ"
+expand = "སྣོད་རྒྱས་ཕྱེ"
+newSubfolder = "ཡན་ལག་སྣོད་གསར་པ"
+rename = "མིང་བསྒྱུར"
+
+[filesPage.typeFilter]
+allTypes = "རིགས་ཚང་མ"
+label = "རིགས་ལྟར་འཚག"
+
+[filesPage.viewMode]
+grid = "ཁྲམ་ལྟ་ཚུལ"
+label = "ལྟ་ཚུལ"
+list = "ཐོ་ཡིག་ལྟ་ཚུལ"
 
 [fileToPDF]
 credit = "ཞབས་ཞུ་འདིས་ཡིག་ཆ་སྒྱུར་བཅོས་ཆེད་དུ་LibreOfficeདང་Unoconvབེད་སྤྱོད་བྱེད་ཀྱི་ཡོད།"
@@ -7695,6 +8010,7 @@ bulkTitle = "བདམས་པའི་ཡིག་ཆ་ཡར་བསྐུ�
 description = "ད་ལྟའི་ཡིག་ཆ་འདི་ཁྱེད་རང་གི་སྤྱོད་དེབ་དོན་ལ་སར་བར་གསོག་འཇོག་ནང་ཡར་བསྐུར་བྱེད།"
 errorTitle = "ཡར་བསྐུར་ཕམ་པ།"
 failure = "ཡར་བསྐུར་ཕམ་པ། ཐོ་འགོད་དང་གསོག་འཇོག་སྒྲིག་འགོད་ཞིབ་བཤེར་བྱོས།"
+featureDisabled = "ཞབས་ཞུ་ཆས་ལ་ཉར་ནི་ལྕོགས་མེད།"
 fileCount = "{{count}} ཡིག་ཆ་བདམས་ཟིན།"
 fileLabel = "ཡིག་ཆ"
 hint = "མང་མཁའི་སྦྲེལ་མཐུད་དང་འཇུག་ཚུལ་ཚང་མ་ཁྱེད་ཀྱི་སར་བར་སྒྲིག་འགོད་ཀྱིས་ཚོད་འཛིན་བྱས་ཡོད།"
@@ -7868,13 +8184,18 @@ viewerMode = "ཡིག་ཆ་མང་པོ་སེལ་བར་ཡིག
 [toolPanel]
 allTools = "ལག་ཆས་ཚང་མ"
 alpha = "ཨལ་ཕ།"
+backToAllTools = "ལག་ཆས་ཚང་མར་ལོག"
+backToDefault = "ཕྱིར་ལོག"
 backToTools = "ལག་ཆས་ལ་ཕྱིར་ལོག"
 collapse = "པང་གཞི་བསྡམས"
 comingSoon = "འབྱོར་ལ་ཉེ:"
 expand = "པང་གཞི་རྒྱས"
+goBack = "ཕྱིར་ལོག"
 placeholder = "འགོ་འཛུགས་བྱེད་པའི་ལག་ཆ་ཞིག་འདེམས།"
 premiumFeature = "གོང་ཚད་མཐོ་བའི་ཁྱད་ཆོས།"
 search = "ལག་ཆས་འཚོལ"
+toolsHeader = "ལག་ཆས"
+viewAllTools = "ལག་ཆས་ཚང་མ་ལྟ"
 
 [toolPanel.fullscreen]
 comingSoon = "འབྱོར་ལ་ཉེ:"

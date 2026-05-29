@@ -90,6 +90,7 @@ nothingToUndo = "Intet at fortryde"
 noticeTopUpOrPlan = "Ikke nok kreditter. Fyld op eller opgrader til et abonnement"
 noValidFiles = "Ingen gyldige filer at behandle"
 oops = "Ups!"
+openInNewWindow = "Åbn i nyt vindue"
 openInViewer = "Åbn i fremviser"
 operationCancelled = "Handling annulleret"
 page = "Sidenummer"
@@ -493,6 +494,11 @@ title = "Juster sideskalering"
 
 [adjustPageScale.error]
 failed = "Der opstod en fejl under justering af sideskaleringen."
+
+[adjustPageScale.orientation]
+label = "Sideorientering"
+landscape = "Liggende"
+portrait = "Stående"
 
 [adjustPageScale.pageSize]
 keep = "Behold original størrelse"
@@ -1512,6 +1518,32 @@ user = "Bruger"
 usernameInfo = "Brugernavn må kun indeholde bogstaver, tal og følgende specialtegn @._+- eller skal være en gyldig e-mailadresse."
 webOnlyUser = "Kun Web-bruger"
 
+[agents]
+auto_redaction_description = "Maskér PII automatisk"
+auto_redaction_name = "Automatisk maskering"
+back_to_tools = "Tilbage til værktøjer"
+coming_soon = "Kommer snart"
+compliance_description = "Gennemgå dokumenter for overholdelse"
+compliance_name = "Compliance-tjek"
+data_extraction_description = "Udtræk tabeller og strukturerede data"
+data_extraction_name = "Dataudtræk"
+doc_summary_description = "Opsummer lange dokumenter"
+doc_summary_name = "Opsummering"
+form_filler_description = "Udfyld PDF-formularer intelligent"
+form_filler_name = "Formularudfylder"
+fullscreen_title = "Stirling-agenter"
+pdf_to_markdown_description = "Konvertér PDF'er til ren Markdown"
+pdf_to_markdown_name = "PDF til Markdown"
+section_title = "Agenter"
+show_less = "Vis mindre"
+start_chat = "Start chat"
+stirling_description = "Din alsidige PDF-assistent"
+stirling_full_name = "Stirling generel agent"
+stirling_long_description = "Alsidig PDF-assistent, der kan køre værktøjer, oprette PDF'er og udtrække indsigter fra dine dokumenter."
+stirling_name = "Stirling"
+stirling_tooltip = "Stirling-agent"
+view_all = "Vis alle agenter"
+
 [analytics]
 disable = "Deaktiver analytics"
 enable = "Aktivér analytics"
@@ -1771,6 +1803,10 @@ insufficientPermissions = "Du har ikke tilladelse til at udføre denne handling.
 pleaseLoginAgain = "Log ind igen."
 sessionExpired = "Session udløbet"
 
+[auth.displayName]
+guest = "Gæst"
+user = "Bruger"
+
 [auto-rename]
 description = "Finder automatisk titlen fra dit PDF-indhold og bruger den som filnavn."
 header = "Auto Omdøb PDF"
@@ -1862,6 +1898,13 @@ label = "Åbn menu for {{title}}"
 
 [automate.files]
 placeholder = "Vælg filer, der skal behandles med denne automatisering"
+
+[automate.folderScanWarning]
+advice = "Du kan stadig downloade filen (fx for at inspicere eller redigere den manuelt), men de ikke-understøttede trin skal fjernes, før backend kan køre den."
+cancel = "Annuller"
+confirm = "Eksportér alligevel"
+intro = "Mappeskanning kører i backend, så den kan kun køre værktøjer, der har et backend-endpoint. Følgende trin i denne automatisering har det ikke og vil fejle, når pipelinen kører:"
+title = "Nogle trin kan ikke køre i mappeskanning"
 
 [automate.importModal]
 cancel = "Annuller"
@@ -2684,6 +2727,16 @@ title = "Ændre Tilladelser"
 [changePermissions.tooltip.warning]
 text = "For at gøre disse tilladelser uændrerlige skal du bruge værktøjet Tilføj adgangskode til at sætte en ejeradgangskode."
 
+[chat.header]
+agentMenu = "Stirling-agentmuligheder"
+clearChat = "Ryd chat"
+settings = "Agentindstillinger"
+
+[chat.input]
+attach = "Vedhæft filer"
+placeholder = "Hvad vil du gøre?"
+send = "Send besked"
+
 [chat.progress]
 analyzing = "Analyserer din anmodning..."
 calling_engine = "AI'en tænker..."
@@ -2698,6 +2751,32 @@ whole_doc_compression_round = "Sammenfatter noter..."
 whole_doc_read_done = "Færdig med at læse dokumentet..."
 whole_doc_read_started = "Læser dokumentet..."
 whole_doc_slice_done = "Læser dokumentet... ({{percent}}% færdig)"
+
+[chat.quickActions]
+browseYourFiles = "Gennemse dine filer"
+compressMany = "Komprimér disse dokumenter"
+compressOne = "Komprimér dette dokument"
+convertMany = "Konvertér disse dokumenter til PDF"
+convertOne = "Konvertér dette dokument til PDF"
+fileSummary_one = "1 fil i arbejdsområdet ({{types}})"
+fileSummary_other = "{{count}} filer i arbejdsområdet ({{types}})"
+heading = "Kom i gang"
+mergeMany = "Flet disse {{count}} dokumenter til 1"
+moreFiles = "+{{count}} flere"
+openFromComputer = "Åbn fra computer"
+removeFile = "Fjern {{name}}"
+rotateMany = "Rotér disse dokumenter"
+rotateOne = "Rotér dette dokument"
+splitOne = "Opdel dette dokument"
+
+[chat.responses]
+cannot_continue = "Noget gik galt, og jeg kan ikke fortsætte."
+cannot_do = "Det kan jeg ikke gøre."
+done = "Færdig."
+need_clarification = "Kan du præcisere din anmodning?"
+not_found = "Jeg kunne ikke finde de ønskede oplysninger."
+processing = "Behandler ({{outcome}})..."
+unsupported_capability = "Ikke-understøttet funktion: {{capability}}"
 
 [chat.toolsUsed]
 summary = "Kørte {{count}} værktøjer"
@@ -2799,6 +2878,7 @@ selectBaseFirst = "Vælg først den originale PDF"
 filesMissing = "Kan ikke finde de valgte filer. Vælg dem igen."
 generic = "Kan ikke sammenligne disse filer."
 selectRequired = "Vælg et originalt og et redigeret dokument."
+title = "Sammenligningen mislykkedes"
 
 [compare.large.file]
 message = "Et eller Begge af de Angivne Dokumenter Er For Store At Behandle"
@@ -2864,6 +2944,7 @@ title = "Arbejder stadig…"
 
 [compare.status]
 complete = "Sammenligning klar"
+error = "Sammenligningen mislykkedes"
 extracting = "Udtrækker tekst..."
 processing = "Analyserer forskelle..."
 
@@ -3771,12 +3852,246 @@ expand = "Udvid sidepanel"
 files = "Filer"
 googleDrive = "Google Drive"
 googleDriveDisabled = "Google Drive er ikke konfigureret"
+leaveMyFiles = "Forlad Mine filer"
+myFiles = "Mine filer"
 noFiles = "Ingen filer endnu"
 openFileManager = "Åbn filhåndtering"
 openFromComputer = "Åbn fra computer"
 openSettings = "Åbn indstillinger"
 search = "Søg"
 searchPlaceholder = "Søg i filer..."
+
+[filesPage]
+addToWorkspace = "Føj til arbejdsområdet"
+addToWorkspaceCount = "Føj {{count}} til arbejdsområdet"
+allFiles = "Alle filer"
+back = "Tilbage"
+backToFolder = "Tilbage til {{folder}}"
+backToMyFiles = "Tilbage til Mine filer"
+breadcrumbs = "Mappesti"
+cancel = "Annuller"
+clearSearch = "Ryd søgning"
+clearSelection = "Ryd markering"
+closeDetails = "Luk detaljer"
+create = "Opret"
+cycleBlocked = "Kan ikke flytte en mappe ind i en af dens egne undermapper."
+delete = "Slet"
+deleteFolder = "Slet mappe"
+deleteFolderBody = "Slet mappen \"{{name}}\"?"
+deleteFolderConfirm = "Slet mappen \"{{name}}\"? Filer indeni vil blive flyttet til Alle filer. {{count}} fil(er) berørt."
+deleteFolderContents = "Slet også {{count}} fil(er) i mappen"
+deleteFolderContentsWarning = "Filerne fjernes permanent og kan ikke gendannes."
+deleteFolderError = "Kunne ikke slette mappen. Prøv igen."
+deleteFolderKeepHint = "Filer indeni vil blive flyttet til Alle filer."
+deleteFolderTitle = "Slet mappe?"
+deselectAll = "Ryd markering"
+details = "Detaljer"
+detailsCount = "{{count}} filer valgt"
+dismissError = "Afvis"
+download = "Download"
+downloadAll = "Download alle"
+downloadVersion = "Download denne version"
+dropOverlay = "Slip filer for at uploade"
+dropOverlaySub = "Filer starter i Lokal. Brug 'Flyt til' eller 'Gem til cloud' for at organisere dem i en mappe."
+file = "Fil"
+fileMenu = "Filhandlinger"
+folder = "Mappe"
+folderItems = "{{count}} elementer"
+folderMenu = "Mappehandlinger"
+inPath = "i {{path}}"
+inWorkspace = "Åbn"
+inWorkspaceAria = "Allerede i arbejdsområdet"
+loading = "Indlæser…"
+localFoldersUnavailable = "Mapper er kun i cloud – gem en fil til cloud for at organisere den."
+moreActions = "Flere mappehandlinger"
+moveLocalToCloudBlocked = "Filer, der kun er lokale, kan ikke flyttes til cloudmapper. Gem dem til cloud først."
+moveSkippedRemote = "{{count}} fil(er) kunne ikke flyttes på serveren (mangler tilladelse eller allerede slettet)."
+moveTo = "Flyt til…"
+myFiles = "Mine filer"
+newFolder = "Ny mappe"
+newFolderStorageDisabled = "Servermappelagring er ikke aktiveret. Bed din admin om at slå det til."
+newFolderTabUnavailable = "Skift til Alle eller Cloud for at oprette mapper."
+newRootFolder = "Ny mappe i roden"
+offlineNoFolderEdits = "Serversynkronisering for mapper er ikke tilgængelig – mappeændringer er deaktiveret. Kontroller login og lagerkonfiguration."
+open = "Åbn"
+openInWorkbench = "Åbn i arbejdsområdet"
+openVersionInWorkspace = "Åbn i arbejdsområdet"
+originFilter = "Filtrér efter kilde"
+quickView = "Hurtig visning"
+refresh = "Opdatér fra server"
+remove = "Slet"
+removeConfirm = "Slet {{count}} fil(er)? Dette kan ikke fortrydes."
+removeVersion = "Fjern denne version"
+rename = "Omdøb"
+renameFolder = "Omdøb mappe"
+resizeFolderTree = "Tilpas størrelsen på mappetræ (piletaster, Shift for større trin; dobbeltklik for auto-tilpas)"
+save = "Gem"
+saveToServer = "Gem til server"
+saveToServerDisabledHint = "Gemning til serveren er ikke aktiveret på denne server. Bed din admin om at aktivere det."
+search = "Søg"
+searchPlaceholder = "Søg i denne mappe og undermapper"
+selectAll = "Markér alt"
+selectAllHint = "Klik for at markere alt. Tip: Hold Ctrl (eller Cmd) for at tilføje filer én ad gangen, Shift for at vælge et område."
+selectedCount = "{{count}} valgt"
+selectFile = "Vælg fil {{name}}"
+shareDisabledHint = "Fildeling er ikke aktiveret på denne server. Bed din admin om at aktivere det."
+shareManage = "Administrer deling"
+showDetails = "Vis detaljer"
+summary = "{{count}} elementer"
+syncFailed = "Mappesynkronisering mislykkedes: {{message}}"
+syncPartial = "Delvis mappesynkronisering: {{failed}} af {{total}} mapper kunne ikke flettes."
+tree = "Mapper"
+upload = "Upload"
+uploadedToLocal = "Uploadede filer starter i Lokal. Brug 'Gem til cloud' for at placere dem i en mappe."
+uploadFromMobile = "Upload fra mobil"
+versionActions = "Versionshandlinger"
+versionCollapse = "Skjul mellemliggende versioner"
+versionOrigin = "Oprindelig upload"
+versionsCount = "{{count}} versioner"
+versionShowHidden = "Vis {{count}} tidligere versioner"
+viewVersion = "Vis denne version"
+
+[filesPage.appearance]
+colour = "Farve"
+icon = "Ikon"
+title = "Udseende"
+useColour = "Brug farve {{c}}"
+
+[filesPage.column]
+modified = "Ændret"
+name = "Navn"
+size = "Størrelse"
+type = "Type"
+
+[filesPage.empty]
+hint = "Slip PDF'er hvor som helst på denne side for at uploade, eller brug knappen Ny mappe for at organisere dine filer."
+newFolderCta = "Opret mappe"
+title = "Denne mappe er tom"
+uploadCta = "Upload filer"
+
+[filesPage.empty.cloud]
+hint = "Upload en fil for at starte, eller opret en mappe for at organisere."
+offlineHint = "Opret forbindelse igen for at indlæse dit cloud-bibliotek."
+offlineTitle = "Ingen cachede cloudfiler"
+title = "Ingen cloudfiler endnu"
+
+[filesPage.empty.local]
+hint = "Filer, der gemmes uden upload, bliver her. Slip en fil for at tilføje en."
+title = "Ingen kun-lokale filer"
+
+[filesPage.empty.recent]
+hint = "Filer, du åbner eller redigerer, vises her."
+title = "Intet ændret endnu"
+
+[filesPage.empty.shared]
+hint = "Når nogen deler en fil via link, vises den her."
+title = "Intet delt med dig"
+
+[filesPage.empty.sharedByMe]
+hint = "Opret et delingslink eller inviter en kollega fra en af dine filer for at se det her."
+title = "Du har ikke delt nogen filer endnu"
+
+[filesPage.error]
+actionFailed = "Kunne ikke {{action}}."
+actionFailedDetail = "Kunne ikke {{action}}: {{message}}"
+deleteFolderFailed = "Kunne ikke slette mappen."
+deleteFolderFailedDetail = "Kunne ikke slette mappen: {{message}}"
+folderAppearanceFailed = "Kunne ikke opdatere mappens udseende."
+folderAppearanceFailedDetail = "Kunne ikke opdatere mappens udseende: {{message}}"
+moveFilesFailed = "Kunne ikke flytte filer."
+moveFilesFailedDetail = "Kunne ikke flytte filer: {{message}}"
+moveFolderFailed = "Kunne ikke flytte mappe."
+moveFolderFailedDetail = "Kunne ikke flytte mappe: {{message}}"
+removeFilesFailed = "Kunne ikke fjerne filer."
+removeFilesFailedDetail = "Kunne ikke fjerne filer: {{message}}"
+uploadFilesFailed = "Kunne ikke uploade filer."
+uploadFilesFailedDetail = "Kunne ikke uploade filer: {{message}}"
+
+[filesPage.field]
+added = "Tilføjet"
+count = "Filer"
+folder = "Mappe"
+modified = "Ændret"
+name = "Navn"
+size = "Størrelse"
+toolHistory = "Værktøjshistorik"
+toolHistoryAtVersion = "Kumulativ værktøjskæde"
+totalSize = "Samlet størrelse"
+type = "Type"
+versionHistory = "Versionsforløb"
+
+[filesPage.folderName]
+cancel = "Annuller"
+error = "Kunne ikke gemme mappen. Prøv igen."
+label = "Mappenavn"
+placeholder = "Mappenavn"
+
+[filesPage.moveDialog]
+cancel = "Annuller"
+confirm = "Flyt hertil"
+error = "Kunne ikke flytte. Prøv igen."
+hint = "Vælg en destinationsmappe. Tip: Du kan også trække og slippe filer på mapper i træet til venstre."
+newFolderCancel = "Kassér"
+newFolderCreate = "Opret"
+newFolderError = "Kunne ikke oprette mappe. Prøv igen."
+newFolderLabel = "Navn på ny mappe"
+newFolderPlaceholder = "Mappenavn"
+newFolderToggle = "Opret ny mappe…"
+title = "Flyt til mappe"
+
+[filesPage.origin]
+all = "Alle kilder"
+cloud = "Cloud"
+cloudHint = "Gemt på Stirling-serveren"
+local = "Lokal"
+localHint = "Kun gemt i denne browser"
+shared = "Delt"
+sharedHint = "Delt med dig via link"
+
+[filesPage.sort]
+modifiedAsc = "Ældste først"
+modifiedDesc = "Nyeste først"
+nameAsc = "Navn A→Z"
+nameDesc = "Navn Z→A"
+sizeAsc = "Mindste først"
+sizeDesc = "Største først"
+
+[filesPage.syncError]
+client = "Mappesynkronisering mislykkedes."
+network = "Kunne ikke nå serveren."
+server = "Serverfejl under mappesynkronisering."
+
+[filesPage.tabName]
+local = "Lokal"
+recent = "Seneste"
+shared = "Delt med mig"
+sharedByMe = "Delt af mig"
+
+[filesPage.tabs]
+all = "Alle"
+ariaLabel = "Filvisninger"
+cloud = "Cloud"
+local = "Lokal"
+recent = "Seneste"
+shared = "Delt med mig"
+sharedByMe = "Delt af mig"
+
+[filesPage.treeMenu]
+actions = "Mappehandlinger for {{name}}"
+collapse = "Skjul mappe"
+delete = "Slet mappe"
+expand = "Udvid mappe"
+newSubfolder = "Ny undermappe"
+rename = "Omdøb"
+
+[filesPage.typeFilter]
+allTypes = "Alle typer"
+label = "Filtrér efter type"
+
+[filesPage.viewMode]
+grid = "Gittervisning"
+label = "Visningstilstand"
+list = "Listevisning"
 
 [fileToPDF]
 credit = "Denne tjeneste bruger LibreOffice og Unoconv til filkonvertering."
@@ -7695,6 +8010,7 @@ bulkTitle = "Upload valgte filer"
 description = "Dette uploader den aktuelle fil til serverlager, så du selv kan få adgang."
 errorTitle = "Upload mislykkedes"
 failure = "Upload mislykkedes. Kontroller dine login- og lagerindstillinger."
+featureDisabled = "Gemning til serveren er ikke aktiveret på denne server."
 fileCount = "{{count}} filer valgt"
 fileLabel = "Fil"
 hint = "Offentlige links og adgangstilstande styres af dine serverindstillinger."
@@ -7868,13 +8184,18 @@ viewerMode = "Skift til filredigeringsværktøjet for at vælge flere filer."
 [toolPanel]
 allTools = "Alle værktøjer"
 alpha = "Alpha"
+backToAllTools = "Tilbage til alle værktøjer"
+backToDefault = "Tilbage"
 backToTools = "Tilbage til værktøjer"
 collapse = "Sammenfold panel"
 comingSoon = "Kommer snart:"
 expand = "Udvid panel"
+goBack = "Gå tilbage"
 placeholder = "Vælg et værktøj for at komme i gang"
 premiumFeature = "Premium-funktion:"
 search = "Søg i værktøjer"
+toolsHeader = "Værktøjer"
+viewAllTools = "Vis alle værktøjer"
 
 [toolPanel.fullscreen]
 comingSoon = "Kommer snart:"

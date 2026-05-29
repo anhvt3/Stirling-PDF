@@ -90,6 +90,7 @@ nothingToUndo = "Ni ničesar za razveljaviti"
 noticeTopUpOrPlan = "Ni dovolj kreditov, kupite dodatne kredite ali nadgradite na paket"
 noValidFiles = "Ni veljavnih datotek za obdelavo"
 oops = "Ojoj!"
+openInNewWindow = "Odpri v novem oknu"
 openInViewer = "Odpri v pregledovalniku"
 operationCancelled = "Operacija preklicana"
 page = "Stran"
@@ -493,6 +494,11 @@ title = "Prilagodi merilo strani"
 
 [adjustPageScale.error]
 failed = "Pri prilagajanju merila strani je prišlo do napake."
+
+[adjustPageScale.orientation]
+label = "Usmerjenost strani"
+landscape = "Ležeče"
+portrait = "Pokončno"
 
 [adjustPageScale.pageSize]
 keep = "Ohrani izvirno velikost"
@@ -1512,6 +1518,32 @@ user = "Uporabnik"
 usernameInfo = "Uporabniško ime lahko vsebuje samo črke, številke in naslednje posebne znake @._+- ali mora biti veljaven e-poštni naslov."
 webOnlyUser = "Samo spletni uporabnik"
 
+[agents]
+auto_redaction_description = "Samodejno prekrivanje PII"
+auto_redaction_name = "Samodejno prekrivanje"
+back_to_tools = "Nazaj na orodja"
+coming_soon = "Kmalu na voljo"
+compliance_description = "Preveri skladnost dokumentov"
+compliance_name = "Preverjanje skladnosti"
+data_extraction_description = "Izlušči tabele & strukturirane podatke"
+data_extraction_name = "Izluščanje podatkov"
+doc_summary_description = "Povzemi dolge dokumente"
+doc_summary_name = "Povzemanje"
+form_filler_description = "Pametno izpolni PDF obrazce"
+form_filler_name = "Izpolnjevanje obrazcev"
+fullscreen_title = "Stirling Agenti"
+pdf_to_markdown_description = "Pretvori PDF-je v čist Markdown"
+pdf_to_markdown_name = "PDF v Markdown"
+section_title = "Agenti"
+show_less = "Pokaži manj"
+start_chat = "Začni klepet"
+stirling_description = "Vaš splošnonamenski PDF pomočnik"
+stirling_full_name = "Splošni agent Stirling"
+stirling_long_description = "Splošnonamenski PDF pomočnik, ki lahko zažene orodja, ustvari PDF-je in pridobi vpoglede iz vaših dokumentov."
+stirling_name = "Stirling"
+stirling_tooltip = "Agent Stirling"
+view_all = "Prikaži vse agente"
+
 [analytics]
 disable = "Onemogoči analitiko"
 enable = "Omogoči analitiko"
@@ -1771,6 +1803,10 @@ insufficientPermissions = "Nimate dovoljenja za izvedbo tega dejanja."
 pleaseLoginAgain = "Prijavite se znova."
 sessionExpired = "Seja je potekla"
 
+[auth.displayName]
+guest = "Gost"
+user = "Uporabnik"
+
 [auto-rename]
 description = "Samodejno najde naslov iz vsebine vašega PDF-ja in ga uporabi kot ime datoteke."
 header = "Samodejno preimenuj PDF"
@@ -1862,6 +1898,13 @@ label = "Odpri meni za {{title}}"
 
 [automate.files]
 placeholder = "Izberite datoteke za obdelavo s to avtomatizacijo"
+
+[automate.folderScanWarning]
+advice = "Datoteko lahko še vedno prenesete (npr. za pregled ali ročno urejanje), vendar je treba nepodprte korake odstraniti, preden jih lahko zaledje izvede."
+cancel = "Prekliči"
+confirm = "Vseeno izvozi"
+intro = "Skeniranje map teče v zaledju, zato lahko izvede le orodja, ki imajo zaledno končno točko. Naslednji koraki v tej avtomatizaciji je nimajo in bodo ob zagonu cevovoda spodleteli:"
+title = "Nekateri koraki se v skeniranju map ne morejo zagnati"
 
 [automate.importModal]
 cancel = "Prekliči"
@@ -2684,6 +2727,16 @@ title = "Spremeni dovoljenja"
 [changePermissions.tooltip.warning]
 text = "Da bodo ta dovoljenja nespremenljiva, uporabite orodje Dodaj geslo za nastavitev lastniškega gesla."
 
+[chat.header]
+agentMenu = "Možnosti agenta Stirling"
+clearChat = "Počisti klepet"
+settings = "Nastavitve agenta"
+
+[chat.input]
+attach = "Pripni datoteke"
+placeholder = "Kaj želite narediti?"
+send = "Pošlji sporočilo"
+
 [chat.progress]
 analyzing = "Analiziram vašo zahtevo..."
 calling_engine = "AI razmišlja..."
@@ -2698,6 +2751,32 @@ whole_doc_compression_round = "Združevanje opomb..."
 whole_doc_read_done = "Končano branje dokumenta..."
 whole_doc_read_started = "Branje dokumenta..."
 whole_doc_slice_done = "Branje dokumenta... ({{percent}} % dokončano)"
+
+[chat.quickActions]
+browseYourFiles = "Prebrskaj svoje datoteke"
+compressMany = "Stisni te dokumente"
+compressOne = "Stisni ta dokument"
+convertMany = "Pretvori te dokumente v PDF"
+convertOne = "Pretvori ta dokument v PDF"
+fileSummary_one = "1 datoteka na delovni mizi ({{types}})"
+fileSummary_other = "{{count}} datotek na delovni mizi ({{types}})"
+heading = "Za začetek"
+mergeMany = "Združi teh {{count}} dokumentov v en dokument"
+moreFiles = "+{{count}} več"
+openFromComputer = "Odpri iz računalnika"
+removeFile = "Odstrani {{name}}"
+rotateMany = "Zavrti te dokumente"
+rotateOne = "Zavrti ta dokument"
+splitOne = "Razdeli ta dokument"
+
+[chat.responses]
+cannot_continue = "Nekaj je šlo narobe in ne morem nadaljevati."
+cannot_do = "Tega ne morem storiti."
+done = "Končano."
+need_clarification = "Ali lahko pojasnite svojo zahtevo?"
+not_found = "Zahtevanih informacij ni bilo mogoče najti."
+processing = "Obdelava ({{outcome}})..."
+unsupported_capability = "Nepodprta zmožnost: {{capability}}"
 
 [chat.toolsUsed]
 summary = "Zagnanih {{count}} orodij"
@@ -2799,6 +2878,7 @@ selectBaseFirst = "Najprej izberite izvirni PDF"
 filesMissing = "Izbranih datotek ni mogoče najti. Prosimo, ponovno jih izberite."
 generic = "Teh datotek ni mogoče primerjati."
 selectRequired = "Izberite izvirni in urejeni dokument."
+title = "Primerjava ni uspela"
 
 [compare.large.file]
 message = "Eden ali oba podana dokumenta sta prevelika za obdelavo"
@@ -2864,6 +2944,7 @@ title = "Še vedno delamo…"
 
 [compare.status]
 complete = "Primerjava je pripravljena"
+error = "Primerjava ni uspela"
 extracting = "Pridobivanje besedila ..."
 processing = "Analiza razlik ..."
 
@@ -3771,12 +3852,246 @@ expand = "Razširi stransko vrstico"
 files = "Datoteke"
 googleDrive = "Google Drive"
 googleDriveDisabled = "Google Drive ni konfiguriran"
+leaveMyFiles = "Zapusti Moje datoteke"
+myFiles = "Moje datoteke"
 noFiles = "Še ni datotek"
 openFileManager = "Odpri upravitelja datotek"
 openFromComputer = "Odpri iz računalnika"
 openSettings = "Odpri nastavitve"
 search = "Išči"
 searchPlaceholder = "Išči datoteke..."
+
+[filesPage]
+addToWorkspace = "Dodaj v delovni prostor"
+addToWorkspaceCount = "Dodaj {{count}} v delovni prostor"
+allFiles = "Vse datoteke"
+back = "Nazaj"
+backToFolder = "Nazaj v {{folder}}"
+backToMyFiles = "Nazaj v Moje datoteke"
+breadcrumbs = "Pot mape"
+cancel = "Prekliči"
+clearSearch = "Počisti iskanje"
+clearSelection = "Počisti izbor"
+closeDetails = "Zapri podrobnosti"
+create = "Ustvari"
+cycleBlocked = "Mape ni mogoče premakniti v eno od njenih podmap."
+delete = "Izbriši"
+deleteFolder = "Izbriši mapo"
+deleteFolderBody = "Izbrisati mapo \"{{name}}\"?"
+deleteFolderConfirm = "Izbrisati mapo \"{{name}}\"? Datoteke znotraj bodo premaknjene v Vse datoteke. Prizadetih: {{count}} datotek."
+deleteFolderContents = "Izbriši tudi {{count}} datotek v mapi"
+deleteFolderContentsWarning = "Datoteke bodo trajno odstranjene in jih ni mogoče obnoviti."
+deleteFolderError = "Mape ni bilo mogoče izbrisati. Poskusite znova."
+deleteFolderKeepHint = "Datoteke v notranjosti bodo premaknjene v Vse datoteke."
+deleteFolderTitle = "Izbris mape?"
+deselectAll = "Počisti izbor"
+details = "Podrobnosti"
+detailsCount = "{{count}} izbranih datotek"
+dismissError = "Zapri"
+download = "Prenesi"
+downloadAll = "Prenesi vse"
+downloadVersion = "Prenesi to različico"
+dropOverlay = "Spusti datoteke za nalaganje"
+dropOverlaySub = "Datoteke se sprva pojavijo v Lokalno. Za organizacijo v mapo uporabite 'Premakni v' ali 'Shrani v oblak'."
+file = "Datoteka"
+fileMenu = "Dejanja datoteke"
+folder = "Mapa"
+folderItems = "{{count}} elementov"
+folderMenu = "Dejanja mape"
+inPath = "v {{path}}"
+inWorkspace = "Odprto"
+inWorkspaceAria = "Že v delovnem prostoru"
+loading = "Nalaganje…"
+localFoldersUnavailable = "Mape so le v oblaku – shranite datoteko v oblak za organizacijo."
+moreActions = "Več dejanj za mapo"
+moveLocalToCloudBlocked = "Datotek samo lokalno ni mogoče premakniti v mape v oblaku. Najprej jih shranite v oblak."
+moveSkippedRemote = "{{count}} datotek ni bilo mogoče premakniti na strežniku (brez dovoljenja ali že izbrisano)."
+moveTo = "Premakni v…"
+myFiles = "Moje datoteke"
+newFolder = "Nova mapa"
+newFolderStorageDisabled = "Shranjevanje map na strežniku ni omogočeno. Prosite skrbnika, naj ga vklopi."
+newFolderTabUnavailable = "Preklopite na Vse ali Oblak za ustvarjanje map."
+newRootFolder = "Nova mapa v korenu"
+offlineNoFolderEdits = "Sinhronizacija map s strežnikom ni na voljo – spremembe map so onemogočene. Preverite prijavo in konfiguracijo shrambe."
+open = "Odpri"
+openInWorkbench = "Odpri na delovni mizi"
+openVersionInWorkspace = "Odpri v delovnem prostoru"
+originFilter = "Filtriraj po viru"
+quickView = "Hiter ogled"
+refresh = "Osveži s strežnika"
+remove = "Izbriši"
+removeConfirm = "Izbrisati {{count}} datotek? Tega ni mogoče razveljaviti."
+removeVersion = "Odstrani to različico"
+rename = "Preimenuj"
+renameFolder = "Preimenuj mapo"
+resizeFolderTree = "Spremeni velikost drevesa map (smerne tipke, Shift za večje korake; dvoklik za samodejno prilagoditev)"
+save = "Shrani"
+saveToServer = "Shrani na strežnik"
+saveToServerDisabledHint = "Shranjevanje na strežnik na tem strežniku ni omogočeno. Prosite skrbnika, naj to omogoči."
+search = "Išči"
+searchPlaceholder = "Išči to mapo in podmape"
+selectAll = "Izberi vse"
+selectAllHint = "Kliknite za izbor vseh. Namig: držite Ctrl (ali Cmd) za dodajanje datotek posamično, Shift za izbor obsega."
+selectedCount = "{{count}} izbranih"
+selectFile = "Izberi datoteko {{name}}"
+shareDisabledHint = "Skupna raba datotek na tem strežniku ni omogočena. Prosite skrbnika, naj jo omogoči."
+shareManage = "Upravljaj skupno rabo"
+showDetails = "Pokaži podrobnosti"
+summary = "{{count}} elementov"
+syncFailed = "Sinhronizacija mape ni uspela: {{message}}"
+syncPartial = "Delna sinhronizacija mape: {{failed}} od {{total}} map ni bilo mogoče združiti."
+tree = "Mape"
+upload = "Naloži"
+uploadedToLocal = "Naložene datoteke se najprej pojavijo v Lokalno. Uporabite 'Shrani v oblak', da jih postavite v mapo."
+uploadFromMobile = "Naloži iz mobilne naprave"
+versionActions = "Dejanja različice"
+versionCollapse = "Strni vmesne različice"
+versionOrigin = "Izvirno nalaganje"
+versionsCount = "{{count}} različic"
+versionShowHidden = "Pokaži {{count}} starejših različic"
+viewVersion = "Ogled te različice"
+
+[filesPage.appearance]
+colour = "Barva"
+icon = "Ikona"
+title = "Videz"
+useColour = "Uporabi barvo {{c}}"
+
+[filesPage.column]
+modified = "Spremenjeno"
+name = "Ime"
+size = "Velikost"
+type = "Vrsta"
+
+[filesPage.empty]
+hint = "Spustite PDF-je kamor koli na to stran za nalaganje ali uporabite gumb Nova mapa za organizacijo datotek."
+newFolderCta = "Ustvari mapo"
+title = "Ta mapa je prazna"
+uploadCta = "Naloži datoteke"
+
+[filesPage.empty.cloud]
+hint = "Najprej naložite datoteko ali ustvarite mapo za organizacijo."
+offlineHint = "Ponovno vzpostavite povezavo, da naložite knjižnico v oblaku."
+offlineTitle = "Ni predpomnjenih datotek v oblaku"
+title = "Še ni datotek v oblaku"
+
+[filesPage.empty.local]
+hint = "Datoteke, shranjene brez nalaganja, ostanejo tukaj. Spustite datoteko, da jo dodate."
+title = "Ni samo lokalnih datotek"
+
+[filesPage.empty.recent]
+hint = "Datoteke, ki jih odprete ali uredite, se bodo prikazale tukaj."
+title = "Še nič spremenjenega"
+
+[filesPage.empty.shared]
+hint = "Ko nekdo deli datoteko prek povezave, se prikaže tukaj."
+title = "Ničesar ni deljeno z vami"
+
+[filesPage.empty.sharedByMe]
+hint = "Ustvarite povezavo za deljenje ali povabite sodelavca iz katere koli svoje datoteke, da se prikaže tukaj."
+title = "Še niste delili nobene datoteke"
+
+[filesPage.error]
+actionFailed = "Ni bilo mogoče {{action}}."
+actionFailedDetail = "Ni bilo mogoče {{action}}: {{message}}"
+deleteFolderFailed = "Mape ni bilo mogoče izbrisati."
+deleteFolderFailedDetail = "Mape ni bilo mogoče izbrisati: {{message}}"
+folderAppearanceFailed = "Videz mape ni bilo mogoče posodobiti."
+folderAppearanceFailedDetail = "Videz mape ni bilo mogoče posodobiti: {{message}}"
+moveFilesFailed = "Datotek ni bilo mogoče premakniti."
+moveFilesFailedDetail = "Datotek ni bilo mogoče premakniti: {{message}}"
+moveFolderFailed = "Mape ni bilo mogoče premakniti."
+moveFolderFailedDetail = "Mape ni bilo mogoče premakniti: {{message}}"
+removeFilesFailed = "Datotek ni bilo mogoče odstraniti."
+removeFilesFailedDetail = "Datotek ni bilo mogoče odstraniti: {{message}}"
+uploadFilesFailed = "Datotek ni bilo mogoče naložiti."
+uploadFilesFailedDetail = "Datotek ni bilo mogoče naložiti: {{message}}"
+
+[filesPage.field]
+added = "Dodano"
+count = "Datoteke"
+folder = "Mapa"
+modified = "Spremenjeno"
+name = "Ime"
+size = "Velikost"
+toolHistory = "Zgodovina orodij"
+toolHistoryAtVersion = "Kumulativna veriga orodij"
+totalSize = "Skupna velikost"
+type = "Vrsta"
+versionHistory = "Potek različic"
+
+[filesPage.folderName]
+cancel = "Prekliči"
+error = "Mape ni bilo mogoče shraniti. Poskusite znova."
+label = "Ime mape"
+placeholder = "Ime mape"
+
+[filesPage.moveDialog]
+cancel = "Prekliči"
+confirm = "Premakni sem"
+error = "Ni mogoče premakniti. Poskusite znova."
+hint = "Izberite ciljno mapo. Namig: datoteke lahko tudi povlečete in spustite na mape v drevesu na levi."
+newFolderCancel = "Zavrzi"
+newFolderCreate = "Ustvari"
+newFolderError = "Mape ni bilo mogoče ustvariti. Poskusite znova."
+newFolderLabel = "Ime nove mape"
+newFolderPlaceholder = "Ime mape"
+newFolderToggle = "Ustvari novo mapo…"
+title = "Premakni v mapo"
+
+[filesPage.origin]
+all = "Vsi viri"
+cloud = "Oblak"
+cloudHint = "Shranjeno na strežniku Stirling"
+local = "Lokalno"
+localHint = "Shranjeno samo v tem brskalniku"
+shared = "V skupni rabi"
+sharedHint = "V skupni rabi z vami prek povezave"
+
+[filesPage.sort]
+modifiedAsc = "Najstarejše najprej"
+modifiedDesc = "Najnovejše najprej"
+nameAsc = "Ime A→Z"
+nameDesc = "Ime Z→A"
+sizeAsc = "Najmanjše najprej"
+sizeDesc = "Največje najprej"
+
+[filesPage.syncError]
+client = "Sinhronizacija mape ni uspela."
+network = "Strežnika ni bilo mogoče doseči."
+server = "Napaka strežnika med sinhronizacijo mape."
+
+[filesPage.tabName]
+local = "Lokalno"
+recent = "Nedavno"
+shared = "V skupni rabi z mano"
+sharedByMe = "V skupni rabi z moje strani"
+
+[filesPage.tabs]
+all = "Vse"
+ariaLabel = "Pogledi datotek"
+cloud = "Oblak"
+local = "Lokalno"
+recent = "Nedavno"
+shared = "V skupni rabi z mano"
+sharedByMe = "V skupni rabi z moje strani"
+
+[filesPage.treeMenu]
+actions = "Dejanja mape za {{name}}"
+collapse = "Strni mapo"
+delete = "Izbriši mapo"
+expand = "Razširi mapo"
+newSubfolder = "Nova podmapa"
+rename = "Preimenuj"
+
+[filesPage.typeFilter]
+allTypes = "Vse vrste"
+label = "Filtriraj po vrsti"
+
+[filesPage.viewMode]
+grid = "Mrežni pogled"
+label = "Način pogleda"
+list = "Seznamski pogled"
 
 [fileToPDF]
 credit = "Ta storitev uporablja LibreOffice in Unoconv za pretvorbo datotek."
@@ -7695,6 +8010,7 @@ bulkTitle = "Naloži izbrane datoteke"
 description = "To naloži trenutno datoteko v strežniško shrambo za vaš dostop."
 errorTitle = "Nalaganje ni uspelo"
 failure = "Nalaganje ni uspelo. Preverite svojo prijavo in nastavitve shrambe."
+featureDisabled = "Shranjevanje na strežnik na tem strežniku ni omogočeno."
 fileCount = "{{count}} izbranih datotek"
 fileLabel = "Datoteka"
 hint = "Javne povezave in načine dostopa nadzirajo nastavitve vašega strežnika."
@@ -7868,13 +8184,18 @@ viewerMode = "Preklopite v urejevalnik datotek, da izberete več datotek."
 [toolPanel]
 allTools = "Vsa orodja"
 alpha = "Alfa"
+backToAllTools = "Nazaj na vsa orodja"
+backToDefault = "Nazaj"
 backToTools = "Nazaj na orodja"
 collapse = "Strni ploščo"
 comingSoon = "Kmalu na voljo:"
 expand = "Razširi ploščo"
+goBack = "Pojdi nazaj"
 placeholder = "Izberite orodje za začetek"
 premiumFeature = "Premium funkcija:"
 search = "Išči orodja"
+toolsHeader = "Orodja"
+viewAllTools = "Prikaži vsa orodja"
 
 [toolPanel.fullscreen]
 comingSoon = "Kmalu na voljo:"

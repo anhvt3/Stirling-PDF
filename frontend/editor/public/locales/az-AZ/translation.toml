@@ -90,6 +90,7 @@ nothingToUndo = "Geri alınacaq heç nə yoxdur"
 noticeTopUpOrPlan = "Kreditlər kifayət deyil, xahiş edirik balansı artırın və ya planı yüksəldin"
 noValidFiles = "Emal üçün etibarlı fayl yoxdur"
 oops = "Bağışlayın!"
+openInNewWindow = "Yeni pəncərədə aç"
 openInViewer = "Baxışda aç"
 operationCancelled = "Əməliyyat ləğv edildi"
 page = "Səhifə"
@@ -493,6 +494,11 @@ title = "Səhifə miqyasını tənzimlə"
 
 [adjustPageScale.error]
 failed = "Səhifə miqyası tənzimlənərkən xəta baş verdi."
+
+[adjustPageScale.orientation]
+label = "Səhifə istiqaməti"
+landscape = "Üfüqi"
+portrait = "Şaquli"
 
 [adjustPageScale.pageSize]
 keep = "Orijinal ölçünü saxla"
@@ -1512,6 +1518,32 @@ user = "İstifadəçi"
 usernameInfo = "İstifadəçi adı sadəcə hərflərdən, rəqəmlərdən və @._+- xüsusi simvollarından ibarət ola bilər və ya düzgün email ünvanı olmalıdır."
 webOnlyUser = "Yalnız Veb İstifadəçisi"
 
+[agents]
+auto_redaction_description = "PII-ni avtomatik məxfiləşdirin"
+auto_redaction_name = "Avtomatik Məxfiləşdirmə"
+back_to_tools = "Alətlərə qayıdın"
+coming_soon = "Tezliklə"
+compliance_description = "Sənədləri uyğunluq üçün yoxlayın"
+compliance_name = "Uyğunluq Yoxlaması"
+data_extraction_description = "Cədvəlləri və strukturlu məlumatları çıxarın"
+data_extraction_name = "Məlumatın Çıxarılması"
+doc_summary_description = "Uzun sənədləri xülasələşdirin"
+doc_summary_name = "Xülasələşdirici"
+form_filler_description = "PDF formalarını ağıllı şəkildə doldurun"
+form_filler_name = "Forma Doldurucu"
+fullscreen_title = "Stirling Agentləri"
+pdf_to_markdown_description = "PDF-ləri təmiz Markdown-a çevirin"
+pdf_to_markdown_name = "PDF-dən Markdown-a"
+section_title = "Agentlər"
+show_less = "Daha az göstərin"
+start_chat = "Söhbətə başlayın"
+stirling_description = "Ümumi təyinatlı PDF köməkçiniz"
+stirling_full_name = "Stirling Ümumi Agent"
+stirling_long_description = "Alətləri işə sala, PDF-lər yarada və sənədlərinizdən məlumat çıxara bilən ümumi təyinatlı PDF köməkçisi."
+stirling_name = "Stirling"
+stirling_tooltip = "Stirling agenti"
+view_all = "Bütün agentlərə baxın"
+
 [analytics]
 disable = "Analitikanı deaktivləşdir"
 enable = "Analitikanı aktivləşdir"
@@ -1771,6 +1803,10 @@ insufficientPermissions = "Bu əməliyyatı yerinə yetirmək üçün icazəniz 
 pleaseLoginAgain = "Zəhmət olmasa yenidən daxil olun."
 sessionExpired = "Sessiya başa çatdı"
 
+[auth.displayName]
+guest = "Qonaq"
+user = "İstifadəçi"
+
 [auto-rename]
 description = "PDF məzmunundan başlığı avtomatik tapır və onu fayl adı kimi istifadə edir."
 header = "Pdf-in Adını Avtomatik Yenidən Adlandır"
@@ -1862,6 +1898,13 @@ label = "{{title}} üçün menyunu aç"
 
 [automate.files]
 placeholder = "Bu avtomatlaşdırma ilə emal etmək üçün faylları seçin"
+
+[automate.folderScanWarning]
+advice = "Faylı yenə də endirə bilərsiniz (məs., baxmaq və ya əl ilə redaktə etmək üçün), lakin backend onu işə sala bilməzdən əvvəl dəstəklənməyən addımlar silinməlidir."
+cancel = "Ləğv et"
+confirm = "Hər halda ixrac et"
+intro = "Qovluğun skan edilməsi backend-də işləyir, buna görə yalnız backend endpoint-i olan alətləri icra edə bilər. Bu avtomatlaşdırmadakı aşağıdakı addım(lər)də yoxdur və pipeline işlədikdə uğursuz olacaq:"
+title = "Bəzi addımlar qovluq skanında icra oluna bilmir"
 
 [automate.importModal]
 cancel = "Ləğv et"
@@ -2684,6 +2727,16 @@ title = "İcazələri Dəyişdir"
 [changePermissions.tooltip.warning]
 text = "Bu icazələri dəyişdirilməz etmək üçün, Parol əlavə etmə alətindən istifadə edərək sahib parolu təyin edin."
 
+[chat.header]
+agentMenu = "Stirling agenti seçimləri"
+clearChat = "Söhbəti təmizləyin"
+settings = "Agent parametrləri"
+
+[chat.input]
+attach = "Faylları əlavə edin"
+placeholder = "Nə etmək istəyirsiniz?"
+send = "Mesajı göndərin"
+
 [chat.progress]
 analyzing = "Sorğunuz təhlil olunur..."
 calling_engine = "Süni intellekt düşünür..."
@@ -2698,6 +2751,32 @@ whole_doc_compression_round = "Qeydlər birləşdirilir..."
 whole_doc_read_done = "Sənədin oxunması tamamlandı..."
 whole_doc_read_started = "Sənəd oxunur..."
 whole_doc_slice_done = "Sənəd oxunur... ({{percent}}% tamamlandı)"
+
+[chat.quickActions]
+browseYourFiles = "Fayllarınıza baxın"
+compressMany = "Bu sənədləri sıxışdırın"
+compressOne = "Bu sənədi sıxışdırın"
+convertMany = "Bu sənədləri PDF-ə çevirin"
+convertOne = "Bu sənədi PDF-ə çevirin"
+fileSummary_one = "İş dəzgahında 1 fayl ({{types}})"
+fileSummary_other = "{{count}} fayl iş dəzgahında ({{types}})"
+heading = "Başlayın"
+mergeMany = "Bu {{count}} sənədi 1-ə birləşdirin"
+moreFiles = "+{{count}} daha"
+openFromComputer = "Kompüterdən açın"
+removeFile = "{{name}} faylını silin"
+rotateMany = "Bu sənədləri fırladın"
+rotateOne = "Bu sənədi fırladın"
+splitOne = "Bu sənədi bölün"
+
+[chat.responses]
+cannot_continue = "Nəsə səhv getdi və davam edə bilmirəm."
+cannot_do = "Bunu edə bilmirəm."
+done = "Bitdi."
+need_clarification = "Zəhmət olmasa sorğunuzu dəqiqləşdirin."
+not_found = "İstənilən məlumatı tapa bilmədim."
+processing = "Emal edilir ({{outcome}})..."
+unsupported_capability = "Dəstəklənməyən imkan: {{capability}}"
 
 [chat.toolsUsed]
 summary = "{{count}} alət işə salındı"
@@ -2799,6 +2878,7 @@ selectBaseFirst = "Əvvəlcə orijinal PDF-i seçin"
 filesMissing = "Seçilmiş faylları tapmaq mümkün olmadı. Zəhmət olmasa onları yenidən seçin."
 generic = "Bu faylları müqayisə etmək mümkün deyil."
 selectRequired = "Orijinal və redaktə edilmiş sənədi seçin."
+title = "Müqayisə uğursuz oldu"
 
 [compare.large.file]
 message = "Fayllardan biri və ya ikisi də işləmək üçün çox böyükdür."
@@ -2864,6 +2944,7 @@ title = "Hələ işləyirik…"
 
 [compare.status]
 complete = "Müqayisə hazırdır"
+error = "Müqayisə uğursuz oldu"
 extracting = "Mətni çıxarır..."
 processing = "Fərqlər analiz olunur..."
 
@@ -3771,12 +3852,246 @@ expand = "Yan paneli genişləndir"
 files = "Fayllar"
 googleDrive = "Google Drive"
 googleDriveDisabled = "Google Drive konfiqurasiya edilməyib"
+leaveMyFiles = "Mənim Fayllarım-dan çıxın"
+myFiles = "Mənim Fayllarım"
 noFiles = "Hələ fayl yoxdur"
 openFileManager = "Fayl menecerini aç"
 openFromComputer = "Kompüterdən aç"
 openSettings = "Ayarları aç"
 search = "Axtar"
 searchPlaceholder = "Fayllarda axtar..."
+
+[filesPage]
+addToWorkspace = "İş sahəsinə əlavə edin"
+addToWorkspaceCount = "{{count}} faylı iş sahəsinə əlavə edin"
+allFiles = "Bütün fayllar"
+back = "Geri"
+backToFolder = "{{folder}} qovluğuna qayıt"
+backToMyFiles = "Mənim Fayllarım-a qayıt"
+breadcrumbs = "Qovluq yolu"
+cancel = "Ləğv et"
+clearSearch = "Axtarışı təmizlə"
+clearSelection = "Seçimi təmizlə"
+closeDetails = "Təfərrüatları bağlayın"
+create = "Yaradın"
+cycleBlocked = "Qovluğu öz alt qovluqlarından birinə köçürmək mümkün deyil."
+delete = "Silin"
+deleteFolder = "Qovluğu silin"
+deleteFolderBody = "\"{{name}}\" qovluğu silinsin?"
+deleteFolderConfirm = "\"{{name}}\" qovluğu silinsin? Daxildəki fayllar Bütün fayllara köçürüləcək. {{count}} fayl təsirlənəcək."
+deleteFolderContents = "Qovluğun içindəki {{count}} faylı da silin"
+deleteFolderContentsWarning = "Fayllar geri qaytarılmadan tam silinəcək."
+deleteFolderError = "Qovluğu silmək mümkün olmadı. Yenidən cəhd edin."
+deleteFolderKeepHint = "İçindəki fayllar Bütün fayllara köçürüləcək."
+deleteFolderTitle = "Qovluğu silmək?"
+deselectAll = "Seçimi təmizlə"
+details = "Təfərrüatlar"
+detailsCount = "{{count}} fayl seçildi"
+dismissError = "Bağlayın"
+download = "Endirin"
+downloadAll = "Hamısını endirin"
+downloadVersion = "Bu versiyanı endirin"
+dropOverlay = "Yükləmək üçün faylları buraxın"
+dropOverlaySub = "Fayllar əvvəlcə Lokalda başlayır. Onları qovluqlara düzənləmək üçün 'Köçür' və ya 'Buluda saxla'dan istifadə edin."
+file = "Fayl"
+fileMenu = "Fayl əməliyyatları"
+folder = "Qovluq"
+folderItems = "{{count}} element"
+folderMenu = "Qovluq əməliyyatları"
+inPath = "{{path}} daxilində"
+inWorkspace = "Açın"
+inWorkspaceAria = "Artıq iş sahəsindədir"
+loading = "Yüklənir…"
+localFoldersUnavailable = "Qovluqlar yalnız buluddadır — düzənləmək üçün faylı buluda saxlayın."
+moreActions = "Daha çox qovluq əməliyyatı"
+moveLocalToCloudBlocked = "Yalnız lokal fayllar bulud qovluqlarına köçürülə bilməz. Əvvəlcə onları buluda saxlayın."
+moveSkippedRemote = "Serverdə {{count}} faylı köçürmək mümkün olmadı (icazə yoxdur və ya artıq silinib)."
+moveTo = "Köçür…"
+myFiles = "Mənim Fayllarım"
+newFolder = "Yeni qovluq"
+newFolderStorageDisabled = "Serverdə qovluq saxlama aktiv deyil. Admininizdən bunu aktivləşdirməsini xahiş edin."
+newFolderTabUnavailable = "Qovluq yaratmaq üçün Bütün və ya Bulud bölməsinə keçin."
+newRootFolder = "Kökdə yeni qovluq"
+offlineNoFolderEdits = "Server qovluq sinxronizasiyası əlçatan deyil — qovluq dəyişiklikləri deaktiv edilib. Daxilolma və saxlama tənzimləmələrini yoxlayın."
+open = "Açın"
+openInWorkbench = "İş dəzgahında açın"
+openVersionInWorkspace = "İş sahəsində açın"
+originFilter = "Mənbəyə görə filtrlə"
+quickView = "Sürətli baxış"
+refresh = "Serverdən yenilə"
+remove = "Silin"
+removeConfirm = "{{count}} fayl silinsin? Bu əməliyyat geri qaytarıla bilməz."
+removeVersion = "Bu versiyanı silin"
+rename = "Adını dəyişin"
+renameFolder = "Qovluğun adını dəyişin"
+resizeFolderTree = "Qovluq ağacını ölçüləndirin (ox düymələri, daha böyük addımlar üçün Shift; avtomatik sığdırmaq üçün iki dəfə klikləyin)"
+save = "Saxlayın"
+saveToServer = "Serverə saxlayın"
+saveToServerDisabledHint = "Bu serverdə serverə saxlama aktiv deyil. Admininizdən aktivləşdirməsini xahiş edin."
+search = "Axtarış"
+searchPlaceholder = "Bu qovluq və alt qovluqlarda axtarın"
+selectAll = "Hamısını seçin"
+selectAllHint = "Hamısını seçmək üçün klikləyin. Məsləhət: Faylları tək-tək əlavə etmək üçün Ctrl (və ya Cmd), aralığı seçmək üçün Shift saxlayın."
+selectedCount = "{{count}} seçildi"
+selectFile = "{{name}} faylını seçin"
+shareDisabledHint = "Bu serverdə fayl paylaşımı aktiv deyil. Admininizdən aktivləşdirməsini xahiş edin."
+shareManage = "Paylaşımı idarə edin"
+showDetails = "Təfərrüatları göstərin"
+summary = "{{count}} element"
+syncFailed = "Qovluq sinxronizasiyası uğursuz oldu: {{message}}"
+syncPartial = "Qovluq sinxronizasiyası qismən baş tutdu: {{total}} qovluqdan {{failed}}-i birləşdirilə bilmədi."
+tree = "Qovluqlar"
+upload = "Yükləyin"
+uploadedToLocal = "Yüklənən fayllar əvvəlcə Lokalda olur. Onları qovluğa yerləşdirmək üçün 'Buluda saxla'dan istifadə edin."
+uploadFromMobile = "Mobil cihazdan yükləyin"
+versionActions = "Versiya əməliyyatları"
+versionCollapse = "Orta versiyaları yığın"
+versionOrigin = "Orijinal yükləmə"
+versionsCount = "{{count}} versiya"
+versionShowHidden = "{{count}} əvvəlki versiyanı göstər"
+viewVersion = "Bu versiyaya baxın"
+
+[filesPage.appearance]
+colour = "Rəng"
+icon = "Nişan"
+title = "Görünüş"
+useColour = "{{c}} rəngini istifadə edin"
+
+[filesPage.column]
+modified = "Dəyişdirilib"
+name = "Ad"
+size = "Ölçü"
+type = "Növ"
+
+[filesPage.empty]
+hint = "Yükləmək üçün bu səhifənin istənilən yerinə PDF-ləri buraxın və ya fayllarınızı düzənləmək üçün Yeni qovluq düyməsindən istifadə edin."
+newFolderCta = "Qovluq yaradın"
+title = "Bu qovluq boşdur"
+uploadCta = "Faylları yükləyin"
+
+[filesPage.empty.cloud]
+hint = "Başlamaq üçün fayl yükləyin və ya düzənləmək üçün qovluq yaradın."
+offlineHint = "Bulud kitabxananızı yükləmək üçün yenidən qoşulun."
+offlineTitle = "Keşlənmiş bulud faylı yoxdur"
+title = "Hələ bulud faylı yoxdur"
+
+[filesPage.empty.local]
+hint = "Yüklənmədən saxlanılan fayllar burada qalır. Əlavə etmək üçün faylı buraxın."
+title = "Lokal fayl yoxdur"
+
+[filesPage.empty.recent]
+hint = "Açdığınız və ya redaktə etdiyiniz fayllar burada görünəcək."
+title = "Hələ dəyişiklik yoxdur"
+
+[filesPage.empty.shared]
+hint = "Kimsə link vasitəsilə fayl paylaşdıqda, burada görünəcək."
+title = "Sizinlə heç nə paylaşılmayıb"
+
+[filesPage.empty.sharedByMe]
+hint = "Burada görmək üçün hər hansı faylınızdan paylaşım linki yaradın və ya komanda yoldaşını dəvət edin."
+title = "Hələ heç bir fayl paylaşmamısınız"
+
+[filesPage.error]
+actionFailed = "{{action}} mümkün olmadı."
+actionFailedDetail = "{{action}} mümkün olmadı: {{message}}"
+deleteFolderFailed = "Qovluğu silmək mümkün olmadı."
+deleteFolderFailedDetail = "Qovluğu silmək mümkün olmadı: {{message}}"
+folderAppearanceFailed = "Qovluğun görünüşünü yeniləmək mümkün olmadı."
+folderAppearanceFailedDetail = "Qovluğun görünüşünü yeniləmək mümkün olmadı: {{message}}"
+moveFilesFailed = "Faylları köçürmək mümkün olmadı."
+moveFilesFailedDetail = "Faylları köçürmək mümkün olmadı: {{message}}"
+moveFolderFailed = "Qovluğu köçürmək mümkün olmadı."
+moveFolderFailedDetail = "Qovluğu köçürmək mümkün olmadı: {{message}}"
+removeFilesFailed = "Faylları silmək mümkün olmadı."
+removeFilesFailedDetail = "Faylları silmək mümkün olmadı: {{message}}"
+uploadFilesFailed = "Faylları yükləmək mümkün olmadı."
+uploadFilesFailedDetail = "Faylları yükləmək mümkün olmadı: {{message}}"
+
+[filesPage.field]
+added = "Əlavə edilib"
+count = "Fayllar"
+folder = "Qovluq"
+modified = "Dəyişdirilib"
+name = "Ad"
+size = "Ölçü"
+toolHistory = "Alət tarixçəsi"
+toolHistoryAtVersion = "Kumulativ alət zənciri"
+totalSize = "Ümumi ölçü"
+type = "Növ"
+versionHistory = "Versiya yolu"
+
+[filesPage.folderName]
+cancel = "Ləğv et"
+error = "Qovluğu saxlamaq mümkün olmadı. Yenidən cəhd edin."
+label = "Qovluq adı"
+placeholder = "Qovluq adı"
+
+[filesPage.moveDialog]
+cancel = "Ləğv et"
+confirm = "Bura köçürün"
+error = "Köçürmək mümkün olmadı. Yenidən cəhd edin."
+hint = "Təyinat qovluğunu seçin. Məsləhət: Soldakı ağacdakı qovluqların üzərinə faylları sürükləyib buraxa da bilərsiniz."
+newFolderCancel = "İmtina et"
+newFolderCreate = "Yaradın"
+newFolderError = "Qovluq yaratmaq mümkün olmadı. Yenidən cəhd edin."
+newFolderLabel = "Yeni qovluğun adı"
+newFolderPlaceholder = "Qovluq adı"
+newFolderToggle = "Yeni qovluq yaradın…"
+title = "Qovluğa köçürün"
+
+[filesPage.origin]
+all = "Bütün mənbələr"
+cloud = "Bulud"
+cloudHint = "Stirling serverində saxlanılır"
+local = "Lokal"
+localHint = "Yalnız bu brauzerdə saxlanılır"
+shared = "Paylaşılan"
+sharedHint = "Link vasitəsilə sizinlə paylaşılıb"
+
+[filesPage.sort]
+modifiedAsc = "Ən köhnə əvvəl"
+modifiedDesc = "Ən yenilər əvvəl"
+nameAsc = "Ad A→Z"
+nameDesc = "Ad Z→A"
+sizeAsc = "Ən kiçik əvvəl"
+sizeDesc = "Ən böyük əvvəl"
+
+[filesPage.syncError]
+client = "Qovluq sinxronizasiyası uğursuz oldu."
+network = "Serverə qoşulmaq mümkün olmadı."
+server = "Qovluq sinxronizasiyası zamanı server xətası."
+
+[filesPage.tabName]
+local = "Lokal"
+recent = "Yaxınlarda"
+shared = "Mənimlə paylaşılanlar"
+sharedByMe = "Mənim tərəfimdən paylaşılanlar"
+
+[filesPage.tabs]
+all = "Hamısı"
+ariaLabel = "Fayl görünüşləri"
+cloud = "Bulud"
+local = "Lokal"
+recent = "Yaxınlarda"
+shared = "Mənimlə paylaşılanlar"
+sharedByMe = "Mənim tərəfimdən paylaşılanlar"
+
+[filesPage.treeMenu]
+actions = "{{name}} üçün qovluq əməliyyatları"
+collapse = "Qovluğu yığın"
+delete = "Qovluğu silin"
+expand = "Qovluğu genişləndirin"
+newSubfolder = "Yeni alt qovluq"
+rename = "Adını dəyişin"
+
+[filesPage.typeFilter]
+allTypes = "Bütün növlər"
+label = "Növə görə filtrlə"
+
+[filesPage.viewMode]
+grid = "Şəbəkə görünüşü"
+label = "Görüntüləmə rejimi"
+list = "Siyahı görünüşü"
 
 [fileToPDF]
 credit = "Bu Servis Fayl Çevirmək Üçün LibreOffice və Unoconv İşlədir"
@@ -7695,6 +8010,7 @@ bulkTitle = "Seçilmiş faylları yüklə"
 description = "Bu, cari faylı öz girişiniz üçün server yaddaşına yükləyir."
 errorTitle = "Yükləmə uğursuz oldu"
 failure = "Yükləmə uğursuz oldu. Zəhmət olmasa giriş və yaddaş tənzimləmələrinizi yoxlayın."
+featureDisabled = "Bu serverdə serverə saxlama aktiv deyil."
 fileCount = "{{count}} fayl seçilib"
 fileLabel = "Fayl"
 hint = "İctimai keçidlər və giriş rejimləri server tənzimləmələriniz tərəfindən idarə olunur."
@@ -7868,13 +8184,18 @@ viewerMode = "Bir neçə fayl seçmək üçün fayl redaktoruna keçin."
 [toolPanel]
 allTools = "Bütün alətlər"
 alpha = "Alfa"
+backToAllTools = "Bütün alətlərə qayıdın"
+backToDefault = "Geri"
 backToTools = "Alətlərə qayıt"
 collapse = "Paneli yığ"
 comingSoon = "Tezliklə:"
 expand = "Paneli genişləndir"
+goBack = "Geri qayıdın"
 placeholder = "Başlamaq üçün alət seçin"
 premiumFeature = "Premium xüsusiyyət:"
 search = "Alətlərdə axtar"
+toolsHeader = "Alətlər"
+viewAllTools = "Bütün alətlərə baxın"
 
 [toolPanel.fullscreen]
 comingSoon = "Tezliklə:"

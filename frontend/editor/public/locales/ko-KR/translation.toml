@@ -90,6 +90,7 @@ nothingToUndo = "실행 취소할 항목이 없습니다"
 noticeTopUpOrPlan = "크레딧이 부족합니다. 충전하거나 요금제를 업그레이드하세요"
 noValidFiles = "처리할 유효한 파일이 없습니다"
 oops = "이런!"
+openInNewWindow = "새 창에서 열기"
 openInViewer = "뷰어에서 열기"
 operationCancelled = "작업이 취소되었습니다"
 page = "페이지"
@@ -493,6 +494,11 @@ title = "페이지 배율 조정"
 
 [adjustPageScale.error]
 failed = "페이지 배율을 조정하는 중 오류가 발생했습니다."
+
+[adjustPageScale.orientation]
+label = "페이지 방향"
+landscape = "가로"
+portrait = "세로"
 
 [adjustPageScale.pageSize]
 keep = "원본 크기 유지"
@@ -1512,6 +1518,32 @@ user = "사용자"
 usernameInfo = "사용자 이름은 문자, 숫자 및 @._+- 특수문자만 포함하거나 유효한 이메일 주소여야 합니다."
 webOnlyUser = "웹 전용 사용자"
 
+[agents]
+auto_redaction_description = "PII를 자동으로 가림"
+auto_redaction_name = "자동 가림"
+back_to_tools = "도구로 돌아가기"
+coming_soon = "곧 제공 예정"
+compliance_description = "문서 규정 준수 검사"
+compliance_name = "규정 준수 검사"
+data_extraction_description = "표 및 구조화된 데이터 추출"
+data_extraction_name = "데이터 추출"
+doc_summary_description = "긴 문서 요약"
+doc_summary_name = "요약기"
+form_filler_description = "지능적으로 PDF 양식 채우기"
+form_filler_name = "양식 채우기"
+fullscreen_title = "Stirling 에이전트"
+pdf_to_markdown_description = "PDF를 깔끔한 Markdown으로 변환"
+pdf_to_markdown_name = "PDF를 Markdown으로"
+section_title = "에이전트"
+show_less = "간단히 보기"
+start_chat = "채팅 시작"
+stirling_description = "범용 PDF 도우미"
+stirling_full_name = "Stirling 범용 에이전트"
+stirling_long_description = "도구 실행, PDF 생성, 문서에서 인사이트 추출이 가능한 범용 PDF 도우미입니다."
+stirling_name = "Stirling"
+stirling_tooltip = "Stirling 에이전트"
+view_all = "모든 에이전트 보기"
+
 [analytics]
 disable = "분석 비활성화"
 enable = "분석 활성화"
@@ -1771,6 +1803,10 @@ insufficientPermissions = "이 작업을 수행할 권한이 없습니다."
 pleaseLoginAgain = "다시 로그인해 주세요."
 sessionExpired = "세션이 만료되었습니다"
 
+[auth.displayName]
+guest = "게스트"
+user = "사용자"
+
 [auto-rename]
 description = "PDF 콘텐츠에서 제목을 자동으로 찾아 파일명으로 사용합니다."
 header = "PDF 자동 이름 변경"
@@ -1862,6 +1898,13 @@ label = "{{title}}에 대한 메뉴 열기"
 
 [automate.files]
 placeholder = "이 자동화로 처리할 파일을 선택하세요"
+
+[automate.folderScanWarning]
+advice = "여전히 파일을 다운로드할 수 있습니다(예: 검사하거나 수동으로 편집). 하지만 백엔드가 실행하기 전에 지원되지 않는 단계는 제거해야 합니다."
+cancel = "취소"
+confirm = "그래도 내보내기"
+intro = "폴더 스캔은 백엔드에서 실행되므로 백엔드 엔드포인트가 있는 도구만 실행할 수 있습니다. 이 자동화의 다음 단계는 엔드포인트가 없어 파이프라인 실행 시 실패합니다:"
+title = "일부 단계는 폴더 스캔에서 실행할 수 없음"
 
 [automate.importModal]
 cancel = "취소"
@@ -2684,6 +2727,16 @@ title = "권한 변경"
 [changePermissions.tooltip.warning]
 text = "이 권한을 변경할 수 없도록 하려면, 비밀번호 추가 도구를 사용해 소유자 비밀번호를 설정하세요."
 
+[chat.header]
+agentMenu = "Stirling 에이전트 옵션"
+clearChat = "채팅 지우기"
+settings = "에이전트 설정"
+
+[chat.input]
+attach = "파일 첨부"
+placeholder = "무엇을 하시겠습니까?"
+send = "메시지 보내기"
+
 [chat.progress]
 analyzing = "요청을 분석하는 중..."
 calling_engine = "AI가 생각하는 중..."
@@ -2698,6 +2751,32 @@ whole_doc_compression_round = "메모를 통합하는 중..."
 whole_doc_read_done = "문서 읽기 완료..."
 whole_doc_read_started = "문서를 읽는 중..."
 whole_doc_slice_done = "문서를 읽는 중... ({{percent}}% 완료)"
+
+[chat.quickActions]
+browseYourFiles = "파일 찾아보기"
+compressMany = "이 문서 압축"
+compressOne = "이 문서 압축"
+convertMany = "이 문서를 PDF로 변환"
+convertOne = "이 문서를 PDF로 변환"
+fileSummary_one = "작업대에 파일 1개 ({{types}})"
+fileSummary_other = "작업대에 파일 {{count}}개 ({{types}})"
+heading = "시작하기"
+mergeMany = "이 {{count}}개 문서를 1개로 병합"
+moreFiles = "+{{count}}개 더"
+openFromComputer = "컴퓨터에서 열기"
+removeFile = "{{name}} 제거"
+rotateMany = "이 문서 회전"
+rotateOne = "이 문서 회전"
+splitOne = "이 문서 분할"
+
+[chat.responses]
+cannot_continue = "문제가 발생하여 계속할 수 없습니다."
+cannot_do = "그렇게 할 수 없습니다."
+done = "완료."
+need_clarification = "요청을 명확히 해 주시겠어요?"
+not_found = "요청한 정보를 찾을 수 없습니다."
+processing = "처리 중 ({{outcome}})..."
+unsupported_capability = "지원되지 않는 기능: {{capability}}"
 
 [chat.toolsUsed]
 summary = "도구 {{count}}개 실행함"
@@ -2799,6 +2878,7 @@ selectBaseFirst = "먼저 원본 PDF를 선택하세요"
 filesMissing = "선택한 파일을 찾을 수 없습니다. 다시 선택하세요."
 generic = "이 파일들을 비교할 수 없습니다."
 selectRequired = "원본과 수정된 문서를 선택하세요."
+title = "비교 실패"
 
 [compare.large.file]
 message = "제공된 문서 중 하나 이상이 처리하기에 너무 큽니다"
@@ -2864,6 +2944,7 @@ title = "작업 중…"
 
 [compare.status]
 complete = "비교 준비 완료"
+error = "비교 실패"
 extracting = "텍스트 추출 중..."
 processing = "차이 분석 중..."
 
@@ -3771,12 +3852,246 @@ expand = "사이드바 펼치기"
 files = "파일"
 googleDrive = "Google Drive"
 googleDriveDisabled = "Google Drive가 구성되지 않았습니다"
+leaveMyFiles = "내 파일에서 나가기"
+myFiles = "내 파일"
 noFiles = "아직 파일이 없습니다"
 openFileManager = "파일 관리자 열기"
 openFromComputer = "컴퓨터에서 열기"
 openSettings = "설정 열기"
 search = "검색"
 searchPlaceholder = "파일 검색..."
+
+[filesPage]
+addToWorkspace = "작업공간에 추가"
+addToWorkspaceCount = "{{count}}개를 작업공간에 추가"
+allFiles = "모든 파일"
+back = "뒤로"
+backToFolder = "{{folder}}로 돌아가기"
+backToMyFiles = "내 파일로 돌아가기"
+breadcrumbs = "폴더 경로"
+cancel = "취소"
+clearSearch = "검색 지우기"
+clearSelection = "선택 해제"
+closeDetails = "상세 닫기"
+create = "만들기"
+cycleBlocked = "폴더를 자신의 하위 폴더로 옮길 수 없습니다."
+delete = "삭제"
+deleteFolder = "폴더 삭제"
+deleteFolderBody = "폴더 \"{{name}}\"를 삭제할까요?"
+deleteFolderConfirm = "폴더 \"{{name}}\"를 삭제할까요? 내부 파일은 모든 파일로 이동됩니다. 파일 {{count}}개에 영향이 있습니다."
+deleteFolderContents = "폴더 안의 파일 {{count}}개도 삭제"
+deleteFolderContentsWarning = "파일은 완전히 삭제되어 복구할 수 없습니다."
+deleteFolderError = "폴더를 삭제할 수 없습니다. 다시 시도하세요."
+deleteFolderKeepHint = "내부 파일은 모든 파일로 이동됩니다."
+deleteFolderTitle = "폴더를 삭제할까요?"
+deselectAll = "선택 해제"
+details = "상세"
+detailsCount = "파일 {{count}}개 선택됨"
+dismissError = "닫기"
+download = "다운로드"
+downloadAll = "모두 다운로드"
+downloadVersion = "이 버전 다운로드"
+dropOverlay = "업로드하려면 파일을 놓으세요"
+dropOverlaySub = "파일은 처음에 로컬에 저장됩니다. 폴더에 정리하려면 '이동…' 또는 '클라우드에 저장'을 사용하세요."
+file = "파일"
+fileMenu = "파일 작업"
+folder = "폴더"
+folderItems = "항목 {{count}}개"
+folderMenu = "폴더 작업"
+inPath = "{{path}}에 있음"
+inWorkspace = "열기"
+inWorkspaceAria = "이미 작업공간에 있음"
+loading = "로드 중…"
+localFoldersUnavailable = "폴더는 클라우드 전용입니다. 정리하려면 파일을 클라우드에 저장하세요."
+moreActions = "추가 폴더 작업"
+moveLocalToCloudBlocked = "로컬 전용 파일은 클라우드 폴더로 이동할 수 없습니다. 먼저 클라우드에 저장하세요."
+moveSkippedRemote = "서버에서 파일 {{count}}개를 이동할 수 없었습니다(권한 없음 또는 이미 삭제됨)."
+moveTo = "이동…"
+myFiles = "내 파일"
+newFolder = "새 폴더"
+newFolderStorageDisabled = "서버 폴더 저장소가 활성화되어 있지 않습니다. 관리자에게 켜 달라고 요청하세요."
+newFolderTabUnavailable = "'전체' 또는 '클라우드'로 전환하여 폴더를 만드세요."
+newRootFolder = "루트에 새 폴더"
+offlineNoFolderEdits = "서버 폴더 동기화를 사용할 수 없어 폴더 변경이 비활성화되었습니다. 로그인 및 저장소 구성을 확인하세요."
+open = "열기"
+openInWorkbench = "작업대에서 열기"
+openVersionInWorkspace = "작업공간에서 열기"
+originFilter = "원본별 필터"
+quickView = "빠른 보기"
+refresh = "서버에서 새로 고침"
+remove = "삭제"
+removeConfirm = "파일 {{count}}개를 삭제할까요? 이 작업은 되돌릴 수 없습니다."
+removeVersion = "이 버전 제거"
+rename = "이름 바꾸기"
+renameFolder = "폴더 이름 바꾸기"
+resizeFolderTree = "폴더 트리 크기 조절(화살표 키, 더 큰 단계는 Shift; 자동 맞춤은 더블 클릭)"
+save = "저장"
+saveToServer = "서버에 저장"
+saveToServerDisabledHint = "서버에 저장이 이 서버에서 활성화되어 있지 않습니다. 관리자에게 활성화를 요청하세요."
+search = "검색"
+searchPlaceholder = "이 폴더 및 하위 폴더에서 검색"
+selectAll = "모두 선택"
+selectAllHint = "클릭하여 모두 선택. 팁: Ctrl(또는 Cmd)로 하나씩 추가 선택, Shift로 범위 선택."
+selectedCount = "{{count}}개 선택됨"
+selectFile = "파일 {{name}} 선택"
+shareDisabledHint = "파일 공유가 이 서버에서 활성화되어 있지 않습니다. 관리자에게 활성화를 요청하세요."
+shareManage = "공유 관리"
+showDetails = "상세 보기"
+summary = "항목 {{count}}개"
+syncFailed = "폴더 동기화 실패: {{message}}"
+syncPartial = "폴더 동기화 부분 완료: 전체 {{total}}개 중 {{failed}}개 폴더를 병합하지 못했습니다."
+tree = "폴더"
+upload = "업로드"
+uploadedToLocal = "업로드된 파일은 로컬에서 시작합니다. 폴더에 넣으려면 '클라우드에 저장'을 사용하세요."
+uploadFromMobile = "모바일에서 업로드"
+versionActions = "버전 작업"
+versionCollapse = "중간 버전 접기"
+versionOrigin = "원본 업로드"
+versionsCount = "버전 {{count}}개"
+versionShowHidden = "이전 버전 {{count}}개 표시"
+viewVersion = "이 버전 보기"
+
+[filesPage.appearance]
+colour = "색상"
+icon = "아이콘"
+title = "모양"
+useColour = "색상 {{c}} 사용"
+
+[filesPage.column]
+modified = "수정됨"
+name = "이름"
+size = "크기"
+type = "유형"
+
+[filesPage.empty]
+hint = "이 페이지 어디에나 PDF를 놓아 업로드하거나, '새 폴더' 버튼으로 파일을 정리하세요."
+newFolderCta = "폴더 만들기"
+title = "이 폴더가 비어 있습니다"
+uploadCta = "파일 업로드"
+
+[filesPage.empty.cloud]
+hint = "파일을 업로드하거나 폴더를 만들어 정리하세요."
+offlineHint = "클라우드 라이브러리를 불러오려면 다시 연결하세요."
+offlineTitle = "캐시된 클라우드 파일 없음"
+title = "아직 클라우드 파일이 없습니다"
+
+[filesPage.empty.local]
+hint = "업로드하지 않고 저장한 파일은 여기 남습니다. 파일을 끌어다 놓아 추가하세요."
+title = "로컬 전용 파일 없음"
+
+[filesPage.empty.recent]
+hint = "열거나 편집한 파일이 여기에 표시됩니다."
+title = "아직 변경된 항목이 없습니다"
+
+[filesPage.empty.shared]
+hint = "누군가 링크로 파일을 공유하면 여기에 표시됩니다."
+title = "나와 공유된 항목이 없습니다"
+
+[filesPage.empty.sharedByMe]
+hint = "내 파일에서 공유 링크를 만들거나 팀원을 초대하면 여기에 표시됩니다."
+title = "아직 공유한 파일이 없습니다"
+
+[filesPage.error]
+actionFailed = "{{action}}을(를) 수행할 수 없습니다."
+actionFailedDetail = "{{action}}을(를) 수행할 수 없습니다: {{message}}"
+deleteFolderFailed = "폴더를 삭제할 수 없습니다."
+deleteFolderFailedDetail = "폴더를 삭제할 수 없습니다: {{message}}"
+folderAppearanceFailed = "폴더 모양을 업데이트할 수 없습니다."
+folderAppearanceFailedDetail = "폴더 모양을 업데이트할 수 없습니다: {{message}}"
+moveFilesFailed = "파일을 이동할 수 없습니다."
+moveFilesFailedDetail = "파일을 이동할 수 없습니다: {{message}}"
+moveFolderFailed = "폴더를 이동할 수 없습니다."
+moveFolderFailedDetail = "폴더를 이동할 수 없습니다: {{message}}"
+removeFilesFailed = "파일을 삭제할 수 없습니다."
+removeFilesFailedDetail = "파일을 삭제할 수 없습니다: {{message}}"
+uploadFilesFailed = "파일을 업로드할 수 없습니다."
+uploadFilesFailedDetail = "파일을 업로드할 수 없습니다: {{message}}"
+
+[filesPage.field]
+added = "추가됨"
+count = "파일"
+folder = "폴더"
+modified = "수정됨"
+name = "이름"
+size = "크기"
+toolHistory = "도구 히스토리"
+toolHistoryAtVersion = "누적 도구 체인"
+totalSize = "총 크기"
+type = "유형"
+versionHistory = "버전 히스토리"
+
+[filesPage.folderName]
+cancel = "취소"
+error = "폴더를 저장할 수 없습니다. 다시 시도하세요."
+label = "폴더 이름"
+placeholder = "폴더 이름"
+
+[filesPage.moveDialog]
+cancel = "취소"
+confirm = "여기로 이동"
+error = "이동할 수 없습니다. 다시 시도하세요."
+hint = "대상 폴더를 선택하세요. 팁: 왼쪽 트리의 폴더에 파일을 끌어다 놓을 수도 있습니다."
+newFolderCancel = "취소"
+newFolderCreate = "만들기"
+newFolderError = "폴더를 만들 수 없습니다. 다시 시도하세요."
+newFolderLabel = "새 폴더 이름"
+newFolderPlaceholder = "폴더 이름"
+newFolderToggle = "새 폴더 만들기…"
+title = "폴더로 이동"
+
+[filesPage.origin]
+all = "모든 소스"
+cloud = "클라우드"
+cloudHint = "Stirling 서버에 저장됨"
+local = "로컬"
+localHint = "이 브라우저에만 저장됨"
+shared = "공유됨"
+sharedHint = "링크를 통해 귀하와 공유됨"
+
+[filesPage.sort]
+modifiedAsc = "오래된 순"
+modifiedDesc = "최신 순"
+nameAsc = "이름 A→Z"
+nameDesc = "이름 Z→A"
+sizeAsc = "작은 것부터"
+sizeDesc = "큰 것부터"
+
+[filesPage.syncError]
+client = "폴더 동기화 실패."
+network = "서버에 연결할 수 없습니다."
+server = "폴더 동기화 중 서버 오류."
+
+[filesPage.tabName]
+local = "로컬"
+recent = "최근"
+shared = "나와 공유됨"
+sharedByMe = "내가 공유함"
+
+[filesPage.tabs]
+all = "전체"
+ariaLabel = "파일 보기"
+cloud = "클라우드"
+local = "로컬"
+recent = "최근"
+shared = "나와 공유됨"
+sharedByMe = "내가 공유함"
+
+[filesPage.treeMenu]
+actions = "{{name}}의 폴더 작업"
+collapse = "폴더 접기"
+delete = "폴더 삭제"
+expand = "폴더 펼치기"
+newSubfolder = "새 하위 폴더"
+rename = "이름 바꾸기"
+
+[filesPage.typeFilter]
+allTypes = "모든 유형"
+label = "유형별 필터"
+
+[filesPage.viewMode]
+grid = "그리드 보기"
+label = "보기 모드"
+list = "목록 보기"
 
 [fileToPDF]
 credit = "이 서비스는 파일 변환을 위해 LibreOffice와 Unoconv를 사용합니다."
@@ -7695,6 +8010,7 @@ bulkTitle = "선택한 파일 업로드"
 description = "현재 파일을 서버 저장소에 업로드하여 본인이 액세스할 수 있습니다."
 errorTitle = "업로드 실패"
 failure = "업로드에 실패했습니다. 로그인 및 저장소 설정을 확인하세요."
+featureDisabled = "서버에 저장이 이 서버에서 활성화되어 있지 않습니다."
 fileCount = "{{count}}개 파일 선택됨"
 fileLabel = "파일"
 hint = "공개 링크와 액세스 모드는 서버 설정에서 제어됩니다."
@@ -7868,13 +8184,18 @@ viewerMode = "여러 파일을 선택하려면 파일 편집기로 전환하세�
 [toolPanel]
 allTools = "모든 도구"
 alpha = "알파"
+backToAllTools = "모든 도구로 돌아가기"
+backToDefault = "뒤로"
 backToTools = "도구로 돌아가기"
 collapse = "패널 접기"
 comingSoon = "곧 제공:"
 expand = "패널 펼치기"
+goBack = "뒤로 가기"
 placeholder = "시작하려면 도구를 선택하세요"
 premiumFeature = "프리미엄 기능:"
 search = "도구 검색"
+toolsHeader = "도구"
+viewAllTools = "모든 도구 보기"
 
 [toolPanel.fullscreen]
 comingSoon = "곧 제공 예정:"

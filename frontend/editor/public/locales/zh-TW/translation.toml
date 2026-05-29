@@ -90,6 +90,7 @@ nothingToUndo = "沒有可復原的操作"
 noticeTopUpOrPlan = "點數不足，請儲值或升級方案"
 noValidFiles = "沒有可處理的有效檔案"
 oops = "哎呀！"
+openInNewWindow = "在新視窗中開啟"
 openInViewer = "在檢視器中開啟"
 operationCancelled = "作業已取消"
 page = "頁面"
@@ -493,6 +494,11 @@ title = "調整頁面縮放"
 
 [adjustPageScale.error]
 failed = "調整頁面縮放時發生錯誤。"
+
+[adjustPageScale.orientation]
+label = "頁面方向"
+landscape = "橫向"
+portrait = "直向"
 
 [adjustPageScale.pageSize]
 keep = "保持原始大小"
@@ -1512,6 +1518,32 @@ user = "使用者"
 usernameInfo = "使用者名稱只能包含字母、數字和以下特殊字元 @._+- 或必須是有效的電子郵件地址。"
 webOnlyUser = "僅網頁版使用者"
 
+[agents]
+auto_redaction_description = "自動遮蔽個資"
+auto_redaction_name = "自動遮蔽"
+back_to_tools = "返回工具"
+coming_soon = "即將推出"
+compliance_description = "稽核文件是否符合規範"
+compliance_name = "合規檢查"
+data_extraction_description = "擷取表格與結構化資料"
+data_extraction_name = "資料擷取"
+doc_summary_description = "摘要長篇文件"
+doc_summary_name = "摘要"
+form_filler_description = "智慧填寫 PDF 表單"
+form_filler_name = "表單填寫"
+fullscreen_title = "Stirling 代理"
+pdf_to_markdown_description = "將 PDF 轉換為乾淨的 Markdown"
+pdf_to_markdown_name = "PDF to Markdown"
+section_title = "代理"
+show_less = "顯示較少"
+start_chat = "開始對話"
+stirling_description = "您的通用 PDF 助理"
+stirling_full_name = "Stirling 通用代理"
+stirling_long_description = "通用 PDF 助理，可執行工具、建立 PDF，並從您的文件中擷取洞見。"
+stirling_name = "Stirling"
+stirling_tooltip = "Stirling 代理"
+view_all = "檢視所有代理"
+
 [analytics]
 disable = "停用分析功能"
 enable = "啟用分析功能"
@@ -1771,6 +1803,10 @@ insufficientPermissions = "您沒有執行此操作的權限。"
 pleaseLoginAgain = "請重新登入。"
 sessionExpired = "工作階段已逾時"
 
+[auth.displayName]
+guest = "訪客"
+user = "使用者"
+
 [auto-rename]
 description = "自動從 PDF 內容找出標題並用作檔名。"
 header = "自動重新命名 PDF"
@@ -1862,6 +1898,13 @@ label = "開啟 {{title}} 的選單"
 
 [automate.files]
 placeholder = "選取要由此自動化流程處理的檔案"
+
+[automate.folderScanWarning]
+advice = "您仍可下載該檔案（例如檢視或手動編輯），但在後端執行前需要移除不支援的步驟。"
+cancel = "取消"
+confirm = "仍要匯出"
+intro = "資料夾掃描在後端執行，因此只能執行具有後端端點的工具。此自動化中的下列步驟沒有，管線執行時將會失敗："
+title = "部分步驟無法在資料夾掃描中執行"
 
 [automate.importModal]
 cancel = "取消"
@@ -2684,6 +2727,16 @@ title = "變更權限"
 [changePermissions.tooltip.warning]
 text = "若要使這些權限無法被變更，請使用「新增密碼」工具設定擁有者密碼。"
 
+[chat.header]
+agentMenu = "Stirling 代理選項"
+clearChat = "清除對話"
+settings = "代理設定"
+
+[chat.input]
+attach = "附加檔案"
+placeholder = "您想做什麼？"
+send = "傳送訊息"
+
 [chat.progress]
 analyzing = "正在分析您的請求..."
 calling_engine = "AI 正在思考..."
@@ -2698,6 +2751,32 @@ whole_doc_compression_round = "正在整合筆記…"
 whole_doc_read_done = "已完成讀取文件…"
 whole_doc_read_started = "正在讀取文件…"
 whole_doc_slice_done = "正在讀取文件…（已完成 {{percent}}%）"
+
+[chat.quickActions]
+browseYourFiles = "瀏覽您的檔案"
+compressMany = "壓縮這些文件"
+compressOne = "壓縮此文件"
+convertMany = "將這些文件轉換為 PDF"
+convertOne = "將此文件轉換為 PDF"
+fileSummary_one = "工作台中有 1 個檔案（{{types}}）"
+fileSummary_other = "工作台中有 {{count}} 個檔案（{{types}}）"
+heading = "開始使用"
+mergeMany = "將這些 {{count}} 份文件合併為 1 份"
+moreFiles = "+{{count}} 更多"
+openFromComputer = "從電腦開啟"
+removeFile = "移除 {{name}}"
+rotateMany = "旋轉這些文件"
+rotateOne = "旋轉此文件"
+splitOne = "分割此文件"
+
+[chat.responses]
+cannot_continue = "發生錯誤，無法繼續。"
+cannot_do = "我無法執行該操作。"
+done = "完成。"
+need_clarification = "可否說明您的需求？"
+not_found = "找不到所需資訊。"
+processing = "處理中（{{outcome}}）..."
+unsupported_capability = "不支援的能力：{{capability}}"
 
 [chat.toolsUsed]
 summary = "已執行 {{count}} 個工具"
@@ -2799,6 +2878,7 @@ selectBaseFirst = "請先選取原始 PDF"
 filesMissing = "找不到所選檔案。請重新選取。"
 generic = "無法比較這些檔案。"
 selectRequired = "請選擇原始與已編輯的文件。"
+title = "比較失敗"
 
 [compare.large.file]
 message = "選擇的檔案大小超出系統限制（其中一個或兩者皆是），無法處理"
@@ -2864,6 +2944,7 @@ title = "仍在處理…"
 
 [compare.status]
 complete = "比較已就緒"
+error = "比較失敗"
 extracting = "正在擷取文字…"
 processing = "正在分析差異…"
 
@@ -3771,12 +3852,246 @@ expand = "展開側邊欄"
 files = "檔案"
 googleDrive = "Google Drive"
 googleDriveDisabled = "尚未設定 Google Drive"
+leaveMyFiles = "離開我的檔案"
+myFiles = "我的檔案"
 noFiles = "尚無檔案"
 openFileManager = "開啟檔案管理器"
 openFromComputer = "從電腦開啟"
 openSettings = "開啟設定"
 search = "搜尋"
 searchPlaceholder = "搜尋檔案…"
+
+[filesPage]
+addToWorkspace = "加入工作區"
+addToWorkspaceCount = "加入 {{count}} 個至工作區"
+allFiles = "所有檔案"
+back = "返回"
+backToFolder = "返回 {{folder}}"
+backToMyFiles = "返回我的檔案"
+breadcrumbs = "資料夾路徑"
+cancel = "取消"
+clearSearch = "清除搜尋"
+clearSelection = "清除選取"
+closeDetails = "關閉詳細資料"
+create = "建立"
+cycleBlocked = "無法將資料夾移動到其自身的子資料夾中。"
+delete = "刪除"
+deleteFolder = "刪除資料夾"
+deleteFolderBody = "要刪除資料夾「{{name}}」嗎？"
+deleteFolderConfirm = "要刪除資料夾「{{name}}」嗎？其中的檔案將移至「所有檔案」。將影響 {{count}} 個檔案。"
+deleteFolderContents = "同時刪除資料夾內的 {{count}} 個檔案"
+deleteFolderContentsWarning = "檔案將被永久移除且無法復原。"
+deleteFolderError = "無法刪除資料夾。請再試一次。"
+deleteFolderKeepHint = "其中的檔案將移至「所有檔案」。"
+deleteFolderTitle = "要刪除資料夾嗎？"
+deselectAll = "清除選取"
+details = "詳細資料"
+detailsCount = "已選取 {{count}} 個檔案"
+dismissError = "關閉"
+download = "下載"
+downloadAll = "全部下載"
+downloadVersion = "下載此版本"
+dropOverlay = "拖放檔案以上傳"
+dropOverlaySub = "檔案會先位於「本機」。使用 '移至' 或 '儲存到雲端' 將它們整理到資料夾。"
+file = "檔案"
+fileMenu = "檔案操作"
+folder = "資料夾"
+folderItems = "{{count}} 個項目"
+folderMenu = "資料夾操作"
+inPath = "位於 {{path}}"
+inWorkspace = "開啟"
+inWorkspaceAria = "已在工作區中"
+loading = "正在載入…"
+localFoldersUnavailable = "資料夾僅適用於雲端—將檔案儲存到雲端以進行整理。"
+moreActions = "更多資料夾操作"
+moveLocalToCloudBlocked = "僅限本機的檔案無法移動到雲端資料夾。請先將它們儲存到雲端。"
+moveSkippedRemote = "{{count}} 個檔案無法在伺服器上移動（沒有權限或已刪除）。"
+moveTo = "移至…"
+myFiles = "我的檔案"
+newFolder = "新資料夾"
+newFolderStorageDisabled = "伺服器資料夾儲存功能未啟用。請聯絡系統管理員開啟。"
+newFolderTabUnavailable = "切換到「全部」或「雲端」以建立資料夾。"
+newRootFolder = "在根目錄建立資料夾"
+offlineNoFolderEdits = "伺服器資料夾同步不可用—資料夾變更已停用。請檢查登入與儲存設定。"
+open = "開啟"
+openInWorkbench = "在工作台中開啟"
+openVersionInWorkspace = "在工作區中開啟此版本"
+originFilter = "依來源篩選"
+quickView = "快速預覽"
+refresh = "從伺服器重新整理"
+remove = "刪除"
+removeConfirm = "要刪除 {{count}} 個檔案嗎？此動作無法復原。"
+removeVersion = "移除此版本"
+rename = "重新命名"
+renameFolder = "重新命名資料夾"
+resizeFolderTree = "調整資料夾樹大小（方向鍵，按住 Shift 為較大步進；按兩下以自動貼合）"
+save = "儲存"
+saveToServer = "儲存到伺服器"
+saveToServerDisabledHint = "此伺服器未啟用儲存到伺服器。請聯絡系統管理員啟用。"
+search = "搜尋"
+searchPlaceholder = "搜尋此資料夾與子資料夾"
+selectAll = "全選"
+selectAllHint = "按一下以全選。提示：按住 Ctrl（或 Cmd）可逐一加入檔案，按住 Shift 可選取範圍。"
+selectedCount = "已選取 {{count}} 個"
+selectFile = "選取檔案 {{name}}"
+shareDisabledHint = "此伺服器未啟用檔案分享。請聯絡系統管理員啟用。"
+shareManage = "管理分享"
+showDetails = "顯示詳細資料"
+summary = "{{count}} 個項目"
+syncFailed = "資料夾同步失敗：{{message}}"
+syncPartial = "資料夾同步部分完成：{{total}} 個資料夾中有 {{failed}} 個無法合併。"
+tree = "資料夾"
+upload = "上傳"
+uploadedToLocal = "上傳的檔案會先位於「本機」。使用 '儲存到雲端' 將它們放入資料夾。"
+uploadFromMobile = "從行動裝置上傳"
+versionActions = "版本操作"
+versionCollapse = "收合中間版本"
+versionOrigin = "原始上傳"
+versionsCount = "{{count}} 個版本"
+versionShowHidden = "顯示較早的 {{count}} 個版本"
+viewVersion = "檢視此版本"
+
+[filesPage.appearance]
+colour = "顏色"
+icon = "圖示"
+title = "外觀"
+useColour = "使用顏色 {{c}}"
+
+[filesPage.column]
+modified = "已修改"
+name = "名稱"
+size = "大小"
+type = "類型"
+
+[filesPage.empty]
+hint = "將 PDF 拖放到此頁面任何位置以上傳，或使用「新資料夾」按鈕整理您的檔案。"
+newFolderCta = "建立資料夾"
+title = "此資料夾是空的"
+uploadCta = "上傳檔案"
+
+[filesPage.empty.cloud]
+hint = "先上傳檔案，或建立資料夾以進行整理。"
+offlineHint = "重新連線以載入您的雲端檔案庫。"
+offlineTitle = "沒有快取的雲端檔案"
+title = "尚無雲端檔案"
+
+[filesPage.empty.local]
+hint = "未上傳而儲存的檔案會保留在此。拖放檔案以新增。"
+title = "沒有僅限本機的檔案"
+
+[filesPage.empty.recent]
+hint = "您開啟或編輯的檔案會顯示在此。"
+title = "尚未有任何變更"
+
+[filesPage.empty.shared]
+hint = "當有人透過連結與您分享檔案時，會顯示在此。"
+title = "尚未有人與您分享"
+
+[filesPage.empty.sharedByMe]
+hint = "從任一檔案建立分享連結或邀請成員，即可在此看到。"
+title = "您尚未分享任何檔案"
+
+[filesPage.error]
+actionFailed = "無法{{action}}。"
+actionFailedDetail = "無法{{action}}：{{message}}"
+deleteFolderFailed = "無法刪除資料夾。"
+deleteFolderFailedDetail = "無法刪除資料夾：{{message}}"
+folderAppearanceFailed = "無法更新資料夾外觀。"
+folderAppearanceFailedDetail = "無法更新資料夾外觀：{{message}}"
+moveFilesFailed = "無法移動檔案。"
+moveFilesFailedDetail = "無法移動檔案：{{message}}"
+moveFolderFailed = "無法移動資料夾。"
+moveFolderFailedDetail = "無法移動資料夾：{{message}}"
+removeFilesFailed = "無法刪除檔案。"
+removeFilesFailedDetail = "無法刪除檔案：{{message}}"
+uploadFilesFailed = "無法上傳檔案。"
+uploadFilesFailedDetail = "無法上傳檔案：{{message}}"
+
+[filesPage.field]
+added = "新增時間"
+count = "檔案數"
+folder = "資料夾"
+modified = "修改時間"
+name = "名稱"
+size = "大小"
+toolHistory = "工具歷程"
+toolHistoryAtVersion = "累積工具鏈"
+totalSize = "總大小"
+type = "類型"
+versionHistory = "版本歷程"
+
+[filesPage.folderName]
+cancel = "取消"
+error = "無法儲存資料夾。請再試一次。"
+label = "資料夾名稱"
+placeholder = "資料夾名稱"
+
+[filesPage.moveDialog]
+cancel = "取消"
+confirm = "移到這裡"
+error = "無法移動。請再試一次。"
+hint = "選擇目的資料夾。提示：您也可以將檔案拖放到左側樹狀結構中的資料夾。"
+newFolderCancel = "捨棄"
+newFolderCreate = "建立"
+newFolderError = "無法建立資料夾。請再試一次。"
+newFolderLabel = "新資料夾名稱"
+newFolderPlaceholder = "資料夾名稱"
+newFolderToggle = "建立新資料夾…"
+title = "移至資料夾"
+
+[filesPage.origin]
+all = "所有來源"
+cloud = "雲端"
+cloudHint = "儲存在 Stirling 伺服器上"
+local = "本機"
+localHint = "僅儲存在此瀏覽器中"
+shared = "分享"
+sharedHint = "透過連結與您分享"
+
+[filesPage.sort]
+modifiedAsc = "最舊優先"
+modifiedDesc = "最新優先"
+nameAsc = "名稱 A→Z"
+nameDesc = "名稱 Z→A"
+sizeAsc = "最小在前"
+sizeDesc = "最大在前"
+
+[filesPage.syncError]
+client = "資料夾同步失敗。"
+network = "無法連線至伺服器。"
+server = "資料夾同步期間發生伺服器錯誤。"
+
+[filesPage.tabName]
+local = "本機"
+recent = "最近"
+shared = "與我分享"
+sharedByMe = "我分享的"
+
+[filesPage.tabs]
+all = "全部"
+ariaLabel = "檔案檢視"
+cloud = "雲端"
+local = "本機"
+recent = "最近"
+shared = "與我分享"
+sharedByMe = "我分享的"
+
+[filesPage.treeMenu]
+actions = "「{{name}}」的資料夾操作"
+collapse = "收合資料夾"
+delete = "刪除資料夾"
+expand = "展開資料夾"
+newSubfolder = "新建子資料夾"
+rename = "重新命名"
+
+[filesPage.typeFilter]
+allTypes = "所有類型"
+label = "依類型篩選"
+
+[filesPage.viewMode]
+grid = "格狀檢視"
+label = "檢視模式"
+list = "清單檢視"
 
 [fileToPDF]
 credit = "此服務使用 LibreOffice 和 Unoconv 進行檔案轉換。"
@@ -7695,6 +8010,7 @@ bulkTitle = "上傳選取的檔案"
 description = "將目前的檔案上傳至伺服器儲存空間，供個人存取。"
 errorTitle = "上傳失敗"
 failure = "上傳失敗。請檢查登入狀態及儲存設定。"
+featureDisabled = "此伺服器未啟用儲存到伺服器。"
 fileCount = "已選取 {{count}} 個檔案"
 fileLabel = "檔案"
 hint = "公開連結及存取模式由伺服器設定控制。"
@@ -7868,13 +8184,18 @@ viewerMode = "切換到檔案編輯器以選取多個檔案。"
 [toolPanel]
 allTools = "所有工具"
 alpha = "Alpha"
+backToAllTools = "返回所有工具"
+backToDefault = "返回"
 backToTools = "返回工具"
 collapse = "收合面板"
 comingSoon = "即將推出："
 expand = "展開面板"
+goBack = "返回"
 placeholder = "選擇一個工具以開始"
 premiumFeature = "進階功能："
 search = "搜尋工具"
+toolsHeader = "工具"
+viewAllTools = "檢視所有工具"
 
 [toolPanel.fullscreen]
 comingSoon = "即將推出："

@@ -90,6 +90,7 @@ nothingToUndo = "No hi ha res per desfer"
 noticeTopUpOrPlan = "No tens prou crèdits; recarrega o passa a un pla"
 noValidFiles = "No hi ha fitxers vàlids per processar"
 oops = "Vaja!"
+openInNewWindow = "Obre en una finestra nova"
 openInViewer = "Obre al visor"
 operationCancelled = "Operació cancel·lada"
 page = "Pàgina"
@@ -493,6 +494,11 @@ title = "Ajusta l'escala de pàgina"
 
 [adjustPageScale.error]
 failed = "S'ha produït un error en ajustar l'escala de pàgina."
+
+[adjustPageScale.orientation]
+label = "Orientació de la pàgina"
+landscape = "Apaïsat"
+portrait = "Vertical"
 
 [adjustPageScale.pageSize]
 keep = "Mantén la mida original"
@@ -1512,6 +1518,32 @@ user = "Usuari"
 usernameInfo = "El nom d'usuari només pot contenir lletres, números i els següents caràcters especials: @._+- o ha de ser una adreça de correu electrònic vàlida."
 webOnlyUser = "Usuari només WEB"
 
+[agents]
+auto_redaction_description = "Censura PII automàticament"
+auto_redaction_name = "Censura automàtica"
+back_to_tools = "Torna a les eines"
+coming_soon = "Properament"
+compliance_description = "Audita documents per al compliment normatiu"
+compliance_name = "Comprovació de compliment normatiu"
+data_extraction_description = "Extreu taules i dades estructurades"
+data_extraction_name = "Extracció de dades"
+doc_summary_description = "Resumeix documents llargs"
+doc_summary_name = "Resumidor"
+form_filler_description = "Omple formularis PDF de manera intel·ligent"
+form_filler_name = "Omplidor de formularis"
+fullscreen_title = "Agents de Stirling"
+pdf_to_markdown_description = "Converteix PDFs a Markdown net"
+pdf_to_markdown_name = "PDF a Markdown"
+section_title = "Agents"
+show_less = "Mostra'n menys"
+start_chat = "Inicia el xat"
+stirling_description = "El teu assistent PDF d'ús general"
+stirling_full_name = "Agent general de Stirling"
+stirling_long_description = "Assistent PDF d'ús general que pot executar eines, crear PDFs i extreure informació dels teus documents."
+stirling_name = "Stirling"
+stirling_tooltip = "Agent de Stirling"
+view_all = "Mostra tots els agents"
+
 [analytics]
 disable = "Desactiva analítiques"
 enable = "Habilita analítiques"
@@ -1771,6 +1803,10 @@ insufficientPermissions = "No tens permís per fer aquesta acció."
 pleaseLoginAgain = "Si us plau, torna a iniciar sessió."
 sessionExpired = "Sessió caducada"
 
+[auth.displayName]
+guest = "Convidat"
+user = "Usuari"
+
 [auto-rename]
 description = "Troba automàticament el títol del contingut del vostre PDF i l'utilitza com a nom de fitxer."
 header = "Canvi de Nom Automàtic de PDF"
@@ -1862,6 +1898,13 @@ label = "Obre el menú per a {{title}}"
 
 [automate.files]
 placeholder = "Seleccioneu fitxers per processar amb aquesta automatització"
+
+[automate.folderScanWarning]
+advice = "Encara pots descarregar el fitxer (p. ex., per inspeccionar-lo o editar-lo manualment), però caldrà eliminar els passos no admesos abans que el backend el pugui executar."
+cancel = "Cancel·la"
+confirm = "Exporta igualment"
+intro = "L'escaneig de carpetes s'executa al backend, de manera que només pot executar eines que tinguin un endpoint de backend. Els passos següents en aquesta automatització no en tenen i fallaran quan s'executi la pipeline:"
+title = "Alguns passos no es poden executar en l'escaneig de carpetes"
 
 [automate.importModal]
 cancel = "Cancel·la"
@@ -2684,6 +2727,16 @@ title = "Canviar Permissos"
 [changePermissions.tooltip.warning]
 text = "Per fer que aquests permisos no es puguin canviar, utilitzeu l’eina Afegir contrasenya per establir una contrasenya del propietari."
 
+[chat.header]
+agentMenu = "Opcions de l'agent de Stirling"
+clearChat = "Buida el xat"
+settings = "Configuració de l'agent"
+
+[chat.input]
+attach = "Adjunta fitxers"
+placeholder = "Què vols fer?"
+send = "Envia el missatge"
+
 [chat.progress]
 analyzing = "Analitzant la teva sol·licitud..."
 calling_engine = "La IA està pensant..."
@@ -2698,6 +2751,32 @@ whole_doc_compression_round = "S’estan consolidant les notes..."
 whole_doc_read_done = "S’ha acabat de llegir el document..."
 whole_doc_read_started = "S’està llegint el document..."
 whole_doc_slice_done = "S’està llegint el document... ({{percent}}% complet)"
+
+[chat.quickActions]
+browseYourFiles = "Navega pels teus fitxers"
+compressMany = "Comprimeix aquests documents"
+compressOne = "Comprimeix aquest document"
+convertMany = "Converteix aquests documents a PDF"
+convertOne = "Converteix aquest document a PDF"
+fileSummary_one = "1 fitxer al banc de treball ({{types}})"
+fileSummary_other = "{{count}} fitxers al banc de treball ({{types}})"
+heading = "Comença"
+mergeMany = "Combina aquests {{count}} documents en 1"
+moreFiles = "+{{count}} més"
+openFromComputer = "Obre des de l'ordinador"
+removeFile = "Elimina {{name}}"
+rotateMany = "Gira aquests documents"
+rotateOne = "Gira aquest document"
+splitOne = "Divideix aquest document"
+
+[chat.responses]
+cannot_continue = "S'ha produït un error i no puc continuar."
+cannot_do = "No puc fer això."
+done = "Fet."
+need_clarification = "Pots aclarir la teva sol·licitud?"
+not_found = "No he pogut trobar la informació sol·licitada."
+processing = "Processant ({{outcome}})..."
+unsupported_capability = "Capacitat no admesa: {{capability}}"
 
 [chat.toolsUsed]
 summary = "S'han executat {{count}} eines"
@@ -2799,6 +2878,7 @@ selectBaseFirst = "Selecciona primer el PDF original"
 filesMissing = "No s'han pogut localitzar els fitxers seleccionats. Torna a seleccionar-los."
 generic = "No es poden comparar aquests fitxers."
 selectRequired = "Selecciona un document original i un d'editat."
+title = "La comparació ha fallat"
 
 [compare.large.file]
 message = "Un o tots dos documents proporcionats són massa grans per ser processats."
@@ -2864,6 +2944,7 @@ title = "Encara treballant…"
 
 [compare.status]
 complete = "Comparació preparada"
+error = "La comparació ha fallat"
 extracting = "Extraient text..."
 processing = "Analitzant diferències..."
 
@@ -3771,12 +3852,246 @@ expand = "Amplia la barra lateral"
 files = "Fitxers"
 googleDrive = "Google Drive"
 googleDriveDisabled = "Google Drive no està configurat"
+leaveMyFiles = "Surt de Els meus fitxers"
+myFiles = "Els meus fitxers"
 noFiles = "Encara no hi ha fitxers"
 openFileManager = "Obre el gestor de fitxers"
 openFromComputer = "Obre des de l’ordinador"
 openSettings = "Obre la configuració"
 search = "Cerca"
 searchPlaceholder = "Cerca fitxers..."
+
+[filesPage]
+addToWorkspace = "Afegeix a l'espai de treball"
+addToWorkspaceCount = "Afegeix {{count}} a l'espai de treball"
+allFiles = "Tots els fitxers"
+back = "Enrere"
+backToFolder = "Torna a {{folder}}"
+backToMyFiles = "Torna a Els meus fitxers"
+breadcrumbs = "Camí de la carpeta"
+cancel = "Cancel·la"
+clearSearch = "Neteja la cerca"
+clearSelection = "Neteja la selecció"
+closeDetails = "Tanca els detalls"
+create = "Crea"
+cycleBlocked = "No es pot moure una carpeta dins d'una de les seves subcarpetes."
+delete = "Suprimeix"
+deleteFolder = "Suprimeix la carpeta"
+deleteFolderBody = "Vols suprimir la carpeta \"{{name}}\"?"
+deleteFolderConfirm = "Vols suprimir la carpeta \"{{name}}\"? Els fitxers que conté es mouran a Tots els fitxers. {{count}} fitxer(s) afectats."
+deleteFolderContents = "Suprimeix també {{count}} fitxer(s) dins de la carpeta"
+deleteFolderContentsWarning = "Els fitxers s'eliminaran de manera permanent i no es podran recuperar."
+deleteFolderError = "No s'ha pogut suprimir la carpeta. Torna-ho a provar."
+deleteFolderKeepHint = "Els fitxers que conté es mouran a Tots els fitxers."
+deleteFolderTitle = "Vols suprimir la carpeta?"
+deselectAll = "Neteja la selecció"
+details = "Detalls"
+detailsCount = "{{count}} fitxers seleccionats"
+dismissError = "Descarta"
+download = "Descarrega"
+downloadAll = "Descarrega-ho tot"
+downloadVersion = "Descarrega aquesta versió"
+dropOverlay = "Deixa anar fitxers per pujar-los"
+dropOverlaySub = "Els fitxers comencen a Local. Usa 'Mou a' o 'Desa al núvol' per organitzar-los en una carpeta."
+file = "Fitxer"
+fileMenu = "Accions del fitxer"
+folder = "Carpeta"
+folderItems = "{{count}} elements"
+folderMenu = "Accions de la carpeta"
+inPath = "a {{path}}"
+inWorkspace = "Obre"
+inWorkspaceAria = "Ja és a l'espai de treball"
+loading = "Carregant…"
+localFoldersUnavailable = "Les carpetes són només al núvol: desa un fitxer al núvol per organitzar-los en una carpeta."
+moreActions = "Més accions de carpeta"
+moveLocalToCloudBlocked = "Els fitxers només locals no es poden moure a carpetes del núvol. Desa'ls al núvol primer."
+moveSkippedRemote = "{{count}} fitxer(s) no s'han pogut moure al servidor (sense permís o ja s'han suprimit)."
+moveTo = "Mou a…"
+myFiles = "Els meus fitxers"
+newFolder = "Carpeta nova"
+newFolderStorageDisabled = "L'emmagatzematge de carpetes al servidor no està habilitat. Demana a l'administrador que l'activi."
+newFolderTabUnavailable = "Canvia a Tots o Núvol per crear carpetes."
+newRootFolder = "Carpeta nova a l'arrel"
+offlineNoFolderEdits = "La sincronització de carpetes amb el servidor no està disponible: els canvis a carpetes estan desactivats. Comprova l'inici de sessió i la configuració d'emmagatzematge."
+open = "Obre"
+openInWorkbench = "Obre al banc de treball"
+openVersionInWorkspace = "Obre a l'espai de treball"
+originFilter = "Filtra per origen"
+quickView = "Vista ràpida"
+refresh = "Actualitza des del servidor"
+remove = "Suprimeix"
+removeConfirm = "Vols suprimir {{count}} fitxer(s)? Això no es pot desfer."
+removeVersion = "Elimina aquesta versió"
+rename = "Canvia el nom"
+renameFolder = "Canvia el nom de la carpeta"
+resizeFolderTree = "Redimensiona l'arbre de carpetes (tecles de fletxa, Maj per a passos més grans; doble clic per ajustar automàticament)"
+save = "Desa"
+saveToServer = "Desa al servidor"
+saveToServerDisabledHint = "Desar al servidor no està habilitat en aquest servidor. Demana a l'administrador que l'activi."
+search = "Cerca"
+searchPlaceholder = "Cerca en aquesta carpeta i subcarpetes"
+selectAll = "Selecciona-ho tot"
+selectAllHint = "Fes clic per seleccionar-ho tot. Consell: mantén premut Ctrl (o Cmd) per afegir fitxers d'un en un i Maj per seleccionar un interval."
+selectedCount = "{{count}} seleccionats"
+selectFile = "Selecciona el fitxer {{name}}"
+shareDisabledHint = "La compartició de fitxers no està habilitada en aquest servidor. Demana a l'administrador que l'activi."
+shareManage = "Gestiona la compartició"
+showDetails = "Mostra els detalls"
+summary = "{{count}} elements"
+syncFailed = "La sincronització de carpetes ha fallat: {{message}}"
+syncPartial = "Sincronització de carpetes parcial: {{failed}} de {{total}} carpetes no s'han pogut fusionar."
+tree = "Carpetes"
+upload = "Puja"
+uploadedToLocal = "Els fitxers pujats comencen a Local. Usa 'Desa al núvol' per posar-los en una carpeta."
+uploadFromMobile = "Puja des del mòbil"
+versionActions = "Accions de la versió"
+versionCollapse = "Replega les versions intermèdies"
+versionOrigin = "Pujada original"
+versionsCount = "{{count}} versions"
+versionShowHidden = "Mostra {{count}} versions anteriors"
+viewVersion = "Visualitza aquesta versió"
+
+[filesPage.appearance]
+colour = "Color"
+icon = "Icona"
+title = "Aparença"
+useColour = "Utilitza el color {{c}}"
+
+[filesPage.column]
+modified = "Modificat"
+name = "Nom"
+size = "Mida"
+type = "Tipus"
+
+[filesPage.empty]
+hint = "Deixa anar PDFs a qualsevol lloc d'aquesta pàgina per pujar-los, o usa el botó Carpeta nova per organitzar els teus fitxers."
+newFolderCta = "Crea una carpeta"
+title = "Aquesta carpeta és buida"
+uploadCta = "Puja fitxers"
+
+[filesPage.empty.cloud]
+hint = "Puja un fitxer per començar, o crea una carpeta per organitzar."
+offlineHint = "Torna a connectar-te per carregar la teva biblioteca al núvol."
+offlineTitle = "No hi ha fitxers del núvol en memòria cau"
+title = "Encara no hi ha fitxers al núvol"
+
+[filesPage.empty.local]
+hint = "Els fitxers desats sense pujar romanen aquí. Deixa anar un fitxer per afegir-ne un."
+title = "No hi ha fitxers només locals"
+
+[filesPage.empty.recent]
+hint = "Els fitxers que obris o editis apareixeran aquí."
+title = "Encara no s'ha modificat res"
+
+[filesPage.empty.shared]
+hint = "Quan algú comparteix un fitxer mitjançant un enllaç, apareix aquí."
+title = "No s'ha compartit res amb tu"
+
+[filesPage.empty.sharedByMe]
+hint = "Crea un enllaç de compartició o convida un company des de qualsevol dels teus fitxers per veure'l aquí."
+title = "Encara no has compartit cap fitxer"
+
+[filesPage.error]
+actionFailed = "No s'ha pogut {{action}}."
+actionFailedDetail = "No s'ha pogut {{action}}: {{message}}"
+deleteFolderFailed = "No s'ha pogut suprimir la carpeta."
+deleteFolderFailedDetail = "No s'ha pogut suprimir la carpeta: {{message}}"
+folderAppearanceFailed = "No s'ha pogut actualitzar l'aparença de la carpeta."
+folderAppearanceFailedDetail = "No s'ha pogut actualitzar l'aparença de la carpeta: {{message}}"
+moveFilesFailed = "No s'han pogut moure els fitxers."
+moveFilesFailedDetail = "No s'han pogut moure els fitxers: {{message}}"
+moveFolderFailed = "No s'ha pogut moure la carpeta."
+moveFolderFailedDetail = "No s'ha pogut moure la carpeta: {{message}}"
+removeFilesFailed = "No s'han pogut eliminar els fitxers."
+removeFilesFailedDetail = "No s'han pogut eliminar els fitxers: {{message}}"
+uploadFilesFailed = "No s'han pogut pujar els fitxers."
+uploadFilesFailedDetail = "No s'han pogut pujar els fitxers: {{message}}"
+
+[filesPage.field]
+added = "Afegit"
+count = "Fitxers"
+folder = "Carpeta"
+modified = "Modificat"
+name = "Nom"
+size = "Mida"
+toolHistory = "Historial de l'eina"
+toolHistoryAtVersion = "Cadena d'eines acumulada"
+totalSize = "Mida total"
+type = "Tipus"
+versionHistory = "Evolució de versions"
+
+[filesPage.folderName]
+cancel = "Cancel·la"
+error = "No s'ha pogut desar la carpeta. Torna-ho a provar."
+label = "Nom de la carpeta"
+placeholder = "Nom de la carpeta"
+
+[filesPage.moveDialog]
+cancel = "Cancel·la"
+confirm = "Mou aquí"
+error = "No s'ha pogut moure. Torna-ho a provar."
+hint = "Tria una carpeta de destinació. Consell: també pots arrossegar i deixar anar fitxers sobre les carpetes de l'arbre de l'esquerra."
+newFolderCancel = "Descarta"
+newFolderCreate = "Crea"
+newFolderError = "No s'ha pogut crear la carpeta. Torna-ho a provar."
+newFolderLabel = "Nom de la carpeta nova"
+newFolderPlaceholder = "Nom de la carpeta"
+newFolderToggle = "Crea una carpeta nova…"
+title = "Mou a la carpeta"
+
+[filesPage.origin]
+all = "Totes les fonts"
+cloud = "Núvol"
+cloudHint = "Emmagatzemat al servidor de Stirling"
+local = "Local"
+localHint = "Només emmagatzemat en aquest navegador"
+shared = "Compartit"
+sharedHint = "Compartit amb tu mitjançant un enllaç"
+
+[filesPage.sort]
+modifiedAsc = "Els més antics primer"
+modifiedDesc = "Els més recents primer"
+nameAsc = "Nom A→Z"
+nameDesc = "Nom Z→A"
+sizeAsc = "Els més petits primer"
+sizeDesc = "Els més grans primer"
+
+[filesPage.syncError]
+client = "La sincronització de carpetes ha fallat."
+network = "No s'ha pogut connectar amb el servidor."
+server = "Error del servidor durant la sincronització de carpetes."
+
+[filesPage.tabName]
+local = "Local"
+recent = "Recents"
+shared = "Compartits amb mi"
+sharedByMe = "Compartits per mi"
+
+[filesPage.tabs]
+all = "Tots"
+ariaLabel = "Vistes de fitxers"
+cloud = "Núvol"
+local = "Local"
+recent = "Recents"
+shared = "Compartits amb mi"
+sharedByMe = "Compartits per mi"
+
+[filesPage.treeMenu]
+actions = "Accions de la carpeta per a {{name}}"
+collapse = "Replega la carpeta"
+delete = "Suprimeix la carpeta"
+expand = "Desplega la carpeta"
+newSubfolder = "Subcarpeta nova"
+rename = "Canvia el nom"
+
+[filesPage.typeFilter]
+allTypes = "Tots els tipus"
+label = "Filtra per tipus"
+
+[filesPage.viewMode]
+grid = "Vista de quadrícula"
+label = "Mode de visualització"
+list = "Vista de llista"
 
 [fileToPDF]
 credit = "Utilitza LibreOffice i Unoconv per a la conversió."
@@ -7695,6 +8010,7 @@ bulkTitle = "Pujar fitxers seleccionats"
 description = "Això puja el fitxer actual a l'emmagatzematge del servidor perquè hi pugueu accedir."
 errorTitle = "La pujada ha fallat"
 failure = "La pujada ha fallat. Comproveu l'inici de sessió i la configuració d'emmagatzematge."
+featureDisabled = "Desar al servidor no està habilitat en aquest servidor."
 fileCount = "{{count}} fitxers seleccionats"
 fileLabel = "Fitxer"
 hint = "Els enllaços públics i els modes d'accés es controlen per la configuració del servidor."
@@ -7868,13 +8184,18 @@ viewerMode = "Canvia a l'editor de fitxers per seleccionar diversos fitxers."
 [toolPanel]
 allTools = "Totes les eines"
 alpha = "Alfa"
+backToAllTools = "Torna a totes les eines"
+backToDefault = "Enrere"
 backToTools = "Torna a les eines"
 collapse = "Redueix el panell"
 comingSoon = "Aviat disponible:"
 expand = "Amplia el panell"
+goBack = "Torna enrere"
 placeholder = "Tria una eina per començar"
 premiumFeature = "Funció premium:"
 search = "Cerca eines"
+toolsHeader = "Eines"
+viewAllTools = "Mostra totes les eines"
 
 [toolPanel.fullscreen]
 comingSoon = "Properament:"

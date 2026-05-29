@@ -90,6 +90,7 @@ nothingToUndo = "موردی برای واگرد نیست"
 noticeTopUpOrPlan = "اعتبار کافی نیست، لطفاً اعتبار را شارژ کنید یا طرح خود را ارتقا دهید"
 noValidFiles = "فایل معتبری برای پردازش وجود ندارد"
 oops = "اوپس!"
+openInNewWindow = "باز کردن در پنجره جدید"
 openInViewer = "باز کردن در نمایشگر"
 operationCancelled = "عملیات لغو شد"
 page = "صفحه"
@@ -493,6 +494,11 @@ title = "تنظیم مقیاس صفحه"
 
 [adjustPageScale.error]
 failed = "هنگام تنظیم مقیاس صفحه خطایی رخ داد."
+
+[adjustPageScale.orientation]
+label = "جهت صفحه"
+landscape = "افقی"
+portrait = "عمودی"
 
 [adjustPageScale.pageSize]
 keep = "حفظ اندازه اصلی"
@@ -1512,6 +1518,32 @@ user = "کاربر"
 usernameInfo = "نام کاربری فقط می‌تواند شامل حروف، اعداد و کاراکترهای خاص @._+- باشد یا باید یک آدرس ایمیل معتبر باشد."
 webOnlyUser = "فقط کاربر وب"
 
+[agents]
+auto_redaction_description = "سانسور خودکار PII"
+auto_redaction_name = "سانسور خودکار"
+back_to_tools = "بازگشت به ابزارها"
+coming_soon = "به‌زودی"
+compliance_description = "بررسی انطباق اسناد"
+compliance_name = "بررسی انطباق"
+data_extraction_description = "استخراج جداول و داده‌های ساختاریافته"
+data_extraction_name = "استخراج داده"
+doc_summary_description = "خلاصه‌سازی اسناد طولانی"
+doc_summary_name = "خلاصه‌ساز"
+form_filler_description = "تکمیل هوشمندانه فرم‌های PDF"
+form_filler_name = "تکمیل‌کننده فرم"
+fullscreen_title = "عامل‌های Stirling"
+pdf_to_markdown_description = "تبدیل PDFها به Markdown تمیز"
+pdf_to_markdown_name = "PDF به Markdown"
+section_title = "عامل‌ها"
+show_less = "نمایش کمتر"
+start_chat = "شروع گفتگو"
+stirling_description = "دستیار PDF همه‌منظوره شما"
+stirling_full_name = "عامل عمومی Stirling"
+stirling_long_description = "دستیار PDF همه‌منظوره که می‌تواند ابزارها را اجرا کند، PDF بسازد و از اسناد شما بینش استخراج کند."
+stirling_name = "Stirling"
+stirling_tooltip = "عامل Stirling"
+view_all = "مشاهده همه عامل‌ها"
+
 [analytics]
 disable = "غیرفعال کردن تحلیل‌ها"
 enable = "فعال کردن تحلیل‌ها"
@@ -1771,6 +1803,10 @@ insufficientPermissions = "شما مجوز انجام این اقدام را ن�
 pleaseLoginAgain = "لطفاً دوباره وارد شوید."
 sessionExpired = "نشست منقضی شد"
 
+[auth.displayName]
+guest = "مهمان"
+user = "کاربر"
+
 [auto-rename]
 description = "به‌صورت خودکار عنوان را از محتوای PDF شما پیدا کرده و آن را به‌عنوان نام فایل استفاده می‌کند."
 header = "تغییر نام خودکار PDF"
@@ -1862,6 +1898,13 @@ label = "باز کردن منو برای {{title}}"
 
 [automate.files]
 placeholder = "فایل‌ها را برای پردازش با این اتوماسیون انتخاب کنید"
+
+[automate.folderScanWarning]
+advice = "هنوز می‌توانید فایل را دانلود کنید (مثلاً برای بررسی یا ویرایش دستی)، اما مراحل پشتیبانی‌نشده باید پیش از اجرای آن توسط backend حذف شوند."
+cancel = "انصراف"
+confirm = "بااین‌حال برون‌بری کن"
+intro = "اسکن پوشه در backend اجرا می‌شود، بنابراین فقط می‌تواند ابزارهایی را اجرا کند که endpoint در backend دارند. مرحله(های) زیر در این خودکارسازی ندارند و هنگام اجرای pipeline با خطا مواجه می‌شوند:"
+title = "برخی مراحل در اسکن پوشه قابل اجرا نیستند"
 
 [automate.importModal]
 cancel = "انصراف"
@@ -2684,6 +2727,16 @@ title = "تغییر مجوزها"
 [changePermissions.tooltip.warning]
 text = "برای غیرقابل‌تغییر کردن این مجوزها، از ابزار افزودن رمز عبور برای تنظیم رمز عبور مالک استفاده کنید."
 
+[chat.header]
+agentMenu = "گزینه‌های عامل Stirling"
+clearChat = "پاک کردن گفتگو"
+settings = "تنظیمات عامل"
+
+[chat.input]
+attach = "پیوست فایل‌ها"
+placeholder = "می‌خواهید چه کاری انجام دهید؟"
+send = "ارسال پیام"
+
 [chat.progress]
 analyzing = "در حال تحلیل درخواست شما..."
 calling_engine = "هوش مصنوعی در حال فکر کردن است..."
@@ -2698,6 +2751,32 @@ whole_doc_compression_round = "در حال تجمیع یادداشت‌ها..."
 whole_doc_read_done = "خواندن سند به پایان رسید..."
 whole_doc_read_started = "در حال خواندن سند..."
 whole_doc_slice_done = "در حال خواندن سند... ({{percent}}% تکمیل)"
+
+[chat.quickActions]
+browseYourFiles = "مرور فایل‌های شما"
+compressMany = "فشرده‌سازی این اسناد"
+compressOne = "فشرده‌سازی این سند"
+convertMany = "تبدیل این اسناد به PDF"
+convertOne = "تبدیل این سند به PDF"
+fileSummary_one = "1 فایل در میزکار ({{types}})"
+fileSummary_other = "{{count}} فایل در میزکار ({{types}})"
+heading = "شروع کنید"
+mergeMany = "ادغام این {{count}} سند در 1 فایل"
+moreFiles = "+{{count}} مورد دیگر"
+openFromComputer = "باز کردن از رایانه"
+removeFile = "حذف {{name}}"
+rotateMany = "چرخاندن این اسناد"
+rotateOne = "چرخاندن این سند"
+splitOne = "تقسیم این سند"
+
+[chat.responses]
+cannot_continue = "مشکلی پیش آمد و نمی‌توانم ادامه دهم."
+cannot_do = "قادر به انجام آن نیستم."
+done = "انجام شد."
+need_clarification = "می‌توانید درخواستتان را شفاف‌تر کنید؟"
+not_found = "اطلاعات درخواستی را پیدا نکردم."
+processing = "در حال پردازش ({{outcome}})..."
+unsupported_capability = "قابلیت پشتیبانی‌نشده: {{capability}}"
 
 [chat.toolsUsed]
 summary = "{{count}} ابزار اجرا شد"
@@ -2799,6 +2878,7 @@ selectBaseFirst = "ابتدا PDF اصلی را انتخاب کنید"
 filesMissing = "یافتن فایل‌های انتخاب‌شده ممکن نبود. لطفاً دوباره آن‌ها را انتخاب کنید."
 generic = "امکان مقایسه این فایل‌ها وجود ندارد."
 selectRequired = "یک سند اصلی و یک سند ویرایش‌شده را انتخاب کنید."
+title = "مقایسه ناموفق بود"
 
 [compare.large.file]
 message = "یکی یا هر دو از اسناد ارائه شده برای پردازش بسیار بزرگ هستند"
@@ -2864,6 +2944,7 @@ title = "هنوز در حال کار..."
 
 [compare.status]
 complete = "مقایسه آماده است"
+error = "مقایسه ناموفق بود"
 extracting = "در حال استخراج متن..."
 processing = "در حال تحلیل تفاوت‌ها..."
 
@@ -3771,12 +3852,246 @@ expand = "گسترش نوار کناری"
 files = "فایل‌ها"
 googleDrive = "Google Drive"
 googleDriveDisabled = "Google Drive پیکربندی نشده است"
+leaveMyFiles = "خروج از فایل‌های من"
+myFiles = "فایل‌های من"
 noFiles = "هنوز فایلی نیست"
 openFileManager = "باز کردن مدیریت فایل"
 openFromComputer = "باز کردن از رایانه"
 openSettings = "باز کردن تنظیمات"
 search = "جستجو"
 searchPlaceholder = "جستجوی فایل‌ها..."
+
+[filesPage]
+addToWorkspace = "افزودن به فضای کاری"
+addToWorkspaceCount = "افزودن {{count}} به فضای کاری"
+allFiles = "همه فایل‌ها"
+back = "بازگشت"
+backToFolder = "بازگشت به {{folder}}"
+backToMyFiles = "بازگشت به فایل‌های من"
+breadcrumbs = "مسیر پوشه"
+cancel = "انصراف"
+clearSearch = "پاک کردن جستجو"
+clearSelection = "پاک کردن انتخاب"
+closeDetails = "بستن جزییات"
+create = "ایجاد"
+cycleBlocked = "نمی‌توان پوشه‌ای را به یکی از زیرپوشه‌های خودش منتقل کرد."
+delete = "حذف"
+deleteFolder = "حذف پوشه"
+deleteFolderBody = "حذف پوشه \"{{name}}\"؟"
+deleteFolderConfirm = "حذف پوشه \"{{name}}\"؟ فایل‌های داخل به «همه فایل‌ها» منتقل می‌شوند. {{count}} فایل تحت تأثیر."
+deleteFolderContents = "همچنین {{count}} فایل داخل پوشه حذف شود"
+deleteFolderContentsWarning = "فایل‌ها برای همیشه حذف می‌شوند و قابل بازیابی نیستند."
+deleteFolderError = "حذف پوشه امکان‌پذیر نبود. دوباره تلاش کنید."
+deleteFolderKeepHint = "فایل‌های داخل به «همه فایل‌ها» منتقل می‌شوند."
+deleteFolderTitle = "پوشه حذف شود؟"
+deselectAll = "پاک کردن انتخاب"
+details = "جزییات"
+detailsCount = "{{count}} فایل انتخاب شده"
+dismissError = "بستن"
+download = "دانلود"
+downloadAll = "دانلود همه"
+downloadVersion = "دانلود این نسخه"
+dropOverlay = "فایل‌ها را برای بارگذاری رها کنید"
+dropOverlaySub = "فایل‌ها از «محلی» شروع می‌شوند. از 'انتقال به' یا 'ذخیره در ابر' برای سازمان‌دهی آنها در یک پوشه استفاده کنید."
+file = "فایل"
+fileMenu = "عملیات فایل"
+folder = "پوشه"
+folderItems = "{{count}} مورد"
+folderMenu = "عملیات پوشه"
+inPath = "در {{path}}"
+inWorkspace = "باز کردن"
+inWorkspaceAria = "از قبل در فضای کاری است"
+loading = "در حال بارگذاری…"
+localFoldersUnavailable = "پوشه‌ها فقط ابری هستند - برای سازمان‌دهی، یک فایل را در ابر ذخیره کنید."
+moreActions = "عملیات بیشتر پوشه"
+moveLocalToCloudBlocked = "فایل‌های فقط-محلی را نمی‌توان به پوشه‌های ابری منتقل کرد. ابتدا آنها را در ابر ذخیره کنید."
+moveSkippedRemote = "{{count}} فایل(ها) روی سرور قابل انتقال نبود (بدون مجوز یا قبلاً حذف شده)."
+moveTo = "انتقال به…"
+myFiles = "فایل‌های من"
+newFolder = "پوشه جدید"
+newFolderStorageDisabled = "ذخیره‌سازی پوشهٔ سرور فعال نیست. از مدیر خود بخواهید آن را فعال کند."
+newFolderTabUnavailable = "برای ایجاد پوشه به «همه» یا «ابر» بروید."
+newRootFolder = "پوشه جدید در ریشه"
+offlineNoFolderEdits = "همگام‌سازی پوشهٔ سرور در دسترس نیست - تغییرات پوشه غیرفعال است. ورود و پیکربندی ذخیره‌سازی را بررسی کنید."
+open = "باز کردن"
+openInWorkbench = "باز کردن در میزکار"
+openVersionInWorkspace = "باز کردن در فضای کاری"
+originFilter = "فیلتر بر اساس منبع"
+quickView = "نمای سریع"
+refresh = "تازه‌سازی از سرور"
+remove = "حذف"
+removeConfirm = "‏{{count}} فایل حذف شود؟ این کار برگشت‌پذیر نیست."
+removeVersion = "حذف این نسخه"
+rename = "تغییر نام"
+renameFolder = "تغییر نام پوشه"
+resizeFolderTree = "تغییر اندازه درخت پوشه (کلیدهای جهت‌نما، Shift برای گام‌های بزرگ‌تر؛ دوبارکلیک برای اندازه‌گذاری خودکار)"
+save = "ذخیره"
+saveToServer = "ذخیره در سرور"
+saveToServerDisabledHint = "ذخیره در سرور روی این سرور فعال نیست. از مدیر خود بخواهید آن را فعال کند."
+search = "جستجو"
+searchPlaceholder = "جستجوی این پوشه و زیرپوشه‌ها"
+selectAll = "انتخاب همه"
+selectAllHint = "برای انتخاب همه کلیک کنید. نکته: با نگه‌داشتن Ctrl (یا Cmd) فایل‌ها را تک‌تک بیفزایید، با Shift یک بازه را انتخاب کنید."
+selectedCount = "{{count}} مورد انتخاب شد"
+selectFile = "فایل {{name}} را انتخاب کنید"
+shareDisabledHint = "اشتراک‌گذاری فایل روی این سرور فعال نیست. از مدیر خود بخواهید آن را فعال کند."
+shareManage = "مدیریت اشتراک‌گذاری"
+showDetails = "نمایش جزییات"
+summary = "{{count}} مورد"
+syncFailed = "همگام‌سازی پوشه ناموفق بود: {{message}}"
+syncPartial = "همگام‌سازی پوشه ناقص بود: ‏{{failed}} از {{total}} پوشه ادغام نشد."
+tree = "پوشه‌ها"
+upload = "بارگذاری"
+uploadedToLocal = "فایل‌های بارگذاری‌شده ابتدا در «محلی» قرار می‌گیرند. از 'ذخیره در ابر' برای قرار دادن آنها در یک پوشه استفاده کنید."
+uploadFromMobile = "بارگذاری از موبایل"
+versionActions = "عملیات نسخه"
+versionCollapse = "جمع‌کردن نسخه‌های میانی"
+versionOrigin = "بارگذاری اولیه"
+versionsCount = "{{count}} نسخه"
+versionShowHidden = "نمایش {{count}} نسخهٔ قبلی"
+viewVersion = "مشاهده این نسخه"
+
+[filesPage.appearance]
+colour = "رنگ"
+icon = "نماد"
+title = "ظاهر"
+useColour = "استفاده از رنگ {{c}}"
+
+[filesPage.column]
+modified = "آخرین ویرایش"
+name = "نام"
+size = "حجم"
+type = "نوع"
+
+[filesPage.empty]
+hint = "برای بارگذاری، PDFها را در هر جای این صفحه رها کنید، یا با دکمه «پوشه جدید» فایل‌های خود را سامان‌دهی کنید."
+newFolderCta = "ایجاد پوشه"
+title = "این پوشه خالی است"
+uploadCta = "بارگذاری فایل‌ها"
+
+[filesPage.empty.cloud]
+hint = "برای شروع یک فایل بارگذاری کنید، یا پوشه‌ای برای سامان‌دهی بسازید."
+offlineHint = "برای بارگذاری کتابخانه ابری خود دوباره وصل شوید."
+offlineTitle = "هیچ فایل ابری کش‌شده‌ای نیست"
+title = "هنوز فایل ابری‌ای نیست"
+
+[filesPage.empty.local]
+hint = "فایل‌هایی که بدون بارگذاری ذخیره می‌شوند اینجا می‌مانند. یک فایل را رها کنید تا اضافه شود."
+title = "هیچ فایلِ فقط-محلی‌ای نیست"
+
+[filesPage.empty.recent]
+hint = "فایل‌هایی که باز یا ویرایش می‌کنید اینجا ظاهر می‌شوند."
+title = "هنوز چیزی ویرایش نشده است"
+
+[filesPage.empty.shared]
+hint = "وقتی کسی فایلی را از طریق لینک با شما به‌اشتراک بگذارد، اینجا نمایش داده می‌شود."
+title = "چیزی با شما به‌اشتراک گذاشته نشده است"
+
+[filesPage.empty.sharedByMe]
+hint = "برای دیدن اینجا، از هر یک از فایل‌هایتان لینک اشتراک بسازید یا هم‌تیمی‌ای را دعوت کنید."
+title = "هنوز فایلی به‌اشتراک نگذاشته‌اید"
+
+[filesPage.error]
+actionFailed = "امکان {{action}} نبود."
+actionFailedDetail = "امکان {{action}} نبود: {{message}}"
+deleteFolderFailed = "امکان حذف پوشه نبود."
+deleteFolderFailedDetail = "امکان حذف پوشه نبود: {{message}}"
+folderAppearanceFailed = "امکان به‌روزرسانی ظاهر پوشه نبود."
+folderAppearanceFailedDetail = "امکان به‌روزرسانی ظاهر پوشه نبود: {{message}}"
+moveFilesFailed = "امکان انتقال فایل‌ها نبود."
+moveFilesFailedDetail = "امکان انتقال فایل‌ها نبود: {{message}}"
+moveFolderFailed = "امکان انتقال پوشه نبود."
+moveFolderFailedDetail = "امکان انتقال پوشه نبود: {{message}}"
+removeFilesFailed = "امکان حذف فایل‌ها نبود."
+removeFilesFailedDetail = "امکان حذف فایل‌ها نبود: {{message}}"
+uploadFilesFailed = "امکان بارگذاری فایل‌ها نبود."
+uploadFilesFailedDetail = "امکان بارگذاری فایل‌ها نبود: {{message}}"
+
+[filesPage.field]
+added = "افزوده"
+count = "فایل‌ها"
+folder = "پوشه"
+modified = "آخرین ویرایش"
+name = "نام"
+size = "حجم"
+toolHistory = "تاریخچه ابزار"
+toolHistoryAtVersion = "زنجیره ابزار تجمیعی"
+totalSize = "حجم کل"
+type = "نوع"
+versionHistory = "سیر نسخه‌ها"
+
+[filesPage.folderName]
+cancel = "انصراف"
+error = "ذخیره پوشه ممکن نشد. دوباره تلاش کنید."
+label = "نام پوشه"
+placeholder = "نام پوشه"
+
+[filesPage.moveDialog]
+cancel = "انصراف"
+confirm = "انتقال به اینجا"
+error = "انتقال ممکن نشد. دوباره تلاش کنید."
+hint = "یک پوشه مقصد انتخاب کنید. نکته: می‌توانید فایل‌ها را روی پوشه‌های درخت سمت چپ هم بکشید و رها کنید."
+newFolderCancel = "انصراف"
+newFolderCreate = "ایجاد"
+newFolderError = "ایجاد پوشه ممکن نشد. دوباره تلاش کنید."
+newFolderLabel = "نام پوشه جدید"
+newFolderPlaceholder = "نام پوشه"
+newFolderToggle = "ایجاد پوشه جدید…"
+title = "انتقال به پوشه"
+
+[filesPage.origin]
+all = "همه منابع"
+cloud = "ابر"
+cloudHint = "ذخیره‌شده روی سرور Stirling"
+local = "محلی"
+localHint = "فقط در این مرورگر ذخیره شده"
+shared = "اشتراکی"
+sharedHint = "از طریق لینک با شما به اشتراک گذاشته شده"
+
+[filesPage.sort]
+modifiedAsc = "قدیمی‌ترها ابتدا"
+modifiedDesc = "جدیدترها ابتدا"
+nameAsc = "نام A→Z"
+nameDesc = "نام Z→A"
+sizeAsc = "کوچک‌ترها ابتدا"
+sizeDesc = "بزرگ‌ترها ابتدا"
+
+[filesPage.syncError]
+client = "همگام‌سازی پوشه ناموفق بود."
+network = "دسترسی به سرور ممکن نشد."
+server = "خطای سرور هنگام همگام‌سازی پوشه."
+
+[filesPage.tabName]
+local = "محلی"
+recent = "اخیر"
+shared = "با من به‌اشتراک گذاشته شده"
+sharedByMe = "به‌اشتراک گذاشته‌شده توسط من"
+
+[filesPage.tabs]
+all = "همه"
+ariaLabel = "نماهای فایل"
+cloud = "ابر"
+local = "محلی"
+recent = "اخیر"
+shared = "با من به‌اشتراک گذاشته شده"
+sharedByMe = "به‌اشتراک گذاشته‌شده توسط من"
+
+[filesPage.treeMenu]
+actions = "عملیات پوشه برای {{name}}"
+collapse = "جمع‌کردن پوشه"
+delete = "حذف پوشه"
+expand = "گسترش پوشه"
+newSubfolder = "زیرپوشه جدید"
+rename = "تغییر نام"
+
+[filesPage.typeFilter]
+allTypes = "همه انواع"
+label = "فیلتر بر اساس نوع"
+
+[filesPage.viewMode]
+grid = "نمای شبکه‌ای"
+label = "حالت نما"
+list = "نمای فهرستی"
 
 [fileToPDF]
 credit = "این سرویس از LibreOffice و Unoconv برای تبدیل فایل استفاده می‌کند."
@@ -7695,6 +8010,7 @@ bulkTitle = "بارگذاری فایل‌های انتخاب‌شده"
 description = "این کار فایل فعلی را برای دسترسی خودتان در فضای ذخیره‌سازی سرور بارگذاری می‌کند."
 errorTitle = "بارگذاری ناموفق بود"
 failure = "بارگذاری ناموفق بود. لطفاً ورود و تنظیمات ذخیره‌سازی خود را بررسی کنید."
+featureDisabled = "ذخیره در سرور روی این سرور فعال نیست."
 fileCount = "{{count}} فایل انتخاب‌شده"
 fileLabel = "فایل"
 hint = "لینک‌های عمومی و حالت‌های دسترسی توسط تنظیمات سرور شما کنترل می‌شوند."
@@ -7868,13 +8184,18 @@ viewerMode = "برای انتخاب چندین پرونده به ویرایشگ�
 [toolPanel]
 allTools = "همهٔ ابزارها"
 alpha = "آلفا"
+backToAllTools = "بازگشت به همه ابزارها"
+backToDefault = "بازگشت"
 backToTools = "بازگشت به ابزارها"
 collapse = "جمع کردن پنل"
 comingSoon = "به‌زودی:"
 expand = "گسترش پنل"
+goBack = "بازگشت"
 placeholder = "برای شروع یک ابزار انتخاب کنید"
 premiumFeature = "ویژگی پرمیوم:"
 search = "جستجوی ابزارها"
+toolsHeader = "ابزارها"
+viewAllTools = "مشاهده همه ابزارها"
 
 [toolPanel.fullscreen]
 comingSoon = "به‌زودی:"

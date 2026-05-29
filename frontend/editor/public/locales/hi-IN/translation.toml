@@ -90,6 +90,7 @@ nothingToUndo = "पूर्ववत करने के लिए कुछ �
 noticeTopUpOrPlan = "पर्याप्त क्रेडिट्स नहीं हैं, कृपया टॉप अप करें या किसी प्लान में अपग्रेड करें"
 noValidFiles = "प्रोसेस करने के लिए कोई मान्य फ़ाइल नहीं"
 oops = "उफ़!"
+openInNewWindow = "नई विंडो में खोलें"
 openInViewer = "व्यूअर में खोलें"
 operationCancelled = "ऑपरेशन रद्द किया गया"
 page = "पृष्ठ"
@@ -493,6 +494,11 @@ title = "पृष्ठ स्केल समायोजित करें"
 
 [adjustPageScale.error]
 failed = "पृष्ठ स्केल समायोजित करते समय त्रुटि हुई।"
+
+[adjustPageScale.orientation]
+label = "पृष्ठ अभिविन्यास"
+landscape = "लैंडस्केप"
+portrait = "पोर्ट्रेट"
 
 [adjustPageScale.pageSize]
 keep = "मूल आकार रखें"
@@ -1512,6 +1518,32 @@ user = "उपयोगकर्ता"
 usernameInfo = "उपयोगकर्ता नाम में केवल अक्षर, संख्याएं और निम्नलिखित विशेष वर्ण @._+- हो सकते हैं या एक वैध ईमेल पता होना चाहिए।"
 webOnlyUser = "केवल वेब उपयोगकर्ता"
 
+[agents]
+auto_redaction_description = "PII को स्वतः रिडैक्ट करें"
+auto_redaction_name = "ऑटो रिडैक्शन"
+back_to_tools = "टूल्स पर वापस"
+coming_soon = "जल्द आ रहा है"
+compliance_description = "अनुपालन हेतु दस्तावेज़ ऑडिट करें"
+compliance_name = "अनुपालन जाँच"
+data_extraction_description = "तालिकाएँ और संरचित डेटा निकालें"
+data_extraction_name = "डेटा निष्कर्षण"
+doc_summary_description = "लंबे दस्तावेज़ों का सारांश बनाएं"
+doc_summary_name = "सारांशक"
+form_filler_description = "PDF फ़ॉर्म्स को बुद्धिमानी से भरें"
+form_filler_name = "फ़ॉर्म फ़िलर"
+fullscreen_title = "Stirling एजेंट्स"
+pdf_to_markdown_description = "PDF को साफ़ Markdown में बदलें"
+pdf_to_markdown_name = "PDF से Markdown"
+section_title = "एजेंट्स"
+show_less = "कम दिखाएं"
+start_chat = "चैट शुरू करें"
+stirling_description = "आपका सामान्य-उद्देश्य PDF सहायक"
+stirling_full_name = "Stirling जनरल एजेंट"
+stirling_long_description = "सामान्य-उद्देश्य PDF सहायक जो टूल्स चला सकता है, PDF बना सकता है और आपके दस्तावेज़ों से अंतर्दृष्टि निकाल सकता है।"
+stirling_name = "Stirling"
+stirling_tooltip = "Stirling एजेंट"
+view_all = "सभी एजेंट्स देखें"
+
 [analytics]
 disable = "विश्लेषण अक्षम करें"
 enable = "विश्लेषण सक्षम करें"
@@ -1771,6 +1803,10 @@ insufficientPermissions = "आपके पास यह क्रिया क�
 pleaseLoginAgain = "कृपया फिर से लॉगिन करें."
 sessionExpired = "सत्र समाप्त"
 
+[auth.displayName]
+guest = "अतिथि"
+user = "उपयोगकर्ता"
+
 [auto-rename]
 description = "आपके PDF सामग्री से स्वतः शीर्षक ढूँढता है और उसे फ़ाइलनाम के रूप में उपयोग करता है।"
 header = "स्वतः PDF नाम बदलें"
@@ -1862,6 +1898,13 @@ label = "{{title}} के लिए मेनू खोलें"
 
 [automate.files]
 placeholder = "इस स्वचालन के साथ प्रोसेस करने के लिए फ़ाइलें चुनें"
+
+[automate.folderScanWarning]
+advice = "आप फ़ाइल अब भी डाउनलोड कर सकते हैं (जैसे निरीक्षण या हाथ से संपादन के लिए), लेकिन बैकएंड इसे चला सके उससे पहले असमर्थित चरणों को हटाना होगा।"
+cancel = "रद्द करें"
+confirm = "फिर भी निर्यात करें"
+intro = "फ़ोल्डर स्कैनिंग बैकएंड पर चलती है, इसलिए यह केवल उन्हीं टूल्स को चला सकती है जिनका बैकएंड एंडपॉइंट है। इस ऑटोमेशन के निम्न चरणों में ऐसा नहीं है, और पाइपलाइन चलने पर वे असफल होंगे:"
+title = "कुछ चरण फ़ोल्डर स्कैनिंग में नहीं चल सकते"
 
 [automate.importModal]
 cancel = "रद्द करें"
@@ -2684,6 +2727,16 @@ title = "अनुमतियां बदलें"
 [changePermissions.tooltip.warning]
 text = "इन अनुमतियों को अपरिवर्तनीय बनाने के लिए, मालिक पासवर्ड सेट करने हेतु Add Password टूल का उपयोग करें।"
 
+[chat.header]
+agentMenu = "Stirling एजेंट विकल्प"
+clearChat = "चैट साफ़ करें"
+settings = "एजेंट सेटिंग्स"
+
+[chat.input]
+attach = "फ़ाइलें संलग्न करें"
+placeholder = "आप क्या करना चाहते हैं?"
+send = "संदेश भेजें"
+
 [chat.progress]
 analyzing = "आपके अनुरोध का विश्लेषण किया जा रहा है..."
 calling_engine = "AI सोच रहा है..."
@@ -2698,6 +2751,32 @@ whole_doc_compression_round = "नोट्स समेकित किए ज�
 whole_doc_read_done = "दस्तावेज़ पढ़ना पूरा हुआ..."
 whole_doc_read_started = "दस्तावेज़ पढ़ा जा रहा है..."
 whole_doc_slice_done = "दस्तावेज़ पढ़ा जा रहा है... ({{percent}}% पूर्ण)"
+
+[chat.quickActions]
+browseYourFiles = "अपनी फ़ाइलें ब्राउज़ करें"
+compressMany = "इन दस्तावेज़ों को संपीड़ित करें"
+compressOne = "इस दस्तावेज़ को संपीड़ित करें"
+convertMany = "इन दस्तावेज़ों को PDF में बदलें"
+convertOne = "इस दस्तावेज़ को PDF में बदलें"
+fileSummary_one = "वर्कबेंच में 1 फ़ाइल ({{types}})"
+fileSummary_other = "वर्कबेंच में {{count}} फ़ाइलें ({{types}})"
+heading = "शुरू करें"
+mergeMany = "इन {{count}} दस्तावेज़ों को 1 में मर्ज करें"
+moreFiles = "+{{count}} और"
+openFromComputer = "कंप्यूटर से खोलें"
+removeFile = "{{name}} हटाएँ"
+rotateMany = "इन दस्तावेज़ों को घुमाएँ"
+rotateOne = "इस दस्तावेज़ को घुमाएँ"
+splitOne = "इस दस्तावेज़ को विभाजित करें"
+
+[chat.responses]
+cannot_continue = "कुछ गड़बड़ हुई, मैं आगे नहीं बढ़ सकता।"
+cannot_do = "मैं यह करने में असमर्थ हूँ।"
+done = "हो गया।"
+need_clarification = "क्या आप अपना अनुरोध स्पष्ट कर सकते हैं?"
+not_found = "मुझे अनुरोधित जानकारी नहीं मिली।"
+processing = "प्रसंस्करण ({{outcome}})..."
+unsupported_capability = "असमर्थित क्षमता: {{capability}}"
 
 [chat.toolsUsed]
 summary = "{{count}} उपकरण चलाए"
@@ -2799,6 +2878,7 @@ selectBaseFirst = "पहले मूल PDF चुनें"
 filesMissing = "चयनित फ़ाइलें नहीं मिल सकीं। कृपया उन्हें पुनः चुनें।"
 generic = "इन फ़ाइलों की तुलना नहीं हो सकी।"
 selectRequired = "मूल और संपादित दस्तावेज़ चुनें।"
+title = "तुलना असफल रही"
 
 [compare.large.file]
 message = "प्रदान किए गए दस्तावेजों में से एक या दोनों प्रक्रिया करने के लिए बहुत बड़े हैं"
@@ -2864,6 +2944,7 @@ title = "अब भी काम चल रहा है…"
 
 [compare.status]
 complete = "तुलना तैयार"
+error = "तुलना असफल रही"
 extracting = "टेक्स्ट निकाला जा रहा है..."
 processing = "अंतर का विश्लेषण किया जा रहा है..."
 
@@ -3771,12 +3852,246 @@ expand = "साइडबार फैलाएँ"
 files = "फ़ाइलें"
 googleDrive = "Google Drive"
 googleDriveDisabled = "Google Drive कॉन्फ़िगर नहीं है"
+leaveMyFiles = "मेरी फ़ाइलों से बाहर निकलें"
+myFiles = "मेरी फ़ाइलें"
 noFiles = "अभी कोई फ़ाइल नहीं"
 openFileManager = "फ़ाइल प्रबंधक खोलें"
 openFromComputer = "कंप्यूटर से खोलें"
 openSettings = "सेटिंग्स खोलें"
 search = "खोजें"
 searchPlaceholder = "फ़ाइलें खोजें..."
+
+[filesPage]
+addToWorkspace = "वर्कस्पेस में जोड़ें"
+addToWorkspaceCount = "{{count}} को वर्कस्पेस में जोड़ें"
+allFiles = "सभी फ़ाइलें"
+back = "वापस"
+backToFolder = "{{folder}} पर वापस"
+backToMyFiles = "मेरी फ़ाइलों पर वापस"
+breadcrumbs = "फ़ोल्डर पथ"
+cancel = "रद्द करें"
+clearSearch = "खोज साफ़ करें"
+clearSelection = "चयन साफ़ करें"
+closeDetails = "विवरण बंद करें"
+create = "बनाएँ"
+cycleBlocked = "किसी फ़ोल्डर को उसके ही उप-फ़ोल्डर में नहीं ले जाया जा सकता।"
+delete = "हटाएँ"
+deleteFolder = "फ़ोल्डर हटाएँ"
+deleteFolderBody = "फ़ोल्डर \"{{name}}\" हटाएँ?"
+deleteFolderConfirm = "फ़ोल्डर \"{{name}}\" हटाएँ? अंदर की फ़ाइलें सभी फ़ाइलें में ले जाई जाएँगी। {{count}} फ़ाइलें प्रभावित।"
+deleteFolderContents = "फ़ोल्डर के अंदर की {{count}} फ़ाइलें भी हटाएँ"
+deleteFolderContentsWarning = "फ़ाइलें स्थायी रूप से हटा दी जाएँगी और पुनर्प्राप्त नहीं की जा सकेंगी।"
+deleteFolderError = "फ़ोल्डर हटाया नहीं जा सका। फिर से प्रयास करें।"
+deleteFolderKeepHint = "अंदर की फ़ाइलें 'सभी फ़ाइलें' में ले जाई जाएँगी।"
+deleteFolderTitle = "फ़ोल्डर हटाएँ?"
+deselectAll = "चयन साफ़ करें"
+details = "विवरण"
+detailsCount = "{{count}} फ़ाइलें चुनी गईं"
+dismissError = "खारिज करें"
+download = "डाउनलोड करें"
+downloadAll = "सभी डाउनलोड करें"
+downloadVersion = "यह संस्करण डाउनलोड करें"
+dropOverlay = "अपलोड करने हेतु फ़ाइलें छोड़ें"
+dropOverlaySub = "फ़ाइलें Local में शुरू होती हैं। उन्हें किसी फ़ोल्डर में व्यवस्थित करने के लिए 'में ले जाएँ' या 'क्लाउड में सहेजें' का उपयोग करें।"
+file = "फ़ाइल"
+fileMenu = "फ़ाइल क्रियाएँ"
+folder = "फ़ोल्डर"
+folderItems = "{{count}} आइटम"
+folderMenu = "फ़ोल्डर क्रियाएँ"
+inPath = "{{path}} में"
+inWorkspace = "खोलें"
+inWorkspaceAria = "पहले से वर्कस्पेस में है"
+loading = "लोड हो रहा है…"
+localFoldersUnavailable = "फ़ोल्डर केवल क्लाउड में हैं — उन्हें व्यवस्थित करने के लिए किसी फ़ाइल को क्लाउड में सहेजें।"
+moreActions = "अधिक फ़ोल्डर क्रियाएँ"
+moveLocalToCloudBlocked = "केवल Local फ़ाइलों को क्लाउड फ़ोल्डरों में नहीं ले जाया जा सकता। पहले उन्हें क्लाउड में सहेजें।"
+moveSkippedRemote = "{{count}} फ़ाइलें सर्वर पर स्थानांतरित नहीं की जा सकीं (अनुमति नहीं या पहले ही हटाई गई)।"
+moveTo = "में ले जाएँ…"
+myFiles = "मेरी फ़ाइलें"
+newFolder = "नया फ़ोल्डर"
+newFolderStorageDisabled = "सर्वर फ़ोल्डर स्टोरेज सक्षम नहीं है। अपने व्यवस्थापक से इसे चालू करने के लिए कहें।"
+newFolderTabUnavailable = "फ़ोल्डर बनाने के लिए All या Cloud पर स्विच करें।"
+newRootFolder = "रूट पर नया फ़ोल्डर"
+offlineNoFolderEdits = "सर्वर फ़ोल्डर सिंक उपलब्ध नहीं — फ़ोल्डर परिवर्तन अक्षम हैं। साइन-इन और स्टोरेज कॉन्फ़िगरेशन जाँचें।"
+open = "खोलें"
+openInWorkbench = "वर्कबेंच में खोलें"
+openVersionInWorkspace = "वर्कस्पेस में खोलें"
+originFilter = "स्रोत से फ़िल्टर करें"
+quickView = "त्वरित दृश्य"
+refresh = "सर्वर से ताज़ा करें"
+remove = "हटाएँ"
+removeConfirm = "{{count}} फ़ाइलें हटाएँ? इसे वापस नहीं किया जा सकता।"
+removeVersion = "यह संस्करण हटाएँ"
+rename = "नाम बदलें"
+renameFolder = "फ़ोल्डर का नाम बदलें"
+resizeFolderTree = "फ़ोल्डर ट्री का आकार बदलें (एरो कुंजियाँ, बड़े चरणों हेतु Shift; ऑटो-फिट के लिए डबल-क्लिक)"
+save = "सहेजें"
+saveToServer = "सर्वर पर सहेजें"
+saveToServerDisabledHint = "यहाँ सर्वर पर सहेजना सक्षम नहीं है। कृपया अपने व्यवस्थापक से इसे सक्षम करने के लिए कहें।"
+search = "खोज"
+searchPlaceholder = "इस फ़ोल्डर और उप-फ़ोल्डरों में खोजें"
+selectAll = "सभी चुनें"
+selectAllHint = "सब चुनने के लिए क्लिक करें। टिप: एक-एक करके फ़ाइलें जोड़ने के लिए Ctrl (या Cmd) दबाए रखें, रेंज चुनने के लिए Shift दबाएँ।"
+selectedCount = "{{count}} चयनित"
+selectFile = "फ़ाइल {{name}} चुनें"
+shareDisabledHint = "इस सर्वर पर फ़ाइल साझा करना सक्षम नहीं है। अपने व्यवस्थापक से इसे सक्षम करने के लिए कहें।"
+shareManage = "शेयरिंग प्रबंधित करें"
+showDetails = "विवरण दिखाएँ"
+summary = "{{count}} आइटम"
+syncFailed = "फ़ोल्डर सिंक असफल: {{message}}"
+syncPartial = "फ़ोल्डर सिंक आंशिक: {{total}} में से {{failed}} फ़ोल्डर मर्ज नहीं हो सके।"
+tree = "फ़ोल्डर"
+upload = "अपलोड करें"
+uploadedToLocal = "अपलोड की गई फ़ाइलें Local में शुरू होती हैं। उन्हें किसी फ़ोल्डर में रखने के लिए 'क्लाउड में सहेजें' का उपयोग करें।"
+uploadFromMobile = "मोबाइल से अपलोड करें"
+versionActions = "संस्करण क्रियाएँ"
+versionCollapse = "बीच के संस्करण समेटें"
+versionOrigin = "मूल अपलोड"
+versionsCount = "{{count}} संस्करण"
+versionShowHidden = "{{count}} पहले के संस्करण दिखाएँ"
+viewVersion = "यह संस्करण देखें"
+
+[filesPage.appearance]
+colour = "रंग"
+icon = "आइकन"
+title = "दिखावट"
+useColour = "रंग {{c}} का उपयोग करें"
+
+[filesPage.column]
+modified = "संशोधित"
+name = "नाम"
+size = "आकार"
+type = "प्रकार"
+
+[filesPage.empty]
+hint = "अपलोड करने के लिए इस पेज पर कहीं भी PDF छोड़ें, या अपनी फ़ाइलों को व्यवस्थित करने हेतु 'नया फ़ोल्डर' बटन का उपयोग करें।"
+newFolderCta = "फ़ोल्डर बनाएँ"
+title = "यह फ़ोल्डर खाली है"
+uploadCta = "फ़ाइलें अपलोड करें"
+
+[filesPage.empty.cloud]
+hint = "शुरू करने के लिए कोई फ़ाइल अपलोड करें, या व्यवस्थित करने हेतु फ़ोल्डर बनाएँ।"
+offlineHint = "अपनी क्लाउड लाइब्रेरी लोड करने के लिए पुनः कनेक्ट करें।"
+offlineTitle = "कोई कैश की गई क्लाउड फ़ाइलें नहीं"
+title = "अभी तक कोई क्लाउड फ़ाइलें नहीं"
+
+[filesPage.empty.local]
+hint = "बिना अपलोड किए सहेजी गई फ़ाइलें यहीं रहती हैं। जोड़ने के लिए कोई फ़ाइल छोड़ें।"
+title = "कोई केवल लोकल फ़ाइलें नहीं"
+
+[filesPage.empty.recent]
+hint = "जो फ़ाइलें आप खोलते या संपादित करते हैं, वे यहाँ दिखाई देंगी।"
+title = "अभी तक कुछ संशोधित नहीं"
+
+[filesPage.empty.shared]
+hint = "जब कोई लिंक के माध्यम से कोई फ़ाइल साझा करता है, तो वह यहाँ दिखाई देती है।"
+title = "आपके साथ कुछ भी साझा नहीं किया गया"
+
+[filesPage.empty.sharedByMe]
+hint = "इसे यहाँ देखने के लिए कोई शेयर लिंक बनाएँ या अपनी किसी फ़ाइल से टीममेट को आमंत्रित करें।"
+title = "आपने अभी तक कोई फ़ाइल साझा नहीं की है"
+
+[filesPage.error]
+actionFailed = "{{action}} नहीं किया जा सका।"
+actionFailedDetail = "{{action}} नहीं किया जा सका: {{message}}"
+deleteFolderFailed = "फ़ोल्डर हटाया नहीं जा सका।"
+deleteFolderFailedDetail = "फ़ोल्डर हटाया नहीं जा सका: {{message}}"
+folderAppearanceFailed = "फ़ोल्डर की दिखावट अद्यतन नहीं की जा सकी।"
+folderAppearanceFailedDetail = "फ़ोल्डर की दिखावट अद्यतन नहीं की जा सकी: {{message}}"
+moveFilesFailed = "फ़ाइलें स्थानांतरित नहीं की जा सकीं।"
+moveFilesFailedDetail = "फ़ाइलें स्थानांतरित नहीं की जा सकीं: {{message}}"
+moveFolderFailed = "फ़ोल्डर स्थानांतरित नहीं किया जा सका।"
+moveFolderFailedDetail = "फ़ोल्डर स्थानांतरित नहीं किया जा सका: {{message}}"
+removeFilesFailed = "फ़ाइलें हटाई नहीं जा सकीं।"
+removeFilesFailedDetail = "फ़ाइलें हटाई नहीं जा सकीं: {{message}}"
+uploadFilesFailed = "फ़ाइलें अपलोड नहीं की जा सकीं।"
+uploadFilesFailedDetail = "फ़ाइलें अपलोड नहीं की जा सकीं: {{message}}"
+
+[filesPage.field]
+added = "जोड़ा गया"
+count = "फ़ाइलें"
+folder = "फ़ोल्डर"
+modified = "संशोधित"
+name = "नाम"
+size = "आकार"
+toolHistory = "टूल इतिहास"
+toolHistoryAtVersion = "संचयी टूल श्रृंखला"
+totalSize = "कुल आकार"
+type = "प्रकार"
+versionHistory = "संस्करण यात्रा"
+
+[filesPage.folderName]
+cancel = "रद्द करें"
+error = "फ़ोल्डर सहेजा नहीं जा सका। फिर से प्रयास करें।"
+label = "फ़ोल्डर का नाम"
+placeholder = "फ़ोल्डर का नाम"
+
+[filesPage.moveDialog]
+cancel = "रद्द करें"
+confirm = "यहाँ ले जाएँ"
+error = "स्थानांतरित नहीं किया जा सका। फिर से प्रयास करें।"
+hint = "गंतव्य फ़ोल्डर चुनें। टिप: आप बाएँ की ट्री में फ़ोल्डरों पर फ़ाइलों को खींचकर छोड़ भी सकते हैं।"
+newFolderCancel = "त्यागें"
+newFolderCreate = "बनाएँ"
+newFolderError = "फ़ोल्डर बनाया नहीं जा सका। फिर से प्रयास करें।"
+newFolderLabel = "नए फ़ोल्डर का नाम"
+newFolderPlaceholder = "फ़ोल्डर का नाम"
+newFolderToggle = "नया फ़ोल्डर बनाएँ…"
+title = "फ़ोल्डर में ले जाएँ"
+
+[filesPage.origin]
+all = "सभी स्रोत"
+cloud = "क्लाउड"
+cloudHint = "Stirling सर्वर पर संग्रहीत"
+local = "Local"
+localHint = "केवल इस ब्राउज़र में संग्रहीत"
+shared = "शेयर किया गया"
+sharedHint = "लिंक के माध्यम से आपके साथ साझा"
+
+[filesPage.sort]
+modifiedAsc = "सबसे पुराना पहले"
+modifiedDesc = "सबसे नया पहले"
+nameAsc = "नाम A→Z"
+nameDesc = "नाम Z→A"
+sizeAsc = "सबसे छोटा पहले"
+sizeDesc = "सबसे बड़ा पहले"
+
+[filesPage.syncError]
+client = "फ़ोल्डर सिंक विफल।"
+network = "सर्वर तक पहुँचा नहीं जा सका।"
+server = "फ़ोल्डर सिंक के दौरान सर्वर त्रुटि।"
+
+[filesPage.tabName]
+local = "Local"
+recent = "हाल के"
+shared = "मेरे साथ साझा"
+sharedByMe = "मेरे द्वारा साझा"
+
+[filesPage.tabs]
+all = "सभी"
+ariaLabel = "फ़ाइल दृश्य"
+cloud = "क्लाउड"
+local = "Local"
+recent = "हाल के"
+shared = "मेरे साथ साझा"
+sharedByMe = "मेरे द्वारा साझा"
+
+[filesPage.treeMenu]
+actions = "{{name}} के लिए फ़ोल्डर क्रियाएँ"
+collapse = "फ़ोल्डर समेटें"
+delete = "फ़ोल्डर हटाएँ"
+expand = "फ़ोल्डर फैलाएँ"
+newSubfolder = "नया सबफ़ोल्डर"
+rename = "नाम बदलें"
+
+[filesPage.typeFilter]
+allTypes = "सभी प्रकार"
+label = "प्रकार से फ़िल्टर करें"
+
+[filesPage.viewMode]
+grid = "ग्रिड दृश्य"
+label = "दृश्य मोड"
+list = "सूची दृश्य"
 
 [fileToPDF]
 credit = "यह सेवा फ़ाइल रूपांतरण के लिए LibreOffice और Unoconv का उपयोग करती है।"
@@ -7695,6 +8010,7 @@ bulkTitle = "चयनित फ़ाइलें अपलोड करें"
 description = "यह वर्तमान फ़ाइल को आपकी पहुँच के लिए सर्वर स्टोरेज पर अपलोड करता है।"
 errorTitle = "अपलोड विफल हुआ"
 failure = "अपलोड विफल हुआ। कृपया अपने लॉगिन और स्टोरेज सेटिंग्स की जाँच करें।"
+featureDisabled = "यहाँ सर्वर पर सहेजना सक्षम नहीं है।"
 fileCount = "{{count}} फ़ाइलें चयनित"
 fileLabel = "फ़ाइल"
 hint = "सार्वजनिक लिंक और एक्सेस मोड आपकी सर्वर सेटिंग्स द्वारा नियंत्रित होते हैं।"
@@ -7868,13 +8184,18 @@ viewerMode = "एकाधिक फ़ाइलें चुनने के �
 [toolPanel]
 allTools = "सभी टूल"
 alpha = "Alpha"
+backToAllTools = "सभी टूल्स पर वापस"
+backToDefault = "वापस"
 backToTools = "टूल्स पर वापस"
 collapse = "पैनल समेटें"
 comingSoon = "जल्द आ रहा है:"
 expand = "पैनल फैलाएँ"
+goBack = "वापस जाएँ"
 placeholder = "शुरू करने के लिए कोई टूल चुनें"
 premiumFeature = "प्रीमियम फीचर:"
 search = "टूल्स खोजें"
+toolsHeader = "टूल्स"
+viewAllTools = "सभी टूल्स देखें"
 
 [toolPanel.fullscreen]
 comingSoon = "जल्द आ रहा है:"

@@ -90,6 +90,7 @@ nothingToUndo = "Brak operacji do cofnięcia"
 noticeTopUpOrPlan = "Za mało kredytów, doładuj lub wybierz plan"
 noValidFiles = "Brak prawidłowych plików do przetworzenia"
 oops = "Ups!"
+openInNewWindow = "Otwórz w nowym oknie"
 openInViewer = "Otwórz w podglądzie"
 operationCancelled = "Operacja anulowana"
 page = "Strona"
@@ -493,6 +494,11 @@ title = "Dostosuj skalę strony"
 
 [adjustPageScale.error]
 failed = "Wystąpił błąd podczas dostosowywania skali strony."
+
+[adjustPageScale.orientation]
+label = "Orientacja strony"
+landscape = "Pozioma"
+portrait = "Pionowa"
 
 [adjustPageScale.pageSize]
 keep = "Zachowaj oryginalny rozmiar"
@@ -1512,6 +1518,32 @@ user = "Użytkownik"
 usernameInfo = "Niewłaściwa nazwa użytkownika - musi zawierać litery, cyfry i @._+- LUB być adresem email."
 webOnlyUser = "Użytkownik tylko WEB"
 
+[agents]
+auto_redaction_description = "Automatycznie anonimizuj dane osobowe (PII)"
+auto_redaction_name = "Automatyczna anonimizacja"
+back_to_tools = "Wróć do narzędzi"
+coming_soon = "Wkrótce"
+compliance_description = "Audyt zgodności dokumentów"
+compliance_name = "Sprawdzenie zgodności"
+data_extraction_description = "Wyodrębnij tabele i dane strukturalne"
+data_extraction_name = "Wyodrębnianie danych"
+doc_summary_description = "Streszczaj długie dokumenty"
+doc_summary_name = "Streszczanie"
+form_filler_description = "Inteligentnie wypełniaj formularze PDF"
+form_filler_name = "Wypełnianie formularzy"
+fullscreen_title = "Agenci Stirling"
+pdf_to_markdown_description = "Konwertuj pliki PDF na czysty Markdown"
+pdf_to_markdown_name = "PDF do Markdown"
+section_title = "Agenci"
+show_less = "Pokaż mniej"
+start_chat = "Rozpocznij czat"
+stirling_description = "Twój uniwersalny asystent PDF"
+stirling_full_name = "Uniwersalny agent Stirling"
+stirling_long_description = "Uniwersalny asystent PDF, który potrafi uruchamiać narzędzia, tworzyć pliki PDF i wydobywać informacje z dokumentów."
+stirling_name = "Stirling"
+stirling_tooltip = "Agent Stirling"
+view_all = "Zobacz wszystkich agentów"
+
 [analytics]
 disable = "Wyłącz analitykę"
 enable = "Włącz analitykę"
@@ -1771,6 +1803,10 @@ insufficientPermissions = "Nie masz uprawnień do wykonania tej czynności."
 pleaseLoginAgain = "Zaloguj się ponownie."
 sessionExpired = "Sesja wygasła"
 
+[auth.displayName]
+guest = "Gość"
+user = "Użytkownik"
+
 [auto-rename]
 description = "Automatycznie znajduje tytuł w treści PDF i używa go jako nazwy pliku."
 header = "Automatyczna zmiana nazwy dokumentu PDF"
@@ -1862,6 +1898,13 @@ label = "Otwórz menu dla {{title}}"
 
 [automate.files]
 placeholder = "Wybierz pliki do przetworzenia w ramach tej automatyzacji"
+
+[automate.folderScanWarning]
+advice = "Wciąż możesz pobrać plik (np. aby go przejrzeć lub ręcznie edytować), ale nieobsługiwane kroki trzeba usunąć, zanim serwer będzie mógł go uruchomić."
+cancel = "Anuluj"
+confirm = "Eksportuj mimo to"
+intro = "Skanowanie folderów działa po stronie serwera, więc może wykonywać tylko narzędzia, które mają punkt końcowy po stronie serwera. Następujące kroki w tej automatyzacji go nie mają i zakończą się błędem podczas uruchamiania potoku:"
+title = "Niektórych kroków nie można uruchomić w skanowaniu folderów"
 
 [automate.importModal]
 cancel = "Anuluj"
@@ -2684,6 +2727,16 @@ title = "Zmień uprawnienia"
 [changePermissions.tooltip.warning]
 text = "Aby uniemożliwić zmianę tych uprawnień, użyj narzędzia Dodaj hasło, aby ustawić hasło właściciela."
 
+[chat.header]
+agentMenu = "Opcje agenta Stirling"
+clearChat = "Wyczyść czat"
+settings = "Ustawienia agenta"
+
+[chat.input]
+attach = "Dołącz pliki"
+placeholder = "Co chcesz zrobić?"
+send = "Wyślij wiadomość"
+
 [chat.progress]
 analyzing = "Analizowanie żądania..."
 calling_engine = "AI myśli..."
@@ -2698,6 +2751,32 @@ whole_doc_compression_round = "Scalanie notatek..."
 whole_doc_read_done = "Zakończono odczyt dokumentu..."
 whole_doc_read_started = "Odczytywanie dokumentu..."
 whole_doc_slice_done = "Odczytywanie dokumentu... (ukończono {{percent}}%)"
+
+[chat.quickActions]
+browseYourFiles = "Przeglądaj swoje pliki"
+compressMany = "Skompresuj te dokumenty"
+compressOne = "Skompresuj ten dokument"
+convertMany = "Konwertuj te dokumenty do PDF"
+convertOne = "Konwertuj ten dokument do PDF"
+fileSummary_one = "1 plik w obszarze roboczym ({{types}})"
+fileSummary_other = "{{count}} plików w obszarze roboczym ({{types}})"
+heading = "Zaczynajmy"
+mergeMany = "Połącz te {{count}} dokumenty w 1"
+moreFiles = "+{{count}} więcej"
+openFromComputer = "Otwórz z komputera"
+removeFile = "Usuń {{name}}"
+rotateMany = "Obróć te dokumenty"
+rotateOne = "Obróć ten dokument"
+splitOne = "Podziel ten dokument"
+
+[chat.responses]
+cannot_continue = "Coś poszło nie tak i nie mogę kontynuować."
+cannot_do = "Nie mogę tego zrobić."
+done = "Gotowe."
+need_clarification = "Czy możesz doprecyzować prośbę?"
+not_found = "Nie udało mi się znaleźć żądanych informacji."
+processing = "Przetwarzanie ({{outcome}})..."
+unsupported_capability = "Nieobsługiwana funkcja: {{capability}}"
 
 [chat.toolsUsed]
 summary = "Uruchomiono {{count}} narzędzi"
@@ -2799,6 +2878,7 @@ selectBaseFirst = "Najpierw wybierz oryginalny PDF"
 filesMissing = "Nie można zlokalizować wybranych plików. Wybierz je ponownie."
 generic = "Nie można porównać tych plików."
 selectRequired = "Wybierz dokumenty: oryginalny i edytowany."
+title = "Porównanie nie powiodło się"
 
 [compare.large.file]
 message = "Jeden lub oba dostarczone dokumenty są zbyt duże do przetworzenia"
@@ -2864,6 +2944,7 @@ title = "Nadal pracujemy…"
 
 [compare.status]
 complete = "Porównanie gotowe"
+error = "Porównanie nie powiodło się"
 extracting = "Wyodrębnianie tekstu..."
 processing = "Analizowanie różnic..."
 
@@ -3771,12 +3852,246 @@ expand = "Rozwiń pasek boczny"
 files = "Pliki"
 googleDrive = "Google Drive"
 googleDriveDisabled = "Google Drive nie jest skonfigurowany"
+leaveMyFiles = "Opuść Moje pliki"
+myFiles = "Moje pliki"
 noFiles = "Brak plików"
 openFileManager = "Otwórz menedżer plików"
 openFromComputer = "Otwórz z komputera"
 openSettings = "Otwórz ustawienia"
 search = "Szukaj"
 searchPlaceholder = "Szukaj plików..."
+
+[filesPage]
+addToWorkspace = "Dodaj do obszaru roboczego"
+addToWorkspaceCount = "Dodaj {{count}} do obszaru roboczego"
+allFiles = "Wszystkie pliki"
+back = "Wstecz"
+backToFolder = "Wróć do {{folder}}"
+backToMyFiles = "Wróć do Moich plików"
+breadcrumbs = "Ścieżka folderu"
+cancel = "Anuluj"
+clearSearch = "Wyczyść wyszukiwanie"
+clearSelection = "Wyczyść zaznaczenie"
+closeDetails = "Zamknij szczegóły"
+create = "Utwórz"
+cycleBlocked = "Nie można przenieść folderu do jednego z jego podfolderów."
+delete = "Usuń"
+deleteFolder = "Usuń folder"
+deleteFolderBody = "Usunąć folder „{{name}}”?"
+deleteFolderConfirm = "Usunąć folder „{{name}}”? Pliki w środku zostaną przeniesione do „Wszystkie pliki”. Dotyczy to {{count}} plików."
+deleteFolderContents = "Usuń też {{count}} plików wewnątrz folderu"
+deleteFolderContentsWarning = "Pliki zostaną trwale usunięte i nie można ich będzie odzyskać."
+deleteFolderError = "Nie udało się usunąć folderu. Spróbuj ponownie."
+deleteFolderKeepHint = "Pliki w środku zostaną przeniesione do Wszystkie pliki."
+deleteFolderTitle = "Usunąć folder?"
+deselectAll = "Wyczyść zaznaczenie"
+details = "Szczegóły"
+detailsCount = "Zaznaczono {{count}} plików"
+dismissError = "Zamknij"
+download = "Pobierz"
+downloadAll = "Pobierz wszystko"
+downloadVersion = "Pobierz tę wersję"
+dropOverlay = "Upuść pliki, aby przesłać"
+dropOverlaySub = "Pliki startują w Lokalnych. Użyj 'Przenieś do' lub 'Zapisz w chmurze', aby umieścić je w folderze."
+file = "Plik"
+fileMenu = "Akcje pliku"
+folder = "Folder"
+folderItems = "{{count}} elementów"
+folderMenu = "Akcje folderu"
+inPath = "w {{path}}"
+inWorkspace = "Otwórz"
+inWorkspaceAria = "Już w obszarze roboczym"
+loading = "Wczytywanie…"
+localFoldersUnavailable = "Foldery są dostępne tylko w chmurze — zapisz plik w chmurze, aby móc je organizować."
+moreActions = "Więcej akcji folderu"
+moveLocalToCloudBlocked = "Plików tylko lokalnych nie można przenosić do folderów w chmurze. Najpierw zapisz je w chmurze."
+moveSkippedRemote = "{{count}} plików nie udało się przenieść na serwerze (brak uprawnień lub już usunięte)."
+moveTo = "Przenieś do…"
+myFiles = "Moje pliki"
+newFolder = "Nowy folder"
+newFolderStorageDisabled = "Magazyn folderów na serwerze nie jest włączony. Poproś administratora o jego włączenie."
+newFolderTabUnavailable = "Przełącz na Wszystkie lub Chmura, aby tworzyć foldery."
+newRootFolder = "Nowy folder w katalogu głównym"
+offlineNoFolderEdits = "Synchronizacja folderów z serwerem jest niedostępna — zmiany w folderach są wyłączone. Sprawdź logowanie i konfigurację magazynu."
+open = "Otwórz"
+openInWorkbench = "Otwórz w obszarze roboczym"
+openVersionInWorkspace = "Otwórz w obszarze roboczym"
+originFilter = "Filtruj wg źródła"
+quickView = "Podgląd"
+refresh = "Odśwież z serwera"
+remove = "Usuń"
+removeConfirm = "Usunąć {{count}} plików? Tej operacji nie można cofnąć."
+removeVersion = "Usuń tę wersję"
+rename = "Zmień nazwę"
+renameFolder = "Zmień nazwę folderu"
+resizeFolderTree = "Zmień rozmiar drzewa folderów (klawisze strzałek, Shift dla większych kroków; kliknij dwukrotnie, aby dopasować automatycznie)"
+save = "Zapisz"
+saveToServer = "Zapisz na serwerze"
+saveToServerDisabledHint = "Zapisywanie na serwerze nie jest włączone na tym serwerze. Poproś administratora o włączenie."
+search = "Szukaj"
+searchPlaceholder = "Przeszukaj ten folder i podfoldery"
+selectAll = "Zaznacz wszystko"
+selectAllHint = "Kliknij, aby zaznaczyć wszystko. Wskazówka: przytrzymaj Ctrl (lub Cmd), aby dodawać pliki pojedynczo, Shift, aby zaznaczyć zakres."
+selectedCount = "Zaznaczono: {{count}}"
+selectFile = "Zaznacz plik {{name}}"
+shareDisabledHint = "Udostępnianie plików nie jest włączone na tym serwerze. Poproś administratora o włączenie."
+shareManage = "Zarządzaj udostępnianiem"
+showDetails = "Pokaż szczegóły"
+summary = "{{count}} elementów"
+syncFailed = "Błąd synchronizacji folderów: {{message}}"
+syncPartial = "Częściowa synchronizacja folderów: {{failed}} z {{total}} folderów nie można było scalić."
+tree = "Foldery"
+upload = "Prześlij"
+uploadedToLocal = "Przesłane pliki trafiają do Lokalnych. Użyj 'Zapisz w chmurze', aby umieścić je w folderze."
+uploadFromMobile = "Prześlij z telefonu"
+versionActions = "Akcje wersji"
+versionCollapse = "Zwiń pośrednie wersje"
+versionOrigin = "Pierwotne przesłanie"
+versionsCount = "{{count}} wersji"
+versionShowHidden = "Pokaż {{count}} wcześniejsze wersje"
+viewVersion = "Wyświetl tę wersję"
+
+[filesPage.appearance]
+colour = "Kolor"
+icon = "Ikona"
+title = "Wygląd"
+useColour = "Użyj koloru {{c}}"
+
+[filesPage.column]
+modified = "Zmodyfikowano"
+name = "Nazwa"
+size = "Rozmiar"
+type = "Typ"
+
+[filesPage.empty]
+hint = "Upuść pliki PDF w dowolnym miejscu na tej stronie, aby je przesłać, lub użyj przycisku Nowy folder, aby uporządkować pliki."
+newFolderCta = "Utwórz folder"
+title = "Ten folder jest pusty"
+uploadCta = "Prześlij pliki"
+
+[filesPage.empty.cloud]
+hint = "Aby zacząć, prześlij plik lub utwórz folder, by uporządkować."
+offlineHint = "Połącz ponownie, aby wczytać bibliotekę w chmurze."
+offlineTitle = "Brak zbuforowanych plików w chmurze"
+title = "Nie ma jeszcze plików w chmurze"
+
+[filesPage.empty.local]
+hint = "Pliki zapisane bez przesyłania pozostają tutaj. Upuść plik, aby go dodać."
+title = "Brak plików tylko lokalnych"
+
+[filesPage.empty.recent]
+hint = "Pliki, które otworzysz lub edytujesz, pojawią się tutaj."
+title = "Jeszcze nic nie zmodyfikowano"
+
+[filesPage.empty.shared]
+hint = "Gdy ktoś udostępni plik przez link, pojawi się on tutaj."
+title = "Nic Ci nie udostępniono"
+
+[filesPage.empty.sharedByMe]
+hint = "Utwórz link do udostępniania lub zaproś członka zespołu z poziomu dowolnego pliku, aby zobaczyć go tutaj."
+title = "Nie udostępniłeś(-aś) jeszcze żadnych plików"
+
+[filesPage.error]
+actionFailed = "Nie udało się wykonać: {{action}}."
+actionFailedDetail = "Nie udało się wykonać: {{action}}: {{message}}"
+deleteFolderFailed = "Nie udało się usunąć folderu."
+deleteFolderFailedDetail = "Nie udało się usunąć folderu: {{message}}"
+folderAppearanceFailed = "Nie udało się zaktualizować wyglądu folderu."
+folderAppearanceFailedDetail = "Nie udało się zaktualizować wyglądu folderu: {{message}}"
+moveFilesFailed = "Nie udało się przenieść plików."
+moveFilesFailedDetail = "Nie udało się przenieść plików: {{message}}"
+moveFolderFailed = "Nie udało się przenieść folderu."
+moveFolderFailedDetail = "Nie udało się przenieść folderu: {{message}}"
+removeFilesFailed = "Nie udało się usunąć plików."
+removeFilesFailedDetail = "Nie udało się usunąć plików: {{message}}"
+uploadFilesFailed = "Nie udało się przesłać plików."
+uploadFilesFailedDetail = "Nie udało się przesłać plików: {{message}}"
+
+[filesPage.field]
+added = "Dodano"
+count = "Plików"
+folder = "Folder"
+modified = "Zmodyfikowano"
+name = "Nazwa"
+size = "Rozmiar"
+toolHistory = "Historia narzędzi"
+toolHistoryAtVersion = "Skumulowany łańcuch narzędzi"
+totalSize = "Łączny rozmiar"
+type = "Typ"
+versionHistory = "Historia wersji"
+
+[filesPage.folderName]
+cancel = "Anuluj"
+error = "Nie można zapisać folderu. Spróbuj ponownie."
+label = "Nazwa folderu"
+placeholder = "Nazwa folderu"
+
+[filesPage.moveDialog]
+cancel = "Anuluj"
+confirm = "Przenieś tutaj"
+error = "Nie udało się przenieść. Spróbuj ponownie."
+hint = "Wybierz folder docelowy. Wskazówka: możesz też przeciągać i upuszczać pliki na foldery w drzewie po lewej."
+newFolderCancel = "Odrzuć"
+newFolderCreate = "Utwórz"
+newFolderError = "Nie udało się utworzyć folderu. Spróbuj ponownie."
+newFolderLabel = "Nazwa nowego folderu"
+newFolderPlaceholder = "Nazwa folderu"
+newFolderToggle = "Utwórz nowy folder…"
+title = "Przenieś do folderu"
+
+[filesPage.origin]
+all = "Wszystkie źródła"
+cloud = "Chmura"
+cloudHint = "Przechowywane na serwerze Stirling"
+local = "Lokalne"
+localHint = "Przechowywane tylko w tej przeglądarce"
+shared = "Udostępnione"
+sharedHint = "Udostępnione Ci za pomocą linku"
+
+[filesPage.sort]
+modifiedAsc = "Najstarsze najpierw"
+modifiedDesc = "Najnowsze najpierw"
+nameAsc = "Nazwa A→Z"
+nameDesc = "Nazwa Z→A"
+sizeAsc = "Najmniejsze najpierw"
+sizeDesc = "Największe najpierw"
+
+[filesPage.syncError]
+client = "Błąd synchronizacji folderów."
+network = "Nie można połączyć się z serwerem."
+server = "Błąd serwera podczas synchronizacji folderów."
+
+[filesPage.tabName]
+local = "Lokalne"
+recent = "Ostatnie"
+shared = "Udostępnione mi"
+sharedByMe = "Udostępnione przeze mnie"
+
+[filesPage.tabs]
+all = "Wszystkie"
+ariaLabel = "Widoki plików"
+cloud = "Chmura"
+local = "Lokalne"
+recent = "Ostatnie"
+shared = "Udostępnione mi"
+sharedByMe = "Udostępnione przeze mnie"
+
+[filesPage.treeMenu]
+actions = "Akcje folderu dla {{name}}"
+collapse = "Zwiń folder"
+delete = "Usuń folder"
+expand = "Rozwiń folder"
+newSubfolder = "Nowy podfolder"
+rename = "Zmień nazwę"
+
+[filesPage.typeFilter]
+allTypes = "Wszystkie typy"
+label = "Filtruj wg typu"
+
+[filesPage.viewMode]
+grid = "Widok siatki"
+label = "Tryb widoku"
+list = "Widok listy"
 
 [fileToPDF]
 credit = "Ta usługa używa LibreOffice i Unoconv do konwersji plików."
@@ -7695,6 +8010,7 @@ bulkTitle = "Prześlij wybrane pliki"
 description = "To przesyła bieżący plik do magazynu serwera, aby uzyskać do niego dostęp."
 errorTitle = "Przesyłanie nie powiodło się"
 failure = "Przesyłanie nie powiodło się. Sprawdź swoje dane logowania i ustawienia magazynu."
+featureDisabled = "Zapisywanie na serwerze nie jest włączone na tym serwerze."
 fileCount = "Wybrano {{count}} plików"
 fileLabel = "Plik"
 hint = "Publiczne linki i tryby dostępu są kontrolowane przez ustawienia serwera."
@@ -7868,13 +8184,18 @@ viewerMode = "Przełącz do edytora plików, aby wybrać wiele plików."
 [toolPanel]
 allTools = "Wszystkie narzędzia"
 alpha = "Alpha"
+backToAllTools = "Wróć do wszystkich narzędzi"
+backToDefault = "Wstecz"
 backToTools = "Wróć do narzędzi"
 collapse = "Zwiń panel"
 comingSoon = "Wkrótce:"
 expand = "Rozwiń panel"
+goBack = "Wróć"
 placeholder = "Wybierz narzędzie, aby zacząć"
 premiumFeature = "Funkcja premium:"
 search = "Szukaj narzędzi"
+toolsHeader = "Narzędzia"
+viewAllTools = "Zobacz wszystkie narzędzia"
 
 [toolPanel.fullscreen]
 comingSoon = "Wkrótce:"

@@ -90,6 +90,7 @@ nothingToUndo = "Nema šta da se opozove"
 noticeTopUpOrPlan = "Nedovoljno kredita, dopunite ili pređite na plan"
 noValidFiles = "Nema važećih fajlova za obradu"
 oops = "Opa!"
+openInNewWindow = "Otvori u novom prozoru"
 openInViewer = "Otvori u prikazivaču"
 operationCancelled = "Operacija otkazana"
 page = "Strana"
@@ -493,6 +494,11 @@ title = "Podesi skalu stranice"
 
 [adjustPageScale.error]
 failed = "Došlo je do greške prilikom podešavanja skale stranice."
+
+[adjustPageScale.orientation]
+label = "Orijentacija stranice"
+landscape = "Pejzaž"
+portrait = "Portret"
 
 [adjustPageScale.pageSize]
 keep = "Zadrži izvornu veličinu"
@@ -1512,6 +1518,32 @@ user = "Korisnik"
 usernameInfo = "Korisničko ime može sadržati samo slova, brojeve i specijalne karaktere @._+- ili mora biti validna email adresa."
 webOnlyUser = "Korisnik samo za web"
 
+[agents]
+auto_redaction_description = "Automatski rediguj PII"
+auto_redaction_name = "Automatsko redigovanje"
+back_to_tools = "Nazad na alate"
+coming_soon = "Uskoro"
+compliance_description = "Proverite usklađenost dokumenata"
+compliance_name = "Provera usklađenosti"
+data_extraction_description = "Izvuci tabele i strukturisane podatke"
+data_extraction_name = "Ekstrakcija podataka"
+doc_summary_description = "Sažmi duga dokumenta"
+doc_summary_name = "Sažimač"
+form_filler_description = "Pametno popuni PDF obrasce"
+form_filler_name = "Popunjavanje obrazaca"
+fullscreen_title = "Stirling Agenti"
+pdf_to_markdown_description = "Konvertuj PDF-ove u čist Markdown"
+pdf_to_markdown_name = "PDF u Markdown"
+section_title = "Agenti"
+show_less = "Prikaži manje"
+start_chat = "Započni razgovor"
+stirling_description = "Vaš višenamenski PDF asistent"
+stirling_full_name = "Stirling opšti agent"
+stirling_long_description = "Višenamenski PDF asistent koji može da pokreće alate, kreira PDF-ove i izdvaja uvide iz vaših dokumenata."
+stirling_name = "Stirling"
+stirling_tooltip = "Stirling agent"
+view_all = "Prikaži sve agente"
+
 [analytics]
 disable = "Onemogući analitiku"
 enable = "Omogući analitiku"
@@ -1771,6 +1803,10 @@ insufficientPermissions = "Nemate dozvolu da izvršite ovu radnju."
 pleaseLoginAgain = "Molimo prijavite se ponovo."
 sessionExpired = "Sesija je istekla"
 
+[auth.displayName]
+guest = "Gost"
+user = "Korisnik"
+
 [auto-rename]
 description = "Automatski pronalazi naslov iz sadržaja vašeg PDF-a i koristi ga kao naziv fajla."
 header = "Automatsko preimenovanje PDF-a"
@@ -1862,6 +1898,13 @@ label = "Otvori meni za {{title}}"
 
 [automate.files]
 placeholder = "Izaberite datoteke za obradu ovom automatizacijom"
+
+[automate.folderScanWarning]
+advice = "I dalje možete preuzeti datoteku (npr. radi pregleda ili ručne izmene), ali nepodržane korake treba ukloniti pre nego što pozadina može da je pokrene."
+cancel = "Otkaži"
+confirm = "Ipak izvezi"
+intro = "Skeniranje fascikli radi na pozadini, pa može da izvršava samo alate koji imaju pozadinski endpoint. Sledeći koraci u ovoj automatizaciji to nemaju i neće uspeti kada se cevovod pokrene:"
+title = "Neki koraci ne mogu da se pokrenu u skeniranju fascikli"
 
 [automate.importModal]
 cancel = "Otkaži"
@@ -2684,6 +2727,16 @@ title = "Promeni dozvole"
 [changePermissions.tooltip.warning]
 text = "Da biste ove dozvole učinili neizmenjivim, koristite alat Dodaj lozinku da postavite vlasničku lozinku."
 
+[chat.header]
+agentMenu = "Opcije Stirling agenta"
+clearChat = "Obriši razgovor"
+settings = "Podešavanja agenta"
+
+[chat.input]
+attach = "Priloži datoteke"
+placeholder = "Šta želite da uradite?"
+send = "Pošalji poruku"
+
 [chat.progress]
 analyzing = "Analiziram vaš zahtev..."
 calling_engine = "AI razmišlja..."
@@ -2698,6 +2751,32 @@ whole_doc_compression_round = "Objedinjavanje beleški..."
 whole_doc_read_done = "Završeno čitanje dokumenta..."
 whole_doc_read_started = "Čitanje dokumenta..."
 whole_doc_slice_done = "Čitanje dokumenta... ({{percent}}% završeno)"
+
+[chat.quickActions]
+browseYourFiles = "Pregledaj svoje datoteke"
+compressMany = "Komprimuj ove dokumente"
+compressOne = "Komprimuj ovaj dokument"
+convertMany = "Konvertuj ove dokumente u PDF"
+convertOne = "Konvertuj ovaj dokument u PDF"
+fileSummary_one = "1 datoteka u radnoj površini ({{types}})"
+fileSummary_other = "{{count}} datoteka u radnoj površini ({{types}})"
+heading = "Počnite"
+mergeMany = "Spoji ovih {{count}} dokumenata u 1"
+moreFiles = "+{{count}} još"
+openFromComputer = "Otvori sa računara"
+removeFile = "Ukloni {{name}}"
+rotateMany = "Rotiraj ove dokumente"
+rotateOne = "Rotiraj ovaj dokument"
+splitOne = "Podeli ovaj dokument"
+
+[chat.responses]
+cannot_continue = "Nešto je pošlo naopako i ne mogu da nastavim."
+cannot_do = "Ne mogu to da uradim."
+done = "Gotovo."
+need_clarification = "Možete li pojasniti svoj zahtev?"
+not_found = "Nisam uspeo da pronađem tražene informacije."
+processing = "Obrada ({{outcome}})..."
+unsupported_capability = "Nepodržana mogućnost: {{capability}}"
 
 [chat.toolsUsed]
 summary = "Pokrenuto {{count}} alata"
@@ -2799,6 +2878,7 @@ selectBaseFirst = "Najpre izaberite originalni PDF"
 filesMissing = "Nije moguće pronaći izabrane datoteke. Molimo izaberite ih ponovo."
 generic = "Nije moguće uporediti ove datoteke."
 selectRequired = "Izaberite originalni i izmenjeni dokument."
+title = "Poređenje nije uspelo"
 
 [compare.large.file]
 message = "Jedan ili oba dostavljena dokumenta su preveliki za obradu"
@@ -2864,6 +2944,7 @@ title = "Još uvek radimo…"
 
 [compare.status]
 complete = "Poređenje spremno"
+error = "Poređenje nije uspelo"
 extracting = "Izdvajanje teksta..."
 processing = "Analiziranje razlika..."
 
@@ -3771,12 +3852,246 @@ expand = "Proširi bočnu traku"
 files = "Datoteke"
 googleDrive = "Google Drive"
 googleDriveDisabled = "Google Drive nije konfigurisan"
+leaveMyFiles = "Napusti Moje datoteke"
+myFiles = "Moje datoteke"
 noFiles = "Još nema datoteka"
 openFileManager = "Otvori menadžer datoteka"
 openFromComputer = "Otvori sa računara"
 openSettings = "Otvori podešavanja"
 search = "Pretraga"
 searchPlaceholder = "Pretraži datoteke..."
+
+[filesPage]
+addToWorkspace = "Dodaj u radni prostor"
+addToWorkspaceCount = "Dodaj {{count}} u radni prostor"
+allFiles = "Sve datoteke"
+back = "Nazad"
+backToFolder = "Nazad na {{folder}}"
+backToMyFiles = "Nazad na Moje datoteke"
+breadcrumbs = "Putanja fascikle"
+cancel = "Otkaži"
+clearSearch = "Obriši pretragu"
+clearSelection = "Poništi izbor"
+closeDetails = "Zatvori detalje"
+create = "Kreiraj"
+cycleBlocked = "Nije moguće premestiti fasciklu u neku od sopstvenih podfascikli."
+delete = "Obriši"
+deleteFolder = "Obriši fasciklu"
+deleteFolderBody = "Obrisati fasciklu \"{{name}}\"?"
+deleteFolderConfirm = "Obrisati fasciklu \"{{name}}\"? Datoteke unutra biće premeštene u Sve datoteke. Pogođeno {{count}} datoteka."
+deleteFolderContents = "Takođe obriši {{count}} datoteka unutar fascikle"
+deleteFolderContentsWarning = "Datoteke će biti trajno uklonjene i ne mogu se povratiti."
+deleteFolderError = "Nije moguće obrisati fasciklu. Pokušajte ponovo."
+deleteFolderKeepHint = "Datoteke unutra biće premeštene u Sve datoteke."
+deleteFolderTitle = "Obrisati fasciklu?"
+deselectAll = "Poništi izbor"
+details = "Detalji"
+detailsCount = "Izabrano {{count}} datoteka"
+dismissError = "Odbaci"
+download = "Preuzmi"
+downloadAll = "Preuzmi sve"
+downloadVersion = "Preuzmi ovu verziju"
+dropOverlay = "Ispustite datoteke za otpremanje"
+dropOverlaySub = "Datoteke prvo idu u Lokalno. Koristite 'Premesti u' ili 'Sačuvaj u oblaku' da ih organizujete u fasciklu."
+file = "Datoteka"
+fileMenu = "Radnje nad datotekom"
+folder = "Fascikla"
+folderItems = "{{count}} stavki"
+folderMenu = "Radnje nad fasciklom"
+inPath = "u {{path}}"
+inWorkspace = "Otvori"
+inWorkspaceAria = "Već u radnom prostoru"
+loading = "Učitavanje…"
+localFoldersUnavailable = "Fascikle su samo u oblaku – sačuvajte datoteku u oblaku da biste ih organizovali."
+moreActions = "Još radnji nad fasciklom"
+moveLocalToCloudBlocked = "Isključivo lokalne datoteke ne mogu se premestiti u fascikle u oblaku. Prvo ih sačuvajte u oblaku."
+moveSkippedRemote = "{{count}} datoteka nije moglo da se premesti na serveru (nema dozvole ili su već obrisane)."
+moveTo = "Premesti u…"
+myFiles = "Moje datoteke"
+newFolder = "Nova fascikla"
+newFolderStorageDisabled = "Skladištenje fascikli na serveru nije omogućeno. Zamolite administratora da ga uključi."
+newFolderTabUnavailable = "Prebacite se na Sve ili Oblak da biste kreirali fascikle."
+newRootFolder = "Nova fascikla u korenu"
+offlineNoFolderEdits = "Sinhronizacija fascikli sa serverom nije dostupna – izmene fascikli su onemogućene. Proverite prijavu i konfiguraciju skladišta."
+open = "Otvori"
+openInWorkbench = "Otvori u radnoj površini"
+openVersionInWorkspace = "Otvori u radnom prostoru"
+originFilter = "Filtriraj po izvoru"
+quickView = "Brzi prikaz"
+refresh = "Osveži sa servera"
+remove = "Obriši"
+removeConfirm = "Obrisati {{count}} datoteka? Ovo se ne može poništiti."
+removeVersion = "Ukloni ovu verziju"
+rename = "Preimenuj"
+renameFolder = "Preimenuj fasciklu"
+resizeFolderTree = "Promeni veličinu stabla fascikli (strelice, Shift za veće korake; dvoklik za automatsko uklapanje)"
+save = "Sačuvaj"
+saveToServer = "Sačuvaj na server"
+saveToServerDisabledHint = "Čuvanje na serveru nije omogućeno na ovom serveru. Zamolite administratora da ga omogući."
+search = "Pretraga"
+searchPlaceholder = "Pretraži ovu fasciklu i podfascikle"
+selectAll = "Odaberi sve"
+selectAllHint = "Kliknite da biste izabrali sve. Savet: držite Ctrl (ili Cmd) da dodajete datoteke jednu po jednu, Shift da odaberete opseg."
+selectedCount = "{{count}} izabrano"
+selectFile = "Izaberi datoteku {{name}}"
+shareDisabledHint = "Deljenje datoteka nije omogućeno na ovom serveru. Zamolite administratora da ga omogući."
+shareManage = "Upravljaj deljenjem"
+showDetails = "Prikaži detalje"
+summary = "{{count}} stavki"
+syncFailed = "Sinhronizacija fascikli nije uspela: {{message}}"
+syncPartial = "Delimična sinhronizacija fascikli: {{failed}} od {{total}} fascikli nije moglo da se spoji."
+tree = "Fascikle"
+upload = "Otpremi"
+uploadedToLocal = "Otpremene datoteke počinju u Lokalnom. Koristite 'Sačuvaj u oblaku' da biste ih smestili u fasciklu."
+uploadFromMobile = "Otpremi sa mobilnog"
+versionActions = "Radnje verzije"
+versionCollapse = "Sažmi srednje verzije"
+versionOrigin = "Originalno otpremanje"
+versionsCount = "{{count}} verzija"
+versionShowHidden = "Prikaži {{count}} ranijih verzija"
+viewVersion = "Prikaži ovu verziju"
+
+[filesPage.appearance]
+colour = "Boja"
+icon = "Ikona"
+title = "Izgled"
+useColour = "Koristi boju {{c}}"
+
+[filesPage.column]
+modified = "Izmenjeno"
+name = "Naziv"
+size = "Veličina"
+type = "Tip"
+
+[filesPage.empty]
+hint = "Ispustite PDF-ove bilo gde na ovoj stranici da biste ih otpremili ili koristite dugme Nova fascikla da organizujete datoteke."
+newFolderCta = "Kreiraj fasciklu"
+title = "Ova fascikla je prazna"
+uploadCta = "Otpremi datoteke"
+
+[filesPage.empty.cloud]
+hint = "Otpremite datoteku da biste započeli ili kreirajte fasciklu da organizujete."
+offlineHint = "Ponovo se povežite da biste učitali vašu biblioteku u oblaku."
+offlineTitle = "Nema keširanih datoteka u oblaku"
+title = "Još nema datoteka u oblaku"
+
+[filesPage.empty.local]
+hint = "Datoteke sačuvane bez otpremanja ostaju ovde. Ispustite datoteku da biste je dodali."
+title = "Nema isključivo lokalnih datoteka"
+
+[filesPage.empty.recent]
+hint = "Datoteke koje otvorite ili izmenite pojaviće se ovde."
+title = "Još nema izmena"
+
+[filesPage.empty.shared]
+hint = "Kada neko podeli datoteku putem linka, pojaviće se ovde."
+title = "Ništa nije podeljeno sa vama"
+
+[filesPage.empty.sharedByMe]
+hint = "Kreirajte link za deljenje ili pozovite kolegu iz bilo koje vaše datoteke da biste je videli ovde."
+title = "Još niste podelili nijednu datoteku"
+
+[filesPage.error]
+actionFailed = "Nije moguće izvršiti {{action}}."
+actionFailedDetail = "Nije moguće izvršiti {{action}}: {{message}}"
+deleteFolderFailed = "Nije moguće obrisati fasciklu."
+deleteFolderFailedDetail = "Nije moguće obrisati fasciklu: {{message}}"
+folderAppearanceFailed = "Nije moguće ažurirati izgled fascikle."
+folderAppearanceFailedDetail = "Nije moguće ažurirati izgled fascikle: {{message}}"
+moveFilesFailed = "Nije moguće premestiti datoteke."
+moveFilesFailedDetail = "Nije moguće premestiti datoteke: {{message}}"
+moveFolderFailed = "Nije moguće premestiti fasciklu."
+moveFolderFailedDetail = "Nije moguće premestiti fasciklu: {{message}}"
+removeFilesFailed = "Nije moguće ukloniti datoteke."
+removeFilesFailedDetail = "Nije moguće ukloniti datoteke: {{message}}"
+uploadFilesFailed = "Nije moguće otpremiti datoteke."
+uploadFilesFailedDetail = "Nije moguće otpremiti datoteke: {{message}}"
+
+[filesPage.field]
+added = "Dodato"
+count = "Datoteke"
+folder = "Fascikla"
+modified = "Izmenjeno"
+name = "Naziv"
+size = "Veličina"
+toolHistory = "Istorija alata"
+toolHistoryAtVersion = "Kumulativni lanac alata"
+totalSize = "Ukupna veličina"
+type = "Tip"
+versionHistory = "Putanja verzija"
+
+[filesPage.folderName]
+cancel = "Otkaži"
+error = "Nije moguće sačuvati fasciklu. Pokušajte ponovo."
+label = "Naziv fascikle"
+placeholder = "Naziv fascikle"
+
+[filesPage.moveDialog]
+cancel = "Otkaži"
+confirm = "Premesti ovde"
+error = "Nije moguće premestiti. Pokušajte ponovo."
+hint = "Izaberite odredišnu fasciklu. Savet: možete i da prevučete i ispustite datoteke na fascikle u stablu levo."
+newFolderCancel = "Odbaci"
+newFolderCreate = "Kreiraj"
+newFolderError = "Nije moguće kreirati fasciklu. Pokušajte ponovo."
+newFolderLabel = "Naziv nove fascikle"
+newFolderPlaceholder = "Naziv fascikle"
+newFolderToggle = "Kreiraj novu fasciklu…"
+title = "Premesti u fasciklu"
+
+[filesPage.origin]
+all = "Svi izvori"
+cloud = "Oblak"
+cloudHint = "Skladišteno na Stirling serveru"
+local = "Lokalno"
+localHint = "Skladišteno samo u ovom pregledaču"
+shared = "Podeljeno"
+sharedHint = "Podeljeno sa vama putem linka"
+
+[filesPage.sort]
+modifiedAsc = "Najstarije prvo"
+modifiedDesc = "Najnovije prvo"
+nameAsc = "Naziv A→Z"
+nameDesc = "Naziv Z→A"
+sizeAsc = "Najmanje prvo"
+sizeDesc = "Najveće prvo"
+
+[filesPage.syncError]
+client = "Sinhronizacija fascikli nije uspela."
+network = "Nije moguće doći do servera."
+server = "Greška servera tokom sinhronizacije fascikli."
+
+[filesPage.tabName]
+local = "Lokalno"
+recent = "Nedavno"
+shared = "Podeljeno sa mnom"
+sharedByMe = "Podeljeno od mene"
+
+[filesPage.tabs]
+all = "Sve"
+ariaLabel = "Pogledi datoteka"
+cloud = "Oblak"
+local = "Lokalno"
+recent = "Nedavno"
+shared = "Podeljeno sa mnom"
+sharedByMe = "Podeljeno od mene"
+
+[filesPage.treeMenu]
+actions = "Radnje nad fasciklom za {{name}}"
+collapse = "Sažmi fasciklu"
+delete = "Obriši fasciklu"
+expand = "Proširi fasciklu"
+newSubfolder = "Nova podfascikla"
+rename = "Preimenuj"
+
+[filesPage.typeFilter]
+allTypes = "Svi tipovi"
+label = "Filtriraj po tipu"
+
+[filesPage.viewMode]
+grid = "Mrežni prikaz"
+label = "Način prikaza"
+list = "Prikaz liste"
 
 [fileToPDF]
 credit = "Ova usluga koristi LibreOffice i Unoconv za konverziju fajla."
@@ -7695,6 +8010,7 @@ bulkTitle = "Otpremi izabrane datoteke"
 description = "Ovo otprema trenutnu datoteku na serversko skladište za vaš sopstveni pristup."
 errorTitle = "Otpremanje nije uspelo"
 failure = "Otpremanje nije uspelo. Proverite prijavu i podešavanja skladišta."
+featureDisabled = "Čuvanje na serveru nije omogućeno na ovom serveru."
 fileCount = "{{count}} izabranih datoteka"
 fileLabel = "Datoteka"
 hint = "Javni linkovi i režimi pristupa kontrolišu se podešavanjima vašeg servera."
@@ -7868,13 +8184,18 @@ viewerMode = "Prebacite se u uređivač datoteka da biste izabrali više datotek
 [toolPanel]
 allTools = "Svi alati"
 alpha = "Alfa"
+backToAllTools = "Nazad na sve alate"
+backToDefault = "Nazad"
 backToTools = "Nazad na alate"
 collapse = "Skupi panel"
 comingSoon = "Uskoro:"
 expand = "Proširi panel"
+goBack = "Vrati se"
 placeholder = "Izaberite alat da biste započeli"
 premiumFeature = "Premium funkcija:"
 search = "Pretraži alate"
+toolsHeader = "Alati"
+viewAllTools = "Prikaži sve alate"
 
 [toolPanel.fullscreen]
 comingSoon = "Uskoro:"

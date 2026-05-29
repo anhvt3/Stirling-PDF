@@ -90,6 +90,7 @@ nothingToUndo = "Không có gì để hoàn tác"
 noticeTopUpOrPlan = "Không đủ tín dụng, vui lòng nạp thêm hoặc nâng cấp lên một gói"
 noValidFiles = "Không có tệp hợp lệ để xử lý"
 oops = "Rất tiếc!"
+openInNewWindow = "Mở trong cửa sổ mới"
 openInViewer = "Mở trong Trình xem"
 operationCancelled = "Đã hủy thao tác"
 page = "Trang"
@@ -493,6 +494,11 @@ title = "Điều chỉnh tỷ lệ trang"
 
 [adjustPageScale.error]
 failed = "Đã xảy ra lỗi khi điều chỉnh tỷ lệ trang."
+
+[adjustPageScale.orientation]
+label = "Hướng trang"
+landscape = "Ngang"
+portrait = "Dọc"
 
 [adjustPageScale.pageSize]
 keep = "Giữ kích thước gốc"
@@ -1512,6 +1518,32 @@ user = "Người dùng"
 usernameInfo = "Tên người dùng chỉ có thể chứa chữ cái, số và các ký tự đặc biệt sau @._+- hoặc phải là một địa chỉ email hợp lệ."
 webOnlyUser = "Chỉ người dùng web"
 
+[agents]
+auto_redaction_description = "Tự động che PII"
+auto_redaction_name = "Che tự động"
+back_to_tools = "Quay lại các công cụ"
+coming_soon = "Sắp ra mắt"
+compliance_description = "Kiểm tra tuân thủ tài liệu"
+compliance_name = "Kiểm tra tuân thủ"
+data_extraction_description = "Trích xuất bảng và dữ liệu có cấu trúc"
+data_extraction_name = "Trích xuất dữ liệu"
+doc_summary_description = "Tóm tắt tài liệu dài"
+doc_summary_name = "Trình tóm tắt"
+form_filler_description = "Điền biểu mẫu PDF thông minh"
+form_filler_name = "Trình điền biểu mẫu"
+fullscreen_title = "Tác nhân Stirling"
+pdf_to_markdown_description = "Chuyển PDF sang Markdown gọn gàng"
+pdf_to_markdown_name = "PDF sang Markdown"
+section_title = "Tác nhân"
+show_less = "Thu gọn"
+start_chat = "Bắt đầu trò chuyện"
+stirling_description = "Trợ lý PDF đa năng của bạn"
+stirling_full_name = "Tác nhân Stirling đa năng"
+stirling_long_description = "Trợ lý PDF đa năng có thể chạy công cụ, tạo PDF và trích xuất thông tin từ tài liệu của bạn."
+stirling_name = "Stirling"
+stirling_tooltip = "Tác nhân Stirling"
+view_all = "Xem tất cả tác nhân"
+
 [analytics]
 disable = "Tắt phân tích"
 enable = "Bật phân tích"
@@ -1771,6 +1803,10 @@ insufficientPermissions = "Bạn không có quyền thực hiện thao tác này
 pleaseLoginAgain = "Vui lòng đăng nhập lại."
 sessionExpired = "Phiên đã hết hạn"
 
+[auth.displayName]
+guest = "Khách"
+user = "Người dùng"
+
 [auto-rename]
 description = "Tự động tìm tiêu đề từ nội dung PDF của bạn và dùng làm tên tệp."
 header = "Tự động đổi tên PDF"
@@ -1862,6 +1898,13 @@ label = "Mở menu cho {{title}}"
 
 [automate.files]
 placeholder = "Chọn tệp để xử lý với tự động hóa này"
+
+[automate.folderScanWarning]
+advice = "Bạn vẫn có thể tải xuống tệp (ví dụ để kiểm tra hoặc chỉnh sửa thủ công), nhưng các bước không được hỗ trợ sẽ cần được xóa trước khi backend có thể chạy nó."
+cancel = "Hủy"
+confirm = "Vẫn xuất"
+intro = "Quét thư mục chạy trên backend, vì vậy nó chỉ có thể thực thi các công cụ có backend endpoint. Các bước sau trong tự động hóa này thì không, và sẽ thất bại khi pipeline chạy:"
+title = "Một số bước không thể chạy trong quét thư mục"
 
 [automate.importModal]
 cancel = "Hủy"
@@ -2684,6 +2727,16 @@ title = "Thay đổi quyền"
 [changePermissions.tooltip.warning]
 text = "Để các quyền này không bị thay đổi, hãy dùng công cụ Thêm mật khẩu để đặt mật khẩu chủ sở hữu."
 
+[chat.header]
+agentMenu = "Tùy chọn tác nhân Stirling"
+clearChat = "Xóa hội thoại"
+settings = "Cài đặt tác nhân"
+
+[chat.input]
+attach = "Đính kèm tệp"
+placeholder = "Bạn muốn làm gì?"
+send = "Gửi tin nhắn"
+
 [chat.progress]
 analyzing = "Đang phân tích yêu cầu của bạn..."
 calling_engine = "AI đang suy nghĩ..."
@@ -2698,6 +2751,32 @@ whole_doc_compression_round = "Đang hợp nhất ghi chú..."
 whole_doc_read_done = "Đã đọc xong tài liệu..."
 whole_doc_read_started = "Đang đọc tài liệu..."
 whole_doc_slice_done = "Đang đọc tài liệu... ({{percent}}% hoàn tất)"
+
+[chat.quickActions]
+browseYourFiles = "Duyệt tệp của bạn"
+compressMany = "Nén các tài liệu này"
+compressOne = "Nén tài liệu này"
+convertMany = "Chuyển các tài liệu này sang PDF"
+convertOne = "Chuyển tài liệu này sang PDF"
+fileSummary_one = "1 tệp trong bàn làm việc ({{types}})"
+fileSummary_other = "{{count}} tệp trong bàn làm việc ({{types}})"
+heading = "Bắt đầu"
+mergeMany = "Hợp nhất {{count}} tài liệu này thành 1"
+moreFiles = "+{{count}} nữa"
+openFromComputer = "Mở từ máy tính"
+removeFile = "Xóa {{name}}"
+rotateMany = "Xoay các tài liệu này"
+rotateOne = "Xoay tài liệu này"
+splitOne = "Tách tài liệu này"
+
+[chat.responses]
+cannot_continue = "Đã xảy ra lỗi và tôi không thể tiếp tục."
+cannot_do = "Tôi không thể làm điều đó."
+done = "Hoàn tất."
+need_clarification = "Bạn có thể làm rõ yêu cầu không?"
+not_found = "Tôi không tìm thấy thông tin được yêu cầu."
+processing = "Đang xử lý ({{outcome}})..."
+unsupported_capability = "Khả năng không được hỗ trợ: {{capability}}"
 
 [chat.toolsUsed]
 summary = "Đã chạy {{count}} công cụ"
@@ -2799,6 +2878,7 @@ selectBaseFirst = "Chọn PDF gốc trước"
 filesMissing = "Không thể định vị các tệp đã chọn. Vui lòng chọn lại."
 generic = "Không thể so sánh các tệp này."
 selectRequired = "Hãy chọn tài liệu gốc và tài liệu đã chỉnh sửa."
+title = "So sánh thất bại"
 
 [compare.large.file]
 message = "Một hoặc cả hai tài liệu được cung cấp quá lớn để xử lý"
@@ -2864,6 +2944,7 @@ title = "Vẫn đang xử lý…"
 
 [compare.status]
 complete = "So sánh đã sẵn sàng"
+error = "So sánh thất bại"
 extracting = "Đang trích xuất văn bản..."
 processing = "Đang phân tích khác biệt..."
 
@@ -3771,12 +3852,246 @@ expand = "Mở rộng thanh bên"
 files = "Tệp"
 googleDrive = "Google Drive"
 googleDriveDisabled = "Google Drive chưa được cấu hình"
+leaveMyFiles = "Rời khỏi Tệp của tôi"
+myFiles = "Tệp của tôi"
 noFiles = "Chưa có tệp nào"
 openFileManager = "Mở trình quản lý tệp"
 openFromComputer = "Mở từ máy tính"
 openSettings = "Mở cài đặt"
 search = "Tìm kiếm"
 searchPlaceholder = "Tìm kiếm tệp..."
+
+[filesPage]
+addToWorkspace = "Thêm vào không gian làm việc"
+addToWorkspaceCount = "Thêm {{count}} vào không gian làm việc"
+allFiles = "Tất cả tệp"
+back = "Quay lại"
+backToFolder = "Quay lại {{folder}}"
+backToMyFiles = "Quay lại Tệp của tôi"
+breadcrumbs = "Đường dẫn thư mục"
+cancel = "Hủy"
+clearSearch = "Xóa tìm kiếm"
+clearSelection = "Bỏ chọn"
+closeDetails = "Đóng chi tiết"
+create = "Tạo"
+cycleBlocked = "Không thể di chuyển một thư mục vào chính thư mục con của nó."
+delete = "Xóa"
+deleteFolder = "Xóa thư mục"
+deleteFolderBody = "Xóa thư mục \"{{name}}\"?"
+deleteFolderConfirm = "Xóa thư mục \"{{name}}\"? Các tệp bên trong sẽ được chuyển vào Tất cả tệp. {{count}} tệp bị ảnh hưởng."
+deleteFolderContents = "Cũng xóa {{count}} tệp bên trong thư mục"
+deleteFolderContentsWarning = "Các tệp sẽ bị xóa vĩnh viễn và không thể khôi phục."
+deleteFolderError = "Không thể xóa thư mục. Thử lại."
+deleteFolderKeepHint = "Các tệp bên trong sẽ được chuyển vào Tất cả tệp."
+deleteFolderTitle = "Xóa thư mục?"
+deselectAll = "Bỏ chọn"
+details = "Chi tiết"
+detailsCount = "{{count}} tệp đã chọn"
+dismissError = "Bỏ qua"
+download = "Tải xuống"
+downloadAll = "Tải xuống tất cả"
+downloadVersion = "Tải xuống phiên bản này"
+dropOverlay = "Thả tệp để tải lên"
+dropOverlaySub = "Các tệp bắt đầu ở Cục bộ. Dùng 'Di chuyển đến' hoặc 'Lưu lên đám mây' để sắp xếp chúng vào thư mục."
+file = "Tệp"
+fileMenu = "Hành động tệp"
+folder = "Thư mục"
+folderItems = "{{count}} mục"
+folderMenu = "Hành động thư mục"
+inPath = "trong {{path}}"
+inWorkspace = "Mở"
+inWorkspaceAria = "Đã có trong không gian làm việc"
+loading = "Đang tải…"
+localFoldersUnavailable = "Thư mục chỉ dành cho đám mây - hãy lưu một tệp lên đám mây để sắp xếp."
+moreActions = "Hành động thư mục khác"
+moveLocalToCloudBlocked = "Các tệp chỉ lưu cục bộ không thể chuyển vào thư mục đám mây. Hãy lưu chúng lên đám mây trước."
+moveSkippedRemote = "{{count}} tệp không thể di chuyển trên máy chủ (không có quyền hoặc đã bị xóa)."
+moveTo = "Di chuyển đến…"
+myFiles = "Tệp của tôi"
+newFolder = "Thư mục mới"
+newFolderStorageDisabled = "Lưu trữ thư mục trên máy chủ chưa được bật. Hãy yêu cầu quản trị viên bật nó."
+newFolderTabUnavailable = "Chuyển sang Tất cả hoặc Đám mây để tạo thư mục."
+newRootFolder = "Thư mục mới ở gốc"
+offlineNoFolderEdits = "Đồng bộ thư mục với máy chủ không khả dụng - thay đổi thư mục bị tắt. Kiểm tra đăng nhập và cấu hình lưu trữ."
+open = "Mở"
+openInWorkbench = "Mở trong bàn làm việc"
+openVersionInWorkspace = "Mở trong không gian làm việc"
+originFilter = "Lọc theo nguồn"
+quickView = "Xem nhanh"
+refresh = "Làm mới từ máy chủ"
+remove = "Xóa"
+removeConfirm = "Xóa {{count}} tệp? Hành động này không thể hoàn tác."
+removeVersion = "Xóa phiên bản này"
+rename = "Đổi tên"
+renameFolder = "Đổi tên thư mục"
+resizeFolderTree = "Thay đổi kích thước cây thư mục (phím mũi tên, Shift để tăng bước; nhấp đúp để tự khớp)"
+save = "Lưu"
+saveToServer = "Lưu lên máy chủ"
+saveToServerDisabledHint = "Lưu lên máy chủ chưa được bật trên máy chủ này. Hãy yêu cầu quản trị viên bật nó."
+search = "Tìm kiếm"
+searchPlaceholder = "Tìm trong thư mục này và thư mục con"
+selectAll = "Chọn tất cả"
+selectAllHint = "Nhấp để chọn tất cả. Mẹo: giữ Ctrl (hoặc Cmd) để thêm từng tệp, Shift để chọn một phạm vi."
+selectedCount = "{{count}} đã chọn"
+selectFile = "Chọn tệp {{name}}"
+shareDisabledHint = "Chia sẻ tệp chưa được bật trên máy chủ này. Hãy yêu cầu quản trị viên bật nó."
+shareManage = "Quản lý chia sẻ"
+showDetails = "Hiện chi tiết"
+summary = "{{count}} mục"
+syncFailed = "Đồng bộ thư mục thất bại: {{message}}"
+syncPartial = "Đồng bộ thư mục một phần: {{failed}} trên {{total}} thư mục không thể hợp nhất."
+tree = "Thư mục"
+upload = "Tải lên"
+uploadedToLocal = "Các tệp đã tải lên bắt đầu ở Cục bộ. Dùng 'Lưu lên đám mây' để đặt chúng vào một thư mục."
+uploadFromMobile = "Tải lên từ thiết bị di động"
+versionActions = "Hành động phiên bản"
+versionCollapse = "Thu gọn các phiên bản ở giữa"
+versionOrigin = "Tải lên ban đầu"
+versionsCount = "{{count}} phiên bản"
+versionShowHidden = "Hiện {{count}} phiên bản trước"
+viewVersion = "Xem phiên bản này"
+
+[filesPage.appearance]
+colour = "Màu sắc"
+icon = "Biểu tượng"
+title = "Giao diện"
+useColour = "Dùng màu {{c}}"
+
+[filesPage.column]
+modified = "Chỉnh sửa lần cuối"
+name = "Tên"
+size = "Kích thước"
+type = "Loại"
+
+[filesPage.empty]
+hint = "Thả PDF vào bất kỳ đâu trên trang này để tải lên, hoặc dùng nút Thư mục mới để sắp xếp tệp của bạn."
+newFolderCta = "Tạo thư mục"
+title = "Thư mục này trống"
+uploadCta = "Tải tệp lên"
+
+[filesPage.empty.cloud]
+hint = "Tải lên một tệp để bắt đầu, hoặc tạo thư mục để sắp xếp."
+offlineHint = "Kết nối lại để tải thư viện đám mây của bạn."
+offlineTitle = "Không có tệp đám mây đã lưu đệm"
+title = "Chưa có tệp đám mây"
+
+[filesPage.empty.local]
+hint = "Các tệp lưu mà không tải lên sẽ ở đây. Thả một tệp để thêm."
+title = "Không có tệp chỉ cục bộ"
+
+[filesPage.empty.recent]
+hint = "Các tệp bạn mở hoặc chỉnh sửa sẽ xuất hiện ở đây."
+title = "Chưa có gì được chỉnh sửa"
+
+[filesPage.empty.shared]
+hint = "Khi ai đó chia sẻ tệp qua liên kết, nó sẽ xuất hiện ở đây."
+title = "Chưa có gì được chia sẻ với bạn"
+
+[filesPage.empty.sharedByMe]
+hint = "Tạo liên kết chia sẻ hoặc mời một đồng nghiệp từ bất kỳ tệp nào của bạn để thấy ở đây."
+title = "Bạn chưa chia sẻ tệp nào"
+
+[filesPage.error]
+actionFailed = "Không thể {{action}}."
+actionFailedDetail = "Không thể {{action}}: {{message}}"
+deleteFolderFailed = "Không thể xóa thư mục."
+deleteFolderFailedDetail = "Không thể xóa thư mục: {{message}}"
+folderAppearanceFailed = "Không thể cập nhật giao diện thư mục."
+folderAppearanceFailedDetail = "Không thể cập nhật giao diện thư mục: {{message}}"
+moveFilesFailed = "Không thể di chuyển tệp."
+moveFilesFailedDetail = "Không thể di chuyển tệp: {{message}}"
+moveFolderFailed = "Không thể di chuyển thư mục."
+moveFolderFailedDetail = "Không thể di chuyển thư mục: {{message}}"
+removeFilesFailed = "Không thể xóa tệp."
+removeFilesFailedDetail = "Không thể xóa tệp: {{message}}"
+uploadFilesFailed = "Không thể tải tệp lên."
+uploadFilesFailedDetail = "Không thể tải tệp lên: {{message}}"
+
+[filesPage.field]
+added = "Đã thêm"
+count = "Tệp"
+folder = "Thư mục"
+modified = "Chỉnh sửa lần cuối"
+name = "Tên"
+size = "Kích thước"
+toolHistory = "Lịch sử công cụ"
+toolHistoryAtVersion = "Chuỗi công cụ tích lũy"
+totalSize = "Tổng kích thước"
+type = "Loại"
+versionHistory = "Hành trình phiên bản"
+
+[filesPage.folderName]
+cancel = "Hủy"
+error = "Không thể lưu thư mục. Thử lại."
+label = "Tên thư mục"
+placeholder = "Tên thư mục"
+
+[filesPage.moveDialog]
+cancel = "Hủy"
+confirm = "Di chuyển vào đây"
+error = "Không thể di chuyển. Thử lại."
+hint = "Chọn một thư mục đích. Mẹo: bạn cũng có thể kéo và thả tệp vào thư mục trong cây ở bên trái."
+newFolderCancel = "Hủy bỏ"
+newFolderCreate = "Tạo"
+newFolderError = "Không thể tạo thư mục. Thử lại."
+newFolderLabel = "Tên thư mục mới"
+newFolderPlaceholder = "Tên thư mục"
+newFolderToggle = "Tạo thư mục mới…"
+title = "Di chuyển vào thư mục"
+
+[filesPage.origin]
+all = "Mọi nguồn"
+cloud = "Đám mây"
+cloudHint = "Được lưu trên máy chủ Stirling"
+local = "Cục bộ"
+localHint = "Chỉ lưu trong trình duyệt này"
+shared = "Được chia sẻ"
+sharedHint = "Chia sẻ với bạn qua liên kết"
+
+[filesPage.sort]
+modifiedAsc = "Cũ nhất trước"
+modifiedDesc = "Mới nhất trước"
+nameAsc = "Tên A→Z"
+nameDesc = "Tên Z→A"
+sizeAsc = "Nhỏ nhất trước"
+sizeDesc = "Lớn nhất trước"
+
+[filesPage.syncError]
+client = "Đồng bộ thư mục thất bại."
+network = "Không thể kết nối tới máy chủ."
+server = "Lỗi máy chủ trong khi đồng bộ thư mục."
+
+[filesPage.tabName]
+local = "Cục bộ"
+recent = "Gần đây"
+shared = "Được chia sẻ với tôi"
+sharedByMe = "Tôi đã chia sẻ"
+
+[filesPage.tabs]
+all = "Tất cả"
+ariaLabel = "Chế độ xem tệp"
+cloud = "Đám mây"
+local = "Cục bộ"
+recent = "Gần đây"
+shared = "Được chia sẻ với tôi"
+sharedByMe = "Tôi đã chia sẻ"
+
+[filesPage.treeMenu]
+actions = "Hành động thư mục cho {{name}}"
+collapse = "Thu gọn thư mục"
+delete = "Xóa thư mục"
+expand = "Mở rộng thư mục"
+newSubfolder = "Thư mục con mới"
+rename = "Đổi tên"
+
+[filesPage.typeFilter]
+allTypes = "Mọi loại"
+label = "Lọc theo loại"
+
+[filesPage.viewMode]
+grid = "Chế độ lưới"
+label = "Chế độ xem"
+list = "Chế độ danh sách"
 
 [fileToPDF]
 credit = "Dịch vụ này sử dụng LibreOffice và Unoconv để chuyển đổi tệp."
@@ -7695,6 +8010,7 @@ bulkTitle = "Tải lên các tệp đã chọn"
 description = "Thao tác này sẽ tải tệp hiện tại lên lưu trữ trên máy chủ để bạn truy cập."
 errorTitle = "Tải lên không thành công"
 failure = "Tải lên không thành công. Vui lòng kiểm tra đăng nhập và cài đặt lưu trữ của bạn."
+featureDisabled = "Lưu lên máy chủ chưa được bật trên máy chủ này."
 fileCount = "Đã chọn {{count}} tệp"
 fileLabel = "Tệp"
 hint = "Liên kết công khai và chế độ truy cập được kiểm soát bởi cài đặt máy chủ của bạn."
@@ -7868,13 +8184,18 @@ viewerMode = "Chuyển sang trình chỉnh sửa tệp để chọn nhiều tệ
 [toolPanel]
 allTools = "Tất cả công cụ"
 alpha = "Alpha"
+backToAllTools = "Quay lại tất cả công cụ"
+backToDefault = "Quay lại"
 backToTools = "Quay lại công cụ"
 collapse = "Thu gọn bảng"
 comingSoon = "Sắp ra mắt:"
 expand = "Mở rộng bảng"
+goBack = "Quay lại"
 placeholder = "Chọn một công cụ để bắt đầu"
 premiumFeature = "Tính năng Premium:"
 search = "Tìm kiếm công cụ"
+toolsHeader = "Công cụ"
+viewAllTools = "Xem tất cả công cụ"
 
 [toolPanel.fullscreen]
 comingSoon = "Sắp ra mắt:"

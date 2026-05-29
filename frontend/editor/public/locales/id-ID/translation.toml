@@ -90,6 +90,7 @@ nothingToUndo = "Tidak ada yang bisa diurungkan"
 noticeTopUpOrPlan = "Kredit tidak mencukupi, silakan isi ulang atau upgrade ke paket"
 noValidFiles = "Tidak ada file valid untuk diproses"
 oops = "Ups!"
+openInNewWindow = "Buka di jendela baru"
 openInViewer = "Buka di Penampil"
 operationCancelled = "Operasi dibatalkan"
 page = "Halaman"
@@ -493,6 +494,11 @@ title = "Sesuaikan Skala Halaman"
 
 [adjustPageScale.error]
 failed = "Terjadi kesalahan saat menyesuaikan skala halaman."
+
+[adjustPageScale.orientation]
+label = "Orientasi halaman"
+landscape = "Lanskap"
+portrait = "Potret"
 
 [adjustPageScale.pageSize]
 keep = "Pertahankan Ukuran Asli"
@@ -1512,6 +1518,32 @@ user = "Pengguna"
 usernameInfo = "Nama pengguna hanya boleh mengandung huruf, angka, dan karakter khusus berikut @._+- atau harus berupa alamat email yang valid."
 webOnlyUser = "Pengguna Khusus Web"
 
+[agents]
+auto_redaction_description = "Sensor PII secara otomatis"
+auto_redaction_name = "Penyensoran Otomatis"
+back_to_tools = "Kembali ke alat"
+coming_soon = "Segera hadir"
+compliance_description = "Audit dokumen untuk kepatuhan"
+compliance_name = "Pemeriksaan Kepatuhan"
+data_extraction_description = "Ekstrak tabel & data terstruktur"
+data_extraction_name = "Ekstraksi Data"
+doc_summary_description = "Ringkas dokumen panjang"
+doc_summary_name = "Perangkum"
+form_filler_description = "Isi formulir PDF secara cerdas"
+form_filler_name = "Pengisi Formulir"
+fullscreen_title = "Agen Stirling"
+pdf_to_markdown_description = "Konversi PDF ke Markdown yang rapi"
+pdf_to_markdown_name = "PDF ke Markdown"
+section_title = "Agen"
+show_less = "Tampilkan lebih sedikit"
+start_chat = "Mulai mengobrol"
+stirling_description = "Asisten PDF serbaguna Anda"
+stirling_full_name = "Agen Umum Stirling"
+stirling_long_description = "Asisten PDF serbaguna yang dapat menjalankan alat, membuat PDF dan mengekstrak wawasan dari dokumen Anda."
+stirling_name = "Stirling"
+stirling_tooltip = "Agen Stirling"
+view_all = "Lihat semua agen"
+
 [analytics]
 disable = "Nonaktifkan analitik"
 enable = "Aktifkan analitik"
@@ -1771,6 +1803,10 @@ insufficientPermissions = "Anda tidak memiliki izin untuk melakukan tindakan ini
 pleaseLoginAgain = "Silakan login lagi."
 sessionExpired = "Sesi berakhir"
 
+[auth.displayName]
+guest = "Tamu"
+user = "Pengguna"
+
 [auto-rename]
 description = "Secara otomatis menemukan judul dari konten PDF Anda dan menggunakannya sebagai nama file."
 header = "Ganti Nama PDF Otomatis"
@@ -1862,6 +1898,13 @@ label = "Buka menu untuk {{title}}"
 
 [automate.files]
 placeholder = "Pilih file untuk diproses dengan otomatisasi ini"
+
+[automate.folderScanWarning]
+advice = "Anda masih dapat mengunduh file (misalnya untuk memeriksa atau mengedit manual), tetapi langkah yang tidak didukung harus dihapus sebelum backend dapat menjalankannya."
+cancel = "Batal"
+confirm = "Tetap ekspor"
+intro = "Pemindaian folder berjalan di backend, sehingga hanya dapat mengeksekusi alat yang memiliki endpoint backend. Langkah berikut dalam otomatisasi ini tidak memilikinya, dan akan gagal saat pipeline berjalan:"
+title = "Beberapa langkah tidak dapat berjalan dalam pemindaian folder"
 
 [automate.importModal]
 cancel = "Batal"
@@ -2684,6 +2727,16 @@ title = "Ganti Perizinan"
 [changePermissions.tooltip.warning]
 text = "Agar izin ini tidak dapat diubah, gunakan alat Tambah Kata Sandi untuk menetapkan kata sandi pemilik."
 
+[chat.header]
+agentMenu = "Opsi agen Stirling"
+clearChat = "Hapus obrolan"
+settings = "Pengaturan agen"
+
+[chat.input]
+attach = "Lampirkan file"
+placeholder = "Apa yang ingin Anda lakukan?"
+send = "Kirim pesan"
+
 [chat.progress]
 analyzing = "Menganalisis permintaan Anda..."
 calling_engine = "AI sedang berpikir..."
@@ -2698,6 +2751,32 @@ whole_doc_compression_round = "Menggabungkan catatan..."
 whole_doc_read_done = "Selesai membaca dokumen..."
 whole_doc_read_started = "Membaca dokumen..."
 whole_doc_slice_done = "Membaca dokumen... ({{percent}}% selesai)"
+
+[chat.quickActions]
+browseYourFiles = "Jelajahi file Anda"
+compressMany = "Kompres dokumen ini"
+compressOne = "Kompres dokumen ini"
+convertMany = "Konversi dokumen ini ke PDF"
+convertOne = "Konversi dokumen ini ke PDF"
+fileSummary_one = "1 file di area kerja ({{types}})"
+fileSummary_other = "{{count}} file di area kerja ({{types}})"
+heading = "Mulai"
+mergeMany = "Gabungkan {{count}} dokumen ini menjadi 1"
+moreFiles = "+{{count}} lagi"
+openFromComputer = "Buka dari komputer"
+removeFile = "Hapus {{name}}"
+rotateMany = "Putar dokumen ini"
+rotateOne = "Putar dokumen ini"
+splitOne = "Pisahkan dokumen ini"
+
+[chat.responses]
+cannot_continue = "Terjadi kesalahan dan saya tidak dapat melanjutkan."
+cannot_do = "Saya tidak dapat melakukannya."
+done = "Selesai."
+need_clarification = "Bisakah Anda memperjelas permintaan Anda?"
+not_found = "Saya tidak dapat menemukan informasi yang diminta."
+processing = "Memproses ({{outcome}})..."
+unsupported_capability = "Kemampuan tidak didukung: {{capability}}"
 
 [chat.toolsUsed]
 summary = "Menjalankan {{count}} alat"
@@ -2799,6 +2878,7 @@ selectBaseFirst = "Pilih PDF asli terlebih dahulu"
 filesMissing = "Tidak dapat menemukan berkas yang dipilih. Silakan pilih kembali."
 generic = "Tidak dapat membandingkan berkas ini."
 selectRequired = "Pilih dokumen asli dan yang diedit."
+title = "Perbandingan gagal"
 
 [compare.large.file]
 message = "Satu atau Kedua dokumen yang disediakan terlalu besar untuk diproses"
@@ -2864,6 +2944,7 @@ title = "Masih memproses…"
 
 [compare.status]
 complete = "Perbandingan siap"
+error = "Perbandingan gagal"
 extracting = "Mengekstrak teks..."
 processing = "Menganalisis perbedaan..."
 
@@ -3771,12 +3852,246 @@ expand = "Perluas bilah samping"
 files = "File"
 googleDrive = "Google Drive"
 googleDriveDisabled = "Google Drive belum dikonfigurasi"
+leaveMyFiles = "Keluar dari File Saya"
+myFiles = "File Saya"
 noFiles = "Belum ada file"
 openFileManager = "Buka pengelola file"
 openFromComputer = "Buka dari komputer"
 openSettings = "Buka pengaturan"
 search = "Cari"
 searchPlaceholder = "Cari file..."
+
+[filesPage]
+addToWorkspace = "Tambahkan ke ruang kerja"
+addToWorkspaceCount = "Tambahkan {{count}} ke ruang kerja"
+allFiles = "Semua file"
+back = "Kembali"
+backToFolder = "Kembali ke {{folder}}"
+backToMyFiles = "Kembali ke File Saya"
+breadcrumbs = "Jalur folder"
+cancel = "Batal"
+clearSearch = "Bersihkan pencarian"
+clearSelection = "Bersihkan pilihan"
+closeDetails = "Tutup detail"
+create = "Buat"
+cycleBlocked = "Tidak dapat memindahkan folder ke salah satu subfoldernya sendiri."
+delete = "Hapus"
+deleteFolder = "Hapus folder"
+deleteFolderBody = "Hapus folder \"{{name}}\"?"
+deleteFolderConfirm = "Hapus folder \"{{name}}\"? File di dalamnya akan dipindahkan ke Semua file. {{count}} file terpengaruh."
+deleteFolderContents = "Juga hapus {{count}} file di dalam folder"
+deleteFolderContentsWarning = "File akan dihapus permanen dan tidak dapat dipulihkan."
+deleteFolderError = "Tidak dapat menghapus folder. Coba lagi."
+deleteFolderKeepHint = "File di dalamnya akan dipindahkan ke Semua file."
+deleteFolderTitle = "Hapus folder?"
+deselectAll = "Bersihkan pilihan"
+details = "Detail"
+detailsCount = "{{count}} file dipilih"
+dismissError = "Tutup"
+download = "Unduh"
+downloadAll = "Unduh semua"
+downloadVersion = "Unduh versi ini"
+dropOverlay = "Lepas file untuk mengunggah"
+dropOverlaySub = "File dimulai di Lokal. Gunakan 'Pindahkan ke' atau 'Simpan ke cloud' untuk mengaturnya ke dalam folder."
+file = "File"
+fileMenu = "Tindakan file"
+folder = "Folder"
+folderItems = "{{count}} item"
+folderMenu = "Tindakan folder"
+inPath = "di {{path}}"
+inWorkspace = "Buka"
+inWorkspaceAria = "Sudah di ruang kerja"
+loading = "Memuat…"
+localFoldersUnavailable = "Folder hanya tersedia di cloud - simpan file ke cloud untuk mengaturnya."
+moreActions = "Tindakan folder lainnya"
+moveLocalToCloudBlocked = "File hanya-lokal tidak dapat dipindahkan ke folder cloud. Simpan ke cloud terlebih dahulu."
+moveSkippedRemote = "{{count}} file tidak dapat dipindahkan di server (tidak ada izin atau sudah dihapus)."
+moveTo = "Pindahkan ke…"
+myFiles = "File Saya"
+newFolder = "Folder baru"
+newFolderStorageDisabled = "Penyimpanan folder server tidak diaktifkan. Minta admin Anda untuk mengaktifkannya."
+newFolderTabUnavailable = "Beralih ke Semua atau Cloud untuk membuat folder."
+newRootFolder = "Folder baru di root"
+offlineNoFolderEdits = "Sinkronisasi folder server tidak tersedia - perubahan folder dinonaktifkan. Periksa status masuk dan konfigurasi penyimpanan Anda."
+open = "Buka"
+openInWorkbench = "Buka di area kerja"
+openVersionInWorkspace = "Buka di ruang kerja"
+originFilter = "Saring berdasarkan sumber"
+quickView = "Tampilan cepat"
+refresh = "Segarkan dari server"
+remove = "Hapus"
+removeConfirm = "Hapus {{count}} file? Tindakan ini tidak dapat dibatalkan."
+removeVersion = "Hapus versi ini"
+rename = "Ubah nama"
+renameFolder = "Ubah nama folder"
+resizeFolderTree = "Ubah ukuran pohon folder (tombol panah, Shift untuk langkah lebih besar; klik ganda untuk pas otomatis)"
+save = "Simpan"
+saveToServer = "Simpan ke server"
+saveToServerDisabledHint = "Penyimpanan ke server tidak diaktifkan di server ini. Minta admin Anda untuk mengaktifkannya."
+search = "Cari"
+searchPlaceholder = "Cari folder ini & subfolder"
+selectAll = "Pilih semua"
+selectAllHint = "Klik untuk memilih semua. Tips: tahan Ctrl (atau Cmd) untuk menambahkan file satu per satu, Shift untuk memilih rentang."
+selectedCount = "{{count}} dipilih"
+selectFile = "Pilih file {{name}}"
+shareDisabledHint = "Berbagi file tidak diaktifkan di server ini. Minta admin Anda untuk mengaktifkannya."
+shareManage = "Kelola berbagi"
+showDetails = "Tampilkan detail"
+summary = "{{count}} item"
+syncFailed = "Sinkronisasi folder gagal: {{message}}"
+syncPartial = "Sinkronisasi folder sebagian: {{failed}} dari {{total}} folder tidak dapat digabungkan."
+tree = "Folder"
+upload = "Unggah"
+uploadedToLocal = "File yang diunggah dimulai di Lokal. Gunakan 'Simpan ke cloud' untuk menempatkannya dalam folder."
+uploadFromMobile = "Unggah dari Ponsel"
+versionActions = "Tindakan versi"
+versionCollapse = "Ciutkan versi tengah"
+versionOrigin = "Unggahan asli"
+versionsCount = "{{count}} versi"
+versionShowHidden = "Tampilkan {{count}} versi sebelumnya"
+viewVersion = "Lihat versi ini"
+
+[filesPage.appearance]
+colour = "Warna"
+icon = "Ikon"
+title = "Tampilan"
+useColour = "Gunakan warna {{c}}"
+
+[filesPage.column]
+modified = "Diubah"
+name = "Nama"
+size = "Ukuran"
+type = "Tipe"
+
+[filesPage.empty]
+hint = "Lepaskan PDF di mana saja pada halaman ini untuk mengunggah, atau gunakan tombol Folder baru untuk mengatur file Anda."
+newFolderCta = "Buat folder"
+title = "Folder ini kosong"
+uploadCta = "Unggah file"
+
+[filesPage.empty.cloud]
+hint = "Unggah file untuk memulai, atau buat folder untuk mengatur."
+offlineHint = "Sambungkan kembali untuk memuat pustaka cloud Anda."
+offlineTitle = "Tidak ada file cloud dalam cache"
+title = "Belum ada file cloud"
+
+[filesPage.empty.local]
+hint = "File yang disimpan tanpa diunggah tetap di sini. Lepas sebuah file untuk menambahkannya."
+title = "Tidak ada file hanya-lokal"
+
+[filesPage.empty.recent]
+hint = "File yang Anda buka atau edit akan muncul di sini."
+title = "Belum ada yang diubah"
+
+[filesPage.empty.shared]
+hint = "Saat seseorang membagikan file melalui tautan, file itu akan muncul di sini."
+title = "Belum ada yang dibagikan kepada Anda"
+
+[filesPage.empty.sharedByMe]
+hint = "Buat tautan berbagi atau undang rekan dari salah satu file Anda untuk melihatnya di sini."
+title = "Anda belum membagikan file apa pun"
+
+[filesPage.error]
+actionFailed = "Tidak dapat {{action}}."
+actionFailedDetail = "Tidak dapat {{action}}: {{message}}"
+deleteFolderFailed = "Tidak dapat menghapus folder."
+deleteFolderFailedDetail = "Tidak dapat menghapus folder: {{message}}"
+folderAppearanceFailed = "Tidak dapat memperbarui tampilan folder."
+folderAppearanceFailedDetail = "Tidak dapat memperbarui tampilan folder: {{message}}"
+moveFilesFailed = "Tidak dapat memindahkan file."
+moveFilesFailedDetail = "Tidak dapat memindahkan file: {{message}}"
+moveFolderFailed = "Tidak dapat memindahkan folder."
+moveFolderFailedDetail = "Tidak dapat memindahkan folder: {{message}}"
+removeFilesFailed = "Tidak dapat menghapus file."
+removeFilesFailedDetail = "Tidak dapat menghapus file: {{message}}"
+uploadFilesFailed = "Tidak dapat mengunggah file."
+uploadFilesFailedDetail = "Tidak dapat mengunggah file: {{message}}"
+
+[filesPage.field]
+added = "Ditambahkan"
+count = "File"
+folder = "Folder"
+modified = "Diubah"
+name = "Nama"
+size = "Ukuran"
+toolHistory = "Riwayat alat"
+toolHistoryAtVersion = "Rangkaian alat kumulatif"
+totalSize = "Total ukuran"
+type = "Tipe"
+versionHistory = "Perjalanan versi"
+
+[filesPage.folderName]
+cancel = "Batal"
+error = "Tidak dapat menyimpan folder. Coba lagi."
+label = "Nama folder"
+placeholder = "Nama folder"
+
+[filesPage.moveDialog]
+cancel = "Batal"
+confirm = "Pindahkan ke sini"
+error = "Tidak dapat memindahkan. Coba lagi."
+hint = "Pilih folder tujuan. Tips: Anda juga dapat menyeret dan lepas file ke folder di pohon di kiri."
+newFolderCancel = "Buang"
+newFolderCreate = "Buat"
+newFolderError = "Tidak dapat membuat folder. Coba lagi."
+newFolderLabel = "Nama folder baru"
+newFolderPlaceholder = "Nama folder"
+newFolderToggle = "Buat folder baru…"
+title = "Pindahkan ke folder"
+
+[filesPage.origin]
+all = "Semua sumber"
+cloud = "Cloud"
+cloudHint = "Disimpan di server Stirling"
+local = "Lokal"
+localHint = "Hanya disimpan di peramban ini"
+shared = "Dibagikan"
+sharedHint = "Dibagikan kepada Anda melalui tautan"
+
+[filesPage.sort]
+modifiedAsc = "Terlama dulu"
+modifiedDesc = "Terbaru dulu"
+nameAsc = "Nama A→Z"
+nameDesc = "Nama Z→A"
+sizeAsc = "Terkecil dulu"
+sizeDesc = "Terbesar dulu"
+
+[filesPage.syncError]
+client = "Sinkronisasi folder gagal."
+network = "Tidak dapat menjangkau server."
+server = "Kesalahan server saat sinkronisasi folder."
+
+[filesPage.tabName]
+local = "Lokal"
+recent = "Terbaru"
+shared = "Dibagikan kepada saya"
+sharedByMe = "Dibagikan oleh saya"
+
+[filesPage.tabs]
+all = "Semua"
+ariaLabel = "Tampilan file"
+cloud = "Cloud"
+local = "Lokal"
+recent = "Terbaru"
+shared = "Dibagikan kepada saya"
+sharedByMe = "Dibagikan oleh saya"
+
+[filesPage.treeMenu]
+actions = "Tindakan folder untuk {{name}}"
+collapse = "Ciutkan folder"
+delete = "Hapus folder"
+expand = "Bentangkan folder"
+newSubfolder = "Subfolder baru"
+rename = "Ubah nama"
+
+[filesPage.typeFilter]
+allTypes = "Semua tipe"
+label = "Saring berdasarkan tipe"
+
+[filesPage.viewMode]
+grid = "Tampilan kisi"
+label = "Mode tampilan"
+list = "Tampilan daftar"
 
 [fileToPDF]
 credit = "Layanan ini menggunakan LibreOffice dan Unoconv untuk konversi berkas."
@@ -7695,6 +8010,7 @@ bulkTitle = "Unggah file yang dipilih"
 description = "Ini mengunggah file saat ini ke penyimpanan server untuk akses Anda sendiri."
 errorTitle = "Gagal mengunggah"
 failure = "Gagal mengunggah. Harap periksa login dan pengaturan penyimpanan Anda."
+featureDisabled = "Penyimpanan ke server tidak diaktifkan di server ini."
 fileCount = "{{count}} file dipilih"
 fileLabel = "File"
 hint = "Tautan publik dan mode akses dikendalikan oleh pengaturan server Anda."
@@ -7868,13 +8184,18 @@ viewerMode = "Beralih ke editor file untuk memilih beberapa file."
 [toolPanel]
 allTools = "Semua alat"
 alpha = "Alpha"
+backToAllTools = "Kembali ke semua alat"
+backToDefault = "Kembali"
 backToTools = "Kembali ke alat"
 collapse = "Ciutkan panel"
 comingSoon = "Segera hadir:"
 expand = "Perluas panel"
+goBack = "Kembali"
 placeholder = "Pilih alat untuk memulai"
 premiumFeature = "Fitur premium:"
 search = "Cari alat"
+toolsHeader = "Alat"
+viewAllTools = "Lihat semua alat"
 
 [toolPanel.fullscreen]
 comingSoon = "Segera hadir:"

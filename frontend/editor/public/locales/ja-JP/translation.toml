@@ -90,6 +90,7 @@ nothingToUndo = "元に戻す項目はありません"
 noticeTopUpOrPlan = "クレジットが不足しています。チャージするかプランをアップグレードしてください"
 noValidFiles = "処理対象の有効なファイルがありません"
 oops = "おっと！"
+openInNewWindow = "新しいウィンドウで開く"
 openInViewer = "ビューアで開く"
 operationCancelled = "操作をキャンセルしました"
 page = "ページ"
@@ -493,6 +494,11 @@ title = "ページスケールを調整"
 
 [adjustPageScale.error]
 failed = "ページスケールの調整中にエラーが発生しました。"
+
+[adjustPageScale.orientation]
+label = "ページの向き"
+landscape = "横向き"
+portrait = "縦向き"
 
 [adjustPageScale.pageSize]
 keep = "元のサイズを保持"
@@ -1512,6 +1518,32 @@ user = "ユーザー"
 usernameInfo = "ユーザー名には、文字、数字、および次の特殊文字 @._+- のみを含めることができます。または、有効な電子メール アドレスである必要があります。"
 webOnlyUser = "ウェブ専用ユーザー"
 
+[agents]
+auto_redaction_description = "個人情報（PII）を自動で墨消し"
+auto_redaction_name = "自動墨消し"
+back_to_tools = "ツールに戻る"
+coming_soon = "近日公開"
+compliance_description = "文書のコンプライアンスを監査"
+compliance_name = "コンプライアンスチェック"
+data_extraction_description = "表および構造化データを抽出"
+data_extraction_name = "データ抽出"
+doc_summary_description = "長いドキュメントを要約"
+doc_summary_name = "要約"
+form_filler_description = "PDF フォームに自動で賢く入力"
+form_filler_name = "フォーム入力"
+fullscreen_title = "Stirling エージェント"
+pdf_to_markdown_description = "PDF をきれいな Markdown に変換"
+pdf_to_markdown_name = "PDF を Markdown に変換"
+section_title = "エージェント"
+show_less = "表示を減らす"
+start_chat = "チャットを開始"
+stirling_description = "汎用 PDF アシスタント"
+stirling_full_name = "Stirling 汎用エージェント"
+stirling_long_description = "ツールを実行し、PDF を作成し、ドキュメントから洞察を抽出できる汎用 PDF アシスタント。"
+stirling_name = "Stirling"
+stirling_tooltip = "Stirling エージェント"
+view_all = "すべてのエージェントを表示"
+
 [analytics]
 disable = "分析を無効にする"
 enable = "分析を有効にする"
@@ -1771,6 +1803,10 @@ insufficientPermissions = "この操作を実行する権限がありません�
 pleaseLoginAgain = "再度ログインしてください。"
 sessionExpired = "セッションの有効期限が切れました"
 
+[auth.displayName]
+guest = "ゲスト"
+user = "ユーザー"
+
 [auto-rename]
 description = "PDF コンテンツからタイトルを自動的に検出し、ファイル名として使用します。"
 header = "PDF名の自動変更"
@@ -1862,6 +1898,13 @@ label = "{{title}} のメニューを開く"
 
 [automate.files]
 placeholder = "この自動処理で処理するファイルを選択"
+
+[automate.folderScanWarning]
+advice = "ファイルをダウンロード（検査や手動編集など）は可能ですが、バックエンドで実行するには未対応の手順を削除する必要があります。"
+cancel = "キャンセル"
+confirm = "このままエクスポート"
+intro = "フォルダスキャンはバックエンドで実行されるため、バックエンドのエンドポイントがあるツールのみ実行できます。この自動化の次のステップは対応しておらず、パイプライン実行時に失敗します:"
+title = "フォルダスキャンでは実行できない手順があります"
 
 [automate.importModal]
 cancel = "キャンセル"
@@ -2684,6 +2727,16 @@ title = "権限の変更"
 [changePermissions.tooltip.warning]
 text = "これらの権限を変更不可にするには、パスワード追加ツールでオーナーパスワードを設定してください。"
 
+[chat.header]
+agentMenu = "Stirling エージェントのオプション"
+clearChat = "チャットをクリア"
+settings = "エージェント設定"
+
+[chat.input]
+attach = "ファイルを添付"
+placeholder = "何をしたいですか？"
+send = "メッセージを送信"
+
 [chat.progress]
 analyzing = "リクエストを分析しています..."
 calling_engine = "AIが考え中..."
@@ -2698,6 +2751,32 @@ whole_doc_compression_round = "メモを統合しています..."
 whole_doc_read_done = "ドキュメントの読み取りが完了しました..."
 whole_doc_read_started = "ドキュメントを読み取っています..."
 whole_doc_slice_done = "ドキュメントを読み取っています...（{{percent}}% 完了）"
+
+[chat.quickActions]
+browseYourFiles = "ファイルを参照"
+compressMany = "これらのドキュメントを圧縮"
+compressOne = "このドキュメントを圧縮"
+convertMany = "これらのドキュメントを PDF に変換"
+convertOne = "このドキュメントを PDF に変換"
+fileSummary_one = "ワークベンチに 1 件のファイル（{{types}}）"
+fileSummary_other = "ワークベンチに {{count}} 件のファイル（{{types}}）"
+heading = "はじめる"
+mergeMany = "これらの {{count}} 件のドキュメントを 1 つに結合"
+moreFiles = "+{{count}} 件"
+openFromComputer = "コンピューターから開く"
+removeFile = "{{name}} を削除"
+rotateMany = "これらのドキュメントを回転"
+rotateOne = "このドキュメントを回転"
+splitOne = "このドキュメントを分割"
+
+[chat.responses]
+cannot_continue = "問題が発生したため続行できません。"
+cannot_do = "それは実行できません。"
+done = "完了しました。"
+need_clarification = "ご要望を詳しく教えていただけますか？"
+not_found = "要求された情報が見つかりませんでした。"
+processing = "処理中（{{outcome}}）..."
+unsupported_capability = "未対応の機能: {{capability}}"
 
 [chat.toolsUsed]
 summary = "ツールを{{count}}件実行しました"
@@ -2799,6 +2878,7 @@ selectBaseFirst = "先に元の PDF を選択してください"
 filesMissing = "選択したファイルを見つけられません。再選択してください。"
 generic = "これらのファイルを比較できません。"
 selectRequired = "元の文書と編集済み文書を選択してください。"
+title = "比較に失敗しました"
 
 [compare.large.file]
 message = "提供された文書の1つまたは両方が大きすぎて処理できません"
@@ -2864,6 +2944,7 @@ title = "まだ処理中…"
 
 [compare.status]
 complete = "比較の準備ができました"
+error = "比較に失敗しました"
 extracting = "テキストを抽出中..."
 processing = "差分を分析中..."
 
@@ -3771,12 +3852,246 @@ expand = "サイドバーを展開"
 files = "ファイル"
 googleDrive = "Google Drive"
 googleDriveDisabled = "Google Drive が未設定です"
+leaveMyFiles = "マイファイルを閉じる"
+myFiles = "マイファイル"
 noFiles = "まだファイルがありません"
 openFileManager = "ファイルマネージャーを開く"
 openFromComputer = "コンピューターから開く"
 openSettings = "設定を開く"
 search = "検索"
 searchPlaceholder = "ファイルを検索..."
+
+[filesPage]
+addToWorkspace = "ワークスペースに追加"
+addToWorkspaceCount = "{{count}} 件をワークスペースに追加"
+allFiles = "すべてのファイル"
+back = "戻る"
+backToFolder = "{{folder}} に戻る"
+backToMyFiles = "マイファイルに戻る"
+breadcrumbs = "フォルダパス"
+cancel = "キャンセル"
+clearSearch = "検索をクリア"
+clearSelection = "選択を解除"
+closeDetails = "詳細を閉じる"
+create = "作成"
+cycleBlocked = "フォルダをそのサブフォルダの中に移動することはできません。"
+delete = "削除"
+deleteFolder = "フォルダを削除"
+deleteFolderBody = "フォルダ「{{name}}」を削除しますか？"
+deleteFolderConfirm = "フォルダ「{{name}}」を削除しますか？ 内部のファイルは「すべてのファイル」に移動されます。影響するファイル: {{count}} 件。"
+deleteFolderContents = "フォルダ内の {{count}} 件のファイルも削除する"
+deleteFolderContentsWarning = "ファイルは完全に削除され、復元できません。"
+deleteFolderError = "フォルダを削除できませんでした。もう一度お試しください。"
+deleteFolderKeepHint = "内部のファイルは「すべてのファイル」に移動されます。"
+deleteFolderTitle = "フォルダを削除しますか？"
+deselectAll = "選択を解除"
+details = "詳細"
+detailsCount = "{{count}} 件のファイルを選択中"
+dismissError = "閉じる"
+download = "ダウンロード"
+downloadAll = "すべてをダウンロード"
+downloadVersion = "このバージョンをダウンロード"
+dropOverlay = "アップロードするファイルをドロップ"
+dropOverlaySub = "ファイルはローカルから始まります。『移動先』または『クラウドに保存』を使ってフォルダに整理してください。"
+file = "ファイル"
+fileMenu = "ファイルの操作"
+folder = "フォルダ"
+folderItems = "{{count}} 件"
+folderMenu = "フォルダの操作"
+inPath = "{{path}} 内"
+inWorkspace = "開く"
+inWorkspaceAria = "すでにワークスペースにあります"
+loading = "読み込み中…"
+localFoldersUnavailable = "フォルダはクラウド専用です。クラウドにファイルを保存してフォルダに整理してください。"
+moreActions = "その他のフォルダ操作"
+moveLocalToCloudBlocked = "ローカルのみのファイルはクラウドフォルダへ移動できません。まずクラウドに保存してください。"
+moveSkippedRemote = "サーバーで {{count}} 件のファイルを移動できませんでした（権限がない、または既に削除されています）。"
+moveTo = "移動先…"
+myFiles = "マイファイル"
+newFolder = "新しいフォルダ"
+newFolderStorageDisabled = "サーバーのフォルダ保存が有効になっていません。管理者に有効化を依頼してください。"
+newFolderTabUnavailable = "フォルダを作成するには「すべて」または「クラウド」に切り替えてください。"
+newRootFolder = "ルートに新しいフォルダ"
+offlineNoFolderEdits = "サーバーフォルダの同期が利用できません—フォルダの変更は無効です。サインインとストレージ設定を確認してください。"
+open = "開く"
+openInWorkbench = "ワークベンチで開く"
+openVersionInWorkspace = "ワークスペースで開く"
+originFilter = "ソースでフィルター"
+quickView = "クイックビュー"
+refresh = "サーバーから更新"
+remove = "削除"
+removeConfirm = "{{count}} 件のファイルを削除しますか？ この操作は元に戻せません。"
+removeVersion = "このバージョンを削除"
+rename = "名前を変更"
+renameFolder = "フォルダ名を変更"
+resizeFolderTree = "フォルダツリーのサイズ変更（矢印キー、Shift で大きく移動；ダブルクリックで自動調整）"
+save = "保存"
+saveToServer = "サーバーに保存"
+saveToServerDisabledHint = "このサーバーではサーバーへの保存が有効になっていません。管理者に有効化を依頼してください。"
+search = "検索"
+searchPlaceholder = "このフォルダとサブフォルダを検索"
+selectAll = "すべて選択"
+selectAllHint = "クリックですべて選択。ヒント: Ctrl（または Cmd）で一つずつ追加、Shift で範囲選択。"
+selectedCount = "{{count}} 件選択"
+selectFile = "ファイル {{name}} を選択"
+shareDisabledHint = "このサーバーではファイル共有が有効になっていません。管理者に有効化を依頼してください。"
+shareManage = "共有を管理"
+showDetails = "詳細を表示"
+summary = "{{count}} 件"
+syncFailed = "フォルダ同期に失敗しました: {{message}}"
+syncPartial = "フォルダ同期は一部のみ成功: {{total}} 個中 {{failed}} 個のフォルダをマージできませんでした。"
+tree = "フォルダ"
+upload = "アップロード"
+uploadedToLocal = "アップロードしたファイルはローカルから始まります。『クラウドに保存』を使ってフォルダに入れてください。"
+uploadFromMobile = "モバイルからアップロード"
+versionActions = "バージョンの操作"
+versionCollapse = "中間のバージョンを折りたたむ"
+versionOrigin = "元のアップロード"
+versionsCount = "{{count}} 件のバージョン"
+versionShowHidden = "以前の {{count}} 件のバージョンを表示"
+viewVersion = "このバージョンを表示"
+
+[filesPage.appearance]
+colour = "色"
+icon = "アイコン"
+title = "外観"
+useColour = "色 {{c}} を使用"
+
+[filesPage.column]
+modified = "更新日"
+name = "名前"
+size = "サイズ"
+type = "種類"
+
+[filesPage.empty]
+hint = "このページのどこにでも PDF をドロップしてアップロードするか、「新しいフォルダ」ボタンでファイルを整理してください。"
+newFolderCta = "フォルダを作成"
+title = "このフォルダは空です"
+uploadCta = "ファイルをアップロード"
+
+[filesPage.empty.cloud]
+hint = "まずファイルをアップロードするか、フォルダを作成して整理しましょう。"
+offlineHint = "再接続してクラウドライブラリを読み込みます。"
+offlineTitle = "キャッシュされたクラウドファイルはありません"
+title = "クラウドファイルはまだありません"
+
+[filesPage.empty.local]
+hint = "アップロードせずに保存したファイルはここに残ります。ファイルをドロップして追加します。"
+title = "ローカルのみのファイルはありません"
+
+[filesPage.empty.recent]
+hint = "開いたり編集したファイルがここに表示されます。"
+title = "まだ変更はありません"
+
+[filesPage.empty.shared]
+hint = "誰かがリンクでファイルを共有すると、ここに表示されます。"
+title = "あなたと共有されたものはありません"
+
+[filesPage.empty.sharedByMe]
+hint = "任意のファイルから共有リンクを作成するか、チームメイトを招待するとここに表示されます。"
+title = "まだファイルを共有していません"
+
+[filesPage.error]
+actionFailed = "{{action}} できませんでした。"
+actionFailedDetail = "{{action}} できませんでした: {{message}}"
+deleteFolderFailed = "フォルダを削除できませんでした。"
+deleteFolderFailedDetail = "フォルダを削除できませんでした: {{message}}"
+folderAppearanceFailed = "フォルダの外観を更新できませんでした。"
+folderAppearanceFailedDetail = "フォルダの外観を更新できませんでした: {{message}}"
+moveFilesFailed = "ファイルを移動できませんでした。"
+moveFilesFailedDetail = "ファイルを移動できませんでした: {{message}}"
+moveFolderFailed = "フォルダを移動できませんでした。"
+moveFolderFailedDetail = "フォルダを移動できませんでした: {{message}}"
+removeFilesFailed = "ファイルを削除できませんでした。"
+removeFilesFailedDetail = "ファイルを削除できませんでした: {{message}}"
+uploadFilesFailed = "ファイルをアップロードできませんでした。"
+uploadFilesFailedDetail = "ファイルをアップロードできませんでした: {{message}}"
+
+[filesPage.field]
+added = "追加日"
+count = "ファイル数"
+folder = "フォルダ"
+modified = "更新日"
+name = "名前"
+size = "サイズ"
+toolHistory = "ツール履歴"
+toolHistoryAtVersion = "累積ツールチェーン"
+totalSize = "合計サイズ"
+type = "種類"
+versionHistory = "バージョンの変遷"
+
+[filesPage.folderName]
+cancel = "キャンセル"
+error = "フォルダを保存できませんでした。もう一度お試しください。"
+label = "フォルダ名"
+placeholder = "フォルダ名"
+
+[filesPage.moveDialog]
+cancel = "キャンセル"
+confirm = "ここに移動"
+error = "移動できませんでした。もう一度お試しください。"
+hint = "移動先のフォルダを選択してください。ヒント: 左のツリー上のフォルダにファイルをドラッグ＆ドロップすることもできます。"
+newFolderCancel = "破棄"
+newFolderCreate = "作成"
+newFolderError = "フォルダを作成できませんでした。もう一度お試しください。"
+newFolderLabel = "新しいフォルダ名"
+newFolderPlaceholder = "フォルダ名"
+newFolderToggle = "新しいフォルダを作成…"
+title = "フォルダへ移動"
+
+[filesPage.origin]
+all = "すべてのソース"
+cloud = "クラウド"
+cloudHint = "Stirling サーバーに保存"
+local = "ローカル"
+localHint = "このブラウザーにのみ保存"
+shared = "共有"
+sharedHint = "リンク経由で共有"
+
+[filesPage.sort]
+modifiedAsc = "古い順"
+modifiedDesc = "新しい順"
+nameAsc = "名前 A→Z"
+nameDesc = "名前 Z→A"
+sizeAsc = "小さい順"
+sizeDesc = "大きい順"
+
+[filesPage.syncError]
+client = "フォルダ同期に失敗しました。"
+network = "サーバーに到達できませんでした。"
+server = "フォルダ同期中にサーバーエラーが発生しました。"
+
+[filesPage.tabName]
+local = "ローカル"
+recent = "最近"
+shared = "自分宛ての共有"
+sharedByMe = "自分が共有"
+
+[filesPage.tabs]
+all = "すべて"
+ariaLabel = "ファイルビュー"
+cloud = "クラウド"
+local = "ローカル"
+recent = "最近"
+shared = "自分宛ての共有"
+sharedByMe = "自分が共有"
+
+[filesPage.treeMenu]
+actions = "{{name}} のフォルダ操作"
+collapse = "フォルダを折りたたむ"
+delete = "フォルダを削除"
+expand = "フォルダを展開"
+newSubfolder = "新しいサブフォルダ"
+rename = "名前を変更"
+
+[filesPage.typeFilter]
+allTypes = "すべての種類"
+label = "種類でフィルター"
+
+[filesPage.viewMode]
+grid = "グリッド表示"
+label = "表示モード"
+list = "リスト表示"
 
 [fileToPDF]
 credit = "本サービスはファイル変換にLibreOfficeとUnoconvを使用しています。"
@@ -7695,6 +8010,7 @@ bulkTitle = "選択したファイルをアップロード"
 description = "現在のファイルをサーバーストレージにアップロードし、自分でアクセスできるようにします。"
 errorTitle = "アップロードに失敗しました"
 failure = "アップロードに失敗しました。ログイン情報とストレージ設定を確認してください。"
+featureDisabled = "このサーバーではサーバーへの保存が有効になっていません。"
 fileCount = "{{count}} 件のファイルを選択中"
 fileLabel = "ファイル"
 hint = "公開リンクとアクセスモードはサーバー設定で制御されます。"
@@ -7868,13 +8184,18 @@ viewerMode = "複数ファイルを選択するにはファイルエディタに
 [toolPanel]
 allTools = "すべてのツール"
 alpha = "アルファ"
+backToAllTools = "すべてのツールに戻る"
+backToDefault = "戻る"
 backToTools = "ツールに戻る"
 collapse = "パネルを折りたたむ"
 comingSoon = "近日公開:"
 expand = "パネルを展開"
+goBack = "戻る"
 placeholder = "ツールを選択して開始"
 premiumFeature = "プレミアム機能:"
 search = "ツールを検索"
+toolsHeader = "ツール"
+viewAllTools = "すべてのツールを表示"
 
 [toolPanel.fullscreen]
 comingSoon = "近日公開:"

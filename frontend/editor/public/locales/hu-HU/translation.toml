@@ -90,6 +90,7 @@ nothingToUndo = "Nincs visszavonható művelet"
 noticeTopUpOrPlan = "Nincs elég kredit, kérjük, töltsön fel vagy váltson csomagra"
 noValidFiles = "Nincs feldolgozható érvényes fájl"
 oops = "Hoppá!"
+openInNewWindow = "Megnyitás új ablakban"
 openInViewer = "Megnyitás a megjelenítőben"
 operationCancelled = "Művelet megszakítva"
 page = "Oldal"
@@ -493,6 +494,11 @@ title = "Oldal skálázása"
 
 [adjustPageScale.error]
 failed = "Hiba történt az oldalskála beállítása közben."
+
+[adjustPageScale.orientation]
+label = "Oldaltájolás"
+landscape = "Fekvő"
+portrait = "Álló"
 
 [adjustPageScale.pageSize]
 keep = "Eredeti méret megtartása"
@@ -1512,6 +1518,32 @@ user = "Felhasználó"
 usernameInfo = "A felhasználónév csak betűket, számokat és a következő speciális karaktereket tartalmazhatja: @._+- vagy érvényes e-mail címnek kell lennie."
 webOnlyUser = "Csak webes felhasználó"
 
+[agents]
+auto_redaction_description = "Személyes adatok automatikus kitakarása"
+auto_redaction_name = "Automatikus kitakarás"
+back_to_tools = "Vissza az eszközökhöz"
+coming_soon = "Hamarosan"
+compliance_description = "Dokumentumok megfelelőségi ellenőrzése"
+compliance_name = "Megfelelőségi ellenőrzés"
+data_extraction_description = "Táblázatok és strukturált adatok kinyerése"
+data_extraction_name = "Adatkinyerés"
+doc_summary_description = "Hosszú dokumentumok összegzése"
+doc_summary_name = "Összefoglaló"
+form_filler_description = "PDF-űrlapok intelligens kitöltése"
+form_filler_name = "Űrlapkitöltő"
+fullscreen_title = "Stirling ügynökök"
+pdf_to_markdown_description = "PDF-ek átalakítása letisztult Markdownná"
+pdf_to_markdown_name = "PDF Markdownná"
+section_title = "Ügynökök"
+show_less = "Kevesebb"
+start_chat = "Csevegés indítása"
+stirling_description = "Az általános célú PDF-asszisztense"
+stirling_full_name = "Stirling általános ügynök"
+stirling_long_description = "Általános célú PDF-asszisztens, amely képes eszközöket futtatni, PDF-eket létrehozni és meglátásokat kinyerni a dokumentumaiból."
+stirling_name = "Stirling"
+stirling_tooltip = "Stirling ügynök"
+view_all = "Összes ügynök megtekintése"
+
 [analytics]
 disable = "Analitika letiltása"
 enable = "Analitika engedélyezése"
@@ -1771,6 +1803,10 @@ insufficientPermissions = "Nincs jogosultsága a művelet végrehajtásához."
 pleaseLoginAgain = "Kérjük, jelentkezzen be újra."
 sessionExpired = "Munkamenet lejárt"
 
+[auth.displayName]
+guest = "Vendég"
+user = "Felhasználó"
+
 [auto-rename]
 description = "Automatikusan megkeresi a PDF tartalmából a címet, és azt használja fájlnévként."
 header = "PDF automatikus átnevezése"
@@ -1862,6 +1898,13 @@ label = "Menü megnyitása ehhez: {{title}}"
 
 [automate.files]
 placeholder = "Válassza ki az automatizálással feldolgozandó fájlokat"
+
+[automate.folderScanWarning]
+advice = "A fájl továbbra is letölthető (pl. megtekintéshez vagy kézi szerkesztéshez), de a nem támogatott lépéseket el kell távolítani, mielőtt a háttérrendszer futtatni tudná."
+cancel = "Mégse"
+confirm = "Exportálás mindenképp"
+intro = "A mappaszkennelés a háttérrendszeren fut, ezért csak olyan eszközöket tud végrehajtani, amelyeknek van háttérrendszer-végpontja. Az alábbi lépés(ek) ebben az automatizálásban nem rendelkeznek ilyennel, és a folyamat futásakor hibát fognak okozni:"
+title = "Néhány lépés nem futtatható mappaszkennelésnél"
 
 [automate.importModal]
 cancel = "Mégse"
@@ -2684,6 +2727,16 @@ title = "Jogosultságok módosítása"
 [changePermissions.tooltip.warning]
 text = "Ezeket a jogosultságokat tegye megváltoztathatatlanná a \"Jelszó hozzáadása\" eszközzel beállított tulajdonosi jelszóval."
 
+[chat.header]
+agentMenu = "Stirling ügynök beállításai"
+clearChat = "Csevegés törlése"
+settings = "Ügynök beállításai"
+
+[chat.input]
+attach = "Fájlok csatolása"
+placeholder = "Mit szeretne csinálni?"
+send = "Üzenet küldése"
+
 [chat.progress]
 analyzing = "Kérésének elemzése..."
 calling_engine = "Az AI gondolkodik..."
@@ -2698,6 +2751,32 @@ whole_doc_compression_round = "Jegyzetek összevonása..."
 whole_doc_read_done = "A dokumentum beolvasása befejeződött..."
 whole_doc_read_started = "A dokumentum beolvasása..."
 whole_doc_slice_done = "A dokumentum beolvasása... ({{percent}}% kész)"
+
+[chat.quickActions]
+browseYourFiles = "Tallózás a fájlok között"
+compressMany = "Ezen dokumentumok tömörítése"
+compressOne = "Ezen dokumentum tömörítése"
+convertMany = "Ezen dokumentumok PDF formátumba konvertálása"
+convertOne = "Ezen dokumentum PDF formátumba konvertálása"
+fileSummary_one = "1 fájl a munkapadban ({{types}})"
+fileSummary_other = "{{count}} fájl a munkapadban ({{types}})"
+heading = "Kezdjen hozzá"
+mergeMany = "Ezen {{count}} dokumentum egyesítése 1 fájlba"
+moreFiles = "+{{count}} további"
+openFromComputer = "Megnyitás a számítógépről"
+removeFile = "{{name}} eltávolítása"
+rotateMany = "Ezen dokumentumok elforgatása"
+rotateOne = "Ezen dokumentum elforgatása"
+splitOne = "Ezen dokumentum felosztása"
+
+[chat.responses]
+cannot_continue = "Valami hiba történt, és nem tudom folytatni."
+cannot_do = "Ezt nem tudom megtenni."
+done = "Kész."
+need_clarification = "Pontosítaná a kérését?"
+not_found = "Nem találtam a kért információt."
+processing = "Feldolgozás ({{outcome}})…"
+unsupported_capability = "Nem támogatott képesség: {{capability}}"
 
 [chat.toolsUsed]
 summary = "{{count}} eszköz futtatva"
@@ -2799,6 +2878,7 @@ selectBaseFirst = "Először válassza ki az eredeti PDF-et"
 filesMissing = "Nem találjuk a kiválasztott fájlokat. Kérjük, válassza ki újra őket."
 generic = "Nem lehet összehasonlítani ezeket a fájlokat."
 selectRequired = "Válasszon ki egy eredeti és egy szerkesztett dokumentumot."
+title = "Összehasonlítás sikertelen"
 
 [compare.large.file]
 message = "Az egyik vagy mindkét dokumentum túl nagy a feldolgozáshoz"
@@ -2864,6 +2944,7 @@ title = "Még dolgozunk…"
 
 [compare.status]
 complete = "Összehasonlítás kész"
+error = "Összehasonlítás sikertelen"
 extracting = "Szöveg kinyerése..."
 processing = "Különbségek elemzése..."
 
@@ -3771,12 +3852,246 @@ expand = "Oldalsáv kinyitása"
 files = "Fájlok"
 googleDrive = "Google Drive"
 googleDriveDisabled = "A Google Drive nincs beállítva"
+leaveMyFiles = "Kilépés a Saját fájlokból"
+myFiles = "Saját fájlok"
 noFiles = "Még nincsenek fájlok"
 openFileManager = "Fájlkezelő megnyitása"
 openFromComputer = "Megnyitás a számítógépről"
 openSettings = "Beállítások megnyitása"
 search = "Keresés"
 searchPlaceholder = "Fájlok keresése..."
+
+[filesPage]
+addToWorkspace = "Hozzáadás a munkaterülethez"
+addToWorkspaceCount = "{{count}} hozzáadása a munkaterülethez"
+allFiles = "Összes fájl"
+back = "Vissza"
+backToFolder = "Vissza ide: {{folder}}"
+backToMyFiles = "Vissza a Saját fájlokhoz"
+breadcrumbs = "Mappaútvonal"
+cancel = "Mégse"
+clearSearch = "Keresés törlése"
+clearSelection = "Kijelölés törlése"
+closeDetails = "Részletek bezárása"
+create = "Létrehozás"
+cycleBlocked = "Egy mappa nem helyezhető át a saját almappájába."
+delete = "Törlés"
+deleteFolder = "Mappa törlése"
+deleteFolderBody = "Törli a(z) \"{{name}}\" mappát?"
+deleteFolderConfirm = "Törli a(z) \"{{name}}\" mappát? A benne lévő fájlok az Összes fájl közé kerülnek. {{count}} fájl érintett."
+deleteFolderContents = "A mappában lévő {{count}} fájl törlése is"
+deleteFolderContentsWarning = "A fájlok véglegesen törlődnek, és nem állíthatók helyre."
+deleteFolderError = "A mappát nem sikerült törölni. Próbálja újra."
+deleteFolderKeepHint = "A benne lévő fájlok az Összes fájl közé kerülnek."
+deleteFolderTitle = "Törli a mappát?"
+deselectAll = "Kijelölés törlése"
+details = "Részletek"
+detailsCount = "{{count}} fájl kijelölve"
+dismissError = "Bezárás"
+download = "Letöltés"
+downloadAll = "Összes letöltése"
+downloadVersion = "Ezen verzió letöltése"
+dropOverlay = "Húzza ide a fájlokat a feltöltéshez"
+dropOverlaySub = "A fájlok a Helyi lapon indulnak. Használja az 'Áthelyezés ide' vagy a 'Mentés a felhőbe' lehetőséget, hogy mappába rendezze őket."
+file = "Fájl"
+fileMenu = "Fájlműveletek"
+folder = "Mappa"
+folderItems = "{{count}} elem"
+folderMenu = "Mappaműveletek"
+inPath = "{{path}} mappában"
+inWorkspace = "Megnyitás"
+inWorkspaceAria = "Már a munkaterületen"
+loading = "Betöltés…"
+localFoldersUnavailable = "A mappák csak felhőben érhetők el – mappába rendezéshez mentsen egy fájlt a felhőbe."
+moreActions = "További mappaműveletek"
+moveLocalToCloudBlocked = "A csak helyi fájlok nem helyezhetők át felhőmappákba. Először mentse őket a felhőbe."
+moveSkippedRemote = "{{count}} fájlt nem sikerült áthelyezni a szerveren (nincs jogosultság vagy már törölve lett)."
+moveTo = "Áthelyezés ide…"
+myFiles = "Saját fájlok"
+newFolder = "Új mappa"
+newFolderStorageDisabled = "A szerver mappatárolása nincs engedélyezve. Kérje meg a rendszergazdát, hogy kapcsolja be."
+newFolderTabUnavailable = "Váltson az Összes vagy a Felhő fülre mappák létrehozásához."
+newRootFolder = "Új mappa a gyökérben"
+offlineNoFolderEdits = "A szerver mappaszinkronja nem érhető el – a mappamódosítások le vannak tiltva. Ellenőrizze a bejelentkezést és a tárolási konfigurációt."
+open = "Megnyitás"
+openInWorkbench = "Megnyitás a munkapadon"
+openVersionInWorkspace = "Megnyitás a munkaterületen"
+originFilter = "Szűrés forrás szerint"
+quickView = "Gyorsnézet"
+refresh = "Frissítés a szerverről"
+remove = "Törlés"
+removeConfirm = "Törli a(z) {{count}} fájlt? Ez nem vonható vissza."
+removeVersion = "Ezen verzió eltávolítása"
+rename = "Átnevezés"
+renameFolder = "Mappa átnevezése"
+resizeFolderTree = "Mappafa átméretezése (nyílbillentyűk, Shift a nagyobb lépésekhez; dupla kattintás az automatikus illesztéshez)"
+save = "Mentés"
+saveToServer = "Mentés a szerverre"
+saveToServerDisabledHint = "A szerverre mentés nincs engedélyezve ezen a szerveren. Kérje meg a rendszergazdát, hogy engedélyezze."
+search = "Keresés"
+searchPlaceholder = "Keresés ebben a mappában és almappáiban"
+selectAll = "Összes kijelölése"
+selectAllHint = "Kattintson az összes kijelöléséhez. Tipp: tartsa lenyomva a Ctrl (vagy Cmd) billentyűt a fájlok egyenkénti hozzáadásához, a Shiftet a tartomány kijelöléséhez."
+selectedCount = "{{count}} kijelölve"
+selectFile = "{{name}} fájl kijelölése"
+shareDisabledHint = "A fájlmegosztás nincs engedélyezve ezen a szerveren. Kérje meg a rendszergazdát, hogy engedélyezze."
+shareManage = "Megosztás kezelése"
+showDetails = "Részletek megjelenítése"
+summary = "{{count}} elem"
+syncFailed = "Mappaszinkronizálás sikertelen: {{message}}"
+syncPartial = "Részleges mappaszinkronizálás: {{failed}} a(z) {{total}} mappából nem volt egyesíthető."
+tree = "Mappák"
+upload = "Feltöltés"
+uploadedToLocal = "A feltöltött fájlok a Helyi lapon indulnak. Használja a 'Mentés a felhőbe' lehetőséget, hogy mappába helyezze őket."
+uploadFromMobile = "Feltöltés mobilról"
+versionActions = "Verzióműveletek"
+versionCollapse = "Köztes verziók összecsukása"
+versionOrigin = "Eredeti feltöltés"
+versionsCount = "{{count}} verzió"
+versionShowHidden = "{{count}} korábbi verzió megjelenítése"
+viewVersion = "Ezen verzió megtekintése"
+
+[filesPage.appearance]
+colour = "Szín"
+icon = "Ikon"
+title = "Megjelenés"
+useColour = "Szín használata: {{c}}"
+
+[filesPage.column]
+modified = "Módosítva"
+name = "Név"
+size = "Méret"
+type = "Típus"
+
+[filesPage.empty]
+hint = "Húzza a PDF-eket az oldal bármely pontjára a feltöltéshez, vagy használja az Új mappa gombot a fájlok rendszerezéséhez."
+newFolderCta = "Mappa létrehozása"
+title = "Ez a mappa üres"
+uploadCta = "Fájlok feltöltése"
+
+[filesPage.empty.cloud]
+hint = "Kezdésként töltsön fel egy fájlt, vagy hozzon létre egy mappát a rendszerezéshez."
+offlineHint = "Csatlakozzon újra a felhőtár betöltéséhez."
+offlineTitle = "Nincs gyorsítótárazott felhőfájl"
+title = "Még nincsenek felhőfájlok"
+
+[filesPage.empty.local]
+hint = "A feltöltés nélkül mentett fájlok itt maradnak. Húzzon ide egy fájlt a hozzáadáshoz."
+title = "Nincsenek csak helyi fájlok"
+
+[filesPage.empty.recent]
+hint = "A megnyitott vagy szerkesztett fájlok itt jelennek meg."
+title = "Még nincs módosított elem"
+
+[filesPage.empty.shared]
+hint = "Amikor valaki hivatkozással megoszt egy fájlt, itt jelenik meg."
+title = "Még semmit sem osztottak meg Önnel"
+
+[filesPage.empty.sharedByMe]
+hint = "Bármelyik fájlján hozhat létre megosztási hivatkozást vagy hívhat meg csapattagot, és itt fog megjelenni."
+title = "Még nem osztott meg fájlokat"
+
+[filesPage.error]
+actionFailed = "Nem sikerült {{action}}."
+actionFailedDetail = "Nem sikerült {{action}}: {{message}}"
+deleteFolderFailed = "Nem sikerült törölni a mappát."
+deleteFolderFailedDetail = "Nem sikerült törölni a mappát: {{message}}"
+folderAppearanceFailed = "Nem sikerült frissíteni a mappa megjelenését."
+folderAppearanceFailedDetail = "Nem sikerült frissíteni a mappa megjelenését: {{message}}"
+moveFilesFailed = "Nem sikerült áthelyezni a fájlokat."
+moveFilesFailedDetail = "Nem sikerült áthelyezni a fájlokat: {{message}}"
+moveFolderFailed = "Nem sikerült áthelyezni a mappát."
+moveFolderFailedDetail = "Nem sikerült áthelyezni a mappát: {{message}}"
+removeFilesFailed = "Nem sikerült törölni a fájlokat."
+removeFilesFailedDetail = "Nem sikerült törölni a fájlokat: {{message}}"
+uploadFilesFailed = "Nem sikerült feltölteni a fájlokat."
+uploadFilesFailedDetail = "Nem sikerült feltölteni a fájlokat: {{message}}"
+
+[filesPage.field]
+added = "Hozzáadva"
+count = "Fájlok"
+folder = "Mappa"
+modified = "Módosítva"
+name = "Név"
+size = "Méret"
+toolHistory = "Eszközelőzmények"
+toolHistoryAtVersion = "Összesített eszközlánc"
+totalSize = "Teljes méret"
+type = "Típus"
+versionHistory = "Verziók története"
+
+[filesPage.folderName]
+cancel = "Mégse"
+error = "Nem sikerült menteni a mappát. Próbálja újra."
+label = "Mappanév"
+placeholder = "Mappanév"
+
+[filesPage.moveDialog]
+cancel = "Mégse"
+confirm = "Áthelyezés ide"
+error = "Nem sikerült áthelyezni. Próbálja újra."
+hint = "Válasszon célmappát. Tipp: a bal oldali fában a mappákra is húzhat fájlokat."
+newFolderCancel = "Elvetés"
+newFolderCreate = "Létrehozás"
+newFolderError = "Nem sikerült mappát létrehozni. Próbálja újra."
+newFolderLabel = "Új mappa neve"
+newFolderPlaceholder = "Mappanév"
+newFolderToggle = "Új mappa létrehozása…"
+title = "Áthelyezés mappába"
+
+[filesPage.origin]
+all = "Minden forrás"
+cloud = "Felhő"
+cloudHint = "A Stirling szerveren tárolva"
+local = "Helyi"
+localHint = "Csak ebben a böngészőben tárolva"
+shared = "Megosztott"
+sharedHint = "Hivatkozással osztották meg Önnel"
+
+[filesPage.sort]
+modifiedAsc = "Legrégebbi elöl"
+modifiedDesc = "Legutóbbi elöl"
+nameAsc = "Név A→Z"
+nameDesc = "Név Z→A"
+sizeAsc = "Legkisebb elöl"
+sizeDesc = "Legnagyobb elöl"
+
+[filesPage.syncError]
+client = "Mappaszinkronizálás sikertelen."
+network = "Nem sikerült elérni a szervert."
+server = "Szerverhiba a mappaszinkronizálás során."
+
+[filesPage.tabName]
+local = "Helyi"
+recent = "Legutóbbi"
+shared = "Velem megosztva"
+sharedByMe = "Általam megosztva"
+
+[filesPage.tabs]
+all = "Összes"
+ariaLabel = "Fájlnézetek"
+cloud = "Felhő"
+local = "Helyi"
+recent = "Legutóbbi"
+shared = "Velem megosztva"
+sharedByMe = "Általam megosztva"
+
+[filesPage.treeMenu]
+actions = "Mappaműveletek ehhez: {{name}}"
+collapse = "Mappa összecsukása"
+delete = "Mappa törlése"
+expand = "Mappa kibontása"
+newSubfolder = "Új almappa"
+rename = "Átnevezés"
+
+[filesPage.typeFilter]
+allTypes = "Összes típus"
+label = "Szűrés típus szerint"
+
+[filesPage.viewMode]
+grid = "Rácsnézet"
+label = "Nézetmód"
+list = "Listanézet"
 
 [fileToPDF]
 credit = "Ez a szolgáltatás a LibreOffice és Unoconv használatával működik."
@@ -7695,6 +8010,7 @@ bulkTitle = "Kijelölt fájlok feltöltése"
 description = "Ez feltölti az aktuális fájlt a szerver tárhelyére, hogy Ön hozzáférhessen."
 errorTitle = "A feltöltés sikertelen"
 failure = "A feltöltés sikertelen. Kérjük, ellenőrizze a bejelentkezési és tárhelybeállításokat."
+featureDisabled = "A szerverre mentés nincs engedélyezve ezen a szerveren."
 fileCount = "{{count}} fájl kijelölve"
 fileLabel = "Fájl"
 hint = "A nyilvános hivatkozásokat és a hozzáférési módokat a szerver beállításai szabályozzák."
@@ -7868,13 +8184,18 @@ viewerMode = "Váltson a fájlszerkesztőre több fájl kiválasztásához."
 [toolPanel]
 allTools = "Összes eszköz"
 alpha = "Alfa"
+backToAllTools = "Vissza az összes eszközhöz"
+backToDefault = "Vissza"
 backToTools = "Vissza az eszközökhöz"
 collapse = "Panel összecsukása"
 comingSoon = "Hamarosan:"
 expand = "Panel kinyitása"
+goBack = "Vissza"
 placeholder = "Válasszon egy eszközt a kezdéshez"
 premiumFeature = "Prémium funkció:"
 search = "Eszközök keresése"
+toolsHeader = "Eszközök"
+viewAllTools = "Összes eszköz megtekintése"
 
 [toolPanel.fullscreen]
 comingSoon = "Hamarosan elérhető:"

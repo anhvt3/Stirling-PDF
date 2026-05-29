@@ -90,6 +90,7 @@ nothingToUndo = "ไม่มีรายการให้เลิกทำ"
 noticeTopUpOrPlan = "เครดิตไม่พอ โปรดเติมเครดิตหรืออัปเกรดเป็นแผน"
 noValidFiles = "ไม่มีไฟล์ที่ใช้ได้สำหรับประมวลผล"
 oops = "อุ๊ย!"
+openInNewWindow = "เปิดในหน้าต่างใหม่"
 openInViewer = "เปิดในโปรแกรมดู"
 operationCancelled = "ยกเลิกการดำเนินการแล้ว"
 page = "หน้า"
@@ -493,6 +494,11 @@ title = "ปรับสเกลหน้า"
 
 [adjustPageScale.error]
 failed = "เกิดข้อผิดพลาดขณะปรับสเกลหน้า"
+
+[adjustPageScale.orientation]
+label = "การวางแนวหน้า"
+landscape = "แนวนอน"
+portrait = "แนวตั้ง"
 
 [adjustPageScale.pageSize]
 keep = "คงขนาดเดิม"
@@ -1512,6 +1518,32 @@ user = "ผู้ใช้"
 usernameInfo = "ชื่อผู้ใช้สามารถประกอบด้วยตัวอักษร ตัวเลข และอักขระพิเศษต่อไปนี้ @._+- หรือจะต้องเป็นที่อยู่อีเมลที่ถูกต้อง"
 webOnlyUser = "ผู้ใช้เว็บเท่านั้น"
 
+[agents]
+auto_redaction_description = "ปกปิด PII โดยอัตโนมัติ"
+auto_redaction_name = "ปกปิดอัตโนมัติ"
+back_to_tools = "กลับไปที่เครื่องมือ"
+coming_soon = "เร็วๆ นี้"
+compliance_description = "ตรวจสอบเอกสารเพื่อการปฏิบัติตามข้อกำหนด"
+compliance_name = "ตรวจสอบการปฏิบัติตามข้อกำหนด"
+data_extraction_description = "ดึงตารางและข้อมูลเชิงโครงสร้าง"
+data_extraction_name = "ดึงข้อมูล"
+doc_summary_description = "สรุปเอกสารขนาดยาว"
+doc_summary_name = "สรุปเนื้อหา"
+form_filler_description = "กรอกแบบฟอร์ม PDF อย่างชาญฉลาด"
+form_filler_name = "กรอกแบบฟอร์ม"
+fullscreen_title = "Stirling Agents"
+pdf_to_markdown_description = "แปลง PDF เป็น Markdown ที่สะอาด"
+pdf_to_markdown_name = "PDF to Markdown"
+section_title = "เอเจนต์"
+show_less = "แสดงน้อยลง"
+start_chat = "เริ่มสนทนา"
+stirling_description = "ผู้ช่วย PDF อเนกประสงค์ของคุณ"
+stirling_full_name = "Stirling General Agent"
+stirling_long_description = "ผู้ช่วย PDF อเนกประสงค์ที่สามารถเรียกใช้เครื่องมือ สร้าง PDF และดึงข้อมูลเชิงลึกจากเอกสารของคุณ"
+stirling_name = "Stirling"
+stirling_tooltip = "เอเจนต์ Stirling"
+view_all = "ดูเอเจนต์ทั้งหมด"
+
 [analytics]
 disable = "ปิดการวิเคราะห์"
 enable = "เปิดการวิเคราะห์"
@@ -1771,6 +1803,10 @@ insufficientPermissions = "คุณไม่มีสิทธิ์ในก�
 pleaseLoginAgain = "โปรดเข้าสู่ระบบอีกครั้ง"
 sessionExpired = "เซสชันหมดอายุ"
 
+[auth.displayName]
+guest = "ผู้เยี่ยมชม"
+user = "ผู้ใช้"
+
 [auto-rename]
 description = "ค้นหาชื่อเรื่องจากเนื้อหา PDF ของคุณโดยอัตโนมัติและใช้เป็นชื่อไฟล์"
 header = "เปลี่ยนชื่อ PDF อัตโนมัติ"
@@ -1862,6 +1898,13 @@ label = "เปิดเมนูสำหรับ {{title}}"
 
 [automate.files]
 placeholder = "เลือกไฟล์ที่จะประมวลผลด้วยระบบอัตโนมัตินี้"
+
+[automate.folderScanWarning]
+advice = "คุณยังสามารถดาวน์โหลดไฟล์ได้ (เช่น เพื่อตรวจสอบหรือแก้ไขด้วยตนเอง) แต่ต้องลบขั้นตอนที่ไม่รองรับออกก่อนที่แบ็กเอนด์จะสามารถรันได้"
+cancel = "ยกเลิก"
+confirm = "ส่งออกต่อไป"
+intro = "การสแกนโฟลเดอร์ทำงานบนแบ็กเอนด์ จึงสามารถเรียกใช้เฉพาะเครื่องมือที่มีเอนด์พอยต์บนแบ็กเอนด์ ขั้นตอนต่อไปนี้ในระบบอัตโนมัตินี้ไม่มี และจะล้มเหลวเมื่อไปป์ไลน์ทำงาน:"
+title = "บางขั้นตอนไม่สามารถทำงานในการสแกนโฟลเดอร์ได้"
 
 [automate.importModal]
 cancel = "ยกเลิก"
@@ -2684,6 +2727,16 @@ title = "เปลี่ยนสิทธิ์"
 [changePermissions.tooltip.warning]
 text = "เพื่อให้สิทธิ์เหล่านี้ไม่สามารถเปลี่ยนได้ ให้ใช้เครื่องมือเพิ่มรหัสผ่านเพื่อตั้งรหัสผ่านเจ้าของ"
 
+[chat.header]
+agentMenu = "ตัวเลือกเอเจนต์ Stirling"
+clearChat = "ล้างการสนทนา"
+settings = "การตั้งค่าเอเจนต์"
+
+[chat.input]
+attach = "แนบไฟล์"
+placeholder = "คุณต้องการทำอะไร?"
+send = "ส่งข้อความ"
+
 [chat.progress]
 analyzing = "กำลังวิเคราะห์คำขอของคุณ..."
 calling_engine = "AI กำลังคิด..."
@@ -2698,6 +2751,32 @@ whole_doc_compression_round = "กำลังรวมบันทึก..."
 whole_doc_read_done = "อ่านเอกสารเสร็จแล้ว..."
 whole_doc_read_started = "กำลังอ่านเอกสาร..."
 whole_doc_slice_done = "กำลังอ่านเอกสาร... (เสร็จ {{percent}}%)"
+
+[chat.quickActions]
+browseYourFiles = "เรียกดูไฟล์ของคุณ"
+compressMany = "บีบอัดเอกสารเหล่านี้"
+compressOne = "บีบอัดเอกสารนี้"
+convertMany = "แปลงเอกสารเหล่านี้เป็น PDF"
+convertOne = "แปลงเอกสารนี้เป็น PDF"
+fileSummary_one = "ไฟล์ 1 รายการในเวิร์กเบนช์ ({{types}})"
+fileSummary_other = "ไฟล์ {{count}} รายการในเวิร์กเบนช์ ({{types}})"
+heading = "เริ่มต้นใช้งาน"
+mergeMany = "ผสานเอกสาร {{count}} ฉบับเหล่านี้ให้เป็น 1"
+moreFiles = "+{{count}} รายการเพิ่มเติม"
+openFromComputer = "เปิดจากคอมพิวเตอร์"
+removeFile = "ลบ {{name}}"
+rotateMany = "หมุนเอกสารเหล่านี้"
+rotateOne = "หมุนเอกสารนี้"
+splitOne = "แยกเอกสารนี้"
+
+[chat.responses]
+cannot_continue = "เกิดข้อผิดพลาดและฉันไม่สามารถดำเนินการต่อได้"
+cannot_do = "ฉันไม่สามารถทำเช่นนั้นได้"
+done = "เสร็จสิ้น"
+need_clarification = "ช่วยชี้แจงคำขอของคุณได้ไหม?"
+not_found = "ฉันไม่พบข้อมูลที่ร้องขอ"
+processing = "กำลังประมวลผล ({{outcome}})..."
+unsupported_capability = "ความสามารถที่ไม่รองรับ: {{capability}}"
 
 [chat.toolsUsed]
 summary = "เรียกใช้เครื่องมือ {{count}} รายการ"
@@ -2799,6 +2878,7 @@ selectBaseFirst = "เลือก PDF ต้นฉบับก่อน"
 filesMissing = "ไม่พบไฟล์ที่เลือก โปรดเลือกใหม่"
 generic = "ไม่สามารถเปรียบเทียบไฟล์เหล่านี้ได้"
 selectRequired = "เลือกเอกสารต้นฉบับและเอกสารที่แก้ไข"
+title = "การเปรียบเทียบล้มเหลว"
 
 [compare.large.file]
 message = "หนึ่งหรือทั้งสองเอกสารที่ให้มามีขนาดใหญ่มาก ไม่สามารถประมวลผลได้"
@@ -2864,6 +2944,7 @@ title = "ยังทำงานอยู่…"
 
 [compare.status]
 complete = "พร้อมสำหรับการเปรียบเทียบ"
+error = "การเปรียบเทียบล้มเหลว"
 extracting = "กำลังดึงข้อความ..."
 processing = "กำลังวิเคราะห์ความแตกต่าง..."
 
@@ -3771,12 +3852,246 @@ expand = "ขยายแถบข้าง"
 files = "ไฟล์"
 googleDrive = "Google Drive"
 googleDriveDisabled = "ยังไม่ได้กำหนดค่า Google Drive"
+leaveMyFiles = "ออกจากไฟล์ของฉัน"
+myFiles = "ไฟล์ของฉัน"
 noFiles = "ยังไม่มีไฟล์"
 openFileManager = "เปิดตัวจัดการไฟล์"
 openFromComputer = "เปิดจากคอมพิวเตอร์"
 openSettings = "เปิดการตั้งค่า"
 search = "ค้นหา"
 searchPlaceholder = "ค้นหาไฟล์..."
+
+[filesPage]
+addToWorkspace = "เพิ่มไปยังพื้นที่ทำงาน"
+addToWorkspaceCount = "เพิ่ม {{count}} ไปยังพื้นที่ทำงาน"
+allFiles = "ไฟล์ทั้งหมด"
+back = "กลับ"
+backToFolder = "กลับไปยัง {{folder}}"
+backToMyFiles = "กลับไปยังไฟล์ของฉัน"
+breadcrumbs = "เส้นทางโฟลเดอร์"
+cancel = "ยกเลิก"
+clearSearch = "ล้างการค้นหา"
+clearSelection = "ล้างการเลือก"
+closeDetails = "ปิดรายละเอียด"
+create = "สร้าง"
+cycleBlocked = "ไม่สามารถย้ายโฟลเดอร์ไปไว้ในโฟลเดอร์ย่อยของมันเองได้"
+delete = "ลบ"
+deleteFolder = "ลบโฟลเดอร์"
+deleteFolderBody = "ลบโฟลเดอร์ \"{{name}}\"?"
+deleteFolderConfirm = "ลบโฟลเดอร์ \"{{name}}\"? ไฟล์ภายในจะถูกย้ายไปยัง ไฟล์ทั้งหมด มีผลกับไฟล์ {{count}} ไฟล์"
+deleteFolderContents = "ลบไฟล์ {{count}} ไฟล์ภายในโฟลเดอร์ด้วย"
+deleteFolderContentsWarning = "ไฟล์จะถูกลบถาวรและไม่สามารถกู้คืนได้"
+deleteFolderError = "ไม่สามารถลบโฟลเดอร์ได้ โปรดลองอีกครั้ง"
+deleteFolderKeepHint = "ไฟล์ภายในจะถูกย้ายไปยัง ไฟล์ทั้งหมด"
+deleteFolderTitle = "ลบโฟลเดอร์?"
+deselectAll = "ล้างการเลือก"
+details = "รายละเอียด"
+detailsCount = "เลือกแล้ว {{count}} ไฟล์"
+dismissError = "ปิด"
+download = "ดาวน์โหลด"
+downloadAll = "ดาวน์โหลดทั้งหมด"
+downloadVersion = "ดาวน์โหลดเวอร์ชันนี้"
+dropOverlay = "วางไฟล์เพื่ออัปโหลด"
+dropOverlaySub = "ไฟล์จะเริ่มใน ภายในเครื่อง ใช้ 'ย้ายไปยัง' หรือ 'บันทึกไปยังคลาวด์' เพื่อจัดระเบียบไว้ในโฟลเดอร์"
+file = "ไฟล์"
+fileMenu = "การดำเนินการไฟล์"
+folder = "โฟลเดอร์"
+folderItems = "{{count}} รายการ"
+folderMenu = "การดำเนินการโฟลเดอร์"
+inPath = "ใน {{path}}"
+inWorkspace = "เปิด"
+inWorkspaceAria = "อยู่ในพื้นที่ทำงานแล้ว"
+loading = "กำลังโหลด…"
+localFoldersUnavailable = "โฟลเดอร์มีเฉพาะบนคลาวด์ - บันทึกไฟล์ไปยังคลาวด์เพื่อจัดระเบียบลงในโฟลเดอร์"
+moreActions = "การดำเนินการโฟลเดอร์เพิ่มเติม"
+moveLocalToCloudBlocked = "ไฟล์ที่อยู่เฉพาะภายในเครื่องไม่สามารถย้ายไปยังโฟลเดอร์บนคลาวด์ได้ โปรดบันทึกไปยังคลาวด์ก่อน"
+moveSkippedRemote = "{{count}} ไฟล์ไม่สามารถย้ายบนเซิร์ฟเวอร์ได้ (ไม่มีสิทธิ์หรือถูกลบไปแล้ว)"
+moveTo = "ย้ายไปยัง…"
+myFiles = "ไฟล์ของฉัน"
+newFolder = "โฟลเดอร์ใหม่"
+newFolderStorageDisabled = "ไม่ได้เปิดใช้งานการจัดเก็บโฟลเดอร์บนเซิร์ฟเวอร์ โปรดขอให้ผู้ดูแลระบบเปิดใช้งาน"
+newFolderTabUnavailable = "สลับไปยัง ทั้งหมด หรือ คลาวด์ เพื่อสร้างโฟลเดอร์"
+newRootFolder = "โฟลเดอร์ใหม่ที่ตำแหน่งราก"
+offlineNoFolderEdits = "ซิงค์โฟลเดอร์กับเซิร์ฟเวอร์ไม่พร้อมใช้งาน - ปิดการเปลี่ยนแปลงโฟลเดอร์ ตรวจสอบการลงชื่อเข้าใช้และการกำหนดค่าการจัดเก็บ"
+open = "เปิด"
+openInWorkbench = "เปิดในเวิร์กเบนช์"
+openVersionInWorkspace = "เปิดในพื้นที่ทำงาน"
+originFilter = "กรองตามแหล่งที่มา"
+quickView = "ดูด่วน"
+refresh = "รีเฟรชจากเซิร์ฟเวอร์"
+remove = "ลบ"
+removeConfirm = "ลบไฟล์ {{count}} ไฟล์? การกระทำนี้ไม่สามารถยกเลิกได้"
+removeVersion = "ลบเวอร์ชันนี้"
+rename = "เปลี่ยนชื่อ"
+renameFolder = "เปลี่ยนชื่อโฟลเดอร์"
+resizeFolderTree = "ปรับขนาดแผนผังโฟลเดอร์ (ปุ่มลูกศร, กด Shift เพื่อก้าวใหญ่ขึ้น; ดับเบิลคลิกเพื่อปรับพอดีอัตโนมัติ)"
+save = "บันทึก"
+saveToServer = "บันทึกไปยังเซิร์ฟเวอร์"
+saveToServerDisabledHint = "ไม่ได้เปิดใช้งานการบันทึกไปยังเซิร์ฟเวอร์บนเซิร์ฟเวอร์นี้ โปรดขอให้ผู้ดูแลระบบเปิดใช้งาน"
+search = "ค้นหา"
+searchPlaceholder = "ค้นหาโฟลเดอร์นี้และโฟลเดอร์ย่อย"
+selectAll = "เลือกทั้งหมด"
+selectAllHint = "คลิกเพื่อเลือกทั้งหมด เคล็ดลับ: กด Ctrl (หรือ Cmd) เพื่อเพิ่มไฟล์ทีละไฟล์, กด Shift เพื่อเลือกช่วง"
+selectedCount = "เลือกแล้ว {{count}} รายการ"
+selectFile = "เลือกไฟล์ {{name}}"
+shareDisabledHint = "ไม่ได้เปิดใช้งานการแชร์ไฟล์บนเซิร์ฟเวอร์นี้ โปรดขอให้ผู้ดูแลระบบเปิดใช้งาน"
+shareManage = "จัดการการแชร์"
+showDetails = "แสดงรายละเอียด"
+summary = "{{count}} รายการ"
+syncFailed = "การซิงค์โฟลเดอร์ล้มเหลว: {{message}}"
+syncPartial = "การซิงค์โฟลเดอร์บางส่วน: {{failed}} จาก {{total}} โฟลเดอร์ไม่สามารถถูกรวมได้"
+tree = "โฟลเดอร์"
+upload = "อัปโหลด"
+uploadedToLocal = "ไฟล์ที่อัปโหลดจะเริ่มใน ภายในเครื่อง ใช้ 'บันทึกไปยังคลาวด์' เพื่อใส่ในโฟลเดอร์"
+uploadFromMobile = "อัปโหลดจากมือถือ"
+versionActions = "การดำเนินการเวอร์ชัน"
+versionCollapse = "ยุบเวอร์ชันตรงกลาง"
+versionOrigin = "อัปโหลดครั้งแรก"
+versionsCount = "{{count}} เวอร์ชัน"
+versionShowHidden = "แสดงเวอร์ชันก่อนหน้า {{count}} รายการ"
+viewVersion = "ดูเวอร์ชันนี้"
+
+[filesPage.appearance]
+colour = "สี"
+icon = "ไอคอน"
+title = "ลักษณะที่ปรากฏ"
+useColour = "ใช้สี {{c}}"
+
+[filesPage.column]
+modified = "แก้ไขเมื่อ"
+name = "ชื่อ"
+size = "ขนาด"
+type = "ประเภท"
+
+[filesPage.empty]
+hint = "วาง PDF ที่ใดก็ได้บนหน้านี้เพื่ออัปโหลด หรือใช้ปุ่ม โฟลเดอร์ใหม่ เพื่อจัดระเบียบไฟล์ของคุณ"
+newFolderCta = "สร้างโฟลเดอร์"
+title = "โฟลเดอร์นี้ว่างเปล่า"
+uploadCta = "อัปโหลดไฟล์"
+
+[filesPage.empty.cloud]
+hint = "เริ่มด้วยการอัปโหลดไฟล์ หรือสร้างโฟลเดอร์เพื่อจัดระเบียบ"
+offlineHint = "เชื่อมต่อใหม่เพื่อโหลดไลบรารีคลาวด์ของคุณ"
+offlineTitle = "ไม่มีไฟล์คลาวด์ที่แคชไว้"
+title = "ยังไม่มีไฟล์คลาวด์"
+
+[filesPage.empty.local]
+hint = "ไฟล์ที่บันทึกโดยไม่อัปโหลดจะอยู่ที่นี่ วางไฟล์เพื่อเพิ่ม"
+title = "ไม่มีไฟล์เฉพาะภายในเครื่อง"
+
+[filesPage.empty.recent]
+hint = "ไฟล์ที่คุณเปิดหรือแก้ไขจะแสดงที่นี่"
+title = "ยังไม่มีการแก้ไข"
+
+[filesPage.empty.shared]
+hint = "เมื่อมีคนแชร์ไฟล์ผ่านลิงก์ ไฟล์นั้นจะแสดงที่นี่"
+title = "ไม่มีไฟล์ที่แชร์กับคุณ"
+
+[filesPage.empty.sharedByMe]
+hint = "สร้างลิงก์แชร์หรือเชิญเพื่อนร่วมงานจากไฟล์ใดๆ ของคุณเพื่อให้แสดงที่นี่"
+title = "คุณยังไม่ได้แชร์ไฟล์ใดๆ"
+
+[filesPage.error]
+actionFailed = "ไม่สามารถ {{action}} ได้"
+actionFailedDetail = "ไม่สามารถ {{action}}: {{message}}"
+deleteFolderFailed = "ไม่สามารถลบโฟลเดอร์ได้"
+deleteFolderFailedDetail = "ไม่สามารถลบโฟลเดอร์: {{message}}"
+folderAppearanceFailed = "ไม่สามารถอัปเดตลักษณะโฟลเดอร์ได้"
+folderAppearanceFailedDetail = "ไม่สามารถอัปเดตลักษณะโฟลเดอร์: {{message}}"
+moveFilesFailed = "ไม่สามารถย้ายไฟล์ได้"
+moveFilesFailedDetail = "ไม่สามารถย้ายไฟล์: {{message}}"
+moveFolderFailed = "ไม่สามารถย้ายโฟลเดอร์ได้"
+moveFolderFailedDetail = "ไม่สามารถย้ายโฟลเดอร์: {{message}}"
+removeFilesFailed = "ไม่สามารถลบไฟล์ได้"
+removeFilesFailedDetail = "ไม่สามารถลบไฟล์: {{message}}"
+uploadFilesFailed = "ไม่สามารถอัปโหลดไฟล์ได้"
+uploadFilesFailedDetail = "ไม่สามารถอัปโหลดไฟล์: {{message}}"
+
+[filesPage.field]
+added = "เพิ่มเมื่อ"
+count = "ไฟล์"
+folder = "โฟลเดอร์"
+modified = "แก้ไขเมื่อ"
+name = "ชื่อ"
+size = "ขนาด"
+toolHistory = "ประวัติเครื่องมือ"
+toolHistoryAtVersion = "ลำดับเครื่องมือแบบสะสม"
+totalSize = "ขนาดรวม"
+type = "ประเภท"
+versionHistory = "เส้นทางเวอร์ชัน"
+
+[filesPage.folderName]
+cancel = "ยกเลิก"
+error = "ไม่สามารถบันทึกโฟลเดอร์ได้ โปรดลองอีกครั้ง"
+label = "ชื่อโฟลเดอร์"
+placeholder = "ชื่อโฟลเดอร์"
+
+[filesPage.moveDialog]
+cancel = "ยกเลิก"
+confirm = "ย้ายมาที่นี่"
+error = "ไม่สามารถย้ายได้ โปรดลองอีกครั้ง"
+hint = "เลือกโฟลเดอร์ปลายทาง เคล็ดลับ: คุณยังสามารถลากและวางไฟล์ลงบนโฟลเดอร์ในแผนผังทางซ้ายได้ด้วย"
+newFolderCancel = "ยกเลิก"
+newFolderCreate = "สร้าง"
+newFolderError = "ไม่สามารถสร้างโฟลเดอร์ได้ โปรดลองอีกครั้ง"
+newFolderLabel = "ชื่อโฟลเดอร์ใหม่"
+newFolderPlaceholder = "ชื่อโฟลเดอร์"
+newFolderToggle = "สร้างโฟลเดอร์ใหม่…"
+title = "ย้ายไปยังโฟลเดอร์"
+
+[filesPage.origin]
+all = "ทุกแหล่งที่มา"
+cloud = "คลาวด์"
+cloudHint = "เก็บไว้บนเซิร์ฟเวอร์ของ Stirling"
+local = "ภายในเครื่อง"
+localHint = "เก็บไว้เฉพาะในเบราว์เซอร์นี้"
+shared = "แชร์"
+sharedHint = "แชร์กับคุณผ่านลิงก์"
+
+[filesPage.sort]
+modifiedAsc = "เก่าสุดก่อน"
+modifiedDesc = "ล่าสุดก่อน"
+nameAsc = "ชื่อ A→Z"
+nameDesc = "ชื่อ Z→A"
+sizeAsc = "เล็กสุดก่อน"
+sizeDesc = "ใหญ่สุดก่อน"
+
+[filesPage.syncError]
+client = "การซิงค์โฟลเดอร์ล้มเหลว"
+network = "ไม่สามารถเชื่อมต่อกับเซิร์ฟเวอร์ได้"
+server = "เกิดข้อผิดพลาดบนเซิร์ฟเวอร์ระหว่างการซิงค์โฟลเดอร์"
+
+[filesPage.tabName]
+local = "ภายในเครื่อง"
+recent = "ล่าสุด"
+shared = "แชร์กับฉัน"
+sharedByMe = "ฉันเป็นผู้แชร์"
+
+[filesPage.tabs]
+all = "ทั้งหมด"
+ariaLabel = "มุมมองไฟล์"
+cloud = "คลาวด์"
+local = "ภายในเครื่อง"
+recent = "ล่าสุด"
+shared = "แชร์กับฉัน"
+sharedByMe = "ฉันเป็นผู้แชร์"
+
+[filesPage.treeMenu]
+actions = "การดำเนินการโฟลเดอร์สำหรับ {{name}}"
+collapse = "ยุบโฟลเดอร์"
+delete = "ลบโฟลเดอร์"
+expand = "ขยายโฟลเดอร์"
+newSubfolder = "โฟลเดอร์ย่อยใหม่"
+rename = "เปลี่ยนชื่อ"
+
+[filesPage.typeFilter]
+allTypes = "ทุกประเภท"
+label = "กรองตามประเภท"
+
+[filesPage.viewMode]
+grid = "มุมมองแบบกริด"
+label = "โหมดมุมมอง"
+list = "มุมมองแบบรายการ"
 
 [fileToPDF]
 credit = "บริการนี้ใช้ LibreOffice และ Unoconv สำหรับการแปลงไฟล์"
@@ -7695,6 +8010,7 @@ bulkTitle = "อัปโหลดไฟล์ที่เลือก"
 description = "อัปโหลดไฟล์ปัจจุบันไปยังพื้นที่จัดเก็บบนเซิร์ฟเวอร์สำหรับการเข้าถึงของคุณเอง"
 errorTitle = "อัปโหลดล้มเหลว"
 failure = "อัปโหลดล้มเหลว โปรดตรวจสอบการเข้าสู่ระบบและการตั้งค่าการจัดเก็บของคุณ"
+featureDisabled = "ไม่ได้เปิดใช้งานการบันทึกไปยังเซิร์ฟเวอร์บนเซิร์ฟเวอร์นี้"
 fileCount = "{{count}} ไฟล์ที่เลือก"
 fileLabel = "ไฟล์"
 hint = "ลิงก์สาธารณะและโหมดการเข้าถึงถูกควบคุมโดยการตั้งค่าเซิร์ฟเวอร์ของคุณ"
@@ -7868,13 +8184,18 @@ viewerMode = "สลับไปที่ตัวแก้ไขไฟล์เ
 [toolPanel]
 allTools = "เครื่องมือทั้งหมด"
 alpha = "อัลฟา"
+backToAllTools = "กลับไปที่เครื่องมือทั้งหมด"
+backToDefault = "กลับ"
 backToTools = "กลับไปที่เครื่องมือ"
 collapse = "ยุบแผง"
 comingSoon = "เร็วๆ นี้:"
 expand = "ขยายแผง"
+goBack = "ย้อนกลับ"
 placeholder = "เลือกเครื่องมือเพื่อเริ่มต้น"
 premiumFeature = "ฟีเจอร์พรีเมียม:"
 search = "ค้นหาเครื่องมือ"
+toolsHeader = "เครื่องมือ"
+viewAllTools = "ดูเครื่องมือทั้งหมด"
 
 [toolPanel.fullscreen]
 comingSoon = "เร็วๆ นี้:"

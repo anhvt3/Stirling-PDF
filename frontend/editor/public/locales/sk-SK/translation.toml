@@ -90,6 +90,7 @@ nothingToUndo = "Nič na vrátenie späť"
 noticeTopUpOrPlan = "Nedostatok kreditov, dobiť alebo prejsť na plán"
 noValidFiles = "Žiadne platné súbory na spracovanie"
 oops = "Ups!"
+openInNewWindow = "Otvoriť v novom okne"
 openInViewer = "Otvoriť v prehliadači"
 operationCancelled = "Operácia zrušená"
 page = "Strana"
@@ -493,6 +494,11 @@ title = "Upraviť mierku strany"
 
 [adjustPageScale.error]
 failed = "Počas upravovania mierky strany došlo k chybe."
+
+[adjustPageScale.orientation]
+label = "Orientácia strany"
+landscape = "Na šírku"
+portrait = "Na výšku"
 
 [adjustPageScale.pageSize]
 keep = "Ponechať pôvodnú veľkosť"
@@ -1512,6 +1518,32 @@ user = "Používateľ"
 usernameInfo = "Používateľské meno musí obsahovať iba písmená a čísla, žiadne medzery alebo špeciálne znaky."
 webOnlyUser = "Používateľ iba pre web"
 
+[agents]
+auto_redaction_description = "Automaticky anonymizovať PII"
+auto_redaction_name = "Automatická anonymizácia"
+back_to_tools = "Späť k nástrojom"
+coming_soon = "Už čoskoro"
+compliance_description = "Auditovať dokumenty z hľadiska súladu"
+compliance_name = "Kontrola súladu"
+data_extraction_description = "Extrahovať tabuľky a štruktúrované údaje"
+data_extraction_name = "Extrahovanie údajov"
+doc_summary_description = "Zhrnúť dlhé dokumenty"
+doc_summary_name = "Zhrnutie"
+form_filler_description = "Inteligentne vyplniť formuláre PDF"
+form_filler_name = "Vyplňovanie formulárov"
+fullscreen_title = "Stirling agenti"
+pdf_to_markdown_description = "Konvertovať PDF na čistý Markdown"
+pdf_to_markdown_name = "PDF na Markdown"
+section_title = "Agenti"
+show_less = "Zobraziť menej"
+start_chat = "Začať chat"
+stirling_description = "Váš univerzálny asistent pre PDF"
+stirling_full_name = "Všeobecný agent Stirling"
+stirling_long_description = "Všeobecný asistent pre PDF, ktorý vie spúšťať nástroje, vytvárať PDF a získavať poznatky z vašich dokumentov."
+stirling_name = "Stirling"
+stirling_tooltip = "Agent Stirling"
+view_all = "Zobraziť všetkých agentov"
+
 [analytics]
 disable = "Zakázať analytiku"
 enable = "Povoliť analytiku"
@@ -1771,6 +1803,10 @@ insufficientPermissions = "Nemáte oprávnenie vykonať túto akciu."
 pleaseLoginAgain = "Prosím, prihláste sa znova."
 sessionExpired = "Relácia vypršala"
 
+[auth.displayName]
+guest = "Hosť"
+user = "Používateľ"
+
 [auto-rename]
 description = "Automaticky nájde názov z obsahu vášho PDF a použije ho ako názov súboru."
 header = "Automatické premenovanie PDF"
@@ -1862,6 +1898,13 @@ label = "Otvoriť ponuku pre {{title}}"
 
 [automate.files]
 placeholder = "Vyberte súbory na spracovanie touto automatizáciou"
+
+[automate.folderScanWarning]
+advice = "Súbor si môžete stále stiahnuť (napr. na kontrolu alebo ručnú úpravu), ale nepodporované kroky bude potrebné odstrániť, aby ho backend vedel spustiť."
+cancel = "Zrušiť"
+confirm = "Aj tak exportovať"
+intro = "Skenovanie priečinkov beží na backende, takže môže vykonávať len nástroje, ktoré majú backend endpoint. Nasledujúce kroky v tejto automatizácii ho nemajú a pri spustení pipeline zlyhajú:"
+title = "Niektoré kroky nemožno spustiť pri skenovaní priečinkov"
 
 [automate.importModal]
 cancel = "Zrušiť"
@@ -2684,6 +2727,16 @@ title = "Zmeniť povolenia"
 [changePermissions.tooltip.warning]
 text = "Aby boli tieto povolenia nezmeniteľné, použite nástroj Add Password na nastavenie hesla vlastníka."
 
+[chat.header]
+agentMenu = "Možnosti agenta Stirling"
+clearChat = "Vymazať chat"
+settings = "Nastavenia agenta"
+
+[chat.input]
+attach = "Priložiť súbory"
+placeholder = "Čo chcete urobiť?"
+send = "Odoslať správu"
+
 [chat.progress]
 analyzing = "Analyzujem vašu požiadavku..."
 calling_engine = "AI premýšľa..."
@@ -2698,6 +2751,32 @@ whole_doc_compression_round = "Zlučovanie poznámok..."
 whole_doc_read_done = "Dokončené čítanie dokumentu..."
 whole_doc_read_started = "Čítanie dokumentu..."
 whole_doc_slice_done = "Čítanie dokumentu... ({{percent}}% dokončené)"
+
+[chat.quickActions]
+browseYourFiles = "Prehliadať svoje súbory"
+compressMany = "Komprimovať tieto dokumenty"
+compressOne = "Komprimovať tento dokument"
+convertMany = "Konvertovať tieto dokumenty na PDF"
+convertOne = "Konvertovať tento dokument na PDF"
+fileSummary_one = "1 súbor na pracovnej ploche ({{types}})"
+fileSummary_other = "{{count}} súborov na pracovnej ploche ({{types}})"
+heading = "Začíname"
+mergeMany = "Zlúčiť tieto {{count}} dokumenty do jedného"
+moreFiles = "+{{count}} ďalších"
+openFromComputer = "Otvoriť z počítača"
+removeFile = "Odstrániť {{name}}"
+rotateMany = "Otočiť tieto dokumenty"
+rotateOne = "Otočiť tento dokument"
+splitOne = "Rozdeliť tento dokument"
+
+[chat.responses]
+cannot_continue = "Niečo sa pokazilo a nemôžem pokračovať."
+cannot_do = "Toto nedokážem urobiť."
+done = "Hotovo."
+need_clarification = "Môžete spresniť svoju požiadavku?"
+not_found = "Nepodarilo sa nájsť požadované informácie."
+processing = "Spracovávanie ({{outcome}})..."
+unsupported_capability = "Nepodporovaná funkcia: {{capability}}"
 
 [chat.toolsUsed]
 summary = "Spustených {{count}} nástrojov"
@@ -2799,6 +2878,7 @@ selectBaseFirst = "Najprv vyberte pôvodný súbor PDF"
 filesMissing = "Nepodarilo sa nájsť vybrané súbory. Vyberte ich znova."
 generic = "Nie je možné porovnať tieto súbory."
 selectRequired = "Vyberte pôvodný a upravený dokument."
+title = "Porovnanie zlyhalo"
 
 [compare.large.file]
 message = "Jeden alebo oba poskytnuté dokumenty sú príliš veľké na spracovanie"
@@ -2864,6 +2944,7 @@ title = "Stále pracujeme…"
 
 [compare.status]
 complete = "Porovnanie pripravené"
+error = "Porovnanie zlyhalo"
 extracting = "Extrahovanie textu..."
 processing = "Analýza rozdielov..."
 
@@ -3771,12 +3852,246 @@ expand = "Rozbaliť bočný panel"
 files = "Súbory"
 googleDrive = "Google Drive"
 googleDriveDisabled = "Google Drive nie je nakonfigurovaný"
+leaveMyFiles = "Opustiť Moje súbory"
+myFiles = "Moje súbory"
 noFiles = "Zatiaľ žiadne súbory"
 openFileManager = "Otvoriť správcu súborov"
 openFromComputer = "Otvoriť z počítača"
 openSettings = "Otvoriť nastavenia"
 search = "Hľadať"
 searchPlaceholder = "Hľadať súbory..."
+
+[filesPage]
+addToWorkspace = "Pridať do pracovného priestoru"
+addToWorkspaceCount = "Pridať {{count}} do pracovného priestoru"
+allFiles = "Všetky súbory"
+back = "Späť"
+backToFolder = "Späť do {{folder}}"
+backToMyFiles = "Späť na Moje súbory"
+breadcrumbs = "Cesta k priečinku"
+cancel = "Zrušiť"
+clearSearch = "Vymazať vyhľadávanie"
+clearSelection = "Zrušiť výber"
+closeDetails = "Zavrieť podrobnosti"
+create = "Vytvoriť"
+cycleBlocked = "Priečinok nemožno presunúť do niektorého zo svojich podpriečinkov."
+delete = "Odstrániť"
+deleteFolder = "Odstrániť priečinok"
+deleteFolderBody = "Odstrániť priečinok \"{{name}}\"?"
+deleteFolderConfirm = "Odstrániť priečinok \"{{name}}\"? Súbory vo vnútri budú presunuté do Všetky súbory. Bude ovplyvnených {{count}} súborov."
+deleteFolderContents = "Tiež odstrániť {{count}} súborov v priečinku"
+deleteFolderContentsWarning = "Súbory budú natrvalo odstránené a nebude ich možné obnoviť."
+deleteFolderError = "Priečinok sa nepodarilo odstrániť. Skúste to znova."
+deleteFolderKeepHint = "Súbory vo vnútri budú presunuté do Všetkých súborov."
+deleteFolderTitle = "Odstrániť priečinok?"
+deselectAll = "Zrušiť výber"
+details = "Podrobnosti"
+detailsCount = "{{count}} vybraných súborov"
+dismissError = "Zavrieť"
+download = "Stiahnuť"
+downloadAll = "Stiahnuť všetko"
+downloadVersion = "Stiahnuť túto verziu"
+dropOverlay = "Pustite súbory sem na nahratie"
+dropOverlaySub = "Súbory sa najprv zobrazia v Miestne. Použite 'Presunúť do' alebo 'Uložiť do cloudu' na ich usporiadanie do priečinka."
+file = "Súbor"
+fileMenu = "Akcie so súborom"
+folder = "Priečinok"
+folderItems = "{{count}} položiek"
+folderMenu = "Akcie s priečinkom"
+inPath = "v {{path}}"
+inWorkspace = "Otvoriť"
+inWorkspaceAria = "Už v pracovnom priestore"
+loading = "Načítava sa…"
+localFoldersUnavailable = "Priečinky sú iba v cloude – uložte súbor do cloudu, aby ste ho mohli usporiadať."
+moreActions = "Ďalšie akcie priečinka"
+moveLocalToCloudBlocked = "Len miestne súbory nemožno presunúť do cloudových priečinkov. Najprv ich uložte do cloudu."
+moveSkippedRemote = "{{count}} súborov sa nepodarilo presunúť na serveri (bez oprávnenia alebo už odstránené)."
+moveTo = "Presunúť do…"
+myFiles = "Moje súbory"
+newFolder = "Nový priečinok"
+newFolderStorageDisabled = "Ukladanie priečinkov na serveri nie je povolené. Požiadajte správcu o zapnutie."
+newFolderTabUnavailable = "Pre vytvorenie priečinkov prepnite na Všetky alebo Cloud."
+newRootFolder = "Nový priečinok v koreňovom adresári"
+offlineNoFolderEdits = "Synchronizácia priečinkov so serverom nie je dostupná – zmeny priečinkov sú zakázané. Skontrolujte prihlásenie a konfiguráciu úložiska."
+open = "Otvoriť"
+openInWorkbench = "Otvoriť v pracovnej ploche"
+openVersionInWorkspace = "Otvoriť v pracovnom priestore"
+originFilter = "Filtrovať podľa zdroja"
+quickView = "Rýchly náhľad"
+refresh = "Obnoviť zo servera"
+remove = "Odstrániť"
+removeConfirm = "Odstrániť {{count}} súborov? Toto nie je možné vrátiť späť."
+removeVersion = "Odstrániť túto verziu"
+rename = "Premenovať"
+renameFolder = "Premenovať priečinok"
+resizeFolderTree = "Zmeniť veľkosť stromu priečinkov (šípkami, Shift pre väčšie kroky; dvojklik pre automatické prispôsobenie)"
+save = "Uložiť"
+saveToServer = "Uložiť na server"
+saveToServerDisabledHint = "Ukladanie na server nie je na tomto serveri povolené. Požiadajte správcu o povolenie."
+search = "Hľadať"
+searchPlaceholder = "Hľadať v tomto priečinku a podpriečinkoch"
+selectAll = "Vybrať všetko"
+selectAllHint = "Kliknutím vyberiete všetko. Tip: podržte Ctrl (alebo Cmd) na pridávanie súborov po jednom, Shift na výber rozsahu."
+selectedCount = "{{count}} vybraných"
+selectFile = "Vybrať súbor {{name}}"
+shareDisabledHint = "Zdieľanie súborov nie je na tomto serveri povolené. Požiadajte správcu o povolenie."
+shareManage = "Spravovať zdieľanie"
+showDetails = "Zobraziť podrobnosti"
+summary = "{{count}} položiek"
+syncFailed = "Synchronizácia priečinkov zlyhala: {{message}}"
+syncPartial = "Čiastočná synchronizácia priečinkov: {{failed}} z {{total}} priečinkov sa nepodarilo zlúčiť."
+tree = "Priečinky"
+upload = "Nahrať"
+uploadedToLocal = "Nahrané súbory sa najprv zobrazia v Miestne. Na vloženie do priečinka použite 'Uložiť do cloudu'."
+uploadFromMobile = "Nahrať z mobilu"
+versionActions = "Akcie verzie"
+versionCollapse = "Zbaliť stredné verzie"
+versionOrigin = "Pôvodné nahratie"
+versionsCount = "{{count}} verzií"
+versionShowHidden = "Zobraziť {{count}} starších verzií"
+viewVersion = "Zobraziť túto verziu"
+
+[filesPage.appearance]
+colour = "Farba"
+icon = "Ikona"
+title = "Vzhľad"
+useColour = "Použiť farbu {{c}}"
+
+[filesPage.column]
+modified = "Upravené"
+name = "Názov"
+size = "Veľkosť"
+type = "Typ"
+
+[filesPage.empty]
+hint = "Presuňte súbory PDF kamkoľvek na túto stránku na nahranie alebo použite tlačidlo Nový priečinok na usporiadanie súborov."
+newFolderCta = "Vytvoriť priečinok"
+title = "Tento priečinok je prázdny"
+uploadCta = "Nahrať súbory"
+
+[filesPage.empty.cloud]
+hint = "Na začiatok nahrajte súbor alebo vytvorte priečinok na usporiadanie."
+offlineHint = "Znova sa pripojte na načítanie vašej cloudovej knižnice."
+offlineTitle = "Žiadne cloudové súbory v medzipamäti"
+title = "Zatiaľ žiadne cloudové súbory"
+
+[filesPage.empty.local]
+hint = "Súbory uložené bez nahratia zostanú tu. Pustite sem súbor, aby ste ho pridali."
+title = "Žiadne iba miestne súbory"
+
+[filesPage.empty.recent]
+hint = "Súbory, ktoré otvoríte alebo upravíte, sa zobrazia tu."
+title = "Zatiaľ nič upravené"
+
+[filesPage.empty.shared]
+hint = "Keď vám niekto zdieľa súbor cez odkaz, zobrazí sa tu."
+title = "Nič zdieľané s vami"
+
+[filesPage.empty.sharedByMe]
+hint = "Vytvorte odkaz na zdieľanie alebo pozvite kolegu z ľubovoľného svojho súboru, aby sa tu zobrazil."
+title = "Zatiaľ ste nezdieľali žiadne súbory"
+
+[filesPage.error]
+actionFailed = "Nepodarilo sa {{action}}."
+actionFailedDetail = "Nepodarilo sa {{action}}: {{message}}"
+deleteFolderFailed = "Priečinok sa nepodarilo odstrániť."
+deleteFolderFailedDetail = "Priečinok sa nepodarilo odstrániť: {{message}}"
+folderAppearanceFailed = "Nepodarilo sa aktualizovať vzhľad priečinka."
+folderAppearanceFailedDetail = "Nepodarilo sa aktualizovať vzhľad priečinka: {{message}}"
+moveFilesFailed = "Nepodarilo sa presunúť súbory."
+moveFilesFailedDetail = "Nepodarilo sa presunúť súbory: {{message}}"
+moveFolderFailed = "Nepodarilo sa presunúť priečinok."
+moveFolderFailedDetail = "Nepodarilo sa presunúť priečinok: {{message}}"
+removeFilesFailed = "Nepodarilo sa odstrániť súbory."
+removeFilesFailedDetail = "Nepodarilo sa odstrániť súbory: {{message}}"
+uploadFilesFailed = "Nepodarilo sa nahrať súbory."
+uploadFilesFailedDetail = "Nepodarilo sa nahrať súbory: {{message}}"
+
+[filesPage.field]
+added = "Pridané"
+count = "Súbory"
+folder = "Priečinok"
+modified = "Upravené"
+name = "Názov"
+size = "Veľkosť"
+toolHistory = "História nástrojov"
+toolHistoryAtVersion = "Kumulatívny reťazec nástrojov"
+totalSize = "Celková veľkosť"
+type = "Typ"
+versionHistory = "Cesta verzií"
+
+[filesPage.folderName]
+cancel = "Zrušiť"
+error = "Priečinok sa nepodarilo uložiť. Skúste to znova."
+label = "Názov priečinka"
+placeholder = "Názov priečinka"
+
+[filesPage.moveDialog]
+cancel = "Zrušiť"
+confirm = "Presunúť sem"
+error = "Nepodarilo sa presunúť. Skúste to znova."
+hint = "Vyberte cieľový priečinok. Tip: súbory môžete aj presunúť myšou na priečinky v strome vľavo."
+newFolderCancel = "Zahodiť"
+newFolderCreate = "Vytvoriť"
+newFolderError = "Priečinok sa nepodarilo vytvoriť. Skúste to znova."
+newFolderLabel = "Názov nového priečinka"
+newFolderPlaceholder = "Názov priečinka"
+newFolderToggle = "Vytvoriť nový priečinok…"
+title = "Presunúť do priečinka"
+
+[filesPage.origin]
+all = "Všetky zdroje"
+cloud = "Cloud"
+cloudHint = "Uložené na serveri Stirling"
+local = "Miestne"
+localHint = "Uložené len v tomto prehliadači"
+shared = "Zdieľané"
+sharedHint = "Zdieľané s vami cez odkaz"
+
+[filesPage.sort]
+modifiedAsc = "Najstaršie ako prvé"
+modifiedDesc = "Najnovšie ako prvé"
+nameAsc = "Názov A→Z"
+nameDesc = "Názov Z→A"
+sizeAsc = "Najmenšie ako prvé"
+sizeDesc = "Najväčšie ako prvé"
+
+[filesPage.syncError]
+client = "Synchronizácia priečinkov zlyhala."
+network = "Nepodarilo sa spojiť so serverom."
+server = "Chyba servera počas synchronizácie priečinkov."
+
+[filesPage.tabName]
+local = "Miestne"
+recent = "Nedávne"
+shared = "Zdieľané so mnou"
+sharedByMe = "Zdieľané mnou"
+
+[filesPage.tabs]
+all = "Všetky"
+ariaLabel = "Zobrazenia súborov"
+cloud = "Cloud"
+local = "Miestne"
+recent = "Nedávne"
+shared = "Zdieľané so mnou"
+sharedByMe = "Zdieľané mnou"
+
+[filesPage.treeMenu]
+actions = "Akcie priečinka pre {{name}}"
+collapse = "Zbaliť priečinok"
+delete = "Odstrániť priečinok"
+expand = "Rozbaliť priečinok"
+newSubfolder = "Nový podpriečinok"
+rename = "Premenovať"
+
+[filesPage.typeFilter]
+allTypes = "Všetky typy"
+label = "Filtrovať podľa typu"
+
+[filesPage.viewMode]
+grid = "Zobrazenie mriežky"
+label = "Režim zobrazenia"
+list = "Zobrazenie zoznamu"
 
 [fileToPDF]
 credit = "Táto služba používa LibreOffice a Unoconv pre konverziu súborov."
@@ -7695,6 +8010,7 @@ bulkTitle = "Nahrať vybrané súbory"
 description = "Týmto nahráte aktuálny súbor do serverového úložiska pre vlastný prístup."
 errorTitle = "Nahrávanie zlyhalo"
 failure = "Nahrávanie zlyhalo. Skontrolujte svoje prihlásenie a nastavenia úložiska."
+featureDisabled = "Ukladanie na server nie je na tomto serveri povolené."
 fileCount = "{{count}} vybraných súborov"
 fileLabel = "Súbor"
 hint = "Verejné odkazy a režimy prístupu sú riadené nastaveniami vášho servera."
@@ -7868,13 +8184,18 @@ viewerMode = "Ak chcete vybrať viac súborov, prepnite do editora súborov."
 [toolPanel]
 allTools = "Všetky nástroje"
 alpha = "Alfa"
+backToAllTools = "Späť na všetky nástroje"
+backToDefault = "Späť"
 backToTools = "Späť na nástroje"
 collapse = "Zbaliť panel"
 comingSoon = "Už čoskoro:"
 expand = "Rozbaliť panel"
+goBack = "Vrátiť sa"
 placeholder = "Vyberte nástroj, aby ste začali"
 premiumFeature = "Prémiová funkcia:"
 search = "Hľadať nástroje"
+toolsHeader = "Nástroje"
+viewAllTools = "Zobraziť všetky nástroje"
 
 [toolPanel.fullscreen]
 comingSoon = "Už čoskoro:"

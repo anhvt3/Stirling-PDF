@@ -90,6 +90,7 @@ nothingToUndo = "Nichts zum Rückgängig machen"
 noticeTopUpOrPlan = "Nicht genug Credits, bitte aufladen oder auf einen Tarif upgraden"
 noValidFiles = "Keine gültigen Dateien zum Verarbeiten"
 oops = "Hoppla!"
+openInNewWindow = "In neuem Fenster öffnen"
 openInViewer = "Im Viewer öffnen"
 operationCancelled = "Vorgang abgebrochen"
 page = "Seite"
@@ -493,6 +494,11 @@ title = "Seitengröße anpassen"
 
 [adjustPageScale.error]
 failed = "Ein Fehler ist beim Anpassen der Seitenskalierung aufgetreten."
+
+[adjustPageScale.orientation]
+label = "Seitenausrichtung"
+landscape = "Querformat"
+portrait = "Hochformat"
 
 [adjustPageScale.pageSize]
 keep = "Ursprüngliche Größe beibehalten"
@@ -1512,6 +1518,32 @@ user = "Benutzer"
 usernameInfo = "Der Benutzername darf nur Buchstaben, Zahlen und die folgenden Sonderzeichen @._+- enthalten oder muss eine gültige E-Mail-Adresse sein."
 webOnlyUser = "Nur Web-Benutzer"
 
+[agents]
+auto_redaction_description = "Personenbezogene Daten automatisch schwärzen"
+auto_redaction_name = "Automatische Schwärzung"
+back_to_tools = "Zurück zu den Tools"
+coming_soon = "Bald verfügbar"
+compliance_description = "Dokumente auf Compliance prüfen"
+compliance_name = "Compliance-Prüfung"
+data_extraction_description = "Tabellen und strukturierte Daten extrahieren"
+data_extraction_name = "Datenextraktion"
+doc_summary_description = "Lange Dokumente zusammenfassen"
+doc_summary_name = "Zusammenfasser"
+form_filler_description = "PDF-Formulare intelligent ausfüllen"
+form_filler_name = "Formularausfüller"
+fullscreen_title = "Stirling Agents"
+pdf_to_markdown_description = "PDFs in sauberes Markdown konvertieren"
+pdf_to_markdown_name = "PDF zu Markdown"
+section_title = "Agenten"
+show_less = "Weniger anzeigen"
+start_chat = "Chat starten"
+stirling_description = "Ihr universeller PDF-Assistent"
+stirling_full_name = "Stirling Allgemeiner Agent"
+stirling_long_description = "Universeller PDF-Assistent, der Tools ausführen, PDFs erstellen und Erkenntnisse aus Ihren Dokumenten gewinnen kann."
+stirling_name = "Stirling"
+stirling_tooltip = "Stirling-Agent"
+view_all = "Alle Agenten anzeigen"
+
 [analytics]
 disable = "Analytics deaktivieren"
 enable = "Analytics aktivieren"
@@ -1771,6 +1803,10 @@ insufficientPermissions = "Sie haben keine Berechtigung, diese Aktion auszuführ
 pleaseLoginAgain = "Bitte melden Sie sich erneut an."
 sessionExpired = "Sitzung abgelaufen"
 
+[auth.displayName]
+guest = "Gast"
+user = "Benutzer"
+
 [auto-rename]
 description = "Findet automatisch den Titel aus Ihrem PDF-Inhalt und verwendet ihn als Dateinamen."
 header = "PDF automatisch umbenennen"
@@ -1862,6 +1898,13 @@ label = "Menü für {{title}} öffnen"
 
 [automate.files]
 placeholder = "Wählen Sie Dateien aus, die mit dieser Automatisierung verarbeitet werden sollen"
+
+[automate.folderScanWarning]
+advice = "Sie können die Datei weiterhin herunterladen (z. B. zur Prüfung oder manuellen Bearbeitung), aber die nicht unterstützten Schritte müssen entfernt werden, bevor das Backend sie ausführen kann."
+cancel = "Abbrechen"
+confirm = "Trotzdem exportieren"
+intro = "Ordnerscans laufen im Backend, daher können nur Tools ausgeführt werden, die einen Backend-Endpunkt haben. Die folgenden Schritt(e) in dieser Automatisierung haben das nicht und schlagen beim Ausführen der Pipeline fehl:"
+title = "Einige Schritte können beim Ordnerscan nicht ausgeführt werden"
 
 [automate.importModal]
 cancel = "Abbrechen"
@@ -2684,6 +2727,16 @@ title = "Berechtigungen ändern"
 [changePermissions.tooltip.warning]
 text = "Um diese Berechtigungen unveränderlich zu machen, verwenden Sie das Passwort hinzufügen-Tool, um ein Besitzer-Passwort zu setzen."
 
+[chat.header]
+agentMenu = "Stirling-Agent-Optionen"
+clearChat = "Chat löschen"
+settings = "Agent-Einstellungen"
+
+[chat.input]
+attach = "Dateien anhängen"
+placeholder = "Was möchten Sie tun?"
+send = "Nachricht senden"
+
 [chat.progress]
 analyzing = "Ihre Anfrage wird analysiert..."
 calling_engine = "KI denkt nach..."
@@ -2698,6 +2751,32 @@ whole_doc_compression_round = "Notizen werden zusammengeführt..."
 whole_doc_read_done = "Dokument wurde eingelesen..."
 whole_doc_read_started = "Dokument wird eingelesen..."
 whole_doc_slice_done = "Dokument wird eingelesen... ({{percent}}% abgeschlossen)"
+
+[chat.quickActions]
+browseYourFiles = "Ihre Dateien durchsuchen"
+compressMany = "Diese Dokumente komprimieren"
+compressOne = "Dieses Dokument komprimieren"
+convertMany = "Diese Dokumente in PDF konvertieren"
+convertOne = "Dieses Dokument in PDF konvertieren"
+fileSummary_one = "1 Datei in der Werkbank ({{types}})"
+fileSummary_other = "{{count}} Dateien in der Werkbank ({{types}})"
+heading = "Erste Schritte"
+mergeMany = "Diese {{count}} Dokumente zu 1 zusammenführen"
+moreFiles = "+{{count}} weitere"
+openFromComputer = "Vom Computer öffnen"
+removeFile = "{{name}} entfernen"
+rotateMany = "Diese Dokumente drehen"
+rotateOne = "Dieses Dokument drehen"
+splitOne = "Dieses Dokument teilen"
+
+[chat.responses]
+cannot_continue = "Etwas ist schiefgelaufen und ich kann nicht fortfahren."
+cannot_do = "Das kann ich nicht."
+done = "Fertig."
+need_clarification = "Könnten Sie Ihre Anfrage präzisieren?"
+not_found = "Ich konnte die angeforderten Informationen nicht finden."
+processing = "Verarbeite ({{outcome}})..."
+unsupported_capability = "Nicht unterstützte Funktion: {{capability}}"
 
 [chat.toolsUsed]
 summary = "{{count}} Tools ausgeführt"
@@ -2799,6 +2878,7 @@ selectBaseFirst = "Zuerst die Original-PDF auswählen"
 filesMissing = "Die ausgewählten Dateien konnten nicht gefunden werden. Bitte wählen Sie sie erneut aus."
 generic = "Diese Dateien können nicht verglichen werden."
 selectRequired = "Wählen Sie ein Original- und ein bearbeitetes Dokument aus."
+title = "Vergleich fehlgeschlagen"
 
 [compare.large.file]
 message = "Eines oder beide Dokumente sind zu groß, um verarbeitet zu werden"
@@ -2864,6 +2944,7 @@ title = "Es wird noch gearbeitet…"
 
 [compare.status]
 complete = "Vergleich bereit"
+error = "Vergleich fehlgeschlagen"
 extracting = "Text wird extrahiert..."
 processing = "Unterschiede werden analysiert..."
 
@@ -3771,12 +3852,246 @@ expand = "Seitenleiste ausklappen"
 files = "Dateien"
 googleDrive = "Google Drive"
 googleDriveDisabled = "Google Drive ist nicht konfiguriert"
+leaveMyFiles = "Meine Dateien verlassen"
+myFiles = "Meine Dateien"
 noFiles = "Noch keine Dateien"
 openFileManager = "Dateimanager öffnen"
 openFromComputer = "Vom Computer öffnen"
 openSettings = "Einstellungen öffnen"
 search = "Suchen"
 searchPlaceholder = "Dateien suchen..."
+
+[filesPage]
+addToWorkspace = "Zum Arbeitsbereich hinzufügen"
+addToWorkspaceCount = "{{count}} zum Arbeitsbereich hinzufügen"
+allFiles = "Alle Dateien"
+back = "Zurück"
+backToFolder = "Zurück zu {{folder}}"
+backToMyFiles = "Zurück zu Meine Dateien"
+breadcrumbs = "Ordnerpfad"
+cancel = "Abbrechen"
+clearSearch = "Suche löschen"
+clearSelection = "Auswahl aufheben"
+closeDetails = "Details schließen"
+create = "Erstellen"
+cycleBlocked = "Ein Ordner kann nicht in einen seiner eigenen Unterordner verschoben werden."
+delete = "Löschen"
+deleteFolder = "Ordner löschen"
+deleteFolderBody = "Ordner „{{name}}“ löschen?"
+deleteFolderConfirm = "Ordner „{{name}}“ löschen? Dateien darin werden nach Alle Dateien verschoben. {{count}} Datei(en) betroffen."
+deleteFolderContents = "Auch {{count}} Datei(en) im Ordner löschen"
+deleteFolderContentsWarning = "Dateien werden dauerhaft entfernt und können nicht wiederhergestellt werden."
+deleteFolderError = "Ordner konnte nicht gelöscht werden. Versuchen Sie es erneut."
+deleteFolderKeepHint = "Dateien darin werden nach Alle Dateien verschoben."
+deleteFolderTitle = "Ordner löschen?"
+deselectAll = "Auswahl aufheben"
+details = "Details"
+detailsCount = "{{count}} Dateien ausgewählt"
+dismissError = "Schließen"
+download = "Herunterladen"
+downloadAll = "Alle herunterladen"
+downloadVersion = "Diese Version herunterladen"
+dropOverlay = "Dateien zum Hochladen hier ablegen"
+dropOverlaySub = "Dateien starten unter Lokal. Verwenden Sie „Verschieben nach“ oder „In die Cloud speichern“, um sie in einem Ordner zu organisieren."
+file = "Datei"
+fileMenu = "Dateiaktionen"
+folder = "Ordner"
+folderItems = "{{count}} Elemente"
+folderMenu = "Ordneraktionen"
+inPath = "in {{path}}"
+inWorkspace = "Öffnen"
+inWorkspaceAria = "Bereits im Arbeitsbereich"
+loading = "Wird geladen…"
+localFoldersUnavailable = "Ordner sind nur in der Cloud verfügbar – speichern Sie eine Datei in der Cloud, um sie zu organisieren."
+moreActions = "Weitere Ordneraktionen"
+moveLocalToCloudBlocked = "Lokal gespeicherte Dateien können nicht in Cloud-Ordner verschoben werden. Speichern Sie sie zuerst in der Cloud."
+moveSkippedRemote = "{{count}} Datei(en) konnten auf dem Server nicht verschoben werden (keine Berechtigung oder bereits gelöscht)."
+moveTo = "Verschieben nach…"
+myFiles = "Meine Dateien"
+newFolder = "Neuer Ordner"
+newFolderStorageDisabled = "Die Ordnerspeicherung auf dem Server ist nicht aktiviert. Bitten Sie Ihren Admin, sie zu aktivieren."
+newFolderTabUnavailable = "Wechseln Sie zu Alle oder Cloud, um Ordner zu erstellen."
+newRootFolder = "Neuer Ordner auf oberster Ebene"
+offlineNoFolderEdits = "Server-Ordnersynchronisierung nicht verfügbar – Ordneränderungen sind deaktiviert. Prüfen Sie Anmeldung und Speicherkonfiguration."
+open = "Öffnen"
+openInWorkbench = "In Werkbank öffnen"
+openVersionInWorkspace = "Im Arbeitsbereich öffnen"
+originFilter = "Nach Quelle filtern"
+quickView = "Schnellansicht"
+refresh = "Vom Server aktualisieren"
+remove = "Löschen"
+removeConfirm = "{{count}} Datei(en) löschen? Dies kann nicht rückgängig gemacht werden."
+removeVersion = "Diese Version entfernen"
+rename = "Umbenennen"
+renameFolder = "Ordner umbenennen"
+resizeFolderTree = "Ordnerbaum skalieren (Pfeiltasten, Umschalt für größere Schritte; Doppelklick für Auto-Anpassung)"
+save = "Speichern"
+saveToServer = "Auf Server speichern"
+saveToServerDisabledHint = "Speichern auf dem Server ist auf diesem Server nicht aktiviert. Bitten Sie Ihren Admin, es zu aktivieren."
+search = "Suchen"
+searchPlaceholder = "Diesen Ordner und Unterordner durchsuchen"
+selectAll = "Alles auswählen"
+selectAllHint = "Klicken Sie, um alles auszuwählen. Tipp: Halten Sie Strg (oder Cmd), um Dateien einzeln hinzuzufügen, Umschalt, um einen Bereich auszuwählen."
+selectedCount = "{{count}} ausgewählt"
+selectFile = "Datei {{name}} auswählen"
+shareDisabledHint = "Dateifreigabe ist auf diesem Server nicht aktiviert. Bitten Sie Ihren Admin, sie zu aktivieren."
+shareManage = "Freigaben verwalten"
+showDetails = "Details anzeigen"
+summary = "{{count}} Elemente"
+syncFailed = "Ordnersynchronisierung fehlgeschlagen: {{message}}"
+syncPartial = "Ordnersynchronisierung teilweise: {{failed}} von {{total}} Ordnern konnten nicht zusammengeführt werden."
+tree = "Ordner"
+upload = "Hochladen"
+uploadedToLocal = "Hochgeladene Dateien starten unter Lokal. Verwenden Sie „In die Cloud speichern“, um sie in einen Ordner zu legen."
+uploadFromMobile = "Vom Mobilgerät hochladen"
+versionActions = "Versionsaktionen"
+versionCollapse = "Mittlere Versionen ausblenden"
+versionOrigin = "Ursprünglicher Upload"
+versionsCount = "{{count}} Versionen"
+versionShowHidden = "{{count}} frühere Versionen anzeigen"
+viewVersion = "Diese Version anzeigen"
+
+[filesPage.appearance]
+colour = "Farbe"
+icon = "Symbol"
+title = "Darstellung"
+useColour = "Farbe {{c}} verwenden"
+
+[filesPage.column]
+modified = "Geändert"
+name = "Name"
+size = "Größe"
+type = "Typ"
+
+[filesPage.empty]
+hint = "Ziehen Sie PDFs irgendwo auf diese Seite, um sie hochzuladen, oder verwenden Sie die Schaltfläche Neuer Ordner, um Ihre Dateien zu organisieren."
+newFolderCta = "Ordner erstellen"
+title = "Dieser Ordner ist leer"
+uploadCta = "Dateien hochladen"
+
+[filesPage.empty.cloud]
+hint = "Laden Sie eine Datei hoch, um zu beginnen, oder erstellen Sie einen Ordner zur Organisation."
+offlineHint = "Stellen Sie die Verbindung wieder her, um Ihre Cloud-Bibliothek zu laden."
+offlineTitle = "Keine zwischengespeicherten Cloud-Dateien"
+title = "Noch keine Cloud-Dateien"
+
+[filesPage.empty.local]
+hint = "Dateien, die ohne Upload gespeichert wurden, bleiben hier. Ziehen Sie eine Datei hierher, um eine hinzuzufügen."
+title = "Keine nur lokal gespeicherten Dateien"
+
+[filesPage.empty.recent]
+hint = "Von Ihnen geöffnete oder bearbeitete Dateien erscheinen hier."
+title = "Noch nichts geändert"
+
+[filesPage.empty.shared]
+hint = "Wenn jemand eine Datei per Link teilt, erscheint sie hier."
+title = "Nichts mit Ihnen geteilt"
+
+[filesPage.empty.sharedByMe]
+hint = "Erstellen Sie einen Freigabelink oder laden Sie ein Teammitglied von einer Ihrer Dateien ein, um es hier zu sehen."
+title = "Sie haben noch keine Dateien geteilt"
+
+[filesPage.error]
+actionFailed = "Konnte {{action}} nicht ausführen."
+actionFailedDetail = "Konnte {{action}} nicht ausführen: {{message}}"
+deleteFolderFailed = "Ordner konnte nicht gelöscht werden."
+deleteFolderFailedDetail = "Ordner konnte nicht gelöscht werden: {{message}}"
+folderAppearanceFailed = "Ordnerdarstellung konnte nicht aktualisiert werden."
+folderAppearanceFailedDetail = "Ordnerdarstellung konnte nicht aktualisiert werden: {{message}}"
+moveFilesFailed = "Dateien konnten nicht verschoben werden."
+moveFilesFailedDetail = "Dateien konnten nicht verschoben werden: {{message}}"
+moveFolderFailed = "Ordner konnte nicht verschoben werden."
+moveFolderFailedDetail = "Ordner konnte nicht verschoben werden: {{message}}"
+removeFilesFailed = "Dateien konnten nicht gelöscht werden."
+removeFilesFailedDetail = "Dateien konnten nicht gelöscht werden: {{message}}"
+uploadFilesFailed = "Dateien konnten nicht hochgeladen werden."
+uploadFilesFailedDetail = "Dateien konnten nicht hochgeladen werden: {{message}}"
+
+[filesPage.field]
+added = "Hinzugefügt"
+count = "Dateien"
+folder = "Ordner"
+modified = "Geändert"
+name = "Name"
+size = "Größe"
+toolHistory = "Tool-Verlauf"
+toolHistoryAtVersion = "Kumulative Toolkette"
+totalSize = "Gesamtgröße"
+type = "Typ"
+versionHistory = "Versionsverlauf"
+
+[filesPage.folderName]
+cancel = "Abbrechen"
+error = "Ordner konnte nicht gespeichert werden. Versuchen Sie es erneut."
+label = "Ordnername"
+placeholder = "Ordnername"
+
+[filesPage.moveDialog]
+cancel = "Abbrechen"
+confirm = "Hierher verschieben"
+error = "Konnte nicht verschoben werden. Versuchen Sie es erneut."
+hint = "Zielordner auswählen. Tipp: Sie können Dateien auch per Drag & Drop auf Ordner im Baum links ziehen."
+newFolderCancel = "Verwerfen"
+newFolderCreate = "Erstellen"
+newFolderError = "Ordner konnte nicht erstellt werden. Versuchen Sie es erneut."
+newFolderLabel = "Neuer Ordnername"
+newFolderPlaceholder = "Ordnername"
+newFolderToggle = "Neuen Ordner erstellen…"
+title = "In Ordner verschieben"
+
+[filesPage.origin]
+all = "Alle Quellen"
+cloud = "Cloud"
+cloudHint = "Auf dem Stirling-Server gespeichert"
+local = "Lokal"
+localHint = "Nur in diesem Browser gespeichert"
+shared = "Geteilt"
+sharedHint = "Per Link mit Ihnen geteilt"
+
+[filesPage.sort]
+modifiedAsc = "Älteste zuerst"
+modifiedDesc = "Neueste zuerst"
+nameAsc = "Name A→Z"
+nameDesc = "Name Z→A"
+sizeAsc = "Kleinste zuerst"
+sizeDesc = "Größte zuerst"
+
+[filesPage.syncError]
+client = "Ordnersynchronisierung fehlgeschlagen."
+network = "Server konnte nicht erreicht werden."
+server = "Serverfehler bei der Ordnersynchronisierung."
+
+[filesPage.tabName]
+local = "Lokal"
+recent = "Zuletzt"
+shared = "Mit mir geteilt"
+sharedByMe = "Von mir geteilt"
+
+[filesPage.tabs]
+all = "Alle"
+ariaLabel = "Dateiansichten"
+cloud = "Cloud"
+local = "Lokal"
+recent = "Zuletzt"
+shared = "Mit mir geteilt"
+sharedByMe = "Von mir geteilt"
+
+[filesPage.treeMenu]
+actions = "Ordneraktionen für {{name}}"
+collapse = "Ordner einklappen"
+delete = "Ordner löschen"
+expand = "Ordner ausklappen"
+newSubfolder = "Neuer Unterordner"
+rename = "Umbenennen"
+
+[filesPage.typeFilter]
+allTypes = "Alle Typen"
+label = "Nach Typ filtern"
+
+[filesPage.viewMode]
+grid = "Rasteransicht"
+label = "Ansichtsmodus"
+list = "Listenansicht"
 
 [fileToPDF]
 credit = "Dieser Dienst verwendet LibreOffice und Unoconv für die Dateikonvertierung."
@@ -7695,6 +8010,7 @@ bulkTitle = "Ausgewählte Dateien hochladen"
 description = "Dadurch wird die aktuelle Datei in den Serverspeicher hochgeladen, damit Sie selbst darauf zugreifen können."
 errorTitle = "Hochladen fehlgeschlagen"
 failure = "Hochladen fehlgeschlagen. Bitte überprüfen Sie Ihre Anmelde- und Speichereinstellungen."
+featureDisabled = "Speichern auf dem Server ist auf diesem Server nicht aktiviert."
 fileCount = "{{count}} Dateien ausgewählt"
 fileLabel = "Datei"
 hint = "Öffentliche Links und Zugriffsmodi werden durch Ihre Servereinstellungen gesteuert."
@@ -7868,13 +8184,18 @@ viewerMode = "Zum Datei-Editor wechseln, um mehrere Dateien auszuwählen."
 [toolPanel]
 allTools = "Alle Tools"
 alpha = "Alpha"
+backToAllTools = "Zurück zu allen Tools"
+backToDefault = "Zurück"
 backToTools = "Zurück zu den Tools"
 collapse = "Bereich einklappen"
 comingSoon = "Demnächst verfügbar:"
 expand = "Bereich ausklappen"
+goBack = "Zurück"
 placeholder = "Wählen Sie ein Tool, um zu starten"
 premiumFeature = "Premium-Funktion:"
 search = "Tools durchsuchen"
+toolsHeader = "Tools"
+viewAllTools = "Alle Tools anzeigen"
 
 [toolPanel.fullscreen]
 comingSoon = "Demnächst:"
