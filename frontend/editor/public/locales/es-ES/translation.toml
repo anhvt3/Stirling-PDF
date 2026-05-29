@@ -1804,6 +1804,7 @@ pleaseLoginAgain = "Inicia sesión de nuevo."
 sessionExpired = "Sesión caducada"
 
 [auth.displayName]
+guest = "Invitado"
 user = "Usuario"
 
 [auto-rename]
