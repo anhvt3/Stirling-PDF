@@ -91,6 +91,41 @@ def get_language_completion(locales_dir: Path, language: str) -> Optional[float]
         return None
 
 
+LOG_DIR = Path("scripts/translations/logs")
+
+
+def _write_log(language: str, stdout: str, stderr: str, returncode: int) -> Path:
+    """Persist subprocess output to a per-language log file. Returns log path."""
+    LOG_DIR.mkdir(parents=True, exist_ok=True)
+    log_path = LOG_DIR / f"{language}.log"
+    with open(log_path, "w", encoding="utf-8") as f:
+        f.write(f"=== returncode: {returncode} ===\n")
+        f.write("=== stdout ===\n")
+        f.write(stdout or "(empty)\n")
+        f.write("\n=== stderr ===\n")
+        f.write(stderr or "(empty)\n")
+    return log_path
+
+
+def _stream_reader(stream, language: str, stream_name: str, sink: list) -> None:
+    """Read lines from a subprocess stream and print them live with a [lang] prefix.
+
+    Each line is also appended to `sink` so the full output can be written to the
+    per-language log file after the process exits.
+    """
+    try:
+        for line in iter(stream.readline, ""):
+            if not line:
+                break
+            sink.append(line)
+            safe_print(f"[{language}][{stream_name}] {line.rstrip()}")
+    finally:
+        try:
+            stream.close()
+        except Exception:
+            pass
+
+
 def translate_language(
     language: str,
     api_key: str,
@@ -105,8 +140,11 @@ def translate_language(
     """
     safe_print(f"[{language}] Starting translation...")
 
+    # -u forces unbuffered stdout/stderr in the child so we get live output
+    # instead of waiting for the OS pipe buffer (~4-8 KB) to fill.
     cmd = [
         "python3",
+        "-u",
         "scripts/translations/auto_translate.py",
         language,
         "--api-key",
@@ -123,34 +161,67 @@ def translate_language(
     if include_existing:
         cmd.append("--include-existing")
 
+    overall_timeout = timeout * 5  # Overall timeout = 5x per-batch timeout
+    stdout_lines: List[str] = []
+    stderr_lines: List[str] = []
+
     try:
-        result = subprocess.run(
+        proc = subprocess.Popen(
             cmd,
-            capture_output=True,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
             text=True,
-            timeout=timeout * 5,  # Overall timeout = 5x per-batch timeout
+            bufsize=1,  # line-buffered on the parent side
         )
-
-        if result.returncode == 0:
-            # Check if nothing to translate
-            if "Nothing to translate!" in result.stdout:
-                safe_print(f"[{language}] ✓ Already complete")
-                return (language, True, "Already complete")
-            safe_print(f"[{language}] ✓ Success")
-            return (language, True, "Success")
-        else:
-            error_msg = (
-                result.stderr.strip() or result.stdout.strip() or "Unknown error"
-            )
-            safe_print(f"[{language}] ✗ Failed: {error_msg[:100]}")
-            return (language, False, error_msg[:200])  # Truncate long errors
-
-    except subprocess.TimeoutExpired:
-        safe_print(f"[{language}] ✗ Timeout exceeded")
-        return (language, False, "Timeout exceeded")
     except Exception as e:
-        safe_print(f"[{language}] ✗ Error: {str(e)}")
+        safe_print(f"[{language}] ✗ Error launching subprocess: {e}")
         return (language, False, str(e))
+
+    t_out = threading.Thread(
+        target=_stream_reader,
+        args=(proc.stdout, language, "out", stdout_lines),
+        daemon=True,
+    )
+    t_err = threading.Thread(
+        target=_stream_reader,
+        args=(proc.stderr, language, "err", stderr_lines),
+        daemon=True,
+    )
+    t_out.start()
+    t_err.start()
+
+    try:
+        returncode = proc.wait(timeout=overall_timeout)
+    except subprocess.TimeoutExpired:
+        proc.kill()
+        proc.wait()
+        t_out.join(timeout=5)
+        t_err.join(timeout=5)
+        log_path = _write_log(
+            language, "".join(stdout_lines), "".join(stderr_lines), -1
+        )
+        safe_print(f"[{language}] ✗ Timeout exceeded (log: {log_path})")
+        return (language, False, "Timeout exceeded")
+
+    t_out.join(timeout=5)
+    t_err.join(timeout=5)
+
+    stdout_full = "".join(stdout_lines)
+    stderr_full = "".join(stderr_lines)
+    log_path = _write_log(language, stdout_full, stderr_full, returncode)
+
+    if returncode == 0:
+        if "Nothing to translate!" in stdout_full:
+            safe_print(f"[{language}] ✓ Already complete (log: {log_path})")
+            return (language, True, "Already complete")
+        safe_print(f"[{language}] ✓ Success (log: {log_path})")
+        return (language, True, "Success")
+
+    last_source = stderr_full or stdout_full
+    last_lines = last_source.rstrip().splitlines()
+    short_msg = last_lines[-1] if last_lines else "Unknown error"
+    safe_print(f"[{language}] ✗ Failed (exit {returncode}) -- full log: {log_path}")
+    return (language, False, f"exit {returncode}: {short_msg[:300]}")
 
 
 def main():
