@@ -21,6 +21,7 @@ import { useMediaQuery } from "@mantine/hooks";
 import SearchIcon from "@mui/icons-material/Search";
 import CloseIcon from "@mui/icons-material/Close";
 import UploadFileIcon from "@mui/icons-material/UploadFile";
+import QrCode2Icon from "@mui/icons-material/QrCode2";
 import CreateNewFolderIcon from "@mui/icons-material/CreateNewFolder";
 import GridViewIcon from "@mui/icons-material/GridView";
 import ViewListIcon from "@mui/icons-material/ViewList";
@@ -58,6 +59,9 @@ import { FolderId, ROOT_FOLDER_ID } from "@app/types/folder";
 import { FileGrid, FilesPageEntry } from "@app/components/filesPage/FileGrid";
 import { FileDetailsPanel } from "@app/components/filesPage/FileDetailsPanel";
 import BulkUploadToServerModal from "@app/components/shared/BulkUploadToServerModal";
+import MobileUploadModal from "@app/components/shared/MobileUploadModal";
+import { useAppConfig } from "@app/contexts/AppConfigContext";
+import { useIsMobile } from "@app/hooks/useIsMobile";
 import { MoveToFolderDialog } from "@app/components/filesPage/MoveToFolderDialog";
 import { FolderNameDialog } from "@app/components/filesPage/FolderNameDialog";
 import { DeleteFolderDialog } from "@app/components/filesPage/DeleteFolderDialog";
@@ -98,6 +102,22 @@ export default function FileManagerView() {
     [activeWorkspaceFileIds],
   );
   const { addFiles } = useFileHandler();
+  const { config: appConfig } = useAppConfig();
+  const isMobile = useIsMobile();
+  const isMobileUploadAvailable =
+    Boolean(appConfig?.enableMobileScanner) && !isMobile;
+  // Server storage gate; mirrors ConfigController's storageEnabled
+  // (enableLogin && storage.isEnabled). When off, Save-to-server stays
+  // visible but disabled with an explanatory tooltip (discoverability beats
+  // hiding - mirrors the New folder / Manage sharing gates in this view).
+  const uploadEnabled = appConfig?.storageEnabled === true;
+  const saveToServerDisabledReason: string | null = uploadEnabled
+    ? null
+    : t(
+        "filesPage.saveToServerDisabledHint",
+        "Saving to the server isn't enabled on this server. Ask your admin to enable it.",
+      );
+  const [mobileUploadModalOpen, setMobileUploadModalOpen] = useState(false);
   const { actions: navActions } = useNavigationActions();
   const { requestNavigation } = useNavigationGuard();
   const { setActiveFileId } = useViewer();
@@ -162,9 +182,7 @@ export default function FileManagerView() {
   useEffect(() => {
     if (
       !sharingEnabled &&
-      (currentTab === "shared" ||
-        currentTab === "sharedByMe" ||
-        currentTab === "imSharing")
+      (currentTab === "shared" || currentTab === "sharedByMe")
     ) {
       setCurrentTab("all");
     }
@@ -211,8 +229,7 @@ export default function FileManagerView() {
       currentTab === "local" ||
       currentTab === "recent" ||
       currentTab === "shared" ||
-      currentTab === "sharedByMe" ||
-      currentTab === "imSharing"
+      currentTab === "sharedByMe"
     ) {
       return [];
     }
@@ -260,28 +277,37 @@ export default function FileManagerView() {
       case "shared":
         return allFiles.filter((f) => f.remoteOwnedByCurrentUser === false);
       case "sharedByMe":
-        // Files I own that have at least one outgoing public share link.
+        // Files I own that I've shared in any way - either with a public link
+        // or with a specific user. (Previously split across two visually
+        // identical tabs; merged here so the same idea lives in one place.)
         return allFiles.filter(
           (f) =>
             f.remoteOwnedByCurrentUser !== false &&
-            f.remoteHasShareLinks === true,
-        );
-      case "imSharing":
-        // Files I own that I've shared directly with specific users.
-        return allFiles.filter(
-          (f) =>
-            f.remoteOwnedByCurrentUser !== false &&
-            f.remoteHasUserShares === true,
+            (f.remoteHasShareLinks === true || f.remoteHasUserShares === true),
         );
       case "all":
       default:
         // Search widens to the subtree.
+        // Files with a dangling folderId (folder deleted, or stale local IDB
+        // row) fall back to root so they aren't permanently invisible.
         return allFiles.filter((f) => {
-          if (search) return subtreeFolderIds.has(f.folderId ?? null);
-          return (f.folderId ?? null) === (currentFolderId ?? null);
+          const rawFolder = f.folderId ?? null;
+          const effectiveFolder =
+            rawFolder !== null && !foldersById.has(rawFolder)
+              ? null
+              : rawFolder;
+          if (search) return subtreeFolderIds.has(effectiveFolder);
+          return effectiveFolder === (currentFolderId ?? null);
         });
     }
-  }, [allFiles, currentFolderId, currentTab, search, subtreeFolderIds]);
+  }, [
+    allFiles,
+    currentFolderId,
+    currentTab,
+    search,
+    subtreeFolderIds,
+    foldersById,
+  ]);
 
   const availableTypes = useMemo(() => {
     const set = new Set<string>();
@@ -786,8 +812,7 @@ export default function FileManagerView() {
     if (
       currentTab === "recent" ||
       currentTab === "shared" ||
-      currentTab === "sharedByMe" ||
-      currentTab === "imSharing"
+      currentTab === "sharedByMe"
     ) {
       return t(
         "filesPage.newFolderTabUnavailable",
@@ -811,8 +836,7 @@ export default function FileManagerView() {
         {(currentTab === "local" ||
           currentTab === "recent" ||
           currentTab === "shared" ||
-          currentTab === "sharedByMe" ||
-          currentTab === "imSharing") && (
+          currentTab === "sharedByMe") && (
           <div
             style={{
               fontSize: "0.95rem",
@@ -827,9 +851,7 @@ export default function FileManagerView() {
                 ? t("filesPage.tabName.recent", "Recent")
                 : currentTab === "shared"
                   ? t("filesPage.tabName.shared", "Shared with me")
-                  : currentTab === "sharedByMe"
-                    ? t("filesPage.tabName.sharedByMe", "Shared by me")
-                    : t("filesPage.tabName.imSharing", "Sharing")}
+                  : t("filesPage.tabName.sharedByMe", "Shared by me")}
           </div>
         )}
         {(() => {
@@ -922,6 +944,28 @@ export default function FileManagerView() {
                 >
                   {t("filesPage.upload", "Upload")}
                 </Button>
+                {isMobileUploadAvailable && (
+                  <Tooltip
+                    label={t(
+                      "filesPage.uploadFromMobile",
+                      "Upload from Mobile",
+                    )}
+                    withinPortal
+                  >
+                    <ActionIcon
+                      size="lg"
+                      variant="default"
+                      radius="md"
+                      onClick={() => setMobileUploadModalOpen(true)}
+                      aria-label={t(
+                        "filesPage.uploadFromMobile",
+                        "Upload from Mobile",
+                      )}
+                    >
+                      <QrCode2Icon fontSize="small" />
+                    </ActionIcon>
+                  </Tooltip>
+                )}
                 <input
                   ref={fileInputRef}
                   type="file"
@@ -986,10 +1030,6 @@ export default function FileManagerView() {
                     {
                       id: "sharedByMe" as const,
                       label: t("filesPage.tabs.sharedByMe", "Shared by me"),
-                    },
-                    {
-                      id: "imSharing" as const,
-                      label: t("filesPage.tabs.imSharing", "Sharing"),
                     },
                   ]
                 : []),
@@ -1156,19 +1196,35 @@ export default function FileManagerView() {
                           </Button>
                         </Tooltip>
                       )}
-                      {/* Save to server; hidden when no local-only file selected. */}
+                      {/* Save to server; shown whenever local-only files are
+                          selected. When storage is off it stays visible but
+                          disabled, tooltip pointing at the admin. */}
                       {localOnlySelectedStubs.length > 0 && (
                         <Tooltip
-                          label={t("filesPage.saveToServer", "Save to server")}
+                          label={
+                            saveToServerDisabledReason ??
+                            t("filesPage.saveToServer", "Save to server")
+                          }
                           withinPortal
+                          multiline={Boolean(saveToServerDisabledReason)}
+                          w={saveToServerDisabledReason ? 240 : undefined}
                         >
                           <Button
                             size="sm"
                             variant="default"
                             leftSection={<CloudUploadIcon fontSize="small" />}
+                            disabled={Boolean(saveToServerDisabledReason)}
                             onClick={() =>
                               setSaveToServerTarget(localOnlySelectedStubs)
                             }
+                            styles={{
+                              root: {
+                                // Keep the tooltip hoverable while disabled.
+                                pointerEvents: saveToServerDisabledReason
+                                  ? "auto"
+                                  : undefined,
+                              },
+                            }}
                             aria-label={t(
                               "filesPage.saveToServer",
                               "Save to server",
@@ -1421,6 +1477,7 @@ export default function FileManagerView() {
               onRemoveFiles={handleRemoveFiles}
               onPromptMoveFiles={promptMoveFiles}
               onSaveToServer={(file) => setSaveToServerTarget([file])}
+              saveToServerDisabledReason={saveToServerDisabledReason}
               // Center-of-grid CTAs when the empty state shows - same
               // handlers the corner header buttons use so behaviour
               // (disabled tooltips, native file picker, dialog) is
@@ -1466,6 +1523,7 @@ export default function FileManagerView() {
             onMove={promptMoveFiles}
             onRemove={handleRemoveFiles}
             onSaveToServer={(files) => setSaveToServerTarget(files)}
+            saveToServerDisabledReason={saveToServerDisabledReason}
           />
         )}
       </div>
@@ -1492,6 +1550,7 @@ export default function FileManagerView() {
               onMove={promptMoveFiles}
               onRemove={handleRemoveFiles}
               onSaveToServer={(files) => setSaveToServerTarget(files)}
+              saveToServerDisabledReason={saveToServerDisabledReason}
             />
           )}
         </Drawer>
@@ -1570,6 +1629,16 @@ export default function FileManagerView() {
         onClose={() => setSaveToServerTarget(null)}
         files={saveToServerTarget ?? []}
         onUploaded={refresh}
+      />
+
+      <MobileUploadModal
+        opened={mobileUploadModalOpen}
+        onClose={() => setMobileUploadModalOpen(false)}
+        onFilesReceived={(files) => {
+          if (files.length > 0) {
+            void addFiles(files);
+          }
+        }}
       />
     </div>
   );

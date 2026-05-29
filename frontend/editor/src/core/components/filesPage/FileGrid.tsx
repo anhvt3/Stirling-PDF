@@ -30,7 +30,9 @@ import { FileOriginBadge } from "@app/components/filesPage/FileOriginBadge";
 import { FolderThumbnail } from "@app/components/filesPage/FolderThumbnail";
 import { findFolderIcon } from "@app/components/filesPage/folderIcons";
 import { FolderAppearancePicker } from "@app/components/filesPage/FolderAppearancePicker";
+import { useLazyThumbnail } from "@app/hooks/useLazyThumbnail";
 import type { FilesPageSortMode } from "@app/contexts/FilesPageContext";
+import { OpenInNewWindowMenuItem } from "@app/components/filesPage/OpenInNewWindowMenuItem";
 
 export type FilesPageViewMode = "grid" | "list";
 
@@ -76,18 +78,13 @@ interface FileGridProps {
   onPromptMoveFiles: (fileIds: FileId[]) => void;
   /** Per-file Save to server; hidden when file already has remoteStorageId. */
   onSaveToServer?: (file: StirlingFileStub) => void;
+  /** When set, the Save to server item renders disabled with this tooltip. */
+  saveToServerDisabledReason?: string | null;
   /** When supplied the list-view column headers become sortable. */
   sortMode?: FilesPageSortMode;
   onChangeSortMode?: (mode: FilesPageSortMode) => void;
   /** Drives the empty-state copy. */
-  currentTab?:
-    | "all"
-    | "local"
-    | "cloud"
-    | "recent"
-    | "shared"
-    | "sharedByMe"
-    | "imSharing";
+  currentTab?: "all" | "local" | "cloud" | "recent" | "shared" | "sharedByMe";
   /** Cloud reachability; switches the cloud empty-state copy. */
   serverReachable?: boolean;
   /** Empty-state CTA handlers; if absent the matching button hides. */
@@ -185,14 +182,7 @@ function SkeletonGrid({ viewMode }: { viewMode: FilesPageViewMode }) {
 
 interface EmptyStateProps {
   /** Drives copy + iconography. */
-  tab?:
-    | "all"
-    | "local"
-    | "cloud"
-    | "recent"
-    | "shared"
-    | "sharedByMe"
-    | "imSharing";
+  tab?: "all" | "local" | "cloud" | "recent" | "shared" | "sharedByMe";
   /** Switches the cloud empty-state copy. */
   serverReachable?: boolean;
   /** CTA handlers; absent => button hidden. */
@@ -252,18 +242,10 @@ function EmptyState({
       case "sharedByMe":
         return {
           titleKey: "filesPage.empty.sharedByMe.title",
-          titleFallback: "No share links yet",
+          titleFallback: "You haven't shared any files yet",
           hintKey: "filesPage.empty.sharedByMe.hint",
           hintFallback:
-            "Create a share link on any of your files to surface it here.",
-        };
-      case "imSharing":
-        return {
-          titleKey: "filesPage.empty.imSharing.title",
-          titleFallback: "Not sharing with anyone yet",
-          hintKey: "filesPage.empty.imSharing.hint",
-          hintFallback:
-            "Invite a teammate to one of your files to see it listed here.",
+            "Create a share link or invite a teammate from any of your files to see it here.",
         };
       case "all":
       default:
@@ -278,10 +260,7 @@ function EmptyState({
   })();
   // Recent/Shared tabs are read-only filters; Local is cloud-only for folders.
   const readOnlyTab =
-    tab === "recent" ||
-    tab === "shared" ||
-    tab === "sharedByMe" ||
-    tab === "imSharing";
+    tab === "recent" || tab === "shared" || tab === "sharedByMe";
   const showUpload = Boolean(onUpload) && !readOnlyTab;
   const showCreateFolder =
     Boolean(onCreateFolder) && !readOnlyTab && tab !== "local";
@@ -357,6 +336,7 @@ function GridView({
   onRemoveFiles,
   onPromptMoveFiles,
   onSaveToServer,
+  saveToServerDisabledReason,
 }: FileGridProps) {
   return (
     <div className="files-page-grid" role="list">
@@ -409,6 +389,7 @@ function GridView({
               onSaveToServer={
                 onSaveToServer ? () => onSaveToServer(entry.file!) : undefined
               }
+              saveToServerDisabledReason={saveToServerDisabledReason}
             />
           );
         }
@@ -607,6 +588,8 @@ interface FileCardProps {
   onMove: () => void;
   /** Kebab Save to server; only fires when file is local-only. */
   onSaveToServer?: () => void;
+  /** When set, the kebab Save to server is disabled with this tooltip. */
+  saveToServerDisabledReason?: string | null;
 }
 
 function FileCard({
@@ -622,6 +605,7 @@ function FileCard({
   onRemove,
   onMove,
   onSaveToServer,
+  saveToServerDisabledReason,
 }: FileCardProps) {
   const { t } = useTranslation();
   const cardRef = useRef<HTMLDivElement>(null);
@@ -645,6 +629,11 @@ function FileCard({
 
   const extension = file.name.split(".").pop()?.toUpperCase() ?? "";
   const isPdf = extension === "PDF";
+  const resolvedThumbnail = useLazyThumbnail(
+    file.id,
+    file.size,
+    file.thumbnailUrl,
+  );
 
   const kebabRef = useRef<HTMLButtonElement>(null);
   const handleContextMenu = useCallback(
@@ -712,9 +701,9 @@ function FileCard({
         </div>
       )}
       <div className="files-page-card-thumb">
-        {file.thumbnailUrl ? (
+        {resolvedThumbnail ? (
           // draggable={false} so card's onDragStart fires, not native image drag.
-          <img src={file.thumbnailUrl} alt="" draggable={false} />
+          <img src={resolvedThumbnail} alt="" draggable={false} />
         ) : (
           <div className="files-page-card-thumb-fallback">
             {isPdf ? (
@@ -777,6 +766,7 @@ function FileCard({
             >
               {t("filesPage.quickView", "Quick view")}
             </Menu.Item>
+            <OpenInNewWindowMenuItem file={file} />
             <Menu.Item
               leftSection={<DriveFileMoveIcon fontSize="small" />}
               onClick={(e) => {
@@ -786,17 +776,33 @@ function FileCard({
             >
               {t("filesPage.moveTo", "Move to…")}
             </Menu.Item>
-            {/* Per-file Save to server; hidden when already on server. */}
+            {/* Per-file Save to server; shown for local-only files. When
+                storage is off it stays visible but disabled with a tooltip. */}
             {onSaveToServer && file.remoteStorageId == null && (
-              <Menu.Item
-                leftSection={<CloudUploadIcon fontSize="small" />}
-                onClick={(e) => {
-                  e.stopPropagation();
-                  onSaveToServer();
-                }}
+              <Tooltip
+                label={saveToServerDisabledReason}
+                disabled={!saveToServerDisabledReason}
+                withinPortal
+                position="left"
+                multiline
+                w={240}
               >
-                {t("filesPage.saveToServer", "Save to server")}
-              </Menu.Item>
+                <Menu.Item
+                  leftSection={<CloudUploadIcon fontSize="small" />}
+                  disabled={Boolean(saveToServerDisabledReason)}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    onSaveToServer();
+                  }}
+                  style={
+                    saveToServerDisabledReason
+                      ? { pointerEvents: "auto" }
+                      : undefined
+                  }
+                >
+                  {t("filesPage.saveToServer", "Save to server")}
+                </Menu.Item>
+              </Tooltip>
             )}
             <Menu.Divider />
             <Menu.Item
@@ -830,6 +836,7 @@ function ListView({
   onRenameFolder,
   onDeleteFolder,
   onSaveToServer,
+  saveToServerDisabledReason,
   onChangeFolderAppearance,
   onRemoveFiles,
   onPromptMoveFiles,
@@ -963,6 +970,7 @@ function ListView({
               onSaveToServer={
                 onSaveToServer ? () => onSaveToServer(entry.file!) : undefined
               }
+              saveToServerDisabledReason={saveToServerDisabledReason}
             />
           );
         }
@@ -1165,6 +1173,8 @@ interface FileRowProps {
   onMove: () => void;
   /** Kebab Save to server; only fires when file is local-only. */
   onSaveToServer?: () => void;
+  /** When set, the kebab Save to server is disabled with this tooltip. */
+  saveToServerDisabledReason?: string | null;
 }
 
 function FileRow({
@@ -1180,6 +1190,7 @@ function FileRow({
   onRemove,
   onMove,
   onSaveToServer,
+  saveToServerDisabledReason,
 }: FileRowProps) {
   const { t } = useTranslation();
   const kebabRef = useRef<HTMLButtonElement>(null);
@@ -1189,6 +1200,11 @@ function FileRow({
     [file.lastModified],
   );
   const ext = (file.name.split(".").pop() ?? "").toUpperCase();
+  const resolvedThumbnail = useLazyThumbnail(
+    file.id,
+    file.size,
+    file.thumbnailUrl,
+  );
   return (
     <div
       role="row"
@@ -1253,9 +1269,9 @@ function FileRow({
           minWidth: 0,
         }}
       >
-        {file.thumbnailUrl ? (
+        {resolvedThumbnail ? (
           <img
-            src={file.thumbnailUrl}
+            src={resolvedThumbnail}
             alt=""
             // draggable={false} so row's onDragStart fires, not native image drag.
             draggable={false}
@@ -1338,6 +1354,7 @@ function FileRow({
           >
             {t("filesPage.quickView", "Quick view")}
           </Menu.Item>
+          <OpenInNewWindowMenuItem file={file} />
           <Menu.Item
             leftSection={<DriveFileMoveIcon fontSize="small" />}
             onClick={(e) => {
@@ -1347,17 +1364,33 @@ function FileRow({
           >
             {t("filesPage.moveTo", "Move to…")}
           </Menu.Item>
-          {/* Per-file Save to server; hidden when already on server. */}
+          {/* Per-file Save to server; shown for local-only files. When
+              storage is off it stays visible but disabled with a tooltip. */}
           {onSaveToServer && file.remoteStorageId == null && (
-            <Menu.Item
-              leftSection={<CloudUploadIcon fontSize="small" />}
-              onClick={(e) => {
-                e.stopPropagation();
-                onSaveToServer();
-              }}
+            <Tooltip
+              label={saveToServerDisabledReason}
+              disabled={!saveToServerDisabledReason}
+              withinPortal
+              position="left"
+              multiline
+              w={240}
             >
-              {t("filesPage.saveToServer", "Save to server")}
-            </Menu.Item>
+              <Menu.Item
+                leftSection={<CloudUploadIcon fontSize="small" />}
+                disabled={Boolean(saveToServerDisabledReason)}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onSaveToServer();
+                }}
+                style={
+                  saveToServerDisabledReason
+                    ? { pointerEvents: "auto" }
+                    : undefined
+                }
+              >
+                {t("filesPage.saveToServer", "Save to server")}
+              </Menu.Item>
+            </Tooltip>
           )}
           <Menu.Divider />
           <Menu.Item

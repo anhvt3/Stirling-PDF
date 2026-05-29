@@ -284,6 +284,52 @@ test.describe("Files page", () => {
     });
   });
 
+  test.describe("Save to server gating (storage disabled)", () => {
+    test.beforeEach(async ({ page }) => {
+      // storageEnabled:false -> Save-to-server stays visible for local-only
+      // files but is disabled (with an explanatory tooltip), not hidden, so
+      // users discover the feature and know to ask their admin.
+      await stubStorageApis(page, { storageEnabled: false });
+      await seedFiles(page, [
+        { id: "local-a", name: "local-a.pdf", remoteStorageId: null },
+      ]);
+    });
+    test.use({ autoGoto: false });
+
+    test("bulk Save to server is disabled (not hidden) when storage off", async ({
+      page,
+    }) => {
+      await gotoFilesPage(page);
+      await page
+        .locator(".files-page-card:not(.is-folder)")
+        .filter({ hasText: "local-a.pdf" })
+        .click();
+      const saveButtons = page.getByRole("button", {
+        name: /^Save to server$/i,
+      });
+      // Present (toolbar + details panel) and every instance disabled.
+      const count = await saveButtons.count();
+      expect(count).toBeGreaterThan(0);
+      for (let i = 0; i < count; i += 1) {
+        await expect(saveButtons.nth(i)).toBeVisible();
+        await expect(saveButtons.nth(i)).toBeDisabled();
+      }
+    });
+
+    test("per-file kebab Save to server is disabled (not hidden) when storage off", async ({
+      page,
+    }) => {
+      await gotoFilesPage(page);
+      const localCard = page
+        .locator(".files-page-card:not(.is-folder)")
+        .filter({ hasText: "local-a.pdf" });
+      await localCard.getByRole("button", { name: /File actions/i }).click();
+      const item = page.getByRole("menuitem", { name: /^Save to server$/i });
+      await expect(item).toBeVisible();
+      await expect(item).toBeDisabled();
+    });
+  });
+
   test.describe("Upload behaviour", () => {
     test.beforeEach(async ({ page }) => {
       await stubStorageApis(page);
@@ -758,17 +804,17 @@ test.describe("Files page", () => {
         page.locator(".files-page-card:not(.is-folder)"),
       ).toHaveCount(4, { timeout: 5_000 });
 
-      // "Shared by me" -> only link-shared.pdf
+      // "Shared by me" -> link-shared.pdf AND user-shared.pdf
+      // (The previously-separate "Shared by me" / "I'm sharing" tabs are now
+      // merged into a single Shared-by-me view that shows both link shares
+      // and direct user shares.)
       await page.locator("#filesPage-tab-sharedByMe").click();
       const sharedByMeCards = page.locator(".files-page-card:not(.is-folder)");
-      await expect(sharedByMeCards).toHaveCount(1, { timeout: 3_000 });
-      await expect(sharedByMeCards.first()).toContainText("link-shared.pdf");
-
-      // "I'm sharing" -> only user-shared.pdf
-      await page.locator("#filesPage-tab-imSharing").click();
-      const imSharingCards = page.locator(".files-page-card:not(.is-folder)");
-      await expect(imSharingCards).toHaveCount(1, { timeout: 3_000 });
-      await expect(imSharingCards.first()).toContainText("user-shared.pdf");
+      await expect(sharedByMeCards).toHaveCount(2, { timeout: 3_000 });
+      await expect(sharedByMeCards).toContainText([
+        "link-shared.pdf",
+        "user-shared.pdf",
+      ]);
 
       // "Shared with me" -> only from-someone-else.pdf
       await page.locator("#filesPage-tab-shared").click();
