@@ -29,6 +29,19 @@ interface Measurement {
   end: PagePoint;
 }
 
+/** Measurement mode for the ruler overlay. */
+export type MeasureMode = "distance" | "perimeter" | "area";
+
+/**
+ * A multi-point measurement: a polyline (perimeter) or closed polygon (area).
+ * All points share the same pageIndex; points are in PDF-point page space.
+ */
+interface PolyMeasurement {
+  id: string;
+  mode: "perimeter" | "area";
+  points: PagePoint[];
+}
+
 export interface RulerOverlayHandle {
   clearAll: () => void;
 }
@@ -59,6 +72,48 @@ function perpUnit(a: Point, b: Point): { nx: number; ny: number } {
 /** Angle from horizontal 0°–90°. Computed from screen-space points (same angle as PDF space). */
 function angleDeg(a: Point, b: Point): number {
   return Math.atan2(Math.abs(b.y - a.y), Math.abs(b.x - a.x)) * (180 / Math.PI);
+}
+
+/** Sum of segment lengths along an ordered point list (in the points' own units). */
+function pathLength(pts: Point[], close: boolean): number {
+  if (pts.length < 2) return 0;
+  let total = 0;
+  for (let i = 1; i < pts.length; i++) total += dist(pts[i - 1], pts[i]);
+  if (close && pts.length >= 3) total += dist(pts[pts.length - 1], pts[0]);
+  return total;
+}
+
+/** Polygon area via the shoelace formula (absolute value), in the points' unit². */
+function shoelaceArea(pts: Point[]): number {
+  const n = pts.length;
+  if (n < 3) return 0;
+  let sum = 0;
+  for (let i = 0; i < n; i++) {
+    const a = pts[i];
+    const b = pts[(i + 1) % n];
+    sum += a.x * b.y - b.x * a.y;
+  }
+  return Math.abs(sum) / 2;
+}
+
+/** Format an area given in PDF points². Falls back to mm²/cm²/m² without a scale. */
+function formatAreaUnscaled(ptsArea: number): string {
+  // 1 pt = 1/72 in = 25.4/72 mm
+  const mmPerPt = 25.4 / 72;
+  const mm2 = ptsArea * mmPerPt * mmPerPt;
+  if (mm2 < 10000) return `${mm2.toFixed(1)} mm²`;
+  const cm2 = mm2 / 100;
+  if (cm2 < 10000) return `${cm2.toFixed(1)} cm²`;
+  return `${(cm2 / 10000).toFixed(2)} m²`;
+}
+
+/** Format an area given in PDF points² using a real-world length scale (factor pts→unit). */
+function formatAreaScaled(ptsArea: number, scale: MeasureScale): string {
+  const val = ptsArea * scale.factor * scale.factor; // area scales as length²
+  if (val >= 1000) return `${val.toFixed(0)} ${scale.unit}²`;
+  if (val >= 100) return `${val.toFixed(1)} ${scale.unit}²`;
+  if (val >= 10) return `${val.toFixed(2)} ${scale.unit}²`;
+  return `${val.toFixed(3)} ${scale.unit}²`;
 }
 
 function formatDist(pts: number): string {
@@ -640,6 +695,21 @@ export const RulerOverlay = React.forwardRef<
 >(({ containerRef, isActive, pageMeasureScales }, ref) => {
   const [measurements, setMeasurements] = useState<Measurement[]>([]);
   const [firstPt, setFirstPt] = useState<PagePoint | null>(null);
+
+  // ── Measure mode (distance / perimeter / area) ──────────────────────────────
+  const [mode, setMode] = useState<MeasureMode>("distance");
+  /** In-progress polyline/polygon points (perimeter/area modes). */
+  const [polyPoints, setPolyPoints] = useState<PagePoint[]>([]);
+  /** Completed perimeter/area measurements. */
+  const [polygons, setPolygons] = useState<PolyMeasurement[]>([]);
+  const modeRef = useRef<MeasureMode>(mode);
+  const polyPointsRef = useRef<PagePoint[]>([]);
+  useEffect(() => {
+    modeRef.current = mode;
+  }, [mode]);
+  useEffect(() => {
+    polyPointsRef.current = polyPoints;
+  }, [polyPoints]);
   /** Current cursor in SVG screen-space — for live crosshair and live line rendering. */
   const [cursorS, setCursorS] = useState<Point | null>(null);
   /** Current cursor in page-relative PDF units — for finalising off-page clicks. */
@@ -739,6 +809,9 @@ export const RulerOverlay = React.forwardRef<
   React.useImperativeHandle(ref, () => ({
     clearAll: () => {
       setMeasurements([]);
+      setPolygons([]);
+      polyPointsRef.current = [];
+      setPolyPoints([]);
       setFirstPt(null);
       setCursorS(null);
       setCursorDoc(null);
@@ -751,6 +824,8 @@ export const RulerOverlay = React.forwardRef<
       setFirstPt(null);
       setCursorS(null);
       setCursorDoc(null);
+      polyPointsRef.current = [];
+      setPolyPoints([]);
     }
   }, [isActive]);
 
@@ -813,11 +888,42 @@ export const RulerOverlay = React.forwardRef<
       }
     };
 
+    const finalizePoly = () => {
+      const pts = polyPointsRef.current;
+      const m = modeRef.current;
+      if (m === "distance") return;
+      const minPts = m === "area" ? 3 : 2;
+      if (pts.length >= minPts) {
+        const id = `ruler-${++idCounter.current}`;
+        const snapshot = pts.slice();
+        setPolygons((prev) => [...prev, { id, mode: m, points: snapshot }]);
+      }
+      polyPointsRef.current = [];
+      setPolyPoints([]);
+    };
+
     const onClick = (e: MouseEvent) => {
       if (e.button !== 0) return;
       if ((e.target as Element).closest?.("[data-ruler-interactive]")) return;
 
+      const m = modeRef.current;
       const overPage = isOverPage(e);
+
+      // ── Perimeter / Area: accumulate points; double-click finalises. ──────────
+      if (m === "perimeter" || m === "area") {
+        const dp = overPage ? toDocPagePt(e) : cursorDocRef.current;
+        if (!dp) return;
+        // Keep all points on the same page (multi-page polygons are undefined).
+        const cur = polyPointsRef.current;
+        if (cur.length > 0 && cur[0].pageIndex !== dp.pageIndex) return;
+        e.preventDefault();
+        const next = [...cur, dp];
+        polyPointsRef.current = next;
+        setPolyPoints(next);
+        return;
+      }
+
+      // ── Distance: original two-click behaviour. ───────────────────────────────
       if (!overPage && firstPtRef.current === null) return;
       e.preventDefault();
 
@@ -831,9 +937,16 @@ export const RulerOverlay = React.forwardRef<
         }
         firstPtRef.current = null;
         const id = `ruler-${++idCounter.current}`;
-        setMeasurements((m) => [...m, { id, start: prev, end: dp }]);
+        setMeasurements((mm) => [...mm, { id, start: prev, end: dp }]);
         return null;
       });
+    };
+
+    const onDblClick = (e: MouseEvent) => {
+      if (modeRef.current === "distance") return;
+      e.preventDefault();
+      e.stopPropagation();
+      finalizePoly();
     };
 
     const onLeave = () => {
@@ -845,16 +958,26 @@ export const RulerOverlay = React.forwardRef<
         setFirstPt(null);
         setCursorS(null);
         setCursorDoc(null);
+        polyPointsRef.current = [];
+        setPolyPoints([]);
+      } else if (e.key === "Enter") {
+        // Enter finalises an in-progress perimeter/area polygon.
+        if (modeRef.current !== "distance" && polyPointsRef.current.length > 0) {
+          e.preventDefault();
+          finalizePoly();
+        }
       }
     };
 
     el.addEventListener("mousemove", onMove);
     el.addEventListener("click", onClick);
+    el.addEventListener("dblclick", onDblClick);
     el.addEventListener("mouseleave", onLeave);
     document.addEventListener("keydown", onKey);
     return () => {
       el.removeEventListener("mousemove", onMove);
       el.removeEventListener("click", onClick);
+      el.removeEventListener("dblclick", onDblClick);
       el.removeEventListener("mouseleave", onLeave);
       document.removeEventListener("keydown", onKey);
       el.style.cursor = "";
@@ -865,7 +988,7 @@ export const RulerOverlay = React.forwardRef<
     setMeasurements((prev) => prev.filter((m) => m.id !== id));
   }, []);
 
-  if (!isActive && measurements.length === 0) return null;
+  if (!isActive && measurements.length === 0 && polygons.length === 0) return null;
 
   // ── PagePoint → SVG screen coordinates ────────────────────────────────────
   /**
@@ -918,6 +1041,118 @@ export const RulerOverlay = React.forwardRef<
           />
         </filter>
       </defs>
+
+      {/* Completed perimeter / area polygons */}
+      {polygons.map((poly) => {
+        const screenPts = poly.points.map(pagePointToScreen);
+        if (screenPts.some((p) => p === null)) return null;
+        const sp = screenPts as Point[];
+        const isArea = poly.mode === "area";
+        const ptsAttr = sp.map((p) => `${p.x},${p.y}`).join(" ");
+        // Label maths use PDF-point page coords directly (zoom-invariant).
+        const scale =
+          pageMeasureScales && poly.points.length >= 2
+            ? pickScale(poly.points[0], poly.points[1], pageMeasureScales)
+            : null;
+        const perimPts = pathLength(poly.points, isArea);
+        const perimLabel = scale
+          ? formatScaled(perimPts, scale)
+          : formatDist(perimPts);
+        let label: string;
+        if (isArea) {
+          const areaPts2 = shoelaceArea(poly.points);
+          const areaLabel = scale
+            ? formatAreaScaled(areaPts2, scale)
+            : formatAreaUnscaled(areaPts2);
+          label = `${areaLabel}  ·  P ${perimLabel}`;
+        } else {
+          label = perimLabel;
+        }
+        // Label anchor = centroid (area) or last vertex (perimeter).
+        const cx = isArea
+          ? sp.reduce((s, p) => s + p.x, 0) / sp.length
+          : sp[sp.length - 1].x;
+        const cy = isArea
+          ? sp.reduce((s, p) => s + p.y, 0) / sp.length
+          : sp[sp.length - 1].y;
+        const labelW = Math.max(48, label.length * 6.6 + 14);
+        return (
+          <g key={poly.id}>
+            {isArea ? (
+              <polygon
+                points={ptsAttr}
+                fill="rgba(30,136,229,0.16)"
+                stroke="#1e88e5"
+                strokeWidth={2}
+              />
+            ) : (
+              <polyline
+                points={ptsAttr}
+                fill="none"
+                stroke="#1e88e5"
+                strokeWidth={2}
+              />
+            )}
+            {sp.map((p, i) => (
+              <circle key={i} cx={p.x} cy={p.y} r={3} fill="#1e88e5" stroke="white" strokeWidth={1} />
+            ))}
+            <g
+              data-ruler-interactive="true"
+              style={{ pointerEvents: "all", cursor: "pointer" }}
+              onClick={(e) => {
+                e.stopPropagation();
+                setPolygons((prev) => prev.filter((x) => x.id !== poly.id));
+              }}
+            >
+              <rect
+                x={cx - labelW / 2}
+                y={cy - 11}
+                width={labelW}
+                height={22}
+                rx={5}
+                fill="rgba(30,136,229,0.95)"
+                filter="url(#ruler-shadow)"
+              />
+              <text
+                x={cx}
+                y={cy + 4}
+                textAnchor="middle"
+                fill="white"
+                fontSize={12}
+                fontFamily="sans-serif"
+                fontWeight={600}
+                style={{ userSelect: "none" }}
+              >
+                {label}
+              </text>
+            </g>
+          </g>
+        );
+      })}
+
+      {/* In-progress perimeter / area polyline */}
+      {isActive && mode !== "distance" && polyPoints.length > 0 && (() => {
+        const sp = polyPoints
+          .map(pagePointToScreen)
+          .filter((p): p is Point => p !== null);
+        if (sp.length === 0) return null;
+        const livePts = cursorS ? [...sp, cursorS] : sp;
+        const ptsAttr = livePts.map((p) => `${p.x},${p.y}`).join(" ");
+        return (
+          <g>
+            <polyline
+              points={ptsAttr}
+              fill="none"
+              stroke="#1e88e5"
+              strokeWidth={2}
+              strokeDasharray="6 4"
+            />
+            {sp.map((p, i) => (
+              <circle key={i} cx={p.x} cy={p.y} r={3.5} fill="#1e88e5" stroke="white" strokeWidth={1.5} />
+            ))}
+          </g>
+        );
+      })()}
 
       {/* Completed measurements */}
       {measurements.map((m) => {
@@ -992,28 +1227,97 @@ export const RulerOverlay = React.forwardRef<
       )}
 
       {/* Clear all */}
-      {measurements.length > 0 && (
+      {/* Mode selector: Distance / Perimeter / Area */}
+      {isActive && (
+        <g data-ruler-interactive="true" style={{ pointerEvents: "all" }}>
+          {(
+            [
+              { m: "distance" as MeasureMode, label: "Distance", x: 8 },
+              { m: "perimeter" as MeasureMode, label: "Perimeter", x: 92 },
+              { m: "area" as MeasureMode, label: "Area", x: 184 },
+            ]
+          ).map(({ m, label, x }) => {
+            const w = label.length * 7 + 16;
+            const sel = mode === m;
+            return (
+              <g
+                key={m}
+                style={{ cursor: "pointer" }}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  // Switching modes cancels any in-progress polygon/segment.
+                  setFirstPt(null);
+                  polyPointsRef.current = [];
+                  setPolyPoints([]);
+                  setMode(m);
+                }}
+              >
+                <rect
+                  x={x}
+                  y={8}
+                  width={w}
+                  height={26}
+                  rx={5}
+                  fill={sel ? "#1e88e5" : "rgba(255,255,255,0.92)"}
+                  stroke={sel ? "white" : "#1e88e5"}
+                  strokeWidth={1}
+                  filter="url(#ruler-shadow)"
+                />
+                <text
+                  x={x + w / 2}
+                  y={25}
+                  textAnchor="middle"
+                  fill={sel ? "white" : "#1e88e5"}
+                  fontSize={12}
+                  fontFamily="sans-serif"
+                  fontWeight={600}
+                  style={{ userSelect: "none" }}
+                >
+                  {label}
+                </text>
+              </g>
+            );
+          })}
+          {isActive && mode !== "distance" && (
+            <text
+              x={8}
+              y={50}
+              fill="#1e88e5"
+              fontSize={11}
+              fontFamily="sans-serif"
+              style={{ userSelect: "none" }}
+            >
+              Click to add points · double-click or Enter to finish · Esc to cancel
+            </text>
+          )}
+        </g>
+      )}
+
+      {/* Clear all */}
+      {(measurements.length > 0 || polygons.length > 0) && (
         <g
           data-ruler-interactive="true"
           style={{ pointerEvents: "all", cursor: "pointer" }}
           onClick={(e) => {
             e.stopPropagation();
             setMeasurements([]);
+            setPolygons([]);
           }}
         >
           <rect
             x={8}
-            y={8}
+            y={64}
             width={88}
             height={26}
             rx={5}
             fill="rgba(239,83,80,0.9)"
             stroke="white"
             strokeWidth={1}
+            filter="url(#ruler-shadow)"
           />
           <text
             x={52}
-            y={25}
+            y={81}
             textAnchor="middle"
             fill="white"
             fontSize={12}
