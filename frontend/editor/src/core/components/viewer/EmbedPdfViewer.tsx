@@ -36,6 +36,10 @@ import {
   type PageScaleInfo,
   type ViewportScale,
 } from "@app/components/viewer/RulerOverlay";
+import {
+  FormDesignerOverlay,
+  type NewFieldSpec,
+} from "@app/components/viewer/FormDesignerOverlay";
 import type { PDFDict, PDFNumber } from "@cantoo/pdf-lib";
 import { useWheelZoom } from "@app/hooks/useWheelZoom";
 import { useFormFill } from "@app/tools/formFill/FormFillContext";
@@ -1067,6 +1071,33 @@ const EmbedPdfViewerContent = ({
   const [pageMeasureScales, setPageMeasureScales] =
     useState<PageMeasureScales | null>(null);
 
+  // Form Designer (create new AcroForm fields by drawing on the page).
+  const [isFormDesignerActive, setIsFormDesignerActive] = useState(false);
+
+  const handleCreateFormField = useCallback(
+    async (spec: NewFieldSpec) => {
+      if (!currentFile) return;
+      const fd = new FormData();
+      fd.append("file", currentFile);
+      fd.append("fields", JSON.stringify([spec]));
+      const res = await fetch("/api/v1/form/create-field", {
+        method: "POST",
+        body: fd,
+      });
+      if (!res.ok) {
+        console.error(
+          "[Viewer] create-field failed:",
+          res.status,
+          await res.text().catch(() => ""),
+        );
+        return;
+      }
+      const blob = await res.blob();
+      await handleFormApply(blob);
+    },
+    [currentFile, handleFormApply],
+  );
+
   useEffect(() => {
     const file = effectiveFile?.file;
     if (!file) {
@@ -1083,7 +1114,12 @@ const EmbedPdfViewerContent = ({
   }, [effectiveFile]);
 
   // Register workbench bar buttons for the viewer
-  useViewerWorkbenchBarButtons(isRulerActive, setIsRulerActive);
+  useViewerWorkbenchBarButtons(
+    isRulerActive,
+    setIsRulerActive,
+    isFormDesignerActive,
+    setIsFormDesignerActive,
+  );
 
   // Auto-fetch form fields when a PDF is loaded in the viewer.
   // In normal viewer mode, this uses PDFium WASM (frontend-only).
@@ -1264,6 +1300,11 @@ const EmbedPdfViewerContent = ({
               containerRef={pdfContainerRef}
               isActive={isRulerActive}
               pageMeasureScales={pageMeasureScales}
+            />
+            <FormDesignerOverlay
+              containerRef={pdfContainerRef}
+              isActive={isFormDesignerActive}
+              onCreateField={handleCreateFormField}
             />
           </Box>
         </>

@@ -89,8 +89,7 @@ public class AddPageNumbersRequest extends PDFWithPageNums {
     private String prefix = "";
 
     @Schema(
-            description =
-                    "Bates suffix appended to every stamp (e.g. '-ACME'). Empty by default.",
+            description = "Bates suffix appended to every stamp (e.g. '-ACME'). Empty by default.",
             example = "-ACME",
             defaultValue = "",
             requiredMode = RequiredMode.NOT_REQUIRED)

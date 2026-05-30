@@ -30,6 +30,8 @@ import { useViewerReadAloud } from "@app/components/viewer/useViewerReadAloud";
 export function useViewerWorkbenchBarButtons(
   isRulerActive?: boolean,
   setIsRulerActive?: (v: boolean) => void,
+  isFormDesignerActive?: boolean,
+  setIsFormDesignerActive?: (v: boolean) => void,
 ) {
   const { t, i18n } = useTranslation();
   const viewer = useViewer();
@@ -124,6 +126,7 @@ export function useViewerWorkbenchBarButtons(
   const annotationsLabel = t("workbenchBar.annotations", "Annotations");
   const formFillLabel = t("workbenchBar.formFill", "Fill Form");
   const rulerLabel = t("workbenchBar.ruler", "Ruler / Measure");
+  const formDesignerLabel = t("workbenchBar.formDesigner", "Form Designer");
   const readAloudLabel = t("workbenchBar.readAloud", "Read Aloud");
   const readAloudSpeedLabel = t("workbenchBar.readAloudSpeed", "Speed");
 
@@ -240,6 +243,27 @@ export function useViewerWorkbenchBarButtons(
           if (next && isPanning) {
             viewer.panActions.disablePan();
             setIsPanning(false);
+          }
+          if (next) setIsFormDesignerActive?.(false);
+        },
+      },
+      {
+        id: "viewer-form-designer",
+        icon: <LayersIcon sx={{ fontSize: "1.25rem" }} />,
+        tooltip: formDesignerLabel,
+        ariaLabel: formDesignerLabel,
+        section: "top" as const,
+        order: 26,
+        active: Boolean(isFormDesignerActive),
+        onClick: () => {
+          const next = !isFormDesignerActive;
+          setIsFormDesignerActive?.(next);
+          if (next) {
+            setIsRulerActive?.(false);
+            if (isPanning) {
+              viewer.panActions.disablePan();
+              setIsPanning(false);
+            }
           }
         },
       },
@@ -570,6 +594,9 @@ export function useViewerWorkbenchBarButtons(
     rulerLabel,
     isRulerActive,
     setIsRulerActive,
+    formDesignerLabel,
+    isFormDesignerActive,
+    setIsFormDesignerActive,
     readAloudLabel,
     readAloudSpeedLabel,
     isReadingAloud,
