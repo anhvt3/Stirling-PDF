@@ -104,8 +104,24 @@ Verified present in Stirling-core, so NOT needed: text-edit, sign/cert/timestamp
 compare, convert-to/from-PDF, compress, repair, sanitize, OCR, redaction, forms
 fill/modify, bookmarks, attachments, multi-page layout, watermark, page numbers.
 
-Still missing / weak vs Foxit:
-1. **Measure** — distance ✅ (upstream) + perimeter/area ✅ (this fork).
-2. **Form Designer** — create new form fields interactively (only fill/modify exist).
-3. **Edit images/objects** — move/resize/recolor page objects (only add/remove image).
-4. **Full Bates numbering** — prefix/suffix/start#/padding (only simple page numbers).
+Status vs Foxit:
+1. **Measure** — distance ✅ (upstream) + perimeter/area ✅ (this fork, `RulerOverlay.tsx`).
+2. **Full Bates numbering** — ✅ (this fork): prefix/suffix added on top of the
+   existing zero-pad + `{n}/{total}/{filename}` template (`PageNumbersController`,
+   `AddPageNumbers*` frontend).
+3. **Form Designer** — ⏳ NOT done. Feasible but multi-piece, larger than the
+   "1 endpoint" first estimate:
+   - Backend: `FormUtils.createNewField(...)` is **private** and needs a
+     `FormFieldTypeSupport` handler + a `NewFormFieldDefinition`. A clean impl
+     adds a public `createFormFields(doc, defs)` wrapper, a new
+     `POST /api/v1/form/create-field` endpoint, a request DTO, and a payload
+     parser (mirroring `modify-fields`).
+   - Frontend: an interactive rect-draw overlay on the page (comparable in size
+     to the measure overlay) plus a field-type/name panel.
+   - Recommend a dedicated task; do NOT ship a half-wired version.
+4. **Edit images/objects** (move/resize/recolor) — ⏳ NOT done, **deferred**.
+   `edit-text` today does find/replace only; true object editing needs
+   content-stream reconstruction (positions, fonts, colors, image XObjects).
+   PDFBox content-stream rebuild risks glyph/layout/embedded-font corruption.
+   Realistic effort ~3–4 weeks with regression risk → needs separate design +
+   golden-file regression suite before any code lands.
