@@ -109,16 +109,28 @@ Status vs Foxit:
 2. **Full Bates numbering** — ✅ (this fork): prefix/suffix added on top of the
    existing zero-pad + `{n}/{total}/{filename}` template (`PageNumbersController`,
    `AddPageNumbers*` frontend).
-3. **Form Designer** — ⏳ NOT done. Feasible but multi-piece, larger than the
-   "1 endpoint" first estimate:
-   - Backend: `FormUtils.createNewField(...)` is **private** and needs a
-     `FormFieldTypeSupport` handler + a `NewFormFieldDefinition`. A clean impl
-     adds a public `createFormFields(doc, defs)` wrapper, a new
-     `POST /api/v1/form/create-field` endpoint, a request DTO, and a payload
-     parser (mirroring `modify-fields`).
-   - Frontend: an interactive rect-draw overlay on the page (comparable in size
-     to the measure overlay) plus a field-type/name panel.
-   - Recommend a dedicated task; do NOT ship a half-wired version.
+3. **Form Designer** — **backend ✅ done & compile-verified; frontend ⏳ remaining**.
+   - Backend (DONE): `FormUtils.createFormFields(doc, defs)` wraps the existing
+     private `createNewField` (creates the AcroForm if missing, validates each
+     def, skips bad ones); `FormPayloadParser.parseNewFieldDefinitions`; and
+     `POST /api/v1/form/create-field` (multipart `file` + JSON `fields[]`).
+     `NewFormFieldDefinition` is self-contained: `{name, label, type, pageIndex,
+     x, y, width, height, required, multiSelect, options, defaultValue,
+     tooltip}` with x/y in PDF points, **lower-left origin**.
+   - Frontend (REMAINING) — fully grounded, ~1 focused session:
+     1. `FormDesignerOverlay.tsx` modelled on `RulerOverlay.tsx`: drag a rect on
+        a page using the same coord model (`PagePoint` = PDF points top-left via
+        `getBoundingClientRect`/zoom). Convert to backend rect:
+        `x_ll = x`, `y_ll = pageHeightPts − (yTop + h)`, where
+        `pageHeightPts = pageRect.height / zoom`.
+     2. On mouse-up show an inline popup (name input + type select text/checkbox)
+        → POST `/api/v1/form/create-field`.
+     3. Reload via the proven pattern in `ViewerAnnotationControls.tsx:92-107`:
+        response blob → `File` → `createStirlingFilesAndStubs([file], parentStub,
+        "form")` → `fileActions.consumeFiles([oldId], stirlingFiles, stubs)`.
+     4. Toolbar toggle button mirroring the ruler wiring
+        (`useViewerWorkbenchBarButtons.tsx:229-245` + `EmbedPdfViewer` state +
+        overlay mount at `:1263`).
 4. **Edit images/objects** (move/resize/recolor) — ⏳ NOT done, **deferred**.
    `edit-text` today does find/replace only; true object editing needs
    content-stream reconstruction (positions, fonts, colors, image XObjects).
