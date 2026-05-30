@@ -289,6 +289,40 @@ public class FormFillController {
                 file, "updated", document -> FormUtils.modifyFormFields(document, modifications));
     }
 
+    @PostMapping(value = "/create-field", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    @Operation(
+            summary = "Create new form fields (Form Designer)",
+            description =
+                    "Adds brand-new AcroForm fields to the PDF. Each definition carries its own"
+                            + " pageIndex and x/y/width/height (PDF points, lower-left origin) plus"
+                            + " a type (text/checkbox/choice) and name. Returns the updated file.")
+    public ResponseEntity<Resource> createField(
+            @Parameter(
+                            description = "The input PDF file",
+                            required = true,
+                            content =
+                                    @Content(
+                                            mediaType = MediaType.APPLICATION_PDF_VALUE,
+                                            schema = @Schema(type = "string", format = "binary")))
+                    @RequestParam("file")
+                    MultipartFile file,
+            @RequestPart(value = "fields", required = false) byte[] fieldsPayload)
+            throws IOException {
+
+        String rawFields = decodePart(fieldsPayload);
+        List<FormUtils.NewFormFieldDefinition> definitions =
+                FormPayloadParser.parseNewFieldDefinitions(objectMapper, rawFields);
+        if (definitions.isEmpty()) {
+            throw ExceptionUtils.createIllegalArgumentException(
+                    "error.dataRequired",
+                    "{0} must contain at least one definition",
+                    "fields payload");
+        }
+
+        return processSingleFile(
+                file, "updated", document -> FormUtils.createFormFields(document, definitions));
+    }
+
     @PostMapping(value = "/delete-fields", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     @Operation(
             summary = "Delete form fields",

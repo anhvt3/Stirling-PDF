@@ -1842,6 +1842,64 @@ public class FormUtils {
         return -1;
     }
 
+    /**
+     * Create brand-new AcroForm fields (Form Designer). Each {@link
+     * NewFormFieldDefinition} is self-contained: it carries its own {@code
+     * pageIndex} and {@code x/y/width/height} (PDF points, lower-left origin). The
+     * AcroForm is created if the document has none. Invalid definitions (empty
+     * name, out-of-range page, missing rectangle) are skipped with a warning so a
+     * single bad field never aborts the whole batch.
+     */
+    public void createFormFields(
+            PDDocument document, List<NewFormFieldDefinition> definitions) {
+        if (document == null || definitions == null || definitions.isEmpty()) return;
+
+        PDAcroForm acroForm = getAcroFormSafely(document);
+        if (acroForm == null) {
+            acroForm = new PDAcroForm(document);
+            document.getDocumentCatalog().setAcroForm(acroForm);
+        }
+
+        int pageCount = document.getNumberOfPages();
+        for (NewFormFieldDefinition def : definitions) {
+            if (def == null) continue;
+            String name = def.name() == null ? null : def.name().trim();
+            if (name == null || name.isEmpty()) {
+                log.warn("Skipping form field with empty name");
+                continue;
+            }
+            int pageIndex = def.pageIndex() == null ? 0 : def.pageIndex();
+            if (pageIndex < 0 || pageIndex >= pageCount) {
+                log.warn("Skipping field '{}' — pageIndex {} out of range", name, pageIndex);
+                continue;
+            }
+            if (def.x() == null
+                    || def.y() == null
+                    || def.width() == null
+                    || def.height() == null) {
+                log.warn("Skipping field '{}' — missing rectangle", name);
+                continue;
+            }
+
+            PDPage page = document.getPage(pageIndex);
+            PDRectangle rect =
+                    new PDRectangle(def.x(), def.y(), def.width(), def.height());
+            String resolvedType = def.type() == null ? "text" : def.type();
+            FormFieldTypeSupport handler = FormFieldTypeSupport.forTypeName(resolvedType);
+            if (handler == null || handler.doesNotsupportsDefinitionCreation()) {
+                handler = FormFieldTypeSupport.TEXT;
+            }
+
+            try {
+                createNewField(
+                        handler, acroForm, page, rect, name, def, sanitizeOptions(def.options()));
+                log.debug("Created form field '{}' ({}) on page {}", name, resolvedType, pageIndex);
+            } catch (Exception e) {
+                log.warn("Failed to create form field '{}': {}", name, e.getMessage());
+            }
+        }
+    }
+
     public void deleteFormFields(PDDocument document, List<String> fieldNames) {
         if (document == null || fieldNames == null || fieldNames.isEmpty()) return;
 
