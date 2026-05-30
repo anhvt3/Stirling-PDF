@@ -128,6 +128,36 @@ const AddPageNumbersAppearanceSettings = ({
           disabled={disabled}
         />
       </Tooltip>
+
+      <Tooltip
+        content={t(
+          "addPageNumbers.prefixTooltip",
+          "Bates prefix added before every number, e.g. a case/document code 'EX-'.",
+        )}
+      >
+        <TextInput
+          label={t("addPageNumbers.prefix", "Bates Prefix")}
+          value={parameters.prefix || ""}
+          onChange={(e) => onParameterChange("prefix", e.currentTarget.value)}
+          placeholder={t("addPageNumbers.prefixPlaceholder", "e.g. EX-")}
+          disabled={disabled}
+        />
+      </Tooltip>
+
+      <Tooltip
+        content={t(
+          "addPageNumbers.suffixTooltip",
+          "Bates suffix added after every number, e.g. '-ACME' or ' (Confidential)'.",
+        )}
+      >
+        <TextInput
+          label={t("addPageNumbers.suffix", "Bates Suffix")}
+          value={parameters.suffix || ""}
+          onChange={(e) => onParameterChange("suffix", e.currentTarget.value)}
+          placeholder={t("addPageNumbers.suffixPlaceholder", "e.g. -ACME")}
+          disabled={disabled}
+        />
+      </Tooltip>
     </Stack>
   );
 };

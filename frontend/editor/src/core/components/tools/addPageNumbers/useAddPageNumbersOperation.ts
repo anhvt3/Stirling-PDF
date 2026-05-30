@@ -23,6 +23,8 @@ export const buildAddPageNumbersFormData = (
   formData.append("pagesToNumber", parameters.pagesToNumber);
   formData.append("customText", parameters.customText);
   formData.append("zeroPad", String(parameters.zeroPad));
+  formData.append("prefix", parameters.prefix ?? "");
+  formData.append("suffix", parameters.suffix ?? "");
 
   return formData;
 };

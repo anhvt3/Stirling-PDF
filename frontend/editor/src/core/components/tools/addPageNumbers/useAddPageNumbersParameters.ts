@@ -14,6 +14,9 @@ export interface AddPageNumbersParameters extends BaseParameters {
   customText: string;
   // Number of digits to zero-pad page numbers to. 0 = no padding.
   zeroPad: number;
+  // Bates stamping: text prepended/appended around every number. "" = none.
+  prefix: string;
+  suffix: string;
 }
 
 export const defaultParameters: AddPageNumbersParameters = {
@@ -25,6 +28,8 @@ export const defaultParameters: AddPageNumbersParameters = {
   pagesToNumber: "",
   customText: "",
   zeroPad: 0,
+  prefix: "",
+  suffix: "",
 };
 
 export type AddPageNumbersParametersHook =

@@ -78,4 +78,21 @@ public class AddPageNumbersRequest extends PDFWithPageNums {
             defaultValue = "{n}",
             requiredMode = RequiredMode.NOT_REQUIRED)
     private String customText;
+
+    @Schema(
+            description =
+                    "Bates prefix prepended to every stamp (e.g. a case/document code like 'EX-')."
+                            + " Empty by default.",
+            example = "EX-",
+            defaultValue = "",
+            requiredMode = RequiredMode.NOT_REQUIRED)
+    private String prefix = "";
+
+    @Schema(
+            description =
+                    "Bates suffix appended to every stamp (e.g. '-ACME'). Empty by default.",
+            example = "-ACME",
+            defaultValue = "",
+            requiredMode = RequiredMode.NOT_REQUIRED)
+    private String suffix = "";
 }

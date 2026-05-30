@@ -59,6 +59,8 @@ public class PageNumbersController {
         int pageNumber = request.getStartingNumber();
         String pagesToNumber = request.getPagesToNumber();
         String customText = request.getCustomText();
+        String batesPrefix = request.getPrefix() == null ? "" : request.getPrefix();
+        String batesSuffix = request.getSuffix() == null ? "" : request.getSuffix();
         int zeroPad = request.getZeroPad();
         float fontSize = request.getFontSize();
         String fontType = request.getFontType();
@@ -109,15 +111,21 @@ public class PageNumbersController {
                 PDRectangle pageSize = page.getMediaBox();
 
                 String nFormatted = String.format(formatN, pageNumber);
+                // Bates: prefix + (templated number) + suffix. Both default to "" so
+                // existing callers are unaffected; the customText template still applies.
                 String text =
-                        customText
-                                .replace("{n}", nFormatted)
-                                .replace("{total}", String.valueOf(document.getNumberOfPages()))
-                                .replace(
-                                        "{filename}",
-                                        GeneralUtils.removeExtension(
-                                                Filenames.toSimpleFileName(
-                                                        file.getOriginalFilename())));
+                        batesPrefix
+                                + customText
+                                        .replace("{n}", nFormatted)
+                                        .replace(
+                                                "{total}",
+                                                String.valueOf(document.getNumberOfPages()))
+                                        .replace(
+                                                "{filename}",
+                                                GeneralUtils.removeExtension(
+                                                        Filenames.toSimpleFileName(
+                                                                file.getOriginalFilename())))
+                                + batesSuffix;
 
                 PDType1Font currentFont =
                         switch (fontType == null ? "" : fontType.toLowerCase(Locale.ROOT)) {
