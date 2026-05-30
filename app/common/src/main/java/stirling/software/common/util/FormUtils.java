@@ -1843,15 +1843,13 @@ public class FormUtils {
     }
 
     /**
-     * Create brand-new AcroForm fields (Form Designer). Each {@link
-     * NewFormFieldDefinition} is self-contained: it carries its own {@code
-     * pageIndex} and {@code x/y/width/height} (PDF points, lower-left origin). The
-     * AcroForm is created if the document has none. Invalid definitions (empty
-     * name, out-of-range page, missing rectangle) are skipped with a warning so a
-     * single bad field never aborts the whole batch.
+     * Create brand-new AcroForm fields (Form Designer). Each {@link NewFormFieldDefinition} is
+     * self-contained: it carries its own {@code pageIndex} and {@code x/y/width/height} (PDF
+     * points, lower-left origin). The AcroForm is created if the document has none. Invalid
+     * definitions (empty name, out-of-range page, missing rectangle) are skipped with a warning so
+     * a single bad field never aborts the whole batch.
      */
-    public void createFormFields(
-            PDDocument document, List<NewFormFieldDefinition> definitions) {
+    public void createFormFields(PDDocument document, List<NewFormFieldDefinition> definitions) {
         if (document == null || definitions == null || definitions.isEmpty()) return;
 
         PDAcroForm acroForm = getAcroFormSafely(document);
@@ -1873,17 +1871,13 @@ public class FormUtils {
                 log.warn("Skipping field '{}' — pageIndex {} out of range", name, pageIndex);
                 continue;
             }
-            if (def.x() == null
-                    || def.y() == null
-                    || def.width() == null
-                    || def.height() == null) {
+            if (def.x() == null || def.y() == null || def.width() == null || def.height() == null) {
                 log.warn("Skipping field '{}' — missing rectangle", name);
                 continue;
             }
 
             PDPage page = document.getPage(pageIndex);
-            PDRectangle rect =
-                    new PDRectangle(def.x(), def.y(), def.width(), def.height());
+            PDRectangle rect = new PDRectangle(def.x(), def.y(), def.width(), def.height());
             String resolvedType = def.type() == null ? "text" : def.type();
             FormFieldTypeSupport handler = FormFieldTypeSupport.forTypeName(resolvedType);
             if (handler == null || handler.doesNotsupportsDefinitionCreation()) {

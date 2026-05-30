@@ -109,7 +109,14 @@ Status vs Foxit:
 2. **Full Bates numbering** — ✅ (this fork): prefix/suffix added on top of the
    existing zero-pad + `{n}/{total}/{filename}` template (`PageNumbersController`,
    `AddPageNumbers*` frontend).
-3. **Form Designer** — **backend ✅ done & compile-verified; frontend ⏳ remaining**.
+3. **Form Designer** — ✅ **DONE & interactively verified** (backend + frontend).
+   Backend verified end-to-end: `POST /form/create-field` on a real PDF then a
+   PyMuPDF widget dump confirms the created fields (`signature` Text + a
+   CheckBox) exist at the correct positions, with the top-left→lower-left Y-flip
+   correct (sent lower-left y=600 on an 842pt page → stored top-left y=212).
+   Frontend verified via Vite dev + Playwright: toggled the toolbar button,
+   dragged a rectangle, the name/type popup appeared, clicked Add → POST 200 →
+   the document reloaded with the field. Implementation detail below.
    - Backend (DONE): `FormUtils.createFormFields(doc, defs)` wraps the existing
      private `createNewField` (creates the AcroForm if missing, validates each
      def, skips bad ones); `FormPayloadParser.parseNewFieldDefinitions`; and
