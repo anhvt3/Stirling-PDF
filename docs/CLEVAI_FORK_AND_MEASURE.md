@@ -91,7 +91,12 @@ Area scales as length², i.e. `realArea = pdfPointsArea × factor²`.
   (pre-existing errors exist only under `prototypes/`/`saas/`, which the core
   build excludes).
 - `npx vite build editor --mode core` → **build succeeds**.
-- Interactive click-test (draw a polygon, read the area label) — pending manual QA.
+- **Interactive QA passed** (Vite dev + Playwright on a real PDF): activated the
+  ruler, switched to Area, clicked a 4-vertex rectangle, pressed Enter. The
+  filled polygon rendered with the label `101.2 cm² · P 40.4 cm` (area +
+  perimeter). Cross-checked the maths by hand from the click coordinates at 89%
+  zoom — both values correct. The 3-mode toggle (Distance/Perimeter/Area) and
+  the Clear-all control render as designed.
 
 ## 4. Remaining Foxit gaps (backlog)
 
