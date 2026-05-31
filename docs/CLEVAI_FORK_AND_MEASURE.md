@@ -138,9 +138,25 @@ Status vs Foxit:
      4. Toolbar toggle button mirroring the ruler wiring
         (`useViewerWorkbenchBarButtons.tsx:229-245` + `EmbedPdfViewer` state +
         overlay mount at `:1263`).
-4. **Edit images/objects** (move/resize/recolor) — ⏳ NOT done, **deferred**.
-   `edit-text` today does find/replace only; true object editing needs
-   content-stream reconstruction (positions, fonts, colors, image XObjects).
-   PDFBox content-stream rebuild risks glyph/layout/embedded-font corruption.
-   Realistic effort ~3–4 weeks with regression risk → needs separate design +
-   golden-file regression suite before any code lands.
+4. **Edit images/objects** (move/resize/recolor) — ⏳ NOT done, but feasibility
+   **revised UP** after reading `PdfJsonConversionService` (6958 lines):
+   - The text-editor JSON model `PdfJsonTextElement` ALREADY carries per-element
+     `textMatrix` (full Tm), `fillColor`/`strokeColor`, `fontSize`, `x/y/w/h`.
+   - The JSON→PDF reconstruction has TWO paths: a **token rewrite**
+     (`rewriteTextOperators`, ~line 3905 — patches the original operators,
+     preserves position/colour, only swaps text) which is the DEFAULT when
+     fonts are intact; and a **full regenerate** (~line 5042 `setTextMatrix`,
+     ~3750 `setNonStrokingColor`) that emits text FROM the elements, honouring an
+     edited matrix/colour/size. Regenerate triggers when rewrite fails / fallback
+     fonts / no preserved stream / `forceRegenerate`.
+   - ⇒ **Move/recolor/resize TEXT is tractable**, NOT a 3–4 week rebuild: edit
+     the element's `textMatrix`/`fillColor`/`fontSize` and force the regenerate
+     path. The hard content-stream reconstruction already exists.
+   - REMAINING to confirm/implement: (a) empirical round-trip test — edit one
+     element's matrix, convert back, assert it moved (PyMuPDF); (b) a way to force
+     regenerate when an element is edited; (c) image-object move/resize is
+     separate (`reconstructImageXObjects` ~line 2962 exists — similar approach);
+     (d) a UI to select + drag/recolor an element. Image *recolor* and arbitrary
+     vector-object editing remain genuinely hard.
+   - Plan: start with the empirical test + a golden-file roundtrip-stability
+     harness, then text move/recolor/resize as v1.
