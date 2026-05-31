@@ -152,11 +152,17 @@ Status vs Foxit:
    - ⇒ **Move/recolor/resize TEXT is tractable**, NOT a 3–4 week rebuild: edit
      the element's `textMatrix`/`fillColor`/`fontSize` and force the regenerate
      path. The hard content-stream reconstruction already exists.
-   - REMAINING to confirm/implement: (a) empirical round-trip test — edit one
-     element's matrix, convert back, assert it moved (PyMuPDF); (b) a way to force
-     regenerate when an element is edited; (c) image-object move/resize is
-     separate (`reconstructImageXObjects` ~line 2962 exists — similar approach);
-     (d) a UI to select + drag/recolor an element. Image *recolor* and arbitrary
+   - ✅ **EMPIRICALLY PROVEN + backend enabler shipped**: round-trip test
+     (PDF→JSON, shift a text element's `textMatrix[4]` by +150, JSON→PDF) moved
+     the text by exactly 150pt (x 161.4→311.4). Added an optional
+     **`forceRegenerate`** flag to `convertJsonToPdf` + `/convert/text-editor/pdf`:
+     `true` rebuilds each page from the (edited) elements so position/colour/size
+     edits apply; `false` (default) keeps the lossless rewrite. Verified both
+     ways (true→moved, false→unchanged). `compileJava` SUCCESSFUL.
+   - REMAINING (next focused session): the interactive element-edit UI — load the
+     per-page text-element JSON, overlay draggable/recolorable handles on the
+     rendered page, on commit set `textMatrix`/`fillColor`/`fontSize` and POST
+     with `forceRegenerate=true`, then reload via `handleFormApply`. Add a
+     golden-file roundtrip-stability harness. Image-object move/resize is
+     separate (`reconstructImageXObjects` ~line 2962); image recolor + arbitrary
      vector-object editing remain genuinely hard.
-   - Plan: start with the empirical test + a golden-file roundtrip-stability
-     harness, then text move/recolor/resize as v1.
