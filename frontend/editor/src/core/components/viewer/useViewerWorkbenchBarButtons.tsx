@@ -32,6 +32,8 @@ export function useViewerWorkbenchBarButtons(
   setIsRulerActive?: (v: boolean) => void,
   isFormDesignerActive?: boolean,
   setIsFormDesignerActive?: (v: boolean) => void,
+  isEditObjectsActive?: boolean,
+  setIsEditObjectsActive?: (v: boolean) => void,
 ) {
   const { t, i18n } = useTranslation();
   const viewer = useViewer();
@@ -127,6 +129,7 @@ export function useViewerWorkbenchBarButtons(
   const formFillLabel = t("workbenchBar.formFill", "Fill Form");
   const rulerLabel = t("workbenchBar.ruler", "Ruler / Measure");
   const formDesignerLabel = t("workbenchBar.formDesigner", "Form Designer");
+  const editObjectsLabel = t("workbenchBar.editObjects", "Edit Objects");
   const readAloudLabel = t("workbenchBar.readAloud", "Read Aloud");
   const readAloudSpeedLabel = t("workbenchBar.readAloudSpeed", "Speed");
 
@@ -260,6 +263,28 @@ export function useViewerWorkbenchBarButtons(
           setIsFormDesignerActive?.(next);
           if (next) {
             setIsRulerActive?.(false);
+            setIsEditObjectsActive?.(false);
+            if (isPanning) {
+              viewer.panActions.disablePan();
+              setIsPanning(false);
+            }
+          }
+        },
+      },
+      {
+        id: "viewer-edit-objects",
+        icon: <TextFieldsIcon sx={{ fontSize: "1.25rem" }} />,
+        tooltip: editObjectsLabel,
+        ariaLabel: editObjectsLabel,
+        section: "top" as const,
+        order: 27,
+        active: Boolean(isEditObjectsActive),
+        onClick: () => {
+          const next = !isEditObjectsActive;
+          setIsEditObjectsActive?.(next);
+          if (next) {
+            setIsRulerActive?.(false);
+            setIsFormDesignerActive?.(false);
             if (isPanning) {
               viewer.panActions.disablePan();
               setIsPanning(false);
@@ -597,6 +622,9 @@ export function useViewerWorkbenchBarButtons(
     formDesignerLabel,
     isFormDesignerActive,
     setIsFormDesignerActive,
+    editObjectsLabel,
+    isEditObjectsActive,
+    setIsEditObjectsActive,
     readAloudLabel,
     readAloudSpeedLabel,
     isReadingAloud,

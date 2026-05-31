@@ -40,6 +40,7 @@ import {
   FormDesignerOverlay,
   type NewFieldSpec,
 } from "@app/components/viewer/FormDesignerOverlay";
+import { EditObjectsOverlay } from "@app/components/viewer/EditObjectsOverlay";
 import type { PDFDict, PDFNumber } from "@cantoo/pdf-lib";
 import { useWheelZoom } from "@app/hooks/useWheelZoom";
 import { useFormFill } from "@app/tools/formFill/FormFillContext";
@@ -1098,6 +1099,29 @@ const EmbedPdfViewerContent = ({
     [currentFile, handleFormApply],
   );
 
+  // Edit Objects (move/recolor text by editing the text-editor JSON).
+  const [isEditObjectsActive, setIsEditObjectsActive] = useState(false);
+
+  const handleApplyEditObjects = useCallback(
+    async (editedDocJson: string) => {
+      const fd = new FormData();
+      fd.append(
+        "fileInput",
+        new File([editedDocJson], "document.json", { type: "application/json" }),
+      );
+      const res = await fetch(
+        "/api/v1/convert/text-editor/pdf?forceRegenerate=true",
+        { method: "POST", body: fd },
+      );
+      if (!res.ok) {
+        throw new Error(`edit-objects apply failed (${res.status})`);
+      }
+      const blob = await res.blob();
+      await handleFormApply(blob);
+    },
+    [handleFormApply],
+  );
+
   useEffect(() => {
     const file = effectiveFile?.file;
     if (!file) {
@@ -1119,6 +1143,8 @@ const EmbedPdfViewerContent = ({
     setIsRulerActive,
     isFormDesignerActive,
     setIsFormDesignerActive,
+    isEditObjectsActive,
+    setIsEditObjectsActive,
   );
 
   // Auto-fetch form fields when a PDF is loaded in the viewer.
@@ -1305,6 +1331,12 @@ const EmbedPdfViewerContent = ({
               containerRef={pdfContainerRef}
               isActive={isFormDesignerActive}
               onCreateField={handleCreateFormField}
+            />
+            <EditObjectsOverlay
+              containerRef={pdfContainerRef}
+              isActive={isEditObjectsActive}
+              currentFile={currentFile ?? null}
+              onApply={handleApplyEditObjects}
             />
           </Box>
         </>

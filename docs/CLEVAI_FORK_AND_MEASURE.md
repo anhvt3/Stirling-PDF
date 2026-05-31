@@ -159,10 +159,14 @@ Status vs Foxit:
      `true` rebuilds each page from the (edited) elements so position/colour/size
      edits apply; `false` (default) keeps the lossless rewrite. Verified both
      ways (true→moved, false→unchanged). `compileJava` SUCCESSFUL.
-   - REMAINING (next focused session): the interactive element-edit UI — load the
-     per-page text-element JSON, overlay draggable/recolorable handles on the
-     rendered page, on commit set `textMatrix`/`fillColor`/`fontSize` and POST
-     with `forceRegenerate=true`, then reload via `handleFormApply`. Add a
-     golden-file roundtrip-stability harness. Image-object move/resize is
-     separate (`reconstructImageXObjects` ~line 2962); image recolor + arbitrary
+   - ✅ **Interactive UI DONE & verified** (`EditObjectsOverlay.tsx` + viewer
+     wiring + toolbar button). On activate it fetches the editable JSON
+     (`POST /convert/pdf/text-editor`), overlays a draggable box on every text
+     run, lets the user drag-to-move and pick a fill colour, and on **Apply**
+     POSTs the edited JSON with `forceRegenerate=true` then reloads via
+     `handleFormApply`. Playwright QA: toolbar button → 12 text boxes rendered
+     accurately over the page text → drag + recolor → Apply → POST 200.
+   - REMAINING (future): resize handles (edit `fontSize`), a golden-file
+     roundtrip-stability harness, and image-object move/resize
+     (`reconstructImageXObjects` ~line 2962). Image recolor + arbitrary
      vector-object editing remain genuinely hard.
