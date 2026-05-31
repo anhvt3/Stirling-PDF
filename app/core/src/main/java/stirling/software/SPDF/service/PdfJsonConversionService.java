@@ -626,15 +626,31 @@ public class PdfJsonConversionService {
     }
 
     public void convertJsonToPdf(MultipartFile file, OutputStream out) throws IOException {
+        convertJsonToPdf(file, false, out);
+    }
+
+    public void convertJsonToPdf(MultipartFile file, boolean forceRegenerate, OutputStream out)
+            throws IOException {
         if (file == null) {
             throw ExceptionUtils.createNullArgumentException("fileInput");
         }
         byte[] jsonBytes = file.getBytes();
         PdfJsonDocument pdfJson = objectMapper.readValue(jsonBytes, PdfJsonDocument.class);
-        convertJsonToPdf(pdfJson, out);
+        convertJsonToPdf(pdfJson, forceRegenerate, out);
     }
 
     public void convertJsonToPdf(PdfJsonDocument pdfJson, OutputStream out) throws IOException {
+        convertJsonToPdf(pdfJson, false, out);
+    }
+
+    /**
+     * @param forceRegenerate when true, the per-page preserved content streams are ignored so the
+     *     page is rebuilt from the (possibly edited) text/image elements. This is what makes edited
+     *     positions ({@code textMatrix}), colours ({@code fillColor}) and sizes take effect — the
+     *     default lossless path rewrites the original operators and would ignore such edits.
+     */
+    public void convertJsonToPdf(PdfJsonDocument pdfJson, boolean forceRegenerate, OutputStream out)
+            throws IOException {
         if (pdfJson == null) {
             throw ExceptionUtils.createNullArgumentException("document");
         }
@@ -684,8 +700,12 @@ public class PdfJsonConversionService {
 
                 applyPageResources(document, page, pageModel.getResources());
 
+                // forceRegenerate: ignore preserved streams so the page is rebuilt from elements
+                // (honours edited textMatrix/fillColor/fontSize). Default keeps the lossless path.
                 List<PDStream> preservedStreams =
-                        buildContentStreams(document, pageModel.getContentStreams());
+                        forceRegenerate
+                                ? new ArrayList<>()
+                                : buildContentStreams(document, pageModel.getContentStreams());
                 if (!preservedStreams.isEmpty()) {
                     page.setContents(preservedStreams);
                 }
