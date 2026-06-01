@@ -285,3 +285,7 @@ frontend/screenshots/
 /packaging/input/
 /packaging/appimage/
 /packaging/installer/
+/packaging/input2/
+/packaging/appimage2/
+/packaging/launcher/*.class
+/packaging/launcher/*.jar
