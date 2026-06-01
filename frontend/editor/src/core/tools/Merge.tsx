@@ -11,11 +11,7 @@ import { useBaseTool } from "@app/hooks/tools/shared/useBaseTool";
 import { BaseToolProps, ToolComponent } from "@app/types/tool";
 import { FileId } from "@app/types/fileContext";
 import { useMergeTips } from "@app/components/tooltips/useMergeTips";
-import {
-  useFileManagement,
-  useAllFiles,
-  useFileSelection,
-} from "@app/contexts/FileContext";
+import { useFileManagement, useAllFiles } from "@app/contexts/FileContext";
 import {
   useNavigationState,
   useNavigationActions,
@@ -25,43 +21,37 @@ const Merge = (props: BaseToolProps) => {
   const { t } = useTranslation();
   const mergeTips = useMergeTips();
 
-  // File selection hooks for custom sorting
-  const { fileIds, fileStubs } = useAllFiles();
-  const { reorderFiles } = useFileManagement();
-  const { selectedFileIds, setSelectedFiles } = useFileSelection();
+  // File hooks. The merge operates on ALL active files (useViewScopedFiles with ignoreViewerScope),
+  // so the in-panel list mirrors `fileStubs` directly — the exact set, and order, that is merged.
+  const { fileStubs } = useAllFiles();
+  const { reorderFiles, removeFiles } = useFileManagement();
 
-  // Ordered list of files in the merge, shown directly in the panel. Order = global file order
-  // (fileStubs) filtered to the selected files, which is exactly the order the backend merges in.
-  const selectedSet = new Set(selectedFileIds);
-  const mergeItems = fileStubs
-    .filter((stub) => selectedSet.has(stub.id))
-    .map((stub) => ({
-      id: stub.id,
-      name: stub.name,
-      pageCount: stub.processedFile?.totalPages,
-      thumbnailUrl: stub.thumbnailUrl,
-    }));
+  const mergeItems = fileStubs.map((stub) => ({
+    id: stub.id,
+    name: stub.name,
+    pageCount: stub.processedFile?.totalPages,
+    thumbnailUrl: stub.thumbnailUrl,
+  }));
   const totalMergePages = mergeItems.reduce(
     (sum, item) => sum + (item.pageCount ?? 0),
     0,
   );
 
-  // Reorder the merge: new order of the selected ids, deselected files keep trailing positions.
+  // Reorder the merge = reorder the active files (the full set is the merge order).
   const handleReorderMerge = useCallback(
-    (orderedSelectedIds: string[]) => {
-      const orderedIds = orderedSelectedIds as FileId[];
-      const deselectedIds = fileIds.filter((id) => !orderedIds.includes(id));
-      reorderFiles([...orderedIds, ...deselectedIds]);
+    (orderedIds: string[]) => {
+      reorderFiles(orderedIds as FileId[]);
     },
-    [fileIds, reorderFiles],
+    [reorderFiles],
   );
 
-  // Remove a file from the merge = deselect it (does not delete it from the workspace).
+  // Remove from the merge = drop the file from the active set (kept in the file library,
+  // not deleted from storage), so it no longer participates in the merge.
   const handleRemoveFromMerge = useCallback(
     (id: string) => {
-      setSelectedFiles(selectedFileIds.filter((fid) => fid !== id));
+      removeFiles([id as FileId], false);
     },
-    [selectedFileIds, setSelectedFiles],
+    [removeFiles],
   );
 
   const base = useBaseTool(
@@ -163,11 +153,9 @@ const Merge = (props: BaseToolProps) => {
         return ascending ? comparison : -comparison;
       });
 
-      const selectedIds = sortedStubs.map((record) => record.id);
-      const deselectedIds = fileIds.filter((id) => !selectedIds.includes(id));
-      reorderFiles([...selectedIds, ...deselectedIds]);
+      reorderFiles(sortedStubs.map((record) => record.id));
     },
-    [fileStubs, fileIds, reorderFiles, naturalCompare],
+    [fileStubs, reorderFiles, naturalCompare],
   );
 
   return createToolFlow({
