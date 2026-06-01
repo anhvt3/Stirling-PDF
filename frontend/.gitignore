@@ -36,6 +36,7 @@ yarn-error.log*
 
 playwright-report
 test-results
+test-artifacts
 
 # auto-generated files
 /editor/src/assets/material-symbols-icons.json

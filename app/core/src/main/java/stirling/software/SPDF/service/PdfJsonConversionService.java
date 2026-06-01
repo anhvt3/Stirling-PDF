@@ -268,6 +268,21 @@ public class PdfJsonConversionService {
         convertPdfToJson(file, null, lightweight, out);
     }
 
+    /**
+     * Variant that lets the caller force images to be inlined into the JSON (full {@code
+     * imageElements} with {@code transform} + base64 data) instead of the default lazy-image path.
+     * The lazy path is a payload optimisation for the read-only text editor, but it strips
+     * imageElements from the synchronous response and caches the image data under a server-side
+     * jobId that single-shot edit tools (Edit Objects / Form Designer) cannot retrieve — so editing
+     * + re-export silently drops every image. Edit tools pass {@code forceInlineImages=true} so the
+     * round-trip carries (and can edit) the images.
+     */
+    public void convertPdfToJson(
+            MultipartFile file, boolean lightweight, boolean forceInlineImages, OutputStream out)
+            throws IOException {
+        convertPdfToJson(file, null, lightweight, forceInlineImages, out);
+    }
+
     public void convertPdfToJson(
             MultipartFile file,
             Consumer<PdfJsonConversionProgress> progressCallback,
@@ -282,13 +297,25 @@ public class PdfJsonConversionService {
             boolean lightweight,
             OutputStream out)
             throws IOException {
+        convertPdfToJson(file, progressCallback, lightweight, false, out);
+    }
+
+    public void convertPdfToJson(
+            MultipartFile file,
+            Consumer<PdfJsonConversionProgress> progressCallback,
+            boolean lightweight,
+            boolean forceInlineImages,
+            OutputStream out)
+            throws IOException {
         if (file == null) {
             throw ExceptionUtils.createNullArgumentException("fileInput");
         }
 
-        // Get job ID from request context if running in async mode
+        // Get job ID from request context if running in async mode. forceInlineImages overrides the
+        // lazy-image path so the response carries full imageElements (edit tools require this).
         String contextJobId = getJobIdFromRequest();
-        boolean useLazyImages = (contextJobId != null && !contextJobId.isEmpty());
+        boolean useLazyImages =
+                !forceInlineImages && (contextJobId != null && !contextJobId.isEmpty());
 
         // Generate synthetic jobId for synchronous conversions to prevent cache collisions
         final String jobId;

@@ -65,7 +65,8 @@ public class ConvertPdfJsonController {
                     "Extracts PDF text, fonts, and metadata into an editable JSON structure for the text editor tool. Input:PDF Output:JSON Type:SISO")
     public ResponseEntity<Resource> convertPdfToJson(
             @ModelAttribute PDFFile request,
-            @RequestParam(value = "lightweight", defaultValue = "false") boolean lightweight)
+            @RequestParam(value = "lightweight", defaultValue = "false") boolean lightweight,
+            @RequestParam(value = "inlineImages", defaultValue = "false") boolean inlineImages)
             throws Exception {
         MultipartFile inputFile = request.getFileInput();
         if (inputFile == null) {
@@ -82,7 +83,7 @@ public class ConvertPdfJsonController {
         String docName = baseName + ".json";
         TempFile tempOut = tempFileManager.createManagedTempFile(".json");
         try (OutputStream os = Files.newOutputStream(tempOut.getPath())) {
-            pdfJsonConversionService.convertPdfToJson(inputFile, lightweight, os);
+            pdfJsonConversionService.convertPdfToJson(inputFile, lightweight, inlineImages, os);
         } catch (Exception e) {
             tempOut.close();
             throw e;

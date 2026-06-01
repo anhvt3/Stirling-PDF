@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyBoolean;
 import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.ArgumentMatchers.eq;
@@ -73,7 +74,7 @@ class ConvertPdfJsonControllerTest {
         PDFFile request = new PDFFile();
         request.setFileInput(null);
 
-        assertThrows(Exception.class, () -> controller.convertPdfToJson(request, false));
+        assertThrows(Exception.class, () -> controller.convertPdfToJson(request, false, false));
     }
 
     @Test
@@ -88,14 +89,14 @@ class ConvertPdfJsonControllerTest {
         // Service writes directly to the OutputStream passed by the controller
         doAnswer(
                         inv -> {
-                            OutputStream os = inv.getArgument(2, OutputStream.class);
+                            OutputStream os = inv.getArgument(3, OutputStream.class);
                             os.write(jsonBytes);
                             return null;
                         })
                 .when(pdfJsonConversionService)
-                .convertPdfToJson(eq(pdfFile), eq(false), any(OutputStream.class));
+                .convertPdfToJson(eq(pdfFile), eq(false), anyBoolean(), any(OutputStream.class));
 
-        ResponseEntity<Resource> response = controller.convertPdfToJson(request, false);
+        ResponseEntity<Resource> response = controller.convertPdfToJson(request, false, false);
 
         assertEquals(HttpStatus.OK, response.getStatusCode());
         assertNotNull(response.getBody());
@@ -112,18 +113,18 @@ class ConvertPdfJsonControllerTest {
 
         doAnswer(
                         inv -> {
-                            OutputStream os = inv.getArgument(2, OutputStream.class);
+                            OutputStream os = inv.getArgument(3, OutputStream.class);
                             os.write(jsonBytes);
                             return null;
                         })
                 .when(pdfJsonConversionService)
-                .convertPdfToJson(eq(pdfFile), eq(true), any(OutputStream.class));
+                .convertPdfToJson(eq(pdfFile), eq(true), anyBoolean(), any(OutputStream.class));
 
-        ResponseEntity<Resource> response = controller.convertPdfToJson(request, true);
+        ResponseEntity<Resource> response = controller.convertPdfToJson(request, true, false);
 
         assertEquals(HttpStatus.OK, response.getStatusCode());
         verify(pdfJsonConversionService)
-                .convertPdfToJson(eq(pdfFile), eq(true), any(OutputStream.class));
+                .convertPdfToJson(eq(pdfFile), eq(true), anyBoolean(), any(OutputStream.class));
     }
 
     @Test
@@ -131,7 +132,7 @@ class ConvertPdfJsonControllerTest {
         GeneralFile request = new GeneralFile();
         request.setFileInput(null);
 
-        assertThrows(Exception.class, () -> controller.convertJsonToPdf(request));
+        assertThrows(Exception.class, () -> controller.convertJsonToPdf(request, false));
     }
 
     @Test
@@ -145,14 +146,14 @@ class ConvertPdfJsonControllerTest {
 
         doAnswer(
                         inv -> {
-                            OutputStream os = inv.getArgument(1, OutputStream.class);
+                            OutputStream os = inv.getArgument(2, OutputStream.class);
                             os.write(pdfBytes);
                             return null;
                         })
                 .when(pdfJsonConversionService)
-                .convertJsonToPdf(eq(jsonFile), any(OutputStream.class));
+                .convertJsonToPdf(eq(jsonFile), anyBoolean(), any(OutputStream.class));
 
-        ResponseEntity<Resource> response = controller.convertJsonToPdf(request);
+        ResponseEntity<Resource> response = controller.convertJsonToPdf(request, false);
 
         assertEquals(HttpStatus.OK, response.getStatusCode());
         assertNotNull(response.getBody());

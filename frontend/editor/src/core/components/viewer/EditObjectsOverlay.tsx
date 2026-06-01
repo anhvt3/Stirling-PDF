@@ -1,5 +1,13 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { useViewer } from "@app/contexts/ViewerContext";
+import {
+  currentFontPt,
+  imageBoxPt,
+  moveImageTransform,
+  resizeImageTransformSE,
+  scaleFactorForResize,
+  scaleTextElement,
+} from "./editObjectsMath";
 
 // ─── Types ──────────────────────────────────────────────────────────────────
 // Minimal shape of the text-editor JSON we need. The full document is kept
@@ -18,13 +26,22 @@ interface TextElement {
   text?: string;
   textMatrix?: number[]; // [a,b,c,d,e,f] — e,f translation in PDF pts (bottom-left origin)
   fontSize?: number;
+  fontMatrixSize?: number; // backend's preferred glyph-size source (resolveFontMatrixSize)
   width?: number;
   height?: number;
   fillColor?: TextColor;
 }
 
+interface ImageElement {
+  // PdfJsonImageElement — placement CTM [a,b,c,d,e,f] in PDF pts, lower-left origin.
+  transform?: number[];
+  width?: number;
+  height?: number;
+}
+
 interface PageModel {
   textElements?: TextElement[];
+  imageElements?: ImageElement[];
 }
 
 interface PdfJsonDoc {
@@ -99,6 +116,33 @@ export const EditObjectsOverlay = ({
     origF: number;
   } | null>(null);
 
+  const resizeRef = useRef<{
+    key: string;
+    startClientY: number;
+    origFontPt: number;
+    // Snapshot of the original element values so each mousemove rescales from
+    // the start (no drift / compounding).
+    origMatrix: number[];
+    origFontSize?: number;
+    origFontMatrixSize?: number;
+    origWidth?: number;
+  } | null>(null);
+
+  // Image move / SE-resize drags. Keys are "img:pageIndex:imageIndex".
+  const imgDragRef = useRef<{
+    key: string;
+    startClientX: number;
+    startClientY: number;
+    origTransform: number[];
+  } | null>(null);
+
+  const imgResizeRef = useRef<{
+    key: string;
+    startClientX: number;
+    startClientY: number;
+    origTransform: number[];
+  } | null>(null);
+
   // ── zoom + scroll re-render ────────────────────────────────────────────────
   useEffect(() => {
     return registerImmediateZoomUpdate((pct) => {
@@ -137,6 +181,10 @@ export const EditObjectsOverlay = ({
       try {
         const fd = new FormData();
         fd.append("fileInput", currentFile);
+        // Force inline images so the doc carries editable imageElements (transform + data) and
+        // images survive the forceRegenerate Apply. Without this the lazy-image path returns
+        // imageElements:[] and every image is dropped on export.
+        fd.append("inlineImages", "true");
         const res = await fetch("/api/v1/convert/pdf/text-editor", {
           method: "POST",
           body: fd,
@@ -190,13 +238,90 @@ export const EditObjectsOverlay = ({
     [containerRef, zoom],
   );
 
+  // ── Image → screen box ─────────────────────────────────────────────────────
+  const imageScreenBox = useCallback(
+    (
+      pageIndex: number,
+      img: ImageElement,
+    ): { left: number; top: number; width: number; height: number } | null => {
+      const container = containerRef.current;
+      if (!container) return null;
+      const pageEl = container.querySelector(
+        `[data-page-index="${pageIndex}"]`,
+      ) as HTMLElement | null;
+      if (!pageEl) return null;
+      const pr = pageEl.getBoundingClientRect();
+      const cr = container.getBoundingClientRect();
+      const z = zoom;
+      const pageHeightPt = pr.height / z;
+      const box = imageBoxPt(img.transform, pageHeightPt);
+      if (!box) return null;
+      return {
+        left: pr.left - cr.left + box.leftPt * z,
+        top: pr.top - cr.top + box.topPt * z,
+        width: Math.max(8, box.wPt * z),
+        height: Math.max(8, box.hPt * z),
+      };
+    },
+    [containerRef, zoom],
+  );
+
   // ── Drag to move ───────────────────────────────────────────────────────────
   useEffect(() => {
     if (!isActive) return;
     const onMove = (ev: MouseEvent) => {
-      const d = dragRef.current;
-      if (!d || !doc) return;
+      if (!doc) return;
       const z = zoomRef.current || 1;
+
+      const ir = imgResizeRef.current;
+      if (ir) {
+        const [pi, ii] = ir.key.slice(4).split(":").map(Number);
+        const img = doc.pages?.[pi]?.imageElements?.[ii];
+        if (img) {
+          const dW = (ev.clientX - ir.startClientX) / z;
+          const dH = (ev.clientY - ir.startClientY) / z; // down = taller
+          img.transform = resizeImageTransformSE(ir.origTransform, dW, dH);
+          setScrollVersion((n) => n + 1);
+        }
+        return;
+      }
+
+      const idr = imgDragRef.current;
+      if (idr) {
+        const [pi, ii] = idr.key.slice(4).split(":").map(Number);
+        const img = doc.pages?.[pi]?.imageElements?.[ii];
+        if (img) {
+          const dxPt = (ev.clientX - idr.startClientX) / z;
+          const dyPt = (ev.clientY - idr.startClientY) / z;
+          img.transform = moveImageTransform(idr.origTransform, dxPt, dyPt);
+          setScrollVersion((n) => n + 1);
+        }
+        return;
+      }
+
+      const r = resizeRef.current;
+      if (r) {
+        const [pi, ei] = r.key.split(":").map(Number);
+        const el = doc.pages?.[pi]?.textElements?.[ei];
+        if (el) {
+          const k = scaleFactorForResize(
+            r.origFontPt,
+            ev.clientY - r.startClientY,
+            z,
+          );
+          // Restore originals, then apply the absolute scale (no compounding).
+          el.textMatrix = r.origMatrix.slice();
+          el.fontSize = r.origFontSize;
+          el.fontMatrixSize = r.origFontMatrixSize;
+          el.width = r.origWidth;
+          scaleTextElement(el, k);
+          setScrollVersion((n) => n + 1);
+        }
+        return;
+      }
+
+      const d = dragRef.current;
+      if (!d) return;
       const dxPt = (ev.clientX - d.startClientX) / z;
       const dyPt = (ev.clientY - d.startClientY) / z;
       const [pi, ei] = d.key.split(":").map(Number);
@@ -208,8 +333,16 @@ export const EditObjectsOverlay = ({
       }
     };
     const onUp = () => {
-      if (dragRef.current) {
+      if (
+        dragRef.current ||
+        resizeRef.current ||
+        imgDragRef.current ||
+        imgResizeRef.current
+      ) {
         dragRef.current = null;
+        resizeRef.current = null;
+        imgDragRef.current = null;
+        imgResizeRef.current = null;
         setDirty(true);
       }
     };
@@ -232,6 +365,48 @@ export const EditObjectsOverlay = ({
       startClientY: ev.clientY,
       origE: el.textMatrix[4],
       origF: el.textMatrix[5],
+    };
+  };
+
+  const startResize = (key: string, el: TextElement, ev: React.MouseEvent) => {
+    ev.preventDefault();
+    ev.stopPropagation();
+    setSelected(key);
+    if (!el.textMatrix) return;
+    resizeRef.current = {
+      key,
+      startClientY: ev.clientY,
+      origFontPt: currentFontPt(el),
+      origMatrix: el.textMatrix.slice(),
+      origFontSize: el.fontSize,
+      origFontMatrixSize: el.fontMatrixSize,
+      origWidth: el.width,
+    };
+  };
+
+  const startImgDrag = (key: string, img: ImageElement, ev: React.MouseEvent) => {
+    ev.preventDefault();
+    ev.stopPropagation();
+    setSelected(key);
+    if (!img.transform || img.transform.length < 6) return;
+    imgDragRef.current = {
+      key,
+      startClientX: ev.clientX,
+      startClientY: ev.clientY,
+      origTransform: img.transform.slice(),
+    };
+  };
+
+  const startImgResize = (key: string, img: ImageElement, ev: React.MouseEvent) => {
+    ev.preventDefault();
+    ev.stopPropagation();
+    setSelected(key);
+    if (!img.transform || img.transform.length < 6) return;
+    imgResizeRef.current = {
+      key,
+      startClientX: ev.clientX,
+      startClientY: ev.clientY,
+      origTransform: img.transform.slice(),
     };
   };
 
@@ -263,9 +438,15 @@ export const EditObjectsOverlay = ({
   if (!isActive) return null;
 
   const selectedEl = (() => {
-    if (!selected || !doc) return null;
+    if (!selected || !doc || selected.startsWith("img:")) return null;
     const [pi, ei] = selected.split(":").map(Number);
     return doc.pages?.[pi]?.textElements?.[ei] ?? null;
+  })();
+
+  const selectedImg = (() => {
+    if (!selected || !doc || !selected.startsWith("img:")) return null;
+    const [pi, ii] = selected.slice(4).split(":").map(Number);
+    return doc.pages?.[pi]?.imageElements?.[ii] ?? null;
   })();
 
   return (
@@ -291,7 +472,20 @@ export const EditObjectsOverlay = ({
       >
         <strong style={{ color: "#1e88e5" }}>Edit Objects</strong>
         {loading && <span>Loading text…</span>}
-        {!loading && doc && <span>Drag text to move · select to recolor</span>}
+        {!loading && doc && (
+          <span>Drag to move · corner handle to resize · text: select to recolor</span>
+        )}
+        {selectedEl && (
+          <span data-testid="editobjects-size" style={{ color: "#475569" }}>
+            {currentFontPt(selectedEl).toFixed(1)} pt
+          </span>
+        )}
+        {selectedImg && selectedImg.transform && (
+          <span data-testid="editobjects-img-size" style={{ color: "#2e7d32" }}>
+            image {Math.abs(selectedImg.transform[0]).toFixed(0)}×
+            {Math.abs(selectedImg.transform[3]).toFixed(0)} pt
+          </span>
+        )}
         {selectedEl && (
           <label style={{ display: "flex", alignItems: "center", gap: 4 }}>
             Color
@@ -350,7 +544,82 @@ export const EditObjectsOverlay = ({
                 pointerEvents: "auto",
                 boxSizing: "border-box",
               }}
-            />
+            >
+              {isSel && (
+                <div
+                  data-editobjects-ui="true"
+                  data-testid={`editobjects-resize-${key}`}
+                  onMouseDown={(ev) => startResize(key, el, ev)}
+                  title="Drag to resize font"
+                  style={{
+                    position: "absolute",
+                    right: -5,
+                    bottom: -5,
+                    width: 10,
+                    height: 10,
+                    borderRadius: 2,
+                    background: "#1e88e5",
+                    border: "1px solid white",
+                    cursor: "nwse-resize",
+                    pointerEvents: "auto",
+                    boxSizing: "border-box",
+                  }}
+                />
+              )}
+            </div>
+          );
+        }),
+      )}
+
+      {/* Draggable / resizable image-element boxes */}
+      {doc?.pages?.map((pg, pi) =>
+        (pg.imageElements ?? []).map((img, ii) => {
+          const box = imageScreenBox(pi, img);
+          if (!box) return null;
+          const key = `img:${pi}:${ii}`;
+          const isSel = selected === key;
+          return (
+            <div
+              key={key}
+              data-editobjects-ui="true"
+              data-testid={`editobjects-img-${pi}:${ii}`}
+              onMouseDown={(ev) => startImgDrag(key, img, ev)}
+              title="Drag to move image · corner handle to resize"
+              style={{
+                position: "absolute",
+                left: box.left,
+                top: box.top,
+                width: box.width,
+                height: box.height,
+                border: isSel ? "2px solid #2e7d32" : "1px dashed rgba(46,125,50,0.6)",
+                background: isSel ? "rgba(46,125,50,0.10)" : "rgba(46,125,50,0.03)",
+                cursor: "move",
+                pointerEvents: "auto",
+                boxSizing: "border-box",
+              }}
+            >
+              {isSel && (
+                <div
+                  data-editobjects-ui="true"
+                  data-testid={`editobjects-img-resize-${pi}:${ii}`}
+                  onMouseDown={(ev) => startImgResize(key, img, ev)}
+                  title="Drag to resize image"
+                  style={{
+                    position: "absolute",
+                    right: -5,
+                    bottom: -5,
+                    width: 10,
+                    height: 10,
+                    borderRadius: 2,
+                    background: "#2e7d32",
+                    border: "1px solid white",
+                    cursor: "nwse-resize",
+                    pointerEvents: "auto",
+                    boxSizing: "border-box",
+                  }}
+                />
+              )}
+            </div>
           );
         }),
       )}
