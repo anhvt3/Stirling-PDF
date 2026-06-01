@@ -12,11 +12,14 @@ interface MergeFileSorterProps {
     ascending: boolean,
   ) => void;
   disabled?: boolean;
+  /** Hide the intro text (e.g. when an ordered file list above already explains reordering). */
+  showDescription?: boolean;
 }
 
 const MergeFileSorter: React.FC<MergeFileSorterProps> = ({
   onSortFiles,
   disabled = false,
+  showDescription = true,
 }) => {
   const { t } = useTranslation();
   const [sortType, setSortType] = useState<"filename" | "dateModified">(
@@ -42,12 +45,14 @@ const MergeFileSorter: React.FC<MergeFileSorterProps> = ({
 
   return (
     <Stack gap="xs">
-      <Text size="sm" fw={500}>
-        {t(
-          "merge.sortBy.description",
-          "Files will be merged in the order they're selected. Drag to reorder or sort below.",
-        )}
-      </Text>
+      {showDescription && (
+        <Text size="sm" fw={500}>
+          {t(
+            "merge.sortBy.description",
+            "Files will be merged in the order they're selected. Drag to reorder or sort below.",
+          )}
+        </Text>
+      )}
       <Stack gap="xs">
         <Group gap="xs" align="end" justify="space-between">
           <Select

@@ -4,12 +4,18 @@ import { Button, Stack, Text } from "@mantine/core";
 import { createToolFlow } from "@app/components/tools/shared/createToolFlow";
 import MergeSettings from "@app/components/tools/merge/MergeSettings";
 import MergeFileSorter from "@app/components/tools/merge/MergeFileSorter";
+import MergeFileList from "@app/components/tools/merge/MergeFileList";
 import { useMergeParameters } from "@app/hooks/tools/merge/useMergeParameters";
 import { useMergeOperation } from "@app/hooks/tools/merge/useMergeOperation";
 import { useBaseTool } from "@app/hooks/tools/shared/useBaseTool";
 import { BaseToolProps, ToolComponent } from "@app/types/tool";
+import { FileId } from "@app/types/fileContext";
 import { useMergeTips } from "@app/components/tooltips/useMergeTips";
-import { useFileManagement, useAllFiles } from "@app/contexts/FileContext";
+import {
+  useFileManagement,
+  useAllFiles,
+  useFileSelection,
+} from "@app/contexts/FileContext";
 import {
   useNavigationState,
   useNavigationActions,
@@ -22,6 +28,41 @@ const Merge = (props: BaseToolProps) => {
   // File selection hooks for custom sorting
   const { fileIds, fileStubs } = useAllFiles();
   const { reorderFiles } = useFileManagement();
+  const { selectedFileIds, setSelectedFiles } = useFileSelection();
+
+  // Ordered list of files in the merge, shown directly in the panel. Order = global file order
+  // (fileStubs) filtered to the selected files, which is exactly the order the backend merges in.
+  const selectedSet = new Set(selectedFileIds);
+  const mergeItems = fileStubs
+    .filter((stub) => selectedSet.has(stub.id))
+    .map((stub) => ({
+      id: stub.id,
+      name: stub.name,
+      pageCount: stub.processedFile?.totalPages,
+      thumbnailUrl: stub.thumbnailUrl,
+    }));
+  const totalMergePages = mergeItems.reduce(
+    (sum, item) => sum + (item.pageCount ?? 0),
+    0,
+  );
+
+  // Reorder the merge: new order of the selected ids, deselected files keep trailing positions.
+  const handleReorderMerge = useCallback(
+    (orderedSelectedIds: string[]) => {
+      const orderedIds = orderedSelectedIds as FileId[];
+      const deselectedIds = fileIds.filter((id) => !orderedIds.includes(id));
+      reorderFiles([...orderedIds, ...deselectedIds]);
+    },
+    [fileIds, reorderFiles],
+  );
+
+  // Remove a file from the merge = deselect it (does not delete it from the workspace).
+  const handleRemoveFromMerge = useCallback(
+    (id: string) => {
+      setSelectedFiles(selectedFileIds.filter((fid) => fid !== id));
+    },
+    [selectedFileIds, setSelectedFiles],
+  );
 
   const base = useBaseTool(
     "merge",
@@ -137,13 +178,22 @@ const Merge = (props: BaseToolProps) => {
     },
     steps: [
       {
-        title: "Sort Files",
+        title: t("merge.orderStep.title", "Files to merge"),
         isCollapsed: base.settingsCollapsed,
         content: (
-          <MergeFileSorter
-            onSortFiles={sortFiles}
-            disabled={!base.hasFiles || base.endpointLoading}
-          />
+          <Stack gap="sm">
+            <MergeFileList
+              items={mergeItems}
+              onReorder={handleReorderMerge}
+              onRemove={handleRemoveFromMerge}
+              disabled={base.endpointLoading}
+            />
+            <MergeFileSorter
+              onSortFiles={sortFiles}
+              disabled={!base.hasFiles || base.endpointLoading}
+              showDescription={false}
+            />
+          </Stack>
         ),
       },
       {
@@ -163,7 +213,12 @@ const Merge = (props: BaseToolProps) => {
       },
     ],
     executeButton: {
-      text: t("merge.submit", "Merge PDFs"),
+      text:
+        totalMergePages > 0
+          ? t("merge.submitWithPages", "Merge → {{count}} pages", {
+              count: totalMergePages,
+            })
+          : t("merge.submit", "Merge PDFs"),
       isVisible: !base.hasResults,
       loadingText: t("loading"),
       onClick: base.handleExecute,
