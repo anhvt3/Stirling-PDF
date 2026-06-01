@@ -280,3 +280,8 @@ docs/type3/signatures/
 
 # Local screenshot artifacts from *-screenshots.spec.ts
 frontend/screenshots/
+
+# Clevai desktop installer build artifacts
+/packaging/input/
+/packaging/appimage/
+/packaging/installer/
