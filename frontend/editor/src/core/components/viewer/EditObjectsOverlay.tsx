@@ -118,6 +118,7 @@ export const EditObjectsOverlay = ({
 
   const resizeRef = useRef<{
     key: string;
+    startClientX: number;
     startClientY: number;
     origFontPt: number;
     // Snapshot of the original element values so each mousemove rescales from
@@ -189,7 +190,18 @@ export const EditObjectsOverlay = ({
           method: "POST",
           body: fd,
         });
-        if (!res.ok) throw new Error(`PDF→JSON failed (${res.status})`);
+        if (!res.ok) {
+          // Surface the backend's message (e.g. the "too large to edit images" guard) instead of
+          // a bare status code.
+          let msg = `Couldn't load this PDF for editing (HTTP ${res.status}).`;
+          try {
+            const parsed = JSON.parse(await res.text());
+            if (parsed?.message) msg = String(parsed.message);
+          } catch {
+            /* non-JSON body — keep the default message */
+          }
+          throw new Error(msg);
+        }
         const json = (await res.json()) as PdfJsonDoc;
         if (!cancelled) setDoc(json);
       } catch (e) {
@@ -304,11 +316,12 @@ export const EditObjectsOverlay = ({
         const [pi, ei] = r.key.split(":").map(Number);
         const el = doc.pages?.[pi]?.textElements?.[ei];
         if (el) {
-          const k = scaleFactorForResize(
-            r.origFontPt,
-            ev.clientY - r.startClientY,
-            z,
-          );
+          // SE (diagonal) handle: combine horizontal + vertical drag so a down-right drag always
+          // grows and up-left shrinks (pure-vertical previously made right-drags do nothing and
+          // could shrink on a slightly-upward down-right drag).
+          const diagDelta =
+            ((ev.clientX - r.startClientX) + (ev.clientY - r.startClientY)) / 2;
+          const k = scaleFactorForResize(r.origFontPt, diagDelta, z);
           // Restore originals, then apply the absolute scale (no compounding).
           el.textMatrix = r.origMatrix.slice();
           el.fontSize = r.origFontSize;
@@ -375,6 +388,7 @@ export const EditObjectsOverlay = ({
     if (!el.textMatrix) return;
     resizeRef.current = {
       key,
+      startClientX: ev.clientX,
       startClientY: ev.clientY,
       origFontPt: currentFontPt(el),
       origMatrix: el.textMatrix.slice(),

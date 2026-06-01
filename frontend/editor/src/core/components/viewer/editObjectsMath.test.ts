@@ -123,10 +123,12 @@ describe("imageBoxPt", () => {
     expect(box).toEqual({ leftPt: 120, topPt: 800 - (500 + 60), wPt: 80, hPt: 60 });
   });
 
-  it("uses absolute width/height for flipped (negative-scale) images", () => {
+  it("places a flipped (negative-d) image correctly: top edge is f, not f+|d|", () => {
+    // Flipped 80x60 image: unit-square maps to y in [f, f+d] = [500, 440], so the TOP edge is f=500.
     const box = imageBoxPt([80, 0, 0, -60, 120, 500], 800);
     expect(box!.wPt).toBe(80);
     expect(box!.hPt).toBe(60);
+    expect(box!.topPt).toBe(800 - 500); // top at f, NOT f+60
   });
 
   it("returns null for a malformed transform", () => {
@@ -165,10 +167,12 @@ describe("resizeImageTransformSE", () => {
     expect(t[3]).toBeCloseTo(MIN_IMAGE_PT);
   });
 
-  it("preserves the sign of a flipped image's scale", () => {
+  it("preserves the sign and top-edge anchor of a flipped image's scale", () => {
+    // Flipped image: top edge is f=500 (max(d,0)=0). Growing keeps f fixed, magnitude grows.
     const t = resizeImageTransformSE([80, 0, 0, -60, 120, 500], 20, 30);
     expect(t[0]).toBeCloseTo(100);
     expect(t[3]).toBeCloseTo(-90); // stays negative (flipped)
+    expect(t[5]).toBeCloseTo(500); // top-edge anchor f preserved
   });
 
   it("does not mutate the input array", () => {

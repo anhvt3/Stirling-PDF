@@ -97,11 +97,14 @@ export function imageBoxPt(
   pageHeightPt: number,
 ): PlacedImageBox | null {
   if (!transform || transform.length < 6) return null;
+  const d = transform[3];
   const wPt = Math.abs(transform[0]);
-  const hPt = Math.abs(transform[3]);
+  const hPt = Math.abs(d);
   const leftPt = transform[4];
-  // f is the lower-left y; the top edge sits at f + height, flipped into top-left space.
-  const topPt = pageHeightPt - (transform[5] + hPt);
+  // The image unit-square maps to PDF y in [f, f+d]. The TOP (larger y) edge is f + max(d,0):
+  // f+d for a normal image (d>0), or f for a vertically flipped one (d<0). Flip into top-left space.
+  const topYpt = transform[5] + Math.max(d, 0);
+  const topPt = pageHeightPt - topYpt;
   return { leftPt, topPt, wPt, hPt };
 }
 
@@ -133,11 +136,14 @@ export function resizeImageTransformSE(
   const t = transform.slice();
   const a = t[0];
   const d = t[3];
-  const topEdge = t[5] + Math.abs(d); // lower-left f + height = top edge (fixed)
+  // Top edge in PDF y is f + max(d,0) (handles vertically flipped images where d<0 and f is top).
+  const topYpt = t[5] + Math.max(d, 0);
   const newW = Math.max(MIN_IMAGE_PT, Math.abs(a) + dWidthPt);
   const newH = Math.max(MIN_IMAGE_PT, Math.abs(d) + dHeightPt);
+  const newD = d < 0 ? -newH : newH;
   t[0] = a < 0 ? -newW : newW;
-  t[3] = d < 0 ? -newH : newH;
-  t[5] = topEdge - newH; // keep the top edge fixed → box grows downward
+  t[3] = newD;
+  // Recompute f so the top edge stays fixed → the box grows downward from the visual top.
+  t[5] = topYpt - Math.max(newD, 0);
   return t;
 }

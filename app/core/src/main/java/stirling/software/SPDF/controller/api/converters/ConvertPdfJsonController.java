@@ -11,8 +11,10 @@ import java.util.regex.Pattern;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.server.ResponseStatusException;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -49,6 +51,13 @@ public class ConvertPdfJsonController {
     private static final Pattern FILE_EXTENSION_PATTERN = Pattern.compile("[.][^.]+$");
     private static final Pattern WHITESPACE_PATTERN = Pattern.compile("[\\r\\n\\t]+");
     private static final Pattern NON_PRINTABLE_PATTERN = Pattern.compile("[^\\x20-\\x7E]");
+
+    // Guard for the Edit Objects "inline images" path: inlining base64-encodes every image into a
+    // single JSON response, which a large/scanned PDF can blow up to hundreds of MB and OOM/freeze
+    // the browser. Reject up front (input bytes are a cheap proxy) with a clear message rather than
+    // silently falling back to lazy mode (which would drop images on re-export). 40 MB comfortably
+    // covers normal object-editing targets (forms, reports, slides with figures).
+    private static final long INLINE_IMAGES_MAX_INPUT_BYTES = 40L * 1024 * 1024;
     private final PdfJsonConversionService pdfJsonConversionService;
     private final TempFileManager tempFileManager;
 
@@ -71,6 +80,16 @@ public class ConvertPdfJsonController {
         MultipartFile inputFile = request.getFileInput();
         if (inputFile == null) {
             throw ExceptionUtils.createNullArgumentException("fileInput");
+        }
+
+        if (inlineImages && inputFile.getSize() > INLINE_IMAGES_MAX_INPUT_BYTES) {
+            throw new ResponseStatusException(
+                    HttpStatus.PAYLOAD_TOO_LARGE,
+                    "This PDF is too large to edit images ("
+                            + (inputFile.getSize() / (1024 * 1024))
+                            + " MB; limit "
+                            + (INLINE_IMAGES_MAX_INPUT_BYTES / (1024 * 1024))
+                            + " MB). Text editing still works on smaller documents.");
         }
 
         String originalName = inputFile.getOriginalFilename();
