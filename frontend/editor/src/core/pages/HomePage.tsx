@@ -277,7 +277,7 @@ export default function HomePage() {
   const baseUrl = useBaseUrl();
 
   // Update document meta when tool changes
-  const appName = config?.appNameNavbar || "Stirling PDF";
+  const appName = config?.appNameNavbar || "PDFMagic";
   useDocumentMeta({
     title: selectedTool ? `${selectedTool.name} - ${appName}` : appName,
     description:

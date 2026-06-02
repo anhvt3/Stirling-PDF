@@ -81,8 +81,9 @@ const LandingPage = () => {
         <LandingDocumentStack />
 
         <Wordmark
-          alt={t("landing.heroTitle", "Stirling PDF")}
+          alt={t("landing.heroTitle", "PDFMagic")}
           className="landing-title"
+          style={{ fontSize: "2.6rem" }}
         />
         <p className="landing-subtitle">
           {t(
